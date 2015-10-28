@@ -1,0 +1,15 @@
+#!/bin/bash
+IFS=$'\n'
+echo
+for line in $(cat $HOME/bin/_tmphint)
+do
+    if [[ ${line:0:2} == '--' ]]
+    then
+        myecho -bo "${line:2}"
+    else
+        myecho -g "$line"
+    fi
+done
+
+echo
+echo

@@ -1,0 +1,5 @@
+#/bin/bash
+
+sudo adb wait-for-device root
+sudo adb wait-for-device remount
+

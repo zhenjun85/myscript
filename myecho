@@ -1,0 +1,124 @@
+#! /bin/bash
+
+black='\E[30m'
+red='\E[31m'
+green='\E[32m'
+yellow='\E[33m'
+blue='\E[34m'
+magenta='\E[35m'
+cyan='\E[36m'
+white='\E[37m'
+bold='\033[1m'
+
+
+function cecho()
+{
+    para=$1
+    case ""$1"" in
+
+        "r" | "-r")
+            begin=$red
+            ;;
+
+        "g" | "-g")
+            begin=$green
+            ;;
+
+        "y" | "-y")
+            begin=$yellow
+            ;;
+
+        "b" | "-b")
+            begin=$blue
+            ;;
+
+        "m" | "-m")
+            begin=$magenta
+            ;;
+
+        "c" | "-c")
+            begin=$cyan
+            ;;
+
+        "bo" | "-bo")
+            begin=$bold
+            ;;
+
+    esac
+
+
+    echo -en "$begin";
+    shift
+    echo "$@"
+    tput sgr0
+}
+
+function cecho_noline()
+{
+    para=$1
+    case ""$1"" in
+
+        "r" | "-r")
+            begin=$red
+            ;;
+
+        "g" | "-g")
+            begin=$green
+            ;;
+
+        "y" | "-y")
+            begin=$yellow
+            ;;
+
+        "b" | "-b")
+            begin=$blue
+            ;;
+
+        "m" | "-m")
+            begin=$magenta
+            ;;
+
+        "c" | "-c")
+            begin=$cyan
+            ;;
+
+        "bo" | "-bo")
+            begin=$bold
+            ;;
+
+    esac
+
+
+    echo -en "$begin";
+    shift
+    echo -en "$@"
+    echo -en $black
+}
+
+
+if [[ $# -lt 2 ]]
+then
+    echo -e "\033[1musage: myecho [color] message you want out put\033[0m"
+    echo "color index:"
+    echo -en "r\t"
+    cecho r red
+    echo -en "g\t"
+    cecho g green
+    echo -en "y\t"
+    cecho y yellow
+    echo -en "b\t"
+    cecho b blue
+    echo -en "m\t"
+    cecho m magenta
+    echo -en "c\t"
+    cecho c cyan
+    echo -en "bo\t"
+    cecho bo bold
+    cecho bo "-nolf means no line feed"
+elif [[ $1 == "-nolf" ]]
+then
+    shift
+    cecho_noline $@
+else
+    cecho $@
+fi

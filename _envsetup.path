@@ -1,0 +1,79 @@
+diff --git a/envsetup.sh b/envsetup.sh
+index 242ace8..484db62 100644
+--- a/envsetup.sh
++++ b/envsetup.sh
+@@ -490,12 +490,30 @@ function print_lunch_menu()
+ function lunch()
+ {
+     local answer
++    local _have_history_selection
+ 
+     if [ "$1" ] ; then
+         answer=$1
+     else
+         print_lunch_menu
+         echo -n "Which would you like? [aosp_arm-eng] "
++
++        _have_history_selection=0
++
++        if [ -f _history_selection ]
++        then
++            echo
++            echo
++            echo "you history selection is:"
++            cat _history_selection
++            _have_history_selection=1
++        fi
++
++        if [ -f _last_selection ]
++        then
++            echo
++            echo "Your last choose is [`cat _last_selection`]"
++        fi
+         read answer
+     fi
+ 
+@@ -503,7 +521,12 @@ function lunch()
+ 
+     if [ -z "$answer" ]
+     then
+-        selection=aosp_arm-eng
++        if [ -f _last_selection ]
++        then
++            selection=`cat _last_selection`
++        else
++            selection=aosp_arm-eng
++        fi
+     elif (echo -n $answer | grep -q -e "^[0-9][0-9]*$")
+     then
+         if [ $answer -le ${#LUNCH_MENU_CHOICES[@]} ]
+@@ -522,6 +545,29 @@ function lunch()
+         return 1
+     fi
+ 
++    _history_restored=0
++
++    if [ "${_have_history_selection}" = "1" ]
++    then
++        for _his in `cat _history_selection`
++        do
++            if [ $_his = $selection ]
++            then
++                _history_restored=1
++                break
++            fi
++        done
++    fi
++
++    if [ "${_history_restored}" = "0" ]
++    then
++        echo $selection>>_history_selection
++    fi
++
++
++    #zzj
++    echo "$selection" > _last_selection
++
+     export TARGET_BUILD_APPS=
+ 
+     local product=$(echo -n $selection | sed -e "s/-.*$//")

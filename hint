@@ -1,0 +1,55 @@
+--更新apt-get
+sudo vi /etc/cntlm.conf
+
+--java 7
+export PATH=/usr/lib/jvm/java-7-openjdk-amd64/bin:$PATH
+
+--extract system.img
+sudo mount -o rw,loop system.img test
+
+--dump tcp
+tcp -s 0 -i any -w /sdcard/dumpfile 
+--parse kernel log in dumpsys
+parse_log -s vmlinux -d sysdump.core.01_0x80000000-0x87ffffff_dump.lst -a 0xc0000000
+
+--小写转大写
+echo adfasfjasdf |tr '[a-z]' '[A-Z]'
+
+--git push
+git push ssh://zhenjun.zhang@10.0.64.28:29418/vendor/sprd/open-source/ HEAD:refs/for/sprdroid4.4
+--git clone
+git clone gittj@10.5.2.49:android/vendor/sprd/open-source -b sprdroid4.4
+
+--grep error
+mmm vendor/sprd/open-source/libs/audio>&1 2>&1|grep error
+
+
+--rm save out
+for a in `ls`; do echo "rm ${a}"; if [[ ${a} != "out" ]]; then rm -rf ${a}; fi; done
+
+--ssh
+ssh -l user 192.168.0.11
+
+--dump c++
+#include <utils/CallStack.h>  
+CallStack stack;  
+stack.update();  
+stack.log("zzj");  
+
+
+--systemproperities
+import android.os.SystemProperties;
+SystemProperties.get("dalvik.vm.heapgrowthlimit", "");
+
+--下载
+repo sync -d -c -q -j8
+repo init -u gittj@10.5.2.49:android/platform/manifest.git -b sprdroid5.0_3.10_lsk
+
+--trace
+Throwable tr = new Throwable();
+tr.fillInStackTrace();
+android.util.Log.d("zzj","Throw",tr);
+
+--展卓会议
+996 720 198
+

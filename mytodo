@@ -1,0 +1,47 @@
+#!/bin/bash
+
+todofile=$HOME/bin/_todofile
+tmpfile=$HOME/bin/_tmpfile
+
+function show_usage(){
+    echo
+    myecho -r "usage: -add    -del"
+}
+
+function show_todo(){
+    clear
+    myecho -r "############--Remind, TODO List--################"
+    cat -n $todofile
+    myecho -r "#################################################"
+}
+
+function add_todo(){
+    myecho -bo "add to do message:"
+    read todo
+    echo $todo >>$todofile
+
+    show_todo
+}
+
+function del_todo() {
+    show_todo
+    myecho -bo "enter the line to delete"
+    read line
+    cat $todofile |sed "${line}"d >$tmpfile
+    cat $tmpfile >$todofile
+}
+
+if [[ $# == 0 ]]
+then
+    show_todo
+elif [[ $1 == "-add" ]]
+then
+    add_todo
+elif [[ $1 == "-del" ]]
+then
+    del_todo
+else
+    show_todo
+    show_usage
+fi
+

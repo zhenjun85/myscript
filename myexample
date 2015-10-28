@@ -1,0 +1,13 @@
+#!/bin/sh
+
+ARGS="";
+while [ "$#" -gt 0 ]; do
+    ARGS=$ARGS" $1"
+    shift 1
+done
+
+echo $ARGS
+
+
+echo "abc" |od -b
+

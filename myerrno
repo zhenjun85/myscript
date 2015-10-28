@@ -1,0 +1,3 @@
+#!/bin/bash
+
+grep -w $1 $HOME/bin/errno.h

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+starttime=$1
+
+starthour=$(echo $starttime|awk -F ":" '{print $1}')
+starthour=${starthour#0}
+startminus=$(echo $starttime|awk -F ":" '{print $2}')
+startminus=${startminus#0}
+hour=$(date|awk -F " " '{print $4}'|awk -F ":" '{print $1}')
+minus=$(date|awk -F " " '{print $4}'|awk -F ":" '{print $2}')
+hour=${hour#0}
+minus=${minus#0}
+
+let "time=($starthour-$hour)*60+$startminus-$minus"
+let "time=$time*60"
+#time=`expr $starthour - $hour * 60`
+echo
+myecho -y "the job will be start at $starttime,  after $time second"
+sleep $time
+myecho -y "start the jobs ..."
+
+#secnods=(date|awk -F " " '{print $4}'|awk -F ":" '{print $3}')
+
+
+
+

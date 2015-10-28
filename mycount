@@ -1,0 +1,36 @@
+
+#!/bin/bash
+
+function usage()
+{
+    myecho -bo "usage mycount b;do someting;mycount e"
+}
+
+function printline()
+{
+    myecho -bo "---------------------------------------"
+}
+
+if [ $# == 0 ]
+then
+    usage
+    exit
+fi
+
+if [ $1 == b ]
+then
+    pretime=`date +%s`
+    echo $pretime>$HOME/bin/_pretime
+elif [ $1 == e ]
+then
+    pretime=`cat $HOME/bin/_pretime`
+    curtime=`date +%s`
+    let "usetime=$curtime-$pretime"
+    printline
+    echo -e '    Total use time $usetime second'
+    printline
+else
+    usage
+fi
+
+

@@ -1,0 +1,7 @@
+
+#/bin/bash
+
+git diff>diff.patch
+folder="/home/likewise-open/SPREADTRUM/zhenjun.zhang/code/patchs/$1"
+mkdir -p $folder
+cp ./diff.patch $folder

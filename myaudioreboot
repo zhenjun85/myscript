@@ -1,0 +1,5 @@
+#/bin/bash
+mediaserverpid=`adb shell ps|grep mediaserver|awk -F " " '{print $2}'`
+echo $mediaserverpid
+
+adb shell kill $mediaserverpid

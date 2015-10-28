@@ -1,0 +1,9 @@
+#/bin/bash
+if [ $# == 0 ]
+    then
+    myecho -r "usage :mykill PROCESS_NAME"
+    exit
+fi
+servername=`sudo adb shell ps|grep $1|awk -F " " '{print $2}'`
+echo $servername
+sudo adb shell kill $servername

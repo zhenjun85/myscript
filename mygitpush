@@ -1,0 +1,19 @@
+#!/bin/bash
+TOPFILE=build/core/envsetup.mk
+FULLDIR=`pwd`
+while [ `pwd` != / ]
+do
+	if [ -f $TOPFILE ]
+	then
+		ROOTDIR=`pwd`
+		break
+	fi
+	cd ..
+done
+
+#echo "$ROOTDIR"
+
+POS=${#ROOTDIR}
+GITREPO=${FULLDIR:$POS+1}
+echo "git push ssh://zhenjun.zhang@10.0.0.160:29418/$GITREPO/ HEAD:refs/for/$1"
+
