@@ -1,0 +1,2 @@
+#!/bin/bash
+gnome-osd-client -f "<message id='notify' hide_timeout='600000' osd_vposition='center' osd_halignment='center'    osd_font='50'>$1</message>"

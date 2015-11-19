@@ -11,9 +11,17 @@ do
 	cd ..
 done
 
-#echo "$ROOTDIR"
 
 POS=${#ROOTDIR}
+
+#compute the project name
+cd ..
+ROOTDIR=`pwd`
+
+ROOTPOS=${#ROOTDIR}
+
+PROJECT=${FULLDIR:$ROOTPOS+1:$POS-$ROOTPOS-1}
+
 GITREPO=${FULLDIR:$POS+1}
-echo "git push ssh://zhenjun.zhang@10.0.0.160:29418/$GITREPO/ HEAD:refs/for/$1"
+echo "git push ssh://zhenjun.zhang@10.0.0.160:29418/platform/$GITREPO/ HEAD:refs/for/$PROJECT"
 

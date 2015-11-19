@@ -1,0 +1,20 @@
+#!/bin/bash
+echo "export my script"
+function croot {
+    local TOPFILE=build/envsetup.sh
+    local FULLDIR=`pwd`
+    while [ `pwd` != / ]
+    do
+        if [ -f $TOPFILE ]
+        then
+            local ROOTDIR=`pwd`
+            break
+        fi
+        cd ..
+    done
+    if [ `pwd` == / ]
+        then
+        echo "Can not find Android Root Folder"
+    fi
+}
+

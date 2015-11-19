@@ -11,3 +11,14 @@ echo $ARGS
 
 echo "abc" |od -b
 
+start_time=$(date +"%s")
+sleep 1
+end_time=$(date +"%s")
+timeuse=$(($end_time-$start_time))
+
+hours=$(($timeuse / 3600))
+mins=$((($timeuse %3600) / 60))
+secs=$(($timeuse%60))
+
+echo "sleep use $hours hours, $mins mins, $secs sec"
+
