@@ -1,6 +1,12 @@
 --更新apt-get
 sudo vi /etc/cntlm.conf
 
+--master base
+git clone https://github.com/android/platform_frameworks_base.git
+
+--monkey
+while true; do adb shell monkey -v 1000000 --ignore-crashes --ignore-timeouts --ignore-security-exceptions --ignore-native-crashes ; done
+
 --java 7
 export PATH=/usr/lib/jvm/java-7-openjdk-amd64/bin:$PATH
 
@@ -35,6 +41,9 @@ ssh -l user 192.168.0.11
 CallStack stack;  
 stack.update();  
 stack.log("zzj");  
+
+--scp
+scp -r apuser@10.5.228.37:/home/apuser/folder .
 
 
 --systemproperities

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+function notify {
+    export DISPLAY=:0 && gnome-osd-client -f "<message id='notify' hide_timeout='600000' osd_vposition='center' osd_halignment='center'    osd_font='50'>$1</message>"
+}
+
+
+#load the daily notification
