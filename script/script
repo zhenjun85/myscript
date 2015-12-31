@@ -18,3 +18,29 @@ function croot {
     fi
 }
 
+
+function mam {
+    if [ ! $ANDROID_PRODUCT_OUT ]
+    then
+        echo "You should initial the Android environment, before use this command!"
+        return
+    fi
+    last_pwd=`pwd`
+    mm |tee ~/tmp/tmplog
+    for result in `cat ~/tmp/tmplog |grep "Install:" |awk -F " " '{print $2}'`
+    do
+        croot
+        mypush $result 
+        cd $last_pwd
+    done
+}
+
+function cds {
+    croot
+    cd frameworks/base/services
+}
+
+function cdc {
+    croot
+    cd frameworks/base/core
+}

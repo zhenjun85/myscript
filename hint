@@ -65,3 +65,7 @@ android.util.Log.d("zzj","Throw",tr);
 --11F6
 pldapps2015
 
+
+--access google proxy
+export https_proxy=10.0.2.100:3128
+

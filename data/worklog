@@ -6,3 +6,24 @@
 2015.51.1     other          和wanglu讨论ANR文档中关于焦点的问题
 2015.51.2     6.0            昨天，uiautimation黑屏问题，分析现场
 2015.51.2     6.0            511595 分析并转出，anr
+2015.51.2     6.0            503869 找到必现步骤，分析为keyguard状态出现问题，需要keyguard模块分析
+2015.51.3     6.0            gallery播放视频，解锁后会闪屏问题，分析为surfaceflinger问题
+2015.51.3     other          和defang讨论快速启动Camera问题
+2015.51.3     6.0            512870，分析为ams调用block，转ams分析
+2015.51.4     other          android One应用crash，分析为硬绘问题
+--2015.52
+2015.52.1     6.0            505017 fixed
+2015.52.1     sharkl         515263 won't fix
+2015.52.2     other          Study SurfaceView
+2015.52.3     6.0            516302 ANR issue, ams block的时间较长，和wms应该没关系
+2015.52.3     other          之前解决的开机死锁问题，查到google递交，邮件给powermanager同事
+2015.52.4     6.0            继续讨论anr问题
+2015.52.4     6.0            按住屏幕不能转动
+2015.52.5     6.0            516818 mm graphic
+2015.52.5     tshark3        功耗问题，分析了一下为keyguard里调用的
+--2015.53
+2015.53.3     6.0            516652 和秋实一起分析，转power
+2015.53.3     other          review 德芳代码
+2015.53.3     6.0            519399    vsync timeout 9832
+2015.53.4     other          输入法问题，周1，2，解决方案，提供google review
+2015.53.4     other          https://android-review.googlesource.com/#/c/181008/       记录，启动死锁问题
