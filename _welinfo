@@ -1,0 +1,6 @@
+#!/bin/sh
+
+clear
+echo
+echo
+myecho -bo "Today is `date`"

@@ -1,0 +1,3 @@
+#! /bin/bash
+
+cat ~/bin/events_logs_info |grep $1

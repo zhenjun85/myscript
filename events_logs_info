@@ -1,0 +1,1011 @@
+/* This file is auto-generated.  DO NOT MODIFY.
+ * Source file: frameworks/base/services/core/java/com/android/server/EventLogTags.logtags
+ */
+
+package com.android.server;
+
+/**
+ * @hide
+ */
+public class EventLogTags {
+  private EventLogTags() { }  // don't instantiate
+
+  /** 2722 battery_level (level|1|6),(voltage|1|1),(temperature|1|1) */
+  public static final int BATTERY_LEVEL = 2722;
+
+  /** 2723 battery_status (status|1|5),(health|1|5),(present|1|5),(plugged|1|5),(technology|3) */
+  public static final int BATTERY_STATUS = 2723;
+
+  /** 2730 battery_discharge (duration|2|3),(minLevel|1|6),(maxLevel|1|6) */
+  public static final int BATTERY_DISCHARGE = 2730;
+
+  /** 2724 power_sleep_requested (wakeLocksCleared|1|1) */
+  public static final int POWER_SLEEP_REQUESTED = 2724;
+
+  /** 2725 power_screen_broadcast_send (wakelockCount|1|1) */
+  public static final int POWER_SCREEN_BROADCAST_SEND = 2725;
+
+  /** 2726 power_screen_broadcast_done (on|1|5),(broadcastDuration|2|3),(wakelockCount|1|1) */
+  public static final int POWER_SCREEN_BROADCAST_DONE = 2726;
+
+  /** 2727 power_screen_broadcast_stop (which|1|5),(wakelockCount|1|1) */
+  public static final int POWER_SCREEN_BROADCAST_STOP = 2727;
+
+  /** 2728 power_screen_state (offOrOn|1|5),(becauseOfUser|1|5),(totalTouchDownTime|2|3),(touchCycles|1|1) */
+  public static final int POWER_SCREEN_STATE = 2728;
+
+  /** 2729 power_partial_wake_state (releasedorAcquired|1|5),(tag|3) */
+  public static final int POWER_PARTIAL_WAKE_STATE = 2729;
+
+  /** 2744 free_storage_changed (data|2|2) */
+  public static final int FREE_STORAGE_CHANGED = 2744;
+
+  /** 2745 low_storage (data|2|2) */
+  public static final int LOW_STORAGE = 2745;
+
+  /** 2746 free_storage_left (data|2|2),(system|2|2),(cache|2|2) */
+  public static final int FREE_STORAGE_LEFT = 2746;
+
+  /** 2748 cache_file_deleted (path|3) */
+  public static final int CACHE_FILE_DELETED = 2748;
+
+  /** 2750 notification_enqueue (uid|1|5),(pid|1|5),(pkg|3),(id|1|5),(tag|3),(userid|1|5),(notification|3),(status|1) */
+  public static final int NOTIFICATION_ENQUEUE = 2750;
+
+  /** 2751 notification_cancel (uid|1|5),(pid|1|5),(pkg|3),(id|1|5),(tag|3),(userid|1|5),(required_flags|1),(forbidden_flags|1),(reason|1|5),(listener|3) */
+  public static final int NOTIFICATION_CANCEL = 2751;
+
+  /** 2752 notification_cancel_all (uid|1|5),(pid|1|5),(pkg|3),(userid|1|5),(required_flags|1),(forbidden_flags|1),(reason|1|5),(listener|3) */
+  public static final int NOTIFICATION_CANCEL_ALL = 2752;
+
+  /** 27500 notification_panel_revealed (items|1) */
+  public static final int NOTIFICATION_PANEL_REVEALED = 27500;
+
+  /** 27501 notification_panel_hidden */
+  public static final int NOTIFICATION_PANEL_HIDDEN = 27501;
+
+  /** 27510 notification_visibility_changed (newlyVisibleKeys|3),(noLongerVisibleKeys|3) */
+  public static final int NOTIFICATION_VISIBILITY_CHANGED = 27510;
+
+  /** 27511 notification_expansion (key|3),(user_action|1),(expanded|1),(lifespan|1),(freshness|1),(exposure|1) */
+  public static final int NOTIFICATION_EXPANSION = 27511;
+
+  /** 27520 notification_clicked (key|3),(lifespan|1),(freshness|1),(exposure|1) */
+  public static final int NOTIFICATION_CLICKED = 27520;
+
+  /** 27521 notification_action_clicked (key|3),(action_index|1),(lifespan|1),(freshness|1),(exposure|1) */
+  public static final int NOTIFICATION_ACTION_CLICKED = 27521;
+
+  /** 27530 notification_canceled (key|3),(reason|1),(lifespan|1),(freshness|1),(exposure|1) */
+  public static final int NOTIFICATION_CANCELED = 27530;
+
+  /** 27531 notification_visibility (key|3),(visibile|1),(lifespan|1),(freshness|1),(exposure|1),(rank|1) */
+  public static final int NOTIFICATION_VISIBILITY = 27531;
+
+  /** 27532 notification_alert (key|3),(buzz|1),(beep|1),(blink|1) */
+  public static final int NOTIFICATION_ALERT = 27532;
+
+  /** 2802 watchdog (Service|3) */
+  public static final int WATCHDOG = 2802;
+
+  /** 2803 watchdog_proc_pss (Process|3),(Pid|1|5),(Pss|1|2) */
+  public static final int WATCHDOG_PROC_PSS = 2803;
+
+  /** 2804 watchdog_soft_reset (Process|3),(Pid|1|5),(MaxPss|1|2),(Pss|1|2),(Skip|3) */
+  public static final int WATCHDOG_SOFT_RESET = 2804;
+
+  /** 2805 watchdog_hard_reset (Process|3),(Pid|1|5),(MaxPss|1|2),(Pss|1|2) */
+  public static final int WATCHDOG_HARD_RESET = 2805;
+
+  /** 2806 watchdog_pss_stats (EmptyPss|1|2),(EmptyCount|1|1),(BackgroundPss|1|2),(BackgroundCount|1|1),(ServicePss|1|2),(ServiceCount|1|1),(VisiblePss|1|2),(VisibleCount|1|1),(ForegroundPss|1|2),(ForegroundCount|1|1),(NoPssCount|1|1) */
+  public static final int WATCHDOG_PSS_STATS = 2806;
+
+  /** 2807 watchdog_proc_stats (DeathsInOne|1|1),(DeathsInTwo|1|1),(DeathsInThree|1|1),(DeathsInFour|1|1),(DeathsInFive|1|1) */
+  public static final int WATCHDOG_PROC_STATS = 2807;
+
+  /** 2808 watchdog_scheduled_reboot (Now|2|1),(Interval|1|3),(StartTime|1|3),(Window|1|3),(Skip|3) */
+  public static final int WATCHDOG_SCHEDULED_REBOOT = 2808;
+
+  /** 2809 watchdog_meminfo (MemFree|1|2),(Buffers|1|2),(Cached|1|2),(Active|1|2),(Inactive|1|2),(AnonPages|1|2),(Mapped|1|2),(Slab|1|2),(SReclaimable|1|2),(SUnreclaim|1|2),(PageTables|1|2) */
+  public static final int WATCHDOG_MEMINFO = 2809;
+
+  /** 2810 watchdog_vmstat (runtime|2|3),(pgfree|1|1),(pgactivate|1|1),(pgdeactivate|1|1),(pgfault|1|1),(pgmajfault|1|1) */
+  public static final int WATCHDOG_VMSTAT = 2810;
+
+  /** 2811 watchdog_requested_reboot (NoWait|1|1),(ScheduleInterval|1|3),(RecheckInterval|1|3),(StartTime|1|3),(Window|1|3),(MinScreenOff|1|3),(MinNextAlarm|1|3) */
+  public static final int WATCHDOG_REQUESTED_REBOOT = 2811;
+
+  /** 2820 backup_data_changed (Package|3) */
+  public static final int BACKUP_DATA_CHANGED = 2820;
+
+  /** 2821 backup_start (Transport|3) */
+  public static final int BACKUP_START = 2821;
+
+  /** 2822 backup_transport_failure (Package|3) */
+  public static final int BACKUP_TRANSPORT_FAILURE = 2822;
+
+  /** 2823 backup_agent_failure (Package|3),(Message|3) */
+  public static final int BACKUP_AGENT_FAILURE = 2823;
+
+  /** 2824 backup_package (Package|3),(Size|1|2) */
+  public static final int BACKUP_PACKAGE = 2824;
+
+  /** 2825 backup_success (Packages|1|1),(Time|1|3) */
+  public static final int BACKUP_SUCCESS = 2825;
+
+  /** 2826 backup_reset (Transport|3) */
+  public static final int BACKUP_RESET = 2826;
+
+  /** 2827 backup_initialize */
+  public static final int BACKUP_INITIALIZE = 2827;
+
+  /** 2830 restore_start (Transport|3),(Source|2|5) */
+  public static final int RESTORE_START = 2830;
+
+  /** 2831 restore_transport_failure */
+  public static final int RESTORE_TRANSPORT_FAILURE = 2831;
+
+  /** 2832 restore_agent_failure (Package|3),(Message|3) */
+  public static final int RESTORE_AGENT_FAILURE = 2832;
+
+  /** 2833 restore_package (Package|3),(Size|1|2) */
+  public static final int RESTORE_PACKAGE = 2833;
+
+  /** 2834 restore_success (Packages|1|1),(Time|1|3) */
+  public static final int RESTORE_SUCCESS = 2834;
+
+  /** 2840 full_backup_package (Package|3) */
+  public static final int FULL_BACKUP_PACKAGE = 2840;
+
+  /** 2841 full_backup_agent_failure (Package|3),(Message|3) */
+  public static final int FULL_BACKUP_AGENT_FAILURE = 2841;
+
+  /** 2842 full_backup_transport_failure */
+  public static final int FULL_BACKUP_TRANSPORT_FAILURE = 2842;
+
+  /** 2843 full_backup_success (Package|3) */
+  public static final int FULL_BACKUP_SUCCESS = 2843;
+
+  /** 2844 full_restore_package (Package|3) */
+  public static final int FULL_RESTORE_PACKAGE = 2844;
+
+  /** 2850 backup_transport_lifecycle (Transport|3),(Bound|1|1) */
+  public static final int BACKUP_TRANSPORT_LIFECYCLE = 2850;
+
+  /** 3010 boot_progress_system_run (time|2|3) */
+  public static final int BOOT_PROGRESS_SYSTEM_RUN = 3010;
+
+  /** 3060 boot_progress_pms_start (time|2|3) */
+  public static final int BOOT_PROGRESS_PMS_START = 3060;
+
+  /** 3070 boot_progress_pms_system_scan_start (time|2|3) */
+  public static final int BOOT_PROGRESS_PMS_SYSTEM_SCAN_START = 3070;
+
+  /** 3080 boot_progress_pms_data_scan_start (time|2|3) */
+  public static final int BOOT_PROGRESS_PMS_DATA_SCAN_START = 3080;
+
+  /** 3090 boot_progress_pms_scan_end (time|2|3) */
+  public static final int BOOT_PROGRESS_PMS_SCAN_END = 3090;
+
+  /** 3100 boot_progress_pms_ready (time|2|3) */
+  public static final int BOOT_PROGRESS_PMS_READY = 3100;
+
+  /** 3110 unknown_sources_enabled (value|1) */
+  public static final int UNKNOWN_SOURCES_ENABLED = 3110;
+
+  /** 3120 pm_critical_info (msg|3) */
+  public static final int PM_CRITICAL_INFO = 3120;
+
+  /** 31000 wm_no_surface_memory (Window|3),(PID|1|5),(Operation|3) */
+  public static final int WM_NO_SURFACE_MEMORY = 31000;
+
+  /** 31001 wm_task_created (TaskId|1|5),(StackId|1|5) */
+  public static final int WM_TASK_CREATED = 31001;
+
+  /** 31002 wm_task_moved (TaskId|1|5),(ToTop|1),(Index|1) */
+  public static final int WM_TASK_MOVED = 31002;
+
+  /** 31003 wm_task_removed (TaskId|1|5),(Reason|3) */
+  public static final int WM_TASK_REMOVED = 31003;
+
+  /** 31004 wm_stack_created (StackId|1|5),(RelativeBoxId|1|5),(Position|1),(Weight|1|6) */
+  public static final int WM_STACK_CREATED = 31004;
+
+  /** 31005 wm_home_stack_moved (ToTop|1) */
+  public static final int WM_HOME_STACK_MOVED = 31005;
+
+  /** 31006 wm_stack_removed (StackId|1|5) */
+  public static final int WM_STACK_REMOVED = 31006;
+
+  /** 32000 imf_force_reconnect_ime (IME|4),(Time Since Connect|2|3),(Showing|1|1) */
+  public static final int IMF_FORCE_RECONNECT_IME = 32000;
+
+  /** 33000 wp_wallpaper_crashed (component|3) */
+  public static final int WP_WALLPAPER_CRASHED = 33000;
+
+  /** 34000 device_idle (state|1|5), (reason|3) */
+  public static final int DEVICE_IDLE = 34000;
+
+  /** 34001 device_idle_step */
+  public static final int DEVICE_IDLE_STEP = 34001;
+
+  /** 34002 device_idle_wake_from_idle (is_idle|1|5), (reason|3) */
+  public static final int DEVICE_IDLE_WAKE_FROM_IDLE = 34002;
+
+  /** 34003 device_idle_on_start */
+  public static final int DEVICE_IDLE_ON_START = 34003;
+
+  /** 34004 device_idle_on_phase (what|3) */
+  public static final int DEVICE_IDLE_ON_PHASE = 34004;
+
+  /** 34005 device_idle_on_complete */
+  public static final int DEVICE_IDLE_ON_COMPLETE = 34005;
+
+  /** 34006 device_idle_off_start (reason|3) */
+  public static final int DEVICE_IDLE_OFF_START = 34006;
+
+  /** 34007 device_idle_off_phase (what|3) */
+  public static final int DEVICE_IDLE_OFF_PHASE = 34007;
+
+  /** 34008 device_idle_off_complete */
+  public static final int DEVICE_IDLE_OFF_COMPLETE = 34008;
+
+  /** 35000 auto_brightness_adj (old_adj|5),(old_lux|5),(old_brightness|5),(old_gamma|5),(new_adj|5),(new_lux|5),(new_brightness|5),(new_gamma|5) */
+  public static final int AUTO_BRIGHTNESS_ADJ = 35000;
+
+  /** 50020 connectivity_state_changed (type|1),(subtype|1),(state|1) */
+  public static final int CONNECTIVITY_STATE_CHANGED = 50020;
+
+  /** 51100 netstats_mobile_sample (dev_rx_bytes|2|2),(dev_tx_bytes|2|2),(dev_rx_pkts|2|1),(dev_tx_pkts|2|1),(xt_rx_bytes|2|2),(xt_tx_bytes|2|2),(xt_rx_pkts|2|1),(xt_tx_pkts|2|1),(uid_rx_bytes|2|2),(uid_tx_bytes|2|2),(uid_rx_pkts|2|1),(uid_tx_pkts|2|1),(trusted_time|2|3) */
+  public static final int NETSTATS_MOBILE_SAMPLE = 51100;
+
+  /** 51101 netstats_wifi_sample (dev_rx_bytes|2|2),(dev_tx_bytes|2|2),(dev_rx_pkts|2|1),(dev_tx_pkts|2|1),(xt_rx_bytes|2|2),(xt_tx_bytes|2|2),(xt_rx_pkts|2|1),(xt_tx_pkts|2|1),(uid_rx_bytes|2|2),(uid_tx_bytes|2|2),(uid_rx_pkts|2|1),(uid_tx_pkts|2|1),(trusted_time|2|3) */
+  public static final int NETSTATS_WIFI_SAMPLE = 51101;
+
+  /** 51200 lockdown_vpn_connecting (egress_net|1) */
+  public static final int LOCKDOWN_VPN_CONNECTING = 51200;
+
+  /** 51201 lockdown_vpn_connected (egress_net|1) */
+  public static final int LOCKDOWN_VPN_CONNECTED = 51201;
+
+  /** 51202 lockdown_vpn_error (egress_net|1) */
+  public static final int LOCKDOWN_VPN_ERROR = 51202;
+
+  /** 51300 config_install_failed (dir|3) */
+  public static final int CONFIG_INSTALL_FAILED = 51300;
+
+  /** 51400 ifw_intent_matched (Intent Type|1|5),(Component Name|3),(Caller Uid|1|5),(Caller Pkg Count|1|1),(Caller Pkgs|3),(Action|3),(MIME Type|3),(URI|3),(Flags|1|5) */
+  public static final int IFW_INTENT_MATCHED = 51400;
+
+  /** 51500 idle_maintenance_window_start (time|2|3), (lastUserActivity|2|3), (batteryLevel|1|6), (batteryCharging|1|5) */
+  public static final int IDLE_MAINTENANCE_WINDOW_START = 51500;
+
+  /** 51501 idle_maintenance_window_finish (time|2|3), (lastUserActivity|2|3), (batteryLevel|1|6), (batteryCharging|1|5) */
+  public static final int IDLE_MAINTENANCE_WINDOW_FINISH = 51501;
+
+  /** 2755 fstrim_start (time|2|3) */
+  public static final int FSTRIM_START = 2755;
+
+  /** 2756 fstrim_finish (time|2|3) */
+  public static final int FSTRIM_FINISH = 2756;
+
+  /** 40000 volume_changed (stream|1), (prev_level|1), (level|1), (max_level|1), (caller|3) */
+  public static final int VOLUME_CHANGED = 40000;
+
+  /** 40001 stream_devices_changed (stream|1), (prev_devices|1), (devices|1) */
+  public static final int STREAM_DEVICES_CHANGED = 40001;
+
+  public static void writeBatteryLevel(int level, int voltage, int temperature) {
+    android.util.EventLog.writeEvent(BATTERY_LEVEL, level, voltage, temperature);
+  }
+
+  public static void writeBatteryStatus(int status, int health, int present, int plugged, String technology) {
+    android.util.EventLog.writeEvent(BATTERY_STATUS, status, health, present, plugged, technology);
+  }
+
+  public static void writeBatteryDischarge(long duration, int minlevel, int maxlevel) {
+    android.util.EventLog.writeEvent(BATTERY_DISCHARGE, duration, minlevel, maxlevel);
+  }
+
+  public static void writePowerSleepRequested(int wakelockscleared) {
+    android.util.EventLog.writeEvent(POWER_SLEEP_REQUESTED, wakelockscleared);
+  }
+
+  public static void writePowerScreenBroadcastSend(int wakelockcount) {
+    android.util.EventLog.writeEvent(POWER_SCREEN_BROADCAST_SEND, wakelockcount);
+  }
+
+  public static void writePowerScreenBroadcastDone(int on, long broadcastduration, int wakelockcount) {
+    android.util.EventLog.writeEvent(POWER_SCREEN_BROADCAST_DONE, on, broadcastduration, wakelockcount);
+  }
+
+  public static void writePowerScreenBroadcastStop(int which, int wakelockcount) {
+    android.util.EventLog.writeEvent(POWER_SCREEN_BROADCAST_STOP, which, wakelockcount);
+  }
+
+  public static void writePowerScreenState(int offoron, int becauseofuser, long totaltouchdowntime, int touchcycles) {
+    android.util.EventLog.writeEvent(POWER_SCREEN_STATE, offoron, becauseofuser, totaltouchdowntime, touchcycles);
+  }
+
+  public static void writePowerPartialWakeState(int releasedoracquired, String tag) {
+    android.util.EventLog.writeEvent(POWER_PARTIAL_WAKE_STATE, releasedoracquired, tag);
+  }
+
+  public static void writeFreeStorageChanged(long data) {
+    android.util.EventLog.writeEvent(FREE_STORAGE_CHANGED, data);
+  }
+
+  public static void writeLowStorage(long data) {
+    android.util.EventLog.writeEvent(LOW_STORAGE, data);
+  }
+
+  public static void writeFreeStorageLeft(long data, long system, long cache) {
+    android.util.EventLog.writeEvent(FREE_STORAGE_LEFT, data, system, cache);
+  }
+
+  public static void writeCacheFileDeleted(String path) {
+    android.util.EventLog.writeEvent(CACHE_FILE_DELETED, path);
+  }
+
+  public static void writeNotificationEnqueue(int uid, int pid, String pkg, int id, String tag, int userid, String notification, int status) {
+    android.util.EventLog.writeEvent(NOTIFICATION_ENQUEUE, uid, pid, pkg, id, tag, userid, notification, status);
+  }
+
+  public static void writeNotificationCancel(int uid, int pid, String pkg, int id, String tag, int userid, int requiredFlags, int forbiddenFlags, int reason, String listener) {
+    android.util.EventLog.writeEvent(NOTIFICATION_CANCEL, uid, pid, pkg, id, tag, userid, requiredFlags, forbiddenFlags, reason, listener);
+  }
+
+  public static void writeNotificationCancelAll(int uid, int pid, String pkg, int userid, int requiredFlags, int forbiddenFlags, int reason, String listener) {
+    android.util.EventLog.writeEvent(NOTIFICATION_CANCEL_ALL, uid, pid, pkg, userid, requiredFlags, forbiddenFlags, reason, listener);
+  }
+
+  public static void writeNotificationPanelRevealed(int items) {
+    android.util.EventLog.writeEvent(NOTIFICATION_PANEL_REVEALED, items);
+  }
+
+  public static void writeNotificationPanelHidden() {
+    android.util.EventLog.writeEvent(NOTIFICATION_PANEL_HIDDEN);
+  }
+
+  public static void writeNotificationVisibilityChanged(String newlyvisiblekeys, String nolongervisiblekeys) {
+    android.util.EventLog.writeEvent(NOTIFICATION_VISIBILITY_CHANGED, newlyvisiblekeys, nolongervisiblekeys);
+  }
+
+  public static void writeNotificationExpansion(String key, int userAction, int expanded, int lifespan, int freshness, int exposure) {
+    android.util.EventLog.writeEvent(NOTIFICATION_EXPANSION, key, userAction, expanded, lifespan, freshness, exposure);
+  }
+
+  public static void writeNotificationClicked(String key, int lifespan, int freshness, int exposure) {
+    android.util.EventLog.writeEvent(NOTIFICATION_CLICKED, key, lifespan, freshness, exposure);
+  }
+
+  public static void writeNotificationActionClicked(String key, int actionIndex, int lifespan, int freshness, int exposure) {
+    android.util.EventLog.writeEvent(NOTIFICATION_ACTION_CLICKED, key, actionIndex, lifespan, freshness, exposure);
+  }
+
+  public static void writeNotificationCanceled(String key, int reason, int lifespan, int freshness, int exposure) {
+    android.util.EventLog.writeEvent(NOTIFICATION_CANCELED, key, reason, lifespan, freshness, exposure);
+  }
+
+  public static void writeNotificationVisibility(String key, int visibile, int lifespan, int freshness, int exposure, int rank) {
+    android.util.EventLog.writeEvent(NOTIFICATION_VISIBILITY, key, visibile, lifespan, freshness, exposure, rank);
+  }
+
+  public static void writeNotificationAlert(String key, int buzz, int beep, int blink) {
+    android.util.EventLog.writeEvent(NOTIFICATION_ALERT, key, buzz, beep, blink);
+  }
+
+  public static void writeWatchdog(String service) {
+    android.util.EventLog.writeEvent(WATCHDOG, service);
+  }
+
+  public static void writeWatchdogProcPss(String process, int pid, int pss) {
+    android.util.EventLog.writeEvent(WATCHDOG_PROC_PSS, process, pid, pss);
+  }
+
+  public static void writeWatchdogSoftReset(String process, int pid, int maxpss, int pss, String skip) {
+    android.util.EventLog.writeEvent(WATCHDOG_SOFT_RESET, process, pid, maxpss, pss, skip);
+  }
+
+  public static void writeWatchdogHardReset(String process, int pid, int maxpss, int pss) {
+    android.util.EventLog.writeEvent(WATCHDOG_HARD_RESET, process, pid, maxpss, pss);
+  }
+
+  public static void writeWatchdogPssStats(int emptypss, int emptycount, int backgroundpss, int backgroundcount, int servicepss, int servicecount, int visiblepss, int visiblecount, int foregroundpss, int foregroundcount, int nopsscount) {
+    android.util.EventLog.writeEvent(WATCHDOG_PSS_STATS, emptypss, emptycount, backgroundpss, backgroundcount, servicepss, servicecount, visiblepss, visiblecount, foregroundpss, foregroundcount, nopsscount);
+  }
+
+  public static void writeWatchdogProcStats(int deathsinone, int deathsintwo, int deathsinthree, int deathsinfour, int deathsinfive) {
+    android.util.EventLog.writeEvent(WATCHDOG_PROC_STATS, deathsinone, deathsintwo, deathsinthree, deathsinfour, deathsinfive);
+  }
+
+  public static void writeWatchdogScheduledReboot(long now, int interval, int starttime, int window, String skip) {
+    android.util.EventLog.writeEvent(WATCHDOG_SCHEDULED_REBOOT, now, interval, starttime, window, skip);
+  }
+
+  public static void writeWatchdogMeminfo(int memfree, int buffers, int cached, int active, int inactive, int anonpages, int mapped, int slab, int sreclaimable, int sunreclaim, int pagetables) {
+    android.util.EventLog.writeEvent(WATCHDOG_MEMINFO, memfree, buffers, cached, active, inactive, anonpages, mapped, slab, sreclaimable, sunreclaim, pagetables);
+  }
+
+  public static void writeWatchdogVmstat(long runtime, int pgfree, int pgactivate, int pgdeactivate, int pgfault, int pgmajfault) {
+    android.util.EventLog.writeEvent(WATCHDOG_VMSTAT, runtime, pgfree, pgactivate, pgdeactivate, pgfault, pgmajfault);
+  }
+
+  public static void writeWatchdogRequestedReboot(int nowait, int scheduleinterval, int recheckinterval, int starttime, int window, int minscreenoff, int minnextalarm) {
+    android.util.EventLog.writeEvent(WATCHDOG_REQUESTED_REBOOT, nowait, scheduleinterval, recheckinterval, starttime, window, minscreenoff, minnextalarm);
+  }
+
+  public static void writeBackupDataChanged(String package_) {
+    android.util.EventLog.writeEvent(BACKUP_DATA_CHANGED, package_);
+  }
+
+  public static void writeBackupStart(String transport) {
+    android.util.EventLog.writeEvent(BACKUP_START, transport);
+  }
+
+  public static void writeBackupTransportFailure(String package_) {
+    android.util.EventLog.writeEvent(BACKUP_TRANSPORT_FAILURE, package_);
+  }
+
+  public static void writeBackupAgentFailure(String package_, String message) {
+    android.util.EventLog.writeEvent(BACKUP_AGENT_FAILURE, package_, message);
+  }
+
+  public static void writeBackupPackage(String package_, int size) {
+    android.util.EventLog.writeEvent(BACKUP_PACKAGE, package_, size);
+  }
+
+  public static void writeBackupSuccess(int packages, int time) {
+    android.util.EventLog.writeEvent(BACKUP_SUCCESS, packages, time);
+  }
+
+  public static void writeBackupReset(String transport) {
+    android.util.EventLog.writeEvent(BACKUP_RESET, transport);
+  }
+
+  public static void writeBackupInitialize() {
+    android.util.EventLog.writeEvent(BACKUP_INITIALIZE);
+  }
+
+  public static void writeRestoreStart(String transport, long source) {
+    android.util.EventLog.writeEvent(RESTORE_START, transport, source);
+  }
+
+  public static void writeRestoreTransportFailure() {
+    android.util.EventLog.writeEvent(RESTORE_TRANSPORT_FAILURE);
+  }
+
+  public static void writeRestoreAgentFailure(String package_, String message) {
+    android.util.EventLog.writeEvent(RESTORE_AGENT_FAILURE, package_, message);
+  }
+
+  public static void writeRestorePackage(String package_, int size) {
+    android.util.EventLog.writeEvent(RESTORE_PACKAGE, package_, size);
+  }
+
+  public static void writeRestoreSuccess(int packages, int time) {
+    android.util.EventLog.writeEvent(RESTORE_SUCCESS, packages, time);
+  }
+
+  public static void writeFullBackupPackage(String package_) {
+    android.util.EventLog.writeEvent(FULL_BACKUP_PACKAGE, package_);
+  }
+
+  public static void writeFullBackupAgentFailure(String package_, String message) {
+    android.util.EventLog.writeEvent(FULL_BACKUP_AGENT_FAILURE, package_, message);
+  }
+
+  public static void writeFullBackupTransportFailure() {
+    android.util.EventLog.writeEvent(FULL_BACKUP_TRANSPORT_FAILURE);
+  }
+
+  public static void writeFullBackupSuccess(String package_) {
+    android.util.EventLog.writeEvent(FULL_BACKUP_SUCCESS, package_);
+  }
+
+  public static void writeFullRestorePackage(String package_) {
+    android.util.EventLog.writeEvent(FULL_RESTORE_PACKAGE, package_);
+  }
+
+  public static void writeBackupTransportLifecycle(String transport, int bound) {
+    android.util.EventLog.writeEvent(BACKUP_TRANSPORT_LIFECYCLE, transport, bound);
+  }
+
+  public static void writeBootProgressSystemRun(long time) {
+    android.util.EventLog.writeEvent(BOOT_PROGRESS_SYSTEM_RUN, time);
+  }
+
+  public static void writeBootProgressPmsStart(long time) {
+    android.util.EventLog.writeEvent(BOOT_PROGRESS_PMS_START, time);
+  }
+
+  public static void writeBootProgressPmsSystemScanStart(long time) {
+    android.util.EventLog.writeEvent(BOOT_PROGRESS_PMS_SYSTEM_SCAN_START, time);
+  }
+
+  public static void writeBootProgressPmsDataScanStart(long time) {
+    android.util.EventLog.writeEvent(BOOT_PROGRESS_PMS_DATA_SCAN_START, time);
+  }
+
+  public static void writeBootProgressPmsScanEnd(long time) {
+    android.util.EventLog.writeEvent(BOOT_PROGRESS_PMS_SCAN_END, time);
+  }
+
+  public static void writeBootProgressPmsReady(long time) {
+    android.util.EventLog.writeEvent(BOOT_PROGRESS_PMS_READY, time);
+  }
+
+  public static void writeUnknownSourcesEnabled(int value) {
+    android.util.EventLog.writeEvent(UNKNOWN_SOURCES_ENABLED, value);
+  }
+
+  public static void writePmCriticalInfo(String msg) {
+    android.util.EventLog.writeEvent(PM_CRITICAL_INFO, msg);
+  }
+
+  public static void writeWmNoSurfaceMemory(String window, int pid, String operation) {
+    android.util.EventLog.writeEvent(WM_NO_SURFACE_MEMORY, window, pid, operation);
+  }
+
+  public static void writeWmTaskCreated(int taskid, int stackid) {
+    android.util.EventLog.writeEvent(WM_TASK_CREATED, taskid, stackid);
+  }
+
+  public static void writeWmTaskMoved(int taskid, int totop, int index) {
+    android.util.EventLog.writeEvent(WM_TASK_MOVED, taskid, totop, index);
+  }
+
+  public static void writeWmTaskRemoved(int taskid, String reason) {
+    android.util.EventLog.writeEvent(WM_TASK_REMOVED, taskid, reason);
+  }
+
+  public static void writeWmStackCreated(int stackid, int relativeboxid, int position, int weight) {
+    android.util.EventLog.writeEvent(WM_STACK_CREATED, stackid, relativeboxid, position, weight);
+  }
+
+  public static void writeWmHomeStackMoved(int totop) {
+    android.util.EventLog.writeEvent(WM_HOME_STACK_MOVED, totop);
+  }
+
+  public static void writeWmStackRemoved(int stackid) {
+    android.util.EventLog.writeEvent(WM_STACK_REMOVED, stackid);
+  }
+
+  public static void writeImfForceReconnectIme(Object[] ime, long timeSinceConnect, int showing) {
+    android.util.EventLog.writeEvent(IMF_FORCE_RECONNECT_IME, ime, timeSinceConnect, showing);
+  }
+
+  public static void writeWpWallpaperCrashed(String component) {
+    android.util.EventLog.writeEvent(WP_WALLPAPER_CRASHED, component);
+  }
+
+  public static void writeDeviceIdle(int state, String reason) {
+    android.util.EventLog.writeEvent(DEVICE_IDLE, state, reason);
+  }
+
+  public static void writeDeviceIdleStep() {
+    android.util.EventLog.writeEvent(DEVICE_IDLE_STEP);
+  }
+
+  public static void writeDeviceIdleWakeFromIdle(int isIdle, String reason) {
+    android.util.EventLog.writeEvent(DEVICE_IDLE_WAKE_FROM_IDLE, isIdle, reason);
+  }
+
+  public static void writeDeviceIdleOnStart() {
+    android.util.EventLog.writeEvent(DEVICE_IDLE_ON_START);
+  }
+
+  public static void writeDeviceIdleOnPhase(String what) {
+    android.util.EventLog.writeEvent(DEVICE_IDLE_ON_PHASE, what);
+  }
+
+  public static void writeDeviceIdleOnComplete() {
+    android.util.EventLog.writeEvent(DEVICE_IDLE_ON_COMPLETE);
+  }
+
+  public static void writeDeviceIdleOffStart(String reason) {
+    android.util.EventLog.writeEvent(DEVICE_IDLE_OFF_START, reason);
+  }
+
+  public static void writeDeviceIdleOffPhase(String what) {
+    android.util.EventLog.writeEvent(DEVICE_IDLE_OFF_PHASE, what);
+  }
+
+  public static void writeDeviceIdleOffComplete() {
+    android.util.EventLog.writeEvent(DEVICE_IDLE_OFF_COMPLETE);
+  }
+
+  public static void writeAutoBrightnessAdj(float oldAdj, float oldLux, float oldBrightness, float oldGamma, float newAdj, float newLux, float newBrightness, float newGamma) {
+    android.util.EventLog.writeEvent(AUTO_BRIGHTNESS_ADJ, oldAdj, oldLux, oldBrightness, oldGamma, newAdj, newLux, newBrightness, newGamma);
+  }
+
+  public static void writeConnectivityStateChanged(int type, int subtype, int state) {
+    android.util.EventLog.writeEvent(CONNECTIVITY_STATE_CHANGED, type, subtype, state);
+  }
+
+  public static void writeNetstatsMobileSample(long devRxBytes, long devTxBytes, long devRxPkts, long devTxPkts, long xtRxBytes, long xtTxBytes, long xtRxPkts, long xtTxPkts, long uidRxBytes, long uidTxBytes, long uidRxPkts, long uidTxPkts, long trustedTime) {
+    android.util.EventLog.writeEvent(NETSTATS_MOBILE_SAMPLE, devRxBytes, devTxBytes, devRxPkts, devTxPkts, xtRxBytes, xtTxBytes, xtRxPkts, xtTxPkts, uidRxBytes, uidTxBytes, uidRxPkts, uidTxPkts, trustedTime);
+  }
+
+  public static void writeNetstatsWifiSample(long devRxBytes, long devTxBytes, long devRxPkts, long devTxPkts, long xtRxBytes, long xtTxBytes, long xtRxPkts, long xtTxPkts, long uidRxBytes, long uidTxBytes, long uidRxPkts, long uidTxPkts, long trustedTime) {
+    android.util.EventLog.writeEvent(NETSTATS_WIFI_SAMPLE, devRxBytes, devTxBytes, devRxPkts, devTxPkts, xtRxBytes, xtTxBytes, xtRxPkts, xtTxPkts, uidRxBytes, uidTxBytes, uidRxPkts, uidTxPkts, trustedTime);
+  }
+
+  public static void writeLockdownVpnConnecting(int egressNet) {
+    android.util.EventLog.writeEvent(LOCKDOWN_VPN_CONNECTING, egressNet);
+  }
+
+  public static void writeLockdownVpnConnected(int egressNet) {
+    android.util.EventLog.writeEvent(LOCKDOWN_VPN_CONNECTED, egressNet);
+  }
+
+  public static void writeLockdownVpnError(int egressNet) {
+    android.util.EventLog.writeEvent(LOCKDOWN_VPN_ERROR, egressNet);
+  }
+
+  public static void writeConfigInstallFailed(String dir) {
+    android.util.EventLog.writeEvent(CONFIG_INSTALL_FAILED, dir);
+  }
+
+  public static void writeIfwIntentMatched(int intentType, String componentName, int callerUid, int callerPkgCount, String callerPkgs, String action, String mimeType, String uri, int flags) {
+    android.util.EventLog.writeEvent(IFW_INTENT_MATCHED, intentType, componentName, callerUid, callerPkgCount, callerPkgs, action, mimeType, uri, flags);
+  }
+
+  public static void writeIdleMaintenanceWindowStart(long time, long lastuseractivity, int batterylevel, int batterycharging) {
+    android.util.EventLog.writeEvent(IDLE_MAINTENANCE_WINDOW_START, time, lastuseractivity, batterylevel, batterycharging);
+  }
+
+  public static void writeIdleMaintenanceWindowFinish(long time, long lastuseractivity, int batterylevel, int batterycharging) {
+    android.util.EventLog.writeEvent(IDLE_MAINTENANCE_WINDOW_FINISH, time, lastuseractivity, batterylevel, batterycharging);
+  }
+
+  public static void writeFstrimStart(long time) {
+    android.util.EventLog.writeEvent(FSTRIM_START, time);
+  }
+
+  public static void writeFstrimFinish(long time) {
+    android.util.EventLog.writeEvent(FSTRIM_FINISH, time);
+  }
+
+  public static void writeVolumeChanged(int stream, int prevLevel, int level, int maxLevel, String caller) {
+    android.util.EventLog.writeEvent(VOLUME_CHANGED, stream, prevLevel, level, maxLevel, caller);
+  }
+
+  public static void writeStreamDevicesChanged(int stream, int prevDevices, int devices) {
+    android.util.EventLog.writeEvent(STREAM_DEVICES_CHANGED, stream, prevDevices, devices);
+  }
+}
+/* This file is auto-generated.  DO NOT MODIFY.
+ * Source file: frameworks/base/services/core/java/com/android/server/am/EventLogTags.logtags
+ */
+
+package com.android.server.am;
+
+/**
+ * @hide
+ */
+public class EventLogTags {
+  private EventLogTags() { }  // don't instantiate
+
+  /** 2719 configuration_changed (config mask|1|5) */
+  public static final int CONFIGURATION_CHANGED = 2719;
+
+  /** 2721 cpu (total|1|6),(user|1|6),(system|1|6),(iowait|1|6),(irq|1|6),(softirq|1|6) */
+  public static final int CPU = 2721;
+
+  /** 3040 boot_progress_ams_ready (time|2|3) */
+  public static final int BOOT_PROGRESS_AMS_READY = 3040;
+
+  /** 3050 boot_progress_enable_screen (time|2|3) */
+  public static final int BOOT_PROGRESS_ENABLE_SCREEN = 3050;
+
+  /** 30001 am_finish_activity (User|1|5),(Token|1|5),(Task ID|1|5),(Component Name|3),(Reason|3) */
+  public static final int AM_FINISH_ACTIVITY = 30001;
+
+  /** 30002 am_task_to_front (User|1|5),(Task|1|5) */
+  public static final int AM_TASK_TO_FRONT = 30002;
+
+  /** 30003 am_new_intent (User|1|5),(Token|1|5),(Task ID|1|5),(Component Name|3),(Action|3),(MIME Type|3),(URI|3),(Flags|1|5) */
+  public static final int AM_NEW_INTENT = 30003;
+
+  /** 30004 am_create_task (User|1|5),(Task ID|1|5) */
+  public static final int AM_CREATE_TASK = 30004;
+
+  /** 30005 am_create_activity (User|1|5),(Token|1|5),(Task ID|1|5),(Component Name|3),(Action|3),(MIME Type|3),(URI|3),(Flags|1|5) */
+  public static final int AM_CREATE_ACTIVITY = 30005;
+
+  /** 30006 am_restart_activity (User|1|5),(Token|1|5),(Task ID|1|5),(Component Name|3) */
+  public static final int AM_RESTART_ACTIVITY = 30006;
+
+  /** 30007 am_resume_activity (User|1|5),(Token|1|5),(Task ID|1|5),(Component Name|3) */
+  public static final int AM_RESUME_ACTIVITY = 30007;
+
+  /** 30008 am_anr (User|1|5),(pid|1|5),(Package Name|3),(Flags|1|5),(reason|3) */
+  public static final int AM_ANR = 30008;
+
+  /** 30009 am_activity_launch_time (User|1|5),(Token|1|5),(Component Name|3),(time|2|3) */
+  public static final int AM_ACTIVITY_LAUNCH_TIME = 30009;
+
+  /** 30010 am_proc_bound (User|1|5),(PID|1|5),(Process Name|3) */
+  public static final int AM_PROC_BOUND = 30010;
+
+  /** 30011 am_proc_died (User|1|5),(PID|1|5),(Process Name|3) */
+  public static final int AM_PROC_DIED = 30011;
+
+  /** 30012 am_failed_to_pause (User|1|5),(Token|1|5),(Wanting to pause|3),(Currently pausing|3) */
+  public static final int AM_FAILED_TO_PAUSE = 30012;
+
+  /** 30013 am_pause_activity (User|1|5),(Token|1|5),(Component Name|3) */
+  public static final int AM_PAUSE_ACTIVITY = 30013;
+
+  /** 30014 am_proc_start (User|1|5),(PID|1|5),(UID|1|5),(Process Name|3),(Type|3),(Component|3) */
+  public static final int AM_PROC_START = 30014;
+
+  /** 30015 am_proc_bad (User|1|5),(UID|1|5),(Process Name|3) */
+  public static final int AM_PROC_BAD = 30015;
+
+  /** 30016 am_proc_good (User|1|5),(UID|1|5),(Process Name|3) */
+  public static final int AM_PROC_GOOD = 30016;
+
+  /** 30017 am_low_memory (Num Processes|1|1) */
+  public static final int AM_LOW_MEMORY = 30017;
+
+  /** 30018 am_destroy_activity (User|1|5),(Token|1|5),(Task ID|1|5),(Component Name|3),(Reason|3) */
+  public static final int AM_DESTROY_ACTIVITY = 30018;
+
+  /** 30019 am_relaunch_resume_activity (User|1|5),(Token|1|5),(Task ID|1|5),(Component Name|3) */
+  public static final int AM_RELAUNCH_RESUME_ACTIVITY = 30019;
+
+  /** 30020 am_relaunch_activity (User|1|5),(Token|1|5),(Task ID|1|5),(Component Name|3) */
+  public static final int AM_RELAUNCH_ACTIVITY = 30020;
+
+  /** 30021 am_on_paused_called (User|1|5),(Component Name|3) */
+  public static final int AM_ON_PAUSED_CALLED = 30021;
+
+  /** 30022 am_on_resume_called (User|1|5),(Component Name|3) */
+  public static final int AM_ON_RESUME_CALLED = 30022;
+
+  /** 30023 am_kill (User|1|5),(PID|1|5),(Process Name|3),(OomAdj|1|5),(Reason|3) */
+  public static final int AM_KILL = 30023;
+
+  /** 30024 am_broadcast_discard_filter (User|1|5),(Broadcast|1|5),(Action|3),(Receiver Number|1|1),(BroadcastFilter|1|5) */
+  public static final int AM_BROADCAST_DISCARD_FILTER = 30024;
+
+  /** 30025 am_broadcast_discard_app (User|1|5),(Broadcast|1|5),(Action|3),(Receiver Number|1|1),(App|3) */
+  public static final int AM_BROADCAST_DISCARD_APP = 30025;
+
+  /** 30030 am_create_service (User|1|5),(Service Record|1|5),(Name|3),(UID|1|5),(PID|1|5) */
+  public static final int AM_CREATE_SERVICE = 30030;
+
+  /** 30031 am_destroy_service (User|1|5),(Service Record|1|5),(PID|1|5) */
+  public static final int AM_DESTROY_SERVICE = 30031;
+
+  /** 30032 am_process_crashed_too_much (User|1|5),(Name|3),(PID|1|5) */
+  public static final int AM_PROCESS_CRASHED_TOO_MUCH = 30032;
+
+  /** 30033 am_drop_process (PID|1|5) */
+  public static final int AM_DROP_PROCESS = 30033;
+
+  /** 30034 am_service_crashed_too_much (User|1|5),(Crash Count|1|1),(Component Name|3),(PID|1|5) */
+  public static final int AM_SERVICE_CRASHED_TOO_MUCH = 30034;
+
+  /** 30035 am_schedule_service_restart (User|1|5),(Component Name|3),(Time|2|3) */
+  public static final int AM_SCHEDULE_SERVICE_RESTART = 30035;
+
+  /** 30036 am_provider_lost_process (User|1|5),(Package Name|3),(UID|1|5),(Name|3) */
+  public static final int AM_PROVIDER_LOST_PROCESS = 30036;
+
+  /** 30037 am_process_start_timeout (User|1|5),(PID|1|5),(UID|1|5),(Process Name|3) */
+  public static final int AM_PROCESS_START_TIMEOUT = 30037;
+
+  /** 30039 am_crash (User|1|5),(PID|1|5),(Process Name|3),(Flags|1|5),(Exception|3),(Message|3),(File|3),(Line|1|5) */
+  public static final int AM_CRASH = 30039;
+
+  /** 30040 am_wtf (User|1|5),(PID|1|5),(Process Name|3),(Flags|1|5),(Tag|3),(Message|3) */
+  public static final int AM_WTF = 30040;
+
+  /** 30041 am_switch_user (id|1|5) */
+  public static final int AM_SWITCH_USER = 30041;
+
+  /** 30042 am_activity_fully_drawn_time (User|1|5),(Token|1|5),(Component Name|3),(time|2|3) */
+  public static final int AM_ACTIVITY_FULLY_DRAWN_TIME = 30042;
+
+  /** 30043 am_focused_activity (User|1|5),(Component Name|3) */
+  public static final int AM_FOCUSED_ACTIVITY = 30043;
+
+  /** 30044 am_home_stack_moved (User|1|5),(To Front|1|5),(Top Stack Id|1|5),(Focused Stack Id|1|5),(Reason|3) */
+  public static final int AM_HOME_STACK_MOVED = 30044;
+
+  /** 30045 am_pre_boot (User|1|5),(Package|3) */
+  public static final int AM_PRE_BOOT = 30045;
+
+  /** 30046 am_meminfo (CachedKb|2|2),(FreeKb|2|2),(ZramKb|2|2),(KernelKb|2|2),(NativeKb|2|2) */
+  public static final int AM_MEMINFO = 30046;
+
+  /** 30047 am_pss (Pid|1|5),(UID|1|5),(Process Name|3),(PssKb|2|2),(UssKb|2|2) */
+  public static final int AM_PSS = 30047;
+
+  public static void writeConfigurationChanged(int configMask) {
+    android.util.EventLog.writeEvent(CONFIGURATION_CHANGED, configMask);
+  }
+
+  public static void writeCpu(int total, int user, int system, int iowait, int irq, int softirq) {
+    android.util.EventLog.writeEvent(CPU, total, user, system, iowait, irq, softirq);
+  }
+
+  public static void writeBootProgressAmsReady(long time) {
+    android.util.EventLog.writeEvent(BOOT_PROGRESS_AMS_READY, time);
+  }
+
+  public static void writeBootProgressEnableScreen(long time) {
+    android.util.EventLog.writeEvent(BOOT_PROGRESS_ENABLE_SCREEN, time);
+  }
+
+  public static void writeAmFinishActivity(int user, int token, int taskId, String componentName, String reason) {
+    android.util.EventLog.writeEvent(AM_FINISH_ACTIVITY, user, token, taskId, componentName, reason);
+  }
+
+  public static void writeAmTaskToFront(int user, int task) {
+    android.util.EventLog.writeEvent(AM_TASK_TO_FRONT, user, task);
+  }
+
+  public static void writeAmNewIntent(int user, int token, int taskId, String componentName, String action, String mimeType, String uri, int flags) {
+    android.util.EventLog.writeEvent(AM_NEW_INTENT, user, token, taskId, componentName, action, mimeType, uri, flags);
+  }
+
+  public static void writeAmCreateTask(int user, int taskId) {
+    android.util.EventLog.writeEvent(AM_CREATE_TASK, user, taskId);
+  }
+
+  public static void writeAmCreateActivity(int user, int token, int taskId, String componentName, String action, String mimeType, String uri, int flags) {
+    android.util.EventLog.writeEvent(AM_CREATE_ACTIVITY, user, token, taskId, componentName, action, mimeType, uri, flags);
+  }
+
+  public static void writeAmRestartActivity(int user, int token, int taskId, String componentName) {
+    android.util.EventLog.writeEvent(AM_RESTART_ACTIVITY, user, token, taskId, componentName);
+  }
+
+  public static void writeAmResumeActivity(int user, int token, int taskId, String componentName) {
+    android.util.EventLog.writeEvent(AM_RESUME_ACTIVITY, user, token, taskId, componentName);
+  }
+
+  public static void writeAmAnr(int user, int pid, String packageName, int flags, String reason) {
+    android.util.EventLog.writeEvent(AM_ANR, user, pid, packageName, flags, reason);
+  }
+
+  public static void writeAmActivityLaunchTime(int user, int token, String componentName, long time) {
+    android.util.EventLog.writeEvent(AM_ACTIVITY_LAUNCH_TIME, user, token, componentName, time);
+  }
+
+  public static void writeAmProcBound(int user, int pid, String processName) {
+    android.util.EventLog.writeEvent(AM_PROC_BOUND, user, pid, processName);
+  }
+
+  public static void writeAmProcDied(int user, int pid, String processName) {
+    android.util.EventLog.writeEvent(AM_PROC_DIED, user, pid, processName);
+  }
+
+  public static void writeAmFailedToPause(int user, int token, String wantingToPause, String currentlyPausing) {
+    android.util.EventLog.writeEvent(AM_FAILED_TO_PAUSE, user, token, wantingToPause, currentlyPausing);
+  }
+
+  public static void writeAmPauseActivity(int user, int token, String componentName) {
+    android.util.EventLog.writeEvent(AM_PAUSE_ACTIVITY, user, token, componentName);
+  }
+
+  public static void writeAmProcStart(int user, int pid, int uid, String processName, String type, String component) {
+    android.util.EventLog.writeEvent(AM_PROC_START, user, pid, uid, processName, type, component);
+  }
+
+  public static void writeAmProcBad(int user, int uid, String processName) {
+    android.util.EventLog.writeEvent(AM_PROC_BAD, user, uid, processName);
+  }
+
+  public static void writeAmProcGood(int user, int uid, String processName) {
+    android.util.EventLog.writeEvent(AM_PROC_GOOD, user, uid, processName);
+  }
+
+  public static void writeAmLowMemory(int numProcesses) {
+    android.util.EventLog.writeEvent(AM_LOW_MEMORY, numProcesses);
+  }
+
+  public static void writeAmDestroyActivity(int user, int token, int taskId, String componentName, String reason) {
+    android.util.EventLog.writeEvent(AM_DESTROY_ACTIVITY, user, token, taskId, componentName, reason);
+  }
+
+  public static void writeAmRelaunchResumeActivity(int user, int token, int taskId, String componentName) {
+    android.util.EventLog.writeEvent(AM_RELAUNCH_RESUME_ACTIVITY, user, token, taskId, componentName);
+  }
+
+  public static void writeAmRelaunchActivity(int user, int token, int taskId, String componentName) {
+    android.util.EventLog.writeEvent(AM_RELAUNCH_ACTIVITY, user, token, taskId, componentName);
+  }
+
+  public static void writeAmOnPausedCalled(int user, String componentName) {
+    android.util.EventLog.writeEvent(AM_ON_PAUSED_CALLED, user, componentName);
+  }
+
+  public static void writeAmOnResumeCalled(int user, String componentName) {
+    android.util.EventLog.writeEvent(AM_ON_RESUME_CALLED, user, componentName);
+  }
+
+  public static void writeAmKill(int user, int pid, String processName, int oomadj, String reason) {
+    android.util.EventLog.writeEvent(AM_KILL, user, pid, processName, oomadj, reason);
+  }
+
+  public static void writeAmBroadcastDiscardFilter(int user, int broadcast, String action, int receiverNumber, int broadcastfilter) {
+    android.util.EventLog.writeEvent(AM_BROADCAST_DISCARD_FILTER, user, broadcast, action, receiverNumber, broadcastfilter);
+  }
+
+  public static void writeAmBroadcastDiscardApp(int user, int broadcast, String action, int receiverNumber, String app) {
+    android.util.EventLog.writeEvent(AM_BROADCAST_DISCARD_APP, user, broadcast, action, receiverNumber, app);
+  }
+
+  public static void writeAmCreateService(int user, int serviceRecord, String name, int uid, int pid) {
+    android.util.EventLog.writeEvent(AM_CREATE_SERVICE, user, serviceRecord, name, uid, pid);
+  }
+
+  public static void writeAmDestroyService(int user, int serviceRecord, int pid) {
+    android.util.EventLog.writeEvent(AM_DESTROY_SERVICE, user, serviceRecord, pid);
+  }
+
+  public static void writeAmProcessCrashedTooMuch(int user, String name, int pid) {
+    android.util.EventLog.writeEvent(AM_PROCESS_CRASHED_TOO_MUCH, user, name, pid);
+  }
+
+  public static void writeAmDropProcess(int pid) {
+    android.util.EventLog.writeEvent(AM_DROP_PROCESS, pid);
+  }
+
+  public static void writeAmServiceCrashedTooMuch(int user, int crashCount, String componentName, int pid) {
+    android.util.EventLog.writeEvent(AM_SERVICE_CRASHED_TOO_MUCH, user, crashCount, componentName, pid);
+  }
+
+  public static void writeAmScheduleServiceRestart(int user, String componentName, long time) {
+    android.util.EventLog.writeEvent(AM_SCHEDULE_SERVICE_RESTART, user, componentName, time);
+  }
+
+  public static void writeAmProviderLostProcess(int user, String packageName, int uid, String name) {
+    android.util.EventLog.writeEvent(AM_PROVIDER_LOST_PROCESS, user, packageName, uid, name);
+  }
+
+  public static void writeAmProcessStartTimeout(int user, int pid, int uid, String processName) {
+    android.util.EventLog.writeEvent(AM_PROCESS_START_TIMEOUT, user, pid, uid, processName);
+  }
+
+  public static void writeAmCrash(int user, int pid, String processName, int flags, String exception, String message, String file, int line) {
+    android.util.EventLog.writeEvent(AM_CRASH, user, pid, processName, flags, exception, message, file, line);
+  }
+
+  public static void writeAmWtf(int user, int pid, String processName, int flags, String tag, String message) {
+    android.util.EventLog.writeEvent(AM_WTF, user, pid, processName, flags, tag, message);
+  }
+
+  public static void writeAmSwitchUser(int id) {
+    android.util.EventLog.writeEvent(AM_SWITCH_USER, id);
+  }
+
+  public static void writeAmActivityFullyDrawnTime(int user, int token, String componentName, long time) {
+    android.util.EventLog.writeEvent(AM_ACTIVITY_FULLY_DRAWN_TIME, user, token, componentName, time);
+  }
+
+  public static void writeAmFocusedActivity(int user, String componentName) {
+    android.util.EventLog.writeEvent(AM_FOCUSED_ACTIVITY, user, componentName);
+  }
+
+  public static void writeAmHomeStackMoved(int user, int toFront, int topStackId, int focusedStackId, String reason) {
+    android.util.EventLog.writeEvent(AM_HOME_STACK_MOVED, user, toFront, topStackId, focusedStackId, reason);
+  }
+
+  public static void writeAmPreBoot(int user, String package_) {
+    android.util.EventLog.writeEvent(AM_PRE_BOOT, user, package_);
+  }
+
+  public static void writeAmMeminfo(long cachedkb, long freekb, long zramkb, long kernelkb, long nativekb) {
+    android.util.EventLog.writeEvent(AM_MEMINFO, cachedkb, freekb, zramkb, kernelkb, nativekb);
+  }
+
+  public static void writeAmPss(int pid, int uid, String processName, long psskb, long usskb) {
+    android.util.EventLog.writeEvent(AM_PSS, pid, uid, processName, psskb, usskb);
+  }
+}

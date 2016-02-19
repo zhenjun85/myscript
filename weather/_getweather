@@ -1,0 +1,8 @@
+#!/bin/sh
+
+wget http://www.weather.com.cn/weather1d/101030100.shtml -O ~/bin/weather/a.shtml >/dev/null 2>&1
+weather=`grep hidden_title ~/bin/weather/a.shtml`
+w1=`echo ${weather##*value=\"}`
+w2=`echo ${w1%%\"*}`
+echo $w2 |awk -F " " '{print $3 "  " $4}' >~/bin/weather/weather
+

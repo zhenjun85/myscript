@@ -1,11 +1,15 @@
 --更新apt-get
 sudo vi /etc/cntlm.conf
 
+--cts
+/PDLogs/MocorDroid/2015/CTS & GTS Tools
+
 --master base
 git clone https://github.com/android/platform_frameworks_base.git
 
 --monkey
 while true; do adb shell monkey -v 1000000 --ignore-crashes --ignore-timeouts --ignore-security-exceptions --ignore-native-crashes ; done
+    adb shell monkey -s 48 --throttle 200 --ignore-crashes --ignore-timeouts --ignore-security-exceptions --pkg-blacklist-file /data/local/tmp/blacklist --kill-process-after-error -v -v -v 750000
 
 --java 7
 export PATH=/usr/lib/jvm/java-7-openjdk-amd64/bin:$PATH
@@ -69,3 +73,5 @@ pldapps2015
 --access google proxy
 export https_proxy=10.0.2.100:3128
 
+--meeting number
+993 241 561

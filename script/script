@@ -1,5 +1,4 @@
 #!/bin/bash
-echo "export my script"
 function croot {
     local TOPFILE=build/envsetup.sh
     local FULLDIR=`pwd`
@@ -44,3 +43,6 @@ function cdc {
     croot
     cd frameworks/base/core
 }
+
+alias cdout='cd $ANDROID_PRODUCT_OUT'
+

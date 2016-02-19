@@ -1,0 +1,1 @@
+run cts -c com.android.cts.devicepolicy.MixedDeviceOwnerTest -m testPermissionPrompts --loop --min-loop-time 30000

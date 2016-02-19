@@ -49,7 +49,9 @@ let "dd=$dd+1"
 formated_date="`date +%G`.${dd}.`date +%w`"
 formated_week="`date +%G`.${dd}"
 
-date_working="$formated_date     $project       $working"
+dd=`date +%m.%d`
+
+date_working="$formated_date     $dd       $project     $working"
 
 IFS=$'\n'
 

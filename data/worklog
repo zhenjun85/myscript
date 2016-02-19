@@ -27,3 +27,26 @@
 2015.53.3     6.0            519399    vsync timeout 9832
 2015.53.4     other          输入法问题，周1，2，解决方案，提供google review
 2015.53.4     other          https://android-review.googlesource.com/#/c/181008/       记录，启动死锁问题
+--2016.2
+2016.2.1     6.0            515376 测试方案是否可行，gts测试没问题
+2016.2.1     t8 5.1         519148 fw-stability  系统慢
+2016.2.2     6.0            515376 之前不发configuration change无用，转给AMS
+2016.2.3     6.0            520600 CTS 问题，原生问题，已有方案
+--2016.4
+2016.4.3     jiaotu         517683  调查发现surfaceView的relayout调用慢，发现gallery2一笔改动，修改后正常，装给gallery，周一周二
+2016.4.3     6.0            分析总结因为动画时间长导致ANR的问题
+2016.4.4     6.0            526042  surface分配过大问题，上层已经无法再保护，转底层
+2016.4.5     6.0            523865 ANR一系列问题，目前分析closeTransition调用耗时导致动画占锁，进而block ams导致anr
+--2016.5
+2016.5.1     6.0            分析google drive不能显示问题
+2016.5.3     6.0            527583 android one 项目，screenpin问题，framework不能修改，转底层
+2016.5.4     6.0            协助分析imagereader问题
+--2016.6
+2016.6.2     6.0            531279 ANR动画执行慢，dup处理
+2016.6.3     sharkl         531384 ANR,setappvisibility调用可能有问题，转ams同事分析
+2016.6.5     6.0            532502,526042 surface创建高度过大问题转graphics
+--2016.8
+2016.8.1     6.0            531682   view刷新状态有问题
+2016.8.2     6.0            娟娟，cts
+2016.8.4     6.0            534598 clip问题
+2016.8.5     sharkl         528612 sharkls 电话界面黑屏，分析了下log

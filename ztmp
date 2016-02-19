@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ $# -gt 0 ]
+then
+    echo "input the strings"
+    read tmp
+    echo $tmp >~/bin/tmp/_cliptmp
+    exit
+fi
+
+cat ~/bin/tmp/_cliptmp
