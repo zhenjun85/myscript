@@ -1,0 +1,23 @@
+#!/bin/sh
+
+sudo adb wait-for-device root
+sleep 1
+sudo adb wait-for-device remount
+sleep 1
+sudo adb push ~/bin/data/blacklist /data/local/tmp/blacklist
+echo "push blacklist to /data/local/tmp/blacklist"
+sleep 1
+
+name=`date +%m_%d_%H-%M`
+cd ~/bugs/monkeylog/
+mkdir $name
+cd $name
+#sudo adb logcat -c; sudo adb logcat -b events -b main -b system > ~/bugs/monkeylog/$name&
+sudo adb logcat -b main > ~/bugs/monkeylog/$name/main_log&
+sudo adb logcat -b events > ~/bugs/monkeylog/$name/event_log&
+sudo adb logcat -b system> ~/bugs/monkeylog/$name/system_log&
+
+while true
+do
+sudo adb shell monkey -s 48 --throttle 200 --ignore-crashes --ignore-timeouts --ignore-security-exceptions --pkg-blacklist-file /data/local/tmp/blacklist --kill-process-after-error -v -v -v 750000
+done

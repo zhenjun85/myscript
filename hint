@@ -75,3 +75,6 @@ export https_proxy=10.0.2.100:3128
 
 --meeting number
 993 241 561
+
+--jenkins
+http://10.0.64.29:8080/jenkins/job/gerrit_do_verify_sprdroid6.x/

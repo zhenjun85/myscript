@@ -1,8 +1,8 @@
 #! /bin/bash
-PATH=/home/likewise-open/SPREADTRUM/zhenjun.zhang/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games 
+#PATH=/home/likewise-open/SPREADTRUM/zhenjun.zhang/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games 
 echo 
-export JAVA_HOME=/usr/java/jdk1.7.0_79
-export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH 
-export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib 
+#export JAVA_HOME=/usr/java/jdk1.7.0_79
+#export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH 
+#export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib 
 
 $HOME/android-studio-new/android-studio/bin/studio.sh

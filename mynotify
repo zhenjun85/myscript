@@ -1,2 +1,8 @@
 #!/bin/bash
-gnome-osd-client -f "<message id='notify' hide_timeout='600000' osd_vposition='center' osd_halignment='center'    osd_font='50'>$1</message>"
+if [ ! $1 ]
+then
+    echo "Please enter the message"
+    exit
+fi
+
+zenity --warning --text=$1 --display=:0.0

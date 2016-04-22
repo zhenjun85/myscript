@@ -1,0 +1,18 @@
+#/bin/bash
+
+sudo adb wait-for-device root
+sudo adb wait-for-device remount
+
+if [ $@ > 1 ]
+    then
+    sudo adb push services.jar /system/framework/
+    sudo adb push framework.jar /system/framework/
+    sudo adb push framework-res.apk /system/framework/
+else
+    cur=`date +%m%d%H%M`
+    mkdir $cur
+    cd $cur
+    sudo adb pull /system/framework/services.jar . 
+    sudo adb pull /system/framework/framework.jar . 
+    sudo adb pull /system/framework/framework-res.apk . 
+fi
