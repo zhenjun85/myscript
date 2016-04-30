@@ -1,9 +1,0 @@
-#!/bin/sh
-
-echo
-echo
-weather=`cat ~/bin/weather/weather`
-
-myecho -y "   Current Weather : $weather"
-echo
-echo

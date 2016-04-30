@@ -25,7 +25,7 @@ function mam {
         return
     fi
     last_pwd=`pwd`
-    mm |tee ~/tmp/tmplog
+    mm >&1 2>&1|tee ~/tmp/tmplog
     for result in `cat ~/tmp/tmplog |grep "Install:" |awk -F " " '{print $2}'`
     do
         croot

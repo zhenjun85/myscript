@@ -1,0 +1,5 @@
+keyguardhide_commit
+414985c422664c7f8d5dec5562b502907b965876
+x
+
+for a in `ls |grep "^5"`; do cd $a;rm -rf `ls |grep -vE ".rar|.gz"`; cd -;done

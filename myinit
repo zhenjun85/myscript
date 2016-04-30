@@ -1,0 +1,27 @@
+#!/bin/bash
+
+command="repo init -u gittj@10.5.2.49:android/platform/manifest.git -b"
+
+#compute last folder name
+aaa=`pwd`
+bbb=`cd .. && pwd &`
+
+lst_folder_name=${aaa#${bbb}/}
+
+if [ $# -eq 0 ]
+then
+    echo "use the default folder name as branch ?"
+    select ans in "Y" "N"
+    do
+        echo $ans
+        if [ $ans == "Y" ]
+        then
+            echo xxxx
+            $command $lst_folder_name
+        fi
+        break
+    done
+else
+    $command $1
+fi
+myecho -y "repo sync -d -c -q -j8"

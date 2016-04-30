@@ -116,3 +116,18 @@
 2016.17.4     04.21       6.0          ANR issue analyse
 2016.17.5     04.22       other        稳定性，fd泄漏问题咨询
 2016.17.5     04.22       77315.1      555550 转lock/unlock
+--2016.18
+2016.18.1     04.25       6.0          554922 whale2 双击亮屏，需要底层确认
+2016.18.1     04.25       sharkl       sharkls cmp 555672   ANR
+2016.18.2     04.26       6.0          554889   power亮屏
+2016.18.2     04.26       other        15c mp 555672  ANR
+2016.18.2     04.26       other        重构会议
+2016.18.2     04.26       6.0          bootanimation 支持，参考高通方案，1 异步，2，直接调用底层audio
+2016.18.3     04.27       other        解藕
+2016.18.3     04.27       other        tmobile sharkls确认
+2016.18.4     04.28       other        changelist 汇总
+2016.18.4     04.28       other        阳平ANR分析
+2016.18.4     04.28       other        pikeL 手电筒工作去掉
+2016.18.4     04.28       other        bootanimation 原生播放方案不可行
+2016.18.5     04.29       other        557916        whale 2 关机闹钟
+2016.18.6     04.30       other        bootanimation   playwav OK

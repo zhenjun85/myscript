@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#tmp save in ~/bin/data/_tmpinfo
+
+if [ $# -eq 0 ]
+then
+    cat ~/bin/data/_tmpinfo
+    exit
+fi
+
+
+while [ $# -gt 0 ]
+do
+    if [ $1 == "e" ]
+    then
+        gedit ~/bin/data/_tmpinfo
+        exit
+    fi
+    myecho -r "Writing [[ $1 ]] to tmp"
+    echo $1 >> ~/bin/data/_tmpinfo
+    shift
+done
+
