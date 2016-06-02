@@ -1,0 +1,13 @@
+bootanimation这个模块比较特殊，android原生逻辑是没有加入播放声音的。
+如果播放声音bootanimation需要调用MediaPlayer去播放。这一点从高通的代码来看，高通也是这么做的opengork，开源
+而bootanimation是在开机过程中去播放声音，这个过程也会交织在system_server,media_server等主要服务进程加载的过程中，所以会出现调用MediaPlayer会黑屏的现象。
+而这个问题已经mediaserver尝试去修改，依然没有好的结果。1.9秒黑屏，测试说这个时间主观很长了，不能接受。
+
+而在9832上，surfacefinger是有解过类似问题的
+
+Bug 548148 (SPCSS00265621) - [SC7731C][SC7731C][INNOVATECH] [c133_trx_211]开机第一帧logo显示完后会黑屏一会才播开机动画
+
+Bug 169610 - [7710][4.1][DCXO][联通入库]开机第一个画面与动画播放之间出现2s黑屏 (edit)
+
+
+而且目前9860和sharkls上对开机后保留uboot画面的时间不一致，这需要底层调查。

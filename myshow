@@ -1,0 +1,15 @@
+#!/bin/bash
+
+infos_folder=~/bin/data/info
+
+cd $infos_folder
+
+select info in `ls $infos_folder`
+do
+    clear
+    myecho -y "------------------------------------------------"
+    cat $info
+    myecho -y "------------------------------------------------"
+
+    break
+done

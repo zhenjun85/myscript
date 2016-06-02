@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#enable alias
+shopt -s  expand_aliases 
+
+alias sp='ifconfig eth0|grep "RX bytes"|sed "s/.*RX bytes://"|sed "s/ (.*//"'
+
+current_speed() {
+    trap 'b=$(cat ~/tmp/begin) && end=$(sp) && eval speed=$(((end-b)/1024));echo; echo " The total download is $speed Kb "&& echo ;exit' 2
+    echo $(sp) > ~/tmp/begin
+    while true
+    do
+        a=$(sp)
+        sleep 1
+        b=$(sp)
+        ((c=b-a))
+        ((d=c/1024))
+        #clear
+        myecho -g "The current download speed is $d k/bytes"
+    done
+}
+
+
+
+
+if [ $# == "1" ]
+then
+    trap 'b=$(cat ~/tmp/begin) && end=$(sp) && eval speed=$(((end-b)/1024));echo; echo " The total download is $speed Kb "&& echo ;exit' 2
+    echo $(sp) > ~/tmp/begin
+    while true
+    do
+        sleep 1
+    done
+else
+    current_speed
+fi

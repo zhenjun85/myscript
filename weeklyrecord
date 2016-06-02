@@ -1,0 +1,100 @@
+#!/bin/bash
+
+worklog=$HOME/bin/data/weeklyrecord
+
+
+printwork (){
+    IFS=$'\n'
+    clear
+    myecho -bo "=======the weeekly record======="
+    for line in `cat $worklog`
+    do
+        if [ ${line:0:2} == '--' ]
+        then
+            echo
+            myecho -y "${line:2}--------------------------------------------------------------------------------------"
+        else
+            echo $line
+        fi
+    done
+}
+
+addwork() {
+    myecho -g "-----------------------daily work-------------------------"
+
+    #read working
+    working=`zenity --entry --text "Save the Weekly Record "`
+
+    if [ $? == 0 ]
+    then
+        echo "save the work log"
+    else
+        myecho -r "Cancel Save the Worklog"
+        exit
+    fi
+
+    dd=`date +%U`
+    let "dd=$dd+1"
+
+    formated_date="`date +%G`.${dd}.`date +%w`"
+    formated_week="`date +%G`.${dd}"
+
+    dd=`date +%m.%d`
+
+    date_working="$formated_date     $dd       $working"
+
+    IFS=$'\n'
+
+
+    #read the last week info first
+
+    for line in `cat $worklog`
+    do
+        if [ ${line:0:2} == '--' ]
+        then
+            last_week=${line:2}
+        fi
+    done
+
+    if [ "$last_week" != "$formated_week" ]
+    then
+        echo "--$formated_week" >>$worklog
+    fi
+
+    echo $date_working>>$worklog
+
+    printwork
+
+}
+
+
+#----main----
+while getopts "a" arg
+do
+    case $arg in
+        a)
+            addwork
+            exit
+            ;;
+        ?)
+            printwork
+            exit
+            ;;
+    esac
+done
+printwork
+
+
+
+
+
+###############
+
+dummy() {
+if [ $# == 0 ]
+then
+    printwork
+else
+    addwork
+fi
+}

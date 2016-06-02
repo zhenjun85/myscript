@@ -49,6 +49,8 @@ stack.log("zzj");
 --scp
 scp -r apuser@10.5.228.37:/home/apuser/folder .
 
+--input log
+adb shell setprop persist.sys.input.log true
 
 --systemproperities
 import android.os.SystemProperties;
@@ -78,3 +80,7 @@ export https_proxy=10.0.2.100:3128
 
 --jenkins
 http://10.0.64.29:8080/jenkins/job/gerrit_do_verify_sprdroid6.x/
+
+--clear bug log
+for a in `ls |grep "^5"`; do cd $a;rm -rf `ls |grep -vE ".rar|.gz"`; cd -;done
+

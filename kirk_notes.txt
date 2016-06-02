@@ -1,0 +1,64 @@
+1. SMS & MMS: 请使用NATIVE APK，不要用环聊（Hangout）， 否则下面BUG会出现
+459730	[TJ][AP_Protocol][SC9830A][4MOD][Global][Telcel_Pretest]收到信息和push消息时信息应用均没有未读信息图标提示 
+459486	[FT_Mexico][SC9830A][4MOD][Global][Telcel_Pretest]DUT does not show the notification on app Messaging that DUT has a SMS 
+454741	[TJ][AP Protocoll][5.1_Trunk][SC9830A][4MOD][Global][Telcel_Pretest]给测试机发送push信息，手机接收不到 
+455288	[SC9830A][4MOD][Global][Telcel_Pretest][PICLAB][IT3]USAT case 27.22.8 MO SHORT MESSAGE CONTROL BY USIM SEQ 1.4 fail，no item for 'Message Retransmission' in SMS setting menu，ENVELOPE(SMS CONTROL) excuted repeatedly 
+
+2. [DRM] Download app及Galley app需要使用native的，否则使用GOOLGLE默认APK会导致下面BUG验收不过
+460583	[FT_Mexico][SC9830A][4MOD][Global][Telcel_Pretest]DUT can not open DRM downloaded in Download app and Gallery app 
+
+3. [BIP] SPN显示需要支持，并且请注意，TELCEL不需要google源生的SPN_CONFIG设置，SPN显示必须根据SIM卡中实际名称显示。
+
+4. TELCEL芯片认证版本必须使用GMS，因为需要使用GOOGLE PLAY去下载CLAROVIDEO。
+
+5. CLAROVIDEO测试必须在墨西哥进行，同时测试的DUT必须使用USER版本
+413584	[Mexico][SC7731][Telcel][Clarovideo app] DUT is not able to access Clarovideo app
+
+6. EAP-AKA, AT命令两个冒号引发的惨案， 7731两个冒号，9830一个冒号
+
+7. FDN需求：
+A. FDN开启只能影响到VOICE CALL, SMS/MMS/DATA CALL不能受影响, 参见BUG 522005 & 522060
+B. 所有用到联系人名称的地方，优先匹配FDN中的名称，其次才是一般联系人名称
+497003	[FT_Mexico][SC9830A][4MOD][Global][Telcel_Pretest][FDN] DUT Displays saved Contact label when calling a number from FDN list, instead of FDN list name 
+507614	FT_Mexico][SC9830A][4MOD][Global][Telcel_Pretest][FDN] DUT displayed phone number in call log instead the contact label of FDN list. 
+508243	[FT_Mexico][SC9830A][4MOD][Global][Telcel_Pretest][FDN] DUT displayed phone number in message history instead the contact label of FDN list 
+511722	[FT_Mexico][SC9830A][4MOD][Global][Telcel_Pretest][FDN]When FDN is disable, DUT still shows the label of the contact of FDN list in "To" field. 
+522005	[FT_Mexico][SC9830A][4MOD][Global][Telcel_Pretest][New Requirement][FDN]When FDN is enable, DUT must be able to send SMS/MMS to any phone number 
+522060	AP同步修改用的Bug 522005 - [FT_Mexico][SC9830A][4MOD][Global][Telcel_Pretest][New Requirement][FDN]When FDN is enable, DUT must be able to send SMS/MMS to any phone number【NV控制这个功能】【telcel专用】 
+
+8. Voice Clear Code: 参见Voice_Clear_Code.xls
+
+9. Data Clear Code: 参见DATA CLEAR CODES REQUIREMENT TELCEL MEXICO 4G January 2016_v2.1.pdf
+
+10. 3rd Call, 参见下面BUG
+7731G Android 4.4的BUG是
+417781	[Mexico][FT][SC7731][Telcel Pretest][Call] Incoming 3thrd call wrong behavior
+
+9830 Android 5.1 的BUG是
+458211	[FT_Mexico][SC9830A][4MOD][Global][Telcel_Pretest]TELCEL Incoming 3 third call wrong behavior
+448248 Incoming 3thrd call wrong behavior
+
+7731G Android 5.1
+Bug 417781 - [Mexico][FT][SC7731][Telcel Pretest][Call] Incoming 3thrd call wrong behavior
+
+
+11. DRM： WRAPPER
+417815	[Mexico][FT][SC7731][Telcel Pretest] Add Wrapper redirected to DRM Spreadtrum server
+
+12. PLMN名称显示： PLMN List Telcel.xlsx
+419461	[Mexico][FT][SC7731][Telcel Pretest][PLMN] PLMN List of Telcel is not implemented
+
+13. MMS需求
+彩信附件最大支持1MB
+
+14. SMS需求
+需要支持空短信发送
+
+15. 其它需要另外回归的BUG
+470896	[FT_Mexico][SC9830A][4MOD][Global][Telcel_Pretest][DRM]DUT can not reproduce DRM MP3， 由于下载的文件MIME type非国际标准，因此需要额外定制
+494191	[FT_Mexico][SC9830A][4MOD][Global][Telcel_Pretest][MMS] When DUT received a MMS MT, logs show double messaging， MMS发送时，不允许建立多次PDP发送
+
+墨西哥回归列表
+419462	[Mexico][FT][SC7731][Telcel Pretest][Transfer Banamex]"MMI completado" pop up must not appear
+417377	[Mexico][FT][SC7731][Telcel Pretest] SATK Service Bancamovil is not working
+

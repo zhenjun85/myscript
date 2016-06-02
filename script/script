@@ -25,11 +25,15 @@ function mam {
         return
     fi
     last_pwd=`pwd`
-    mm >&1 2>&1|tee ~/tmp/tmplog
+    mm 2>&1|tee ~/tmp/tmplog
     for result in `cat ~/tmp/tmplog |grep "Install:" |awk -F " " '{print $2}'`
     do
         croot
         mypush $result 
+        if [ $? -ne 0 ]
+        then
+            myecho -r "!! Device is not connection !!!"
+        fi
         cd $last_pwd
     done
 }

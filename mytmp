@@ -11,7 +11,7 @@ fi
 
 while [ $# -gt 0 ]
 do
-    if [ $1 == "e" ]
+    if [ "$1" == "e" ]
     then
         gedit ~/bin/data/_tmpinfo
         exit
