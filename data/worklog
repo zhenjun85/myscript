@@ -175,3 +175,15 @@
 2016.23.1     05.30       other        huawei,getdisplayheight，displaymanager，调用到surfacefligner
 2016.23.3     06.01       other        dynamic debug log for phonewindowmanager
 2016.23.3     06.01       other        telcel bug追踪，telstra表格
+2016.23.5     06.03       6.0          568662 第三方应用导致anr
+2016.23.5     06.03       6.0          Bug 569040 - [Multimedia][SC9860G]低概率出现所有界面无法横屏
+--2016.24
+2016.24.1     06.06       6.0          569390 - [15.32 h][TJ-RD][monkey][android6.0_trunk_16b_sharkl][ANR]com.android.fmradio happens ANR,log:ANR in com.android.fmradio
+2016.24.2     06.07       other        telstra表格整理
+2016.24.2     06.07       other        其他问题追踪，wangteng，zhibin，anr
+--2016.25
+2016.25.0     06.12       other        华为pointerlocation卡顿问题，建议打开硬件加速
+2016.25.0     06.12       other        telcel 问题追踪，drm问题，mp4问题，chenyao，imei，563552
+2016.25.0     06.12       other        androidN pdk的版本会讲frameworks.jar等内容打包提供，所以andriodn的版本依然没有多大参考性
+2016.25.2     06.14       other        telcel 问题跟踪，telstra表格汇总，androidn-pdk研究
+2016.25.2     06.14       other        telstra表格整理

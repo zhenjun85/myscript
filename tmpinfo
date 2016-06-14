@@ -1,0 +1,2 @@
+sudo add-apt-repository ppa:fcitx-team/nightly
+sudo apt-get update

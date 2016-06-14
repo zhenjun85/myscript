@@ -4,3 +4,9 @@ keyguardhide_commit
 for a in `ls |grep "^5"`; do cd $a;rm -rf `ls |grep -vE ".rar|.gz"`; cd -;done
 558102
 560146 典型bug
+-a
+sudo
+add-apt-repository
+ppa:fcitx-team/nightly
+export
+JACK_SERVER_VM_ARGUMENTS=-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g

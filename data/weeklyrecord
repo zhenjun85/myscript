@@ -16,3 +16,9 @@
 2016.23.1     05.30       567606 - [SZ][SLAB][Stability][3593AAA][ANR]:联通双卡，测试到打电话的时候，界面弹出提示框：“拨号界面无响应。要将其关闭吗？  5.1
 2016.23.2     05.31       565248] [Sprdroid_6.0_Whale2] [FW-WindowsManager][] [Camera_Team][SC9860G]开启“极速抓拍”，偶现手机未震动也未生成照片
 2016.23.4     06.02       567477 - [SC9832][5.1][3593AA1][CPU 1.3G][Volte][FT_TP][Stability]System crashed at com.android.quicksearchbox [ViewRootImpl.java:562] 
+2016.23.5     06.03       568662 - [PSST][SC9860G]手机进行系统monkey测试，测试2.1717个小时，#082手机出现ANR in com.android.browser (com.cmvideo.migumovie/com.wondertek.activity.AppActivity)，6台手机累计出现10次    第三方应用导致
+--2016.24
+2016.24.1     06.06       569390 - [15.32 h][TJ-RD][monkey][android6.0_trunk_16b_sharkl][ANR]com.android.fmradio happens ANR,log:ANR in com.android.fmradio     GSPlog太多
+2016.24.1     06.06       zhibin,wangteng  browser anr的问题
+--2016.25
+2016.25.1     06.13       [Bug 567606] [Sprdroid5.1_SharkLS] [FW-WindowsManager][] [SZ][SLAB][Stability][3593AA1][ANR]:联通双卡，测试到打电话的时候，界面弹出提示框：“拨号界面无响应。要将其关闭吗？”。

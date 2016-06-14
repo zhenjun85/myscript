@@ -9,13 +9,13 @@ echo "push blacklist to /data/local/tmp/blacklist"
 sleep 1
 
 name=`date +%m_%d_%H-%M`
-cd ~/bugs/monkeylog/
+cd ~/logs/monkeylog/
 mkdir $name
 cd $name
 #sudo adb logcat -c; sudo adb logcat -b events -b main -b system > ~/bugs/monkeylog/$name&
-sudo adb logcat -v threadtime -b main > ~/bugs/monkeylog/$name/main_log&
-sudo adb logcat -v threadtime -b events > ~/bugs/monkeylog/$name/event_log&
-sudo adb logcat -v threadtime -b system> ~/bugs/monkeylog/$name/system_log&
+sudo adb logcat -v threadtime -b main > ~/logs/monkeylog/$name/main_log&
+sudo adb logcat -v threadtime -b events > ~/logs/monkeylog/$name/event_log&
+sudo adb logcat -v threadtime -b system> ~/logs/monkeylog/$name/system_log&
 
 while true
 do
