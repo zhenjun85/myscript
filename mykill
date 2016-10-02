@@ -1,9 +1,15 @@
-#/bin/bash
+#!/bin/bash
+
+killserver() {
+    servername=`sudo adb shell ps|grep $1|awk -F " " '{print $2}'`
+    echo $servername
+    sudo adb shell kill $servername
+}
+
 if [ $# == 0 ]
     then
-    myecho -r "usage :mykill PROCESS_NAME"
+        killserver system_server
     exit
 fi
-servername=`sudo adb shell ps|grep $1|awk -F " " '{print $2}'`
-echo $servername
-sudo adb shell kill $servername
+
+killserver $1

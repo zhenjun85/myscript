@@ -1,0 +1,142 @@
+commit cd9053646a676cfd1aa15ad5e073d4067cb426e3
+Author: Ramakant Singh <ramaka@codeaurora.org>
+Date:   Tue Oct 6 14:05:17 2015 +0530
+
+    display : Align all rotation values according to panel orientation
+    
+    Align all rotation values according to the panel orientation
+    specified by the user in property.
+    
+    Change-Id: If3959c15e848e972ff6ef70ed8ec42fd40a13ed0
+
+diff --git a/cmds/bootanimation/BootAnimation.cpp b/cmds/bootanimation/BootAnimation.cpp
+index fba462b..2bf020a 100644
+--- a/cmds/bootanimation/BootAnimation.cpp
++++ b/cmds/bootanimation/BootAnimation.cpp
+@@ -238,6 +238,16 @@ status_t BootAnimation::readyToRun() {
+     if (status)
+         return -1;
+ 
++    char value[PROPERTY_VALUE_MAX];
++    property_get("persist.panel.orientation", value, "0");
++    int orient = atoi(value)/90;
++    if (orient == eOrientation90 || orient == eOrientation270) {
++        int temp = dinfo.h;
++        dinfo.h = dinfo.w;
++        dinfo.w = temp;
++    }
++    Rect destRect(dinfo.w, dinfo.h);
++    mSession->setDisplayProjection(dtoken, orient, destRect, destRect);
+     // create the native surface
+     sp<SurfaceControl> control = session()->createSurface(String8("BootAnimation"),
+             dinfo.w, dinfo.h, PIXEL_FORMAT_RGB_565);
+diff --git a/cmds/bootanimation/BootAnimation.h b/cmds/bootanimation/BootAnimation.h
+index f968b25..b2f9f1f 100644
+--- a/cmds/bootanimation/BootAnimation.h
++++ b/cmds/bootanimation/BootAnimation.h
+@@ -51,6 +51,12 @@ private:
+     virtual void        onFirstRef();
+     virtual void        binderDied(const wp<IBinder>& who);
+ 
++    enum {
++        eOrientationDefault     = 0,
++        eOrientation90          = 1,
++        eOrientation180         = 2,
++        eOrientation270         = 3,
++    };
+     struct Texture {
+         GLint   w;
+         GLint   h;
+diff --git a/core/java/com/android/internal/view/RotationPolicy.java b/core/java/com/android/internal/view/RotationPolicy.java
+index b479cb1..ebbb92e 100644
+--- a/core/java/com/android/internal/view/RotationPolicy.java
++++ b/core/java/com/android/internal/view/RotationPolicy.java
+@@ -32,9 +32,8 @@ import android.view.Display;
+ import android.view.IWindowManager;
+ import android.view.Surface;
+ import android.view.WindowManagerGlobal;
+-
+ import com.android.internal.R;
+-
++import android.os.SystemProperties;
+ /**
+  * Provides helper functions for configuring the display rotation policy.
+  */
+@@ -140,7 +139,14 @@ public final class RotationPolicy {
+                 try {
+                     IWindowManager wm = WindowManagerGlobal.getWindowManagerService();
+                     if (enabled) {
+-                        wm.freezeRotation(rotation);
++                        //Consider input rotation parameter even if display panel is mounted
++                        //with 90 or 180 or 270 degrees rotated.
++                        if (rotation < 0) {
++                           wm.freezeRotation(rotation);
++                        } else {
++                           wm.freezeRotation(SystemProperties.getInt(
++                                "persist.panel.orientation", 0)/90);
++                        }
+                     } else {
+                         wm.thawRotation();
+                     }
+@@ -194,4 +200,4 @@ public final class RotationPolicy {
+ 
+         public abstract void onChange();
+     }
+-}
+\ No newline at end of file
++}
+diff --git a/services/core/java/com/android/server/policy/PhoneWindowManager.java b/services/core/java/com/android/server/policy/PhoneWindowManager.java
+index 899c176..08172ab 100644
+--- a/services/core/java/com/android/server/policy/PhoneWindowManager.java
++++ b/services/core/java/com/android/server/policy/PhoneWindowManager.java
+@@ -579,6 +579,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+     int mOverscanRight = 0;
+     int mOverscanBottom = 0;
+ 
++    // Panel Orientation default portrait
++    private int mPanelOrientation = Surface.ROTATION_0;
++
+     // What we do when the user long presses on home
+     private int mLongPressOnHomeBehavior;
+ 
+@@ -1592,7 +1595,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+             return;
+         }
+         mDisplay = display;
+-
++        mPanelOrientation =
++            SystemProperties.getInt("persist.panel.orientation", 0) / 90;
+         final Resources res = mContext.getResources();
+         int shortSize, longSize;
+         if (width > height) {
+@@ -5905,7 +5909,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+                     mAllowAllRotations = mContext.getResources().getBoolean(
+                             com.android.internal.R.bool.config_allowAllRotations) ? 1 : 0;
+                 }
+-                if (sensorRotation != Surface.ROTATION_180
++                if (sensorRotation != mUpsideDownRotation
+                         || mAllowAllRotations == 1
+                         || orientation == ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
+                         || orientation == ActivityInfo.SCREEN_ORIENTATION_FULL_USER) {
+@@ -5983,7 +5987,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+                     if (preferredRotation >= 0) {
+                         return preferredRotation;
+                     }
+-                    return Surface.ROTATION_0;
++                    return mPanelOrientation;
+             }
+         }
+     }
+diff --git a/services/core/java/com/android/server/wm/WindowManagerService.java b/services/core/java/com/android/server/wm/WindowManagerService.java
+index 8a0a7c8..6c77105 100644
+--- a/services/core/java/com/android/server/wm/WindowManagerService.java
++++ b/services/core/java/com/android/server/wm/WindowManagerService.java
+@@ -467,7 +467,7 @@ public class WindowManagerService extends IWindowManager.Stub
+     /** All DisplayContents in the world, kept here */
+     SparseArray<DisplayContent> mDisplayContents = new SparseArray<>(2);
+ 
+-    int mRotation = 0;
++    int mRotation = SystemProperties.getInt("persist.panel.orientation", 0) / 90;
+     int mForcedAppOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED;
+     boolean mAltOrientation = false;
+ 

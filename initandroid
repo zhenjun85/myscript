@@ -1,0 +1,51 @@
+#!/bin/bash
+
+function croot() {
+local TOPFILE=build/envsetup.sh
+local FULLDIR=`pwd`
+while [ `pwd` != / ]
+do
+    if [ -f $TOPFILE ]
+    then
+        local ROOTDIR=`pwd`
+        break
+    fi
+    cd ..
+done
+if [ `pwd` == / ]
+then
+    myecho -y "Should use this script in Android Root Folder, Exit..."
+    echo
+    return -1
+fi
+}
+
+croot || exit 1
+
+pwd
+
+if [ -f _bart_initialed ]
+then
+    myecho -y "Already initialed, Exit"
+    exit
+fi
+
+touch _bart_initialed
+
+pwd
+
+if [ -d external/jpeg ]
+then
+    echo "Current is android M"
+    cd build
+    git apply ~/bin/data/androidm_build.patch
+else
+    echo "Current is android N"
+    cd build
+    git apply ~/bin/data/androidn_build.patch
+fi
+
+myecho -b "Initial Android Success"
+
+
+#git apply ~/bin/data/androidm_build.patch

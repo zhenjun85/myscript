@@ -1,0 +1,30 @@
+commit 462c460b607ee143ba7d1af23c1dc874167768e4
+Author: wyuan <wyuan@codeaurora.org>
+Date:   Wed May 27 16:35:05 2015 +0800
+
+    WindowManager: remove freezing window to fix UI freezing issue
+    
+    In some corner case, some window is at exiting state, but can't be
+    removed. because the binder transact failed, and the state of window can't change
+    so that will still resizing window,This will result the windownmanger fall into freezing state.
+    The fix will stop resizing this window when encounter this case
+    
+    Change-Id: I3e41aacadcaaea197dd74d8b93a7ed73ee441ff1
+    CRs-Fixed: 838815
+
+diff --git a/services/core/java/com/android/server/wm/WindowState.java b/services/core/java/com/android/server/wm/WindowState.java
+index 021a6e4..5e93d8b 100644
+--- a/services/core/java/com/android/server/wm/WindowState.java
++++ b/services/core/java/com/android/server/wm/WindowState.java
+@@ -1433,6 +1433,11 @@ final class WindowState implements WindowManagerPolicy.WindowState {
+             mStableInsetsChanged = false;
+             mWinAnimator.mSurfaceResized = false;
+         } catch (RemoteException e) {
++            mOverscanInsetsChanged = false;
++            mContentInsetsChanged = false;
++            mVisibleInsetsChanged = false;
++            mStableInsetsChanged = false;
++            mWinAnimator.mSurfaceResized = false;
+             mOrientationChanging = false;
+             mLastFreezeDuration = (int)(SystemClock.elapsedRealtime()
+                     - mService.mDisplayFreezeTime);

@@ -1,0 +1,158 @@
+From cb318fa7131a7feaffdc9948829a6ca0f3889689 Mon Sep 17 00:00:00 2001
+From: "zhenjun.zhang" <zhenjun.zhang@spreadtrum.com>
+Date: Sat, 1 Oct 2016 15:22:53 +0800
+Subject: [PATCH] Bug #00000 animation calculate
+
+[root cause  ]
+[changes     ]
+[side effects]
+[self test   ]<board, Test cases summary>:
+[reviewers   ]
+[change_type ] AOB --> google_original
+[tag_product ] common
+
+Change-Id: Ib94d1362ed71c7cba9910bf5d335213b0f3d7364
+---
+ core/java/android/view/WindowManagerPolicy.java      |  3 ++-
+ .../core/java/com/android/server/wm/WindowState.java |  7 ++++---
+ .../com/android/server/wm/WindowStateAnimator.java   | 20 +++++++++++---------
+ 3 files changed, 17 insertions(+), 13 deletions(-)
+
+diff --git a/core/java/android/view/WindowManagerPolicy.java b/core/java/android/view/WindowManagerPolicy.java
+index 98367ea..e61c00b 100644
+--- a/core/java/android/view/WindowManagerPolicy.java
++++ b/core/java/android/view/WindowManagerPolicy.java
+@@ -24,6 +24,7 @@ import android.content.pm.ActivityInfo;
+ import android.content.res.CompatibilityInfo;
+ import android.content.res.Configuration;
+ import android.graphics.Point;
++import android.graphics.PointF;
+ import android.graphics.Rect;
+ import android.graphics.RectF;
+ import android.os.Bundle;
+@@ -196,7 +197,7 @@ public interface WindowManagerPolicy {
+          *
+          * @return Point The point holding the shown window position.
+          */
+-        public Point getShownPositionLw();
++        public PointF getShownPositionLw();
+ 
+         /**
+          * Retrieve the frame of the display that this window was last
+diff --git a/services/core/java/com/android/server/wm/WindowState.java b/services/core/java/com/android/server/wm/WindowState.java
+index cb5b5b3..789b212 100644
+--- a/services/core/java/com/android/server/wm/WindowState.java
++++ b/services/core/java/com/android/server/wm/WindowState.java
+@@ -23,6 +23,7 @@ import android.content.res.Configuration;
+ import android.graphics.Matrix;
+ import android.graphics.PixelFormat;
+ import android.graphics.Point;
++import android.graphics.PointF;
+ import android.graphics.Rect;
+ import android.graphics.Region;
+ import android.os.IBinder;
+@@ -203,7 +204,7 @@ final class WindowState implements WindowManagerPolicy.WindowState {
+      * Actual position of the surface shown on-screen (may be modified by animation). These are
+      * in the screen's coordinate space (WITH the compatibility scale applied).
+      */
+-    final Point mShownPosition = new Point();
++    final PointF mShownPosition = new PointF();
+ 
+     /**
+      * Insets that determine the actually visible area.  These are in the application's
+@@ -945,7 +946,7 @@ final class WindowState implements WindowManagerPolicy.WindowState {
+     }
+ 
+     @Override
+-    public Point getShownPositionLw() {
++    public PointF getShownPositionLw() {
+         return mShownPosition;
+     }
+ 
+@@ -2613,7 +2614,7 @@ final class WindowState implements WindowManagerPolicy.WindowState {
+             pw.print(prefix); pw.print("mMergedConfiguration="); pw.println(mMergedConfiguration);
+         }
+         pw.print(prefix); pw.print("mHasSurface="); pw.print(mHasSurface);
+-                pw.print(" mShownPosition="); mShownPosition.printShortString(pw);
++                pw.print(" mShownPosition=["); pw.print(mShownPosition.x);pw.print(",");pw.print(mShownPosition.y);pw.print("]");
+                 pw.print(" isReadyForDisplay()="); pw.print(isReadyForDisplay());
+                 pw.print(" hasSavedSurface()="); pw.print(hasSavedSurface());
+                 pw.print(" mWindowRemovalAllowed="); pw.println(mWindowRemovalAllowed);
+diff --git a/services/core/java/com/android/server/wm/WindowStateAnimator.java b/services/core/java/com/android/server/wm/WindowStateAnimator.java
+index 56d0502..69e419e 100644
+--- a/services/core/java/com/android/server/wm/WindowStateAnimator.java
++++ b/services/core/java/com/android/server/wm/WindowStateAnimator.java
+@@ -50,7 +50,9 @@ import android.content.Context;
+ import android.graphics.Matrix;
+ import android.graphics.PixelFormat;
+ import android.graphics.Point;
++import android.graphics.PointF;
+ import android.graphics.Rect;
++import android.graphics.RectF;
+ import android.graphics.Region;
+ import android.os.Debug;
+ import android.os.RemoteException;
+@@ -244,7 +246,7 @@ class WindowStateAnimator {
+     float mExtraHScale = (float) 1.0;
+     float mExtraVScale = (float) 1.0;
+ 
+-    private final Rect mTmpSize = new Rect();
++    private final RectF mTmpSize = new RectF();
+ 
+     WindowStateAnimator(final WindowState win) {
+         final WindowManagerService service = win.mService;
+@@ -716,8 +718,8 @@ class WindowStateAnimator {
+ 
+         mTmpSize.set(w.mFrame.left + w.mXOffset, w.mFrame.top + w.mYOffset, 0, 0);
+         calculateSurfaceBounds(w, attrs);
+-        final int width = mTmpSize.width();
+-        final int height = mTmpSize.height();
++        final int width = (int)mTmpSize.width();
++        final int height = (int)mTmpSize.height();
+ 
+         if (DEBUG_VISIBILITY) {
+             Slog.v(TAG, "Creating surface in session "
+@@ -1039,7 +1041,7 @@ class WindowStateAnimator {
+             mDtDy = tmpFloats[Matrix.MSCALE_Y];
+             float x = tmpFloats[Matrix.MTRANS_X];
+             float y = tmpFloats[Matrix.MTRANS_Y];
+-            mWin.mShownPosition.set((int) x, (int) y);
++            mWin.mShownPosition.set( x, y);
+ 
+             // Now set the alpha...  but because our current hardware
+             // can't do alpha transformation on a non-opaque surface,
+@@ -1259,7 +1261,7 @@ class WindowStateAnimator {
+         if (isFreeformResizing && !w.isChildWindow()) {
+             // For freeform resizing non child windows, we are using the big surface positioned
+             // at 0,0. Thus we must express the crop in that coordinate space.
+-            clipRect.offset(w.mShownPosition.x, w.mShownPosition.y);
++            clipRect.offset((int)w.mShownPosition.x, (int)w.mShownPosition.y);
+         }
+ 
+         // Expand the clip rect for surface insets.
+@@ -1423,7 +1425,7 @@ class WindowStateAnimator {
+ 
+         if (!w.inPinnedWorkspace() || (!w.mRelayoutCalled || w.mInRelayout)) {
+             mSurfaceResized = mSurfaceController.setSizeInTransaction(
+-                    mTmpSize.width(), mTmpSize.height(), recoveringMemory);
++                    (int)mTmpSize.width(), (int)mTmpSize.height(), recoveringMemory);
+         } else {
+             mSurfaceResized = false;
+         }
+@@ -1648,10 +1650,10 @@ class WindowStateAnimator {
+         mSurfaceController.setTransparentRegionHint(region);
+     }
+ 
+-    void setWallpaperOffset(Point shownPosition) {
++    void setWallpaperOffset(PointF shownPosition) {
+         final LayoutParams attrs = mWin.getAttrs();
+-        final int left = shownPosition.x - attrs.surfaceInsets.left;
+-        final int top = shownPosition.y - attrs.surfaceInsets.top;
++        final int left = (int)shownPosition.x - attrs.surfaceInsets.left;
++        final int top = (int)shownPosition.y - attrs.surfaceInsets.top;
+ 
+         try {
+             if (SHOW_LIGHT_TRANSACTIONS) Slog.i(TAG, ">>> OPEN TRANSACTION setWallpaperOffset");
+-- 
+1.9.1
+

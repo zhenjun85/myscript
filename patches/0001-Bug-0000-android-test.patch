@@ -1,0 +1,110 @@
+From f7ca98385eea4e355ea201d561cb7958b02649f9 Mon Sep 17 00:00:00 2001
+From: "zhenjun.zhang" <zhenjun.zhang@spreadtrum.com>
+Date: Mon, 18 Jul 2016 14:29:45 +0800
+Subject: [PATCH] Bug #0000 android test
+
+[root cause  ]
+[changes     ]
+[side effects]
+[self test   ]<board, Test cases summary>:
+[reviewers   ]
+[change_type ] feature
+[tag_product ] common
+
+Change-Id: I2a6339128219f42b01850163c62a4766011b8df5
+---
+ .../android/server/policy/PhoneWindowManager.java  | 35 +++++++++++++++++++++-
+ 1 file changed, 34 insertions(+), 1 deletion(-)
+
+diff --git a/services/core/java/com/android/server/policy/PhoneWindowManager.java b/services/core/java/com/android/server/policy/PhoneWindowManager.java
+index a4408fc..28e04fe 100644
+--- a/services/core/java/com/android/server/policy/PhoneWindowManager.java
++++ b/services/core/java/com/android/server/policy/PhoneWindowManager.java
+@@ -406,6 +406,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+     volatile boolean mGoingToSleep;
+     volatile boolean mRecentsVisible;
+     volatile boolean mTvPictureInPictureVisible;
++      volatile boolean mAppSwitchKeyHandled;
+ 
+     int mRecentAppsHeldModifiers;
+     boolean mLanguageSwitchKeyPressed;
+@@ -717,6 +718,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+     private static final int MSG_SHOW_TV_PICTURE_IN_PICTURE_MENU = 17;
+     private static final int MSG_BACK_LONG_PRESS = 18;
+     private static final int MSG_DISPOSE_INPUT_CONSUMER = 19;
++    private static final int MSG_APP_SWITCH_LONG_PRESS = 20;
+ 
+     private static final int MSG_REQUEST_TRANSIENT_BARS_ARG_STATUS = 0;
+     private static final int MSG_REQUEST_TRANSIENT_BARS_ARG_NAVIGATION = 1;
+@@ -787,6 +789,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+                 case MSG_DISPOSE_INPUT_CONSUMER:
+                     disposeInputConsumer((InputConsumer) msg.obj);
+                     break;
++                case MSG_APP_SWITCH_LONG_PRESS:
++                    appswitchLongPress();
++                    break;
+             }
+         }
+     }
+@@ -1137,6 +1142,13 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+         }
+     }
+ 
++	private void cancelPendingAppSwitchKeyAction() {
++        if (!mAppSwitchKeyHandled) {
++            mAppSwitchKeyHandled = true;
++            mHandler.removeMessages(MSG_APP_SWITCH_LONG_PRESS);
++        }
++    }
++
+     private void cancelPendingBackKeyAction() {
+         if (!mBackKeyHandled) {
+             mBackKeyHandled = true;
+@@ -1251,6 +1263,13 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+         }
+     }
+ 
++    private void appswitchLongPress() {
++        if (ActivityManager.supportsMultiWindow()) {
++            mAppSwitchKeyHandled = true;
++            toggleSplitScreen();
++        }
++    }
++
+     private void backLongPress() {
+         mBackKeyHandled = true;
+ 
+@@ -3134,8 +3153,14 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+         } else if (keyCode == KeyEvent.KEYCODE_APP_SWITCH) {
+             if (!keyguardOn) {
+                 if (down && repeatCount == 0) {
++                    mAppSwitchKeyHandled = false;
++                    Message msg = mHandler.obtainMessage(MSG_APP_SWITCH_LONG_PRESS);
++                    msg.setAsynchronous(true);
++                    mHandler.sendMessageDelayed(msg,
++                            ViewConfiguration.get(mContext).getDeviceGlobalActionKeyTimeout());
++                } else if (!down && !mAppSwitchKeyHandled) {
++                    cancelPendingAppSwitchKeyAction();
+                     preloadRecentApps();
+-                } else if (!down) {
+                     toggleRecentApps();
+                 }
+             }
+@@ -3630,6 +3655,14 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+         }
+     }
+ 
++    private void toggleSplitScreen() {
++        StatusBarManagerInternal statusbar = getStatusBarManagerInternal();
++        if (statusbar != null) {
++            statusbar.toggleSplitScreen();
++        }
++    }
++
++
+     @Override
+     public void showRecentApps(boolean fromHome) {
+         mHandler.removeMessages(MSG_DISPATCH_SHOW_RECENTS);
+-- 
+1.9.1
+

@@ -1,0 +1,203 @@
+diff --git a/services/core/java/com/android/server/wm/AppWindowAnimator.java b/services/core/java/com/android/server/wm/AppWindowAnimator.java
+index 8e700ce..9a678d7 100644
+--- a/services/core/java/com/android/server/wm/AppWindowAnimator.java
++++ b/services/core/java/com/android/server/wm/AppWindowAnimator.java
+@@ -43,6 +43,7 @@ public class AppWindowAnimator {
+ 
+     boolean animating;
+     boolean wasAnimating;
++    boolean mDummyAnimation;
+     Animation animation;
+     boolean hasTransformation;
+     final Transformation transformation = new Transformation();
+@@ -101,10 +102,11 @@ public class AppWindowAnimator {
+     }
+ 
+     public void setAnimation(Animation anim, int width, int height, boolean skipFirstFrame) {
+-        if (WindowManagerService.localLOGV) Slog.v(TAG, "Setting animation in " + mAppToken
++        if (true) Slog.v(TAG, "zzj  Setting animation in " + mAppToken
+                 + ": " + anim + " wxh=" + width + "x" + height
+-                + " isVisible=" + mAppToken.isVisible());
++                + " isVisible=" + mAppToken.isVisible() + android.os.Debug.getCallers(8) );
+         animation = anim;
++        mDummyAnimation = false;
+         animating = false;
+         if (!anim.isInitialized()) {
+             anim.initialize(width, height, width, height);
+@@ -136,9 +138,10 @@ public class AppWindowAnimator {
+     }
+ 
+     public void setDummyAnimation() {
+-        if (WindowManagerService.localLOGV) Slog.v(TAG, "Setting dummy animation in " + mAppToken
+-                + " isVisible=" + mAppToken.isVisible());
++        if (true) Slog.v(TAG, "zzj   Setting dummy animation in " + mAppToken
++                + " isVisible=" + mAppToken.isVisible() + " " + android.os.Debug.getCallers(8));
+         animation = sDummyAnimation;
++        mDummyAnimation = true;
+         hasTransformation = true;
+         transformation.clear();
+         transformation.setAlpha(mAppToken.isVisible() ? 1 : 0);
+@@ -147,6 +150,7 @@ public class AppWindowAnimator {
+     public void clearAnimation() {
+         if (animation != null) {
+             animation = null;
++            mDummyAnimation = false;
+             animating = true;
+         }
+         clearThumbnail();
+@@ -175,6 +179,7 @@ public class AppWindowAnimator {
+         if (animation != null) {
+             toAppAnimator.animation = animation;
+             animation = null;
++            mDummyAnimation = false;
+             toAppAnimator.animating = animating;
+             toAppAnimator.animLayerAdjustment = animLayerAdjustment;
+             animLayerAdjustment = 0;
+@@ -267,6 +272,7 @@ public class AppWindowAnimator {
+                         ", xform=" + transformation);
+                 deferFinalFrameCleanup = false;
+                 animation = null;
++                mDummyAnimation = false;
+                 clearThumbnail();
+                 if (DEBUG_ANIM) Slog.v(TAG,
+                         "Finished animation in " + mAppToken + " @ " + currentTime);
+@@ -332,6 +338,7 @@ public class AppWindowAnimator {
+             // clear it and make sure we run the cleanup code.
+             animating = true;
+             animation = null;
++            mDummyAnimation = false;
+         }
+ 
+         hasTransformation = false;
+diff --git a/services/core/java/com/android/server/wm/WindowAnimator.java b/services/core/java/com/android/server/wm/WindowAnimator.java
+index 2a11a7e..47376a1 100644
+--- a/services/core/java/com/android/server/wm/WindowAnimator.java
++++ b/services/core/java/com/android/server/wm/WindowAnimator.java
+@@ -15,6 +15,7 @@
+  */
+ 
+ package com.android.server.wm;
++import android.os.SystemProperties;
+ 
+ import static android.view.WindowManager.LayoutParams.FLAG_SHOW_WALLPAPER;
+ import static android.view.WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED;
+@@ -543,7 +544,8 @@ public class WindowAnimator {
+             // If this window is animating, make a note that we have
+             // an animating window and take care of a request to run
+             // a detached wallpaper animation.
+-            if (winAnimator.mAnimating) {
++            if (winAnimator.mAnimating && (winAnimator.mAppAnimator == null || 
++            		(winAnimator.mAppAnimator != null && !winAnimator.mAppAnimator.mDummyAnimation))) {
+                 if (winAnimator.mAnimation != null) {
+                     if ((flags & FLAG_SHOW_WALLPAPER) != 0
+                             && winAnimator.mAnimation.getDetachWallpaper()) {
+@@ -557,7 +559,10 @@ public class WindowAnimator {
+                         }
+                     }
+                 }
+-                mAnimating = true;
++                if ("true".equals(SystemProperties.get("persist.zzj", "true"))) {
++                	Slog.e(TAG, "zzj   updateWallpaperLocked    true   " + winAnimator.mWin);
++                	mAnimating = true;
++                }
+             }
+ 
+             // If this window's app token is running a detached wallpaper
+diff --git a/services/core/java/com/android/server/wm/WindowManagerService.java b/services/core/java/com/android/server/wm/WindowManagerService.java
+index 4de019c..0e5d3f5 100644
+--- a/services/core/java/com/android/server/wm/WindowManagerService.java
++++ b/services/core/java/com/android/server/wm/WindowManagerService.java
+@@ -13,7 +13,7 @@
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  */
+-
++ 
+ package com.android.server.wm;
+ 
+ import android.Manifest;
+@@ -196,7 +196,7 @@ public class WindowManagerService extends IWindowManager.Stub
+     static /*final*/ boolean DEBUG_ADD_REMOVE = false;
+     static /*final*/ boolean DEBUG_FOCUS = false;
+     static /*final*/ boolean DEBUG_FOCUS_LIGHT = DEBUG_FOCUS || false;
+-    static /*final*/ boolean DEBUG_ANIM = false;
++    static /*final*/ boolean DEBUG_ANIM = true;
+     static /*final*/ boolean DEBUG_KEYGUARD = false;
+     static /*final*/ boolean DEBUG_LAYOUT = false;
+     static /*final*/ boolean DEBUG_RESIZE = false;
+@@ -4728,8 +4728,9 @@ public class WindowManagerService extends IWindowManager.Stub
+                 // created since an animation is already in progress.
+                 if (!wtoken.mAppAnimator.usingTransferredAnimation &&
+                         (!wtoken.startingDisplayed || mSkipAppTransitionAnimation)) {
+-                    if (DEBUG_APP_TRANSITIONS) Slog.v(
+-                            TAG, "Setting dummy animation on: " + wtoken);
++                    if (true) Slog.v(
++                            TAG, "zzj   Setting dummy animation on: " + wtoken + " wtoken.startingDisplayed= " + wtoken.startingDisplayed
++                            		+ " mSkipAppTransitionAnimation=" + mSkipAppTransitionAnimation);
+                     wtoken.mAppAnimator.setDummyAnimation();
+                 }
+                 wtoken.inPendingTransaction = true;
+diff --git a/services/core/java/com/android/server/wm/WindowStateAnimator.java b/services/core/java/com/android/server/wm/WindowStateAnimator.java
+index fcc3719..87dc728 100644
+--- a/services/core/java/com/android/server/wm/WindowStateAnimator.java
++++ b/services/core/java/com/android/server/wm/WindowStateAnimator.java
+@@ -224,7 +224,7 @@ class WindowStateAnimator {
+     }
+ 
+     public void setAnimation(Animation anim, long startTime) {
+-        if (localLOGV) Slog.v(TAG, "Setting animation in " + this + ": " + anim);
++        if (true) Slog.v(TAG, "Setting animation in " + this + ": " + anim);
+         mAnimating = false;
+         mLocalAnimating = false;
+         mAnimation = anim;
+@@ -243,6 +243,7 @@ class WindowStateAnimator {
+ 
+     public void clearAnimation() {
+         if (mAnimation != null) {
++        	Slog.v(TAG, "clearAnimation");
+             mAnimating = true;
+             mLocalAnimating = false;
+             mAnimation.cancel();
+@@ -322,6 +323,7 @@ class WindowStateAnimator {
+                             ? mAnimationStartTime
+                             : currentTime);
+                     mLocalAnimating = true;
++                    Slog.v(TAG, "stepAnimationLocked");
+                     mAnimating = true;
+                 }
+                 if ((mAnimation != null) && mLocalAnimating) {
+@@ -345,6 +347,8 @@ class WindowStateAnimator {
+                 // locally animating itself.  The idea being that one that
+                 // is exiting and doing a local animation should be removed
+                 // once that animation is done.
++                Slog.v(TAG, "zzj    stepAnimationLocked mLocalAnimating="+mLocalAnimating + " mAnimationIsEntrance=" + mAnimationIsEntrance
++                			+ " mAppAnimator=" + mAppAnimator + " mWin" +mWin);
+                 mAnimating = true;
+                 mHasTransformation = true;
+                 mTransformation.clear();
+@@ -352,13 +356,16 @@ class WindowStateAnimator {
+             } else if (mHasTransformation) {
+                 // Little trick to get through the path below to act like
+                 // we have finished an animation.
++                Slog.v(TAG, "zzj    stepAnima   1");
+                 mAnimating = true;
+             } else if (isAnimating()) {
++            	Slog.v(TAG, "zzj    stepAnima    2");
+                 mAnimating = true;
+             }
+         } else if (mAnimation != null) {
+             // If the display is frozen, and there is a pending animation,
+             // clear it and make sure we run the cleanup code.
++            Slog.v(TAG, "zzj    stepAnima      3");
+             mAnimating = true;
+         }
+ 
+@@ -481,7 +488,7 @@ class WindowStateAnimator {
+             return;
+         }
+ 
+-        if (WindowManagerService.localLOGV) Slog.v(
++        if (true) Slog.v(
+                 TAG, "Exit animation finished in " + this
+                 + ": remove=" + mWin.mRemoveOnExit);
+         if (mSurfaceControl != null) {

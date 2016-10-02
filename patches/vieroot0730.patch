@@ -1,0 +1,54 @@
+diff --git a/core/java/android/view/ViewRootImpl.java b/core/java/android/view/ViewRootImpl.java
+index 70c3ba4..d877b87 100644
+--- a/core/java/android/view/ViewRootImpl.java
++++ b/core/java/android/view/ViewRootImpl.java
+@@ -19,6 +19,7 @@ package android.view;
+ import android.Manifest;
+ import android.animation.LayoutTransition;
+ import android.app.ActivityManagerNative;
++import android.app.ActivityManager;
+ import android.content.ClipDescription;
+ import android.content.ComponentCallbacks;
+ import android.content.Context;
+@@ -216,6 +217,7 @@ public final class ViewRootImpl implements ViewParent,
+     boolean mReportNextDraw;
+     boolean mFullRedrawNeeded;
+     boolean mNewSurfaceNeeded;
++    boolean mTmpRelayoutNeeded;
+     boolean mHasHadWindowFocus;
+     boolean mLastWasImTarget;
+     boolean mWindowsAnimating;
+@@ -844,6 +846,7 @@ public final class ViewRootImpl implements ViewParent,
+ 
+     void handleAppVisibility(boolean visible) {
+         if (mAppVisible != visible) {
++        	Log.e(TAG, "zzj   XXXXXXXXXXX    handleAppVisibility="  + visible + "  " + mWindowAttributes.getTitle());
+             mAppVisible = visible;
+             scheduleTraversals();
+             if (!mAppVisible) {
+@@ -1552,7 +1555,12 @@ public final class ViewRootImpl implements ViewParent,
+         int relayoutResult = 0;
+ 
+         if (mFirst || windowShouldResize || insetsChanged ||
+-                viewVisibilityChanged || params != null) {
++                viewVisibilityChanged || params != null ||
++                (mTmpRelayoutNeeded && viewVisibility == View.VISIBLE)) {
++            if (!(mFirst || windowShouldResize || insetsChanged ||
++                viewVisibilityChanged || params != null) && (mTmpRelayoutNeeded && viewVisibility == View.VISIBLE)) {
++				Log.i(TAG, "zzjxx        XXXXXXXX     give another change to relayoutWindow " + mWindowAttributes.getTitle());
++            }
+ 
+             if (viewVisibility == View.VISIBLE) {
+                 // If this window is giving internal insets to the window
+@@ -2047,6 +2055,11 @@ public final class ViewRootImpl implements ViewParent,
+         mWillDrawSoon = false;
+         mNewSurfaceNeeded = false;
+         mViewVisibility = viewVisibility;
++        mTmpRelayoutNeeded = false;
++        if(ActivityManager.isUserAMonkey() && !mSurface.isValid() && viewVisibility == View.VISIBLE) {
++            Slog.e("zzj", "      XXXXXXXXXXx     mTmpRelayoutNeeded = true;    " + mWindowAttributes.getTitle());
++            mTmpRelayoutNeeded = true;
++        }
+ 
+         if (mAttachInfo.mHasWindowFocus && !isInLocalFocusMode()) {
+             final boolean imTarget = WindowManager.LayoutParams

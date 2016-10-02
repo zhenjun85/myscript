@@ -10,3 +10,4 @@ add-apt-repository
 ppa:fcitx-team/nightly
 export
 JACK_SERVER_VM_ARGUMENTS=-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g
+3008668

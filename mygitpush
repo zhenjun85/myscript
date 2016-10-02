@@ -23,5 +23,24 @@ ROOTPOS=${#ROOTDIR}
 PROJECT=${FULLDIR:$ROOTPOS+1:$POS-$ROOTPOS-1}
 
 GITREPO=${FULLDIR:$POS+1}
-echo "git push ssh://zhenjun.zhang@10.0.0.160:29418/platform/$GITREPO/ HEAD:refs/for/$PROJECT"
+
+ROOTGITREPO=`echo $GITREPO|sed 's/\/.*//'`
+
+
+nonplatformlist=("vendor")
+
+
+for i in ${nonplatformlist[*]}
+do
+    if [ $ROOTGITREPO == $i ]
+    then
+        echo "git push ssh://zhenjun.zhang@10.0.0.160:29418/$GITREPO/ HEAD:refs/for/$PROJECT"
+        exit
+    fi
+done
+
+echo "-----------------------------------------------------------------"
+echo
+myecho -y "git push ssh://zhenjun.zhang@10.0.0.160:29418/platform/$GITREPO/ HEAD:refs/for/$PROJECT"
+echo "-----------------------------------------------------------------"
 

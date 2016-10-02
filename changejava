@@ -1,14 +1,5 @@
 #!/bin/bash
 
-dummy() {
-    if [ -e ~/bin/data/java7 ]
-    then
-        echo hav
-    else
-        echo no
-    fi
-}
-
 myecho -y "Select the java version:"
 select javaversion in "java7" "java8" "sunjava8"
 do

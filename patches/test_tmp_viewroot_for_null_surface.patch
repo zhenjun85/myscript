@@ -1,0 +1,49 @@
+diff --git a/core/java/android/view/ViewRootImpl.java b/core/java/android/view/ViewRootImpl.java
+index fcbfe73..64c6ff4 100644
+--- a/core/java/android/view/ViewRootImpl.java
++++ b/core/java/android/view/ViewRootImpl.java
+@@ -829,6 +829,7 @@ public final class ViewRootImpl implements ViewParent,
+ 
+     void handleAppVisibility(boolean visible) {
+         if (mAppVisible != visible) {
++        	Log.e(TAG, "zzj   XXXXXXXXXXX    handleAppVisibility="  + visible + "  " + mWindowAttributes.getTitle());
+             mAppVisible = visible;
+             scheduleTraversals();
+             if (!mAppVisible) {
+@@ -1538,7 +1539,11 @@ public final class ViewRootImpl implements ViewParent,
+ 
+         if (mFirst || windowShouldResize || insetsChanged ||
+                 viewVisibilityChanged || params != null ||
+-                (mTmpRelayoutNeeded && mViewVisibility == View.VISIBLE)) {
++                (mTmpRelayoutNeeded && viewVisibility == View.VISIBLE)) {
++            if (!(mFirst || windowShouldResize || insetsChanged ||
++                viewVisibilityChanged || params != null) && (mTmpRelayoutNeeded && viewVisibility == View.VISIBLE)) {
++				Log.i(TAG, "zzjxx        XXXXXXXX     give another change to relayoutWindow " + mWindowAttributes.getTitle());
++            }
+ 
+             if (viewVisibility == View.VISIBLE) {
+                 // If this window is giving internal insets to the window
+@@ -1754,6 +1759,10 @@ public final class ViewRootImpl implements ViewParent,
+                             mAttachInfo.mHardwareRenderer.isEnabled()) {
+                         mAttachInfo.mHardwareRenderer.destroy();
+                     }
++                    if(viewVisibility == View.VISIBLE) {
++                    	Slog.e("zzj", "      XXXXXXXXXXx     mTmpRelayoutNeeded = true;    " + mWindowAttributes.getTitle());
++						mTmpRelayoutNeeded = true;
++                    }
+                 } else if (surfaceGenerationId != mSurface.getGenerationId() &&
+                         mSurfaceHolder == null && mAttachInfo.mHardwareRenderer != null) {
+                     mFullRedrawNeeded = true;
+@@ -2075,9 +2084,9 @@ public final class ViewRootImpl implements ViewParent,
+                 scheduleTraversals();
+                 //the surface may not created beacuse of server's win.mAppToken.clientHidden set true
+                 //We set this flag to give another chance to create surface
+-                if (!newSurface) {
+-                    mTmpRelayoutNeeded = true;
+-                }
++                //if (!newSurface) {
++                //    mTmpRelayoutNeeded = true;
++                //}
+             } else if (mPendingTransitions != null && mPendingTransitions.size() > 0) {
+                 for (int i = 0; i < mPendingTransitions.size(); ++i) {
+                     mPendingTransitions.get(i).endChangingAnimations();

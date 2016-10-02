@@ -1,0 +1,5 @@
+下载vim配置
+wget -qO- https://raw.github.com/ma6174/vim/master/setup.sh | sh -x
+
+配置git 编辑器
+git config --global core.editor vim

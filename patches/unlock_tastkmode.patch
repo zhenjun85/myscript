@@ -1,0 +1,55 @@
+diff --git a/core/res/res/values/config.xml b/core/res/res/values/config.xml
+index d0fd36a..4242299 100644
+--- a/core/res/res/values/config.xml
++++ b/core/res/res/values/config.xml
+@@ -770,8 +770,9 @@
+          valid for watches as part of CDD/CTS.
+             0 - Nothing
+             1 - Go to voice assist
++            3 - CanCel Lock Task Mode
+     -->
+-    <integer name="config_longPressOnBackBehavior">0</integer>
++    <integer name="config_longPressOnBackBehavior">2</integer>
+ 
+     <!-- Control the behavior when the user short presses the power button.
+             0 - Nothing
+diff --git a/services/core/java/com/android/server/policy/PhoneWindowManager.java b/services/core/java/com/android/server/policy/PhoneWindowManager.java
+index 28e04fe..2dec5cd 100644
+--- a/services/core/java/com/android/server/policy/PhoneWindowManager.java
++++ b/services/core/java/com/android/server/policy/PhoneWindowManager.java
+@@ -44,6 +44,7 @@ import android.app.ActivityManagerInternal;
+ import android.app.ActivityManagerInternal.SleepToken;
+ import android.app.ActivityManagerNative;
+ import android.app.AppOpsManager;
++import android.app.IActivityManager;
+ import android.app.IUiModeManager;
+ import android.app.ProgressDialog;
+ import android.app.SearchManager;
+@@ -195,6 +196,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+ 
+     static final int LONG_PRESS_BACK_NOTHING = 0;
+     static final int LONG_PRESS_BACK_GO_TO_VOICE_ASSIST = 1;
++    static final int LONG_PRESS_BACK_CANCEL_LOCKTASK = 2;
+ 
+     static final int MULTI_PRESS_POWER_NOTHING = 0;
+     static final int MULTI_PRESS_POWER_THEATER_MODE = 1;
+@@ -1280,6 +1282,19 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+                 Intent intent = new Intent(Intent.ACTION_VOICE_ASSIST);
+                 startActivityAsUser(intent, UserHandle.CURRENT_OR_SELF);
+                 break;
++            case LONG_PRESS_BACK_CANCEL_LOCKTASK:
++                try {
++                    IActivityManager activityManager = ActivityManagerNative.getDefault();
++                    if (activityManager.isInLockTaskMode()) {
++                        activityManager.stopSystemLockTaskMode();
++                    } else {
++                        mBackKeyHandled = false;
++                    }
++                } catch (RemoteException e) {
++                    Log.w(TAG, "Unable to reach activity manager", e);
++                }
++
++                break;
+         }
+     }
+ 

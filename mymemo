@@ -1,0 +1,66 @@
+#!/bin/bash
+
+memofolder=~/bin/data/memo/
+
+addmemo() {
+    myecho -y "=========Enter The Memo Title========="
+    read _title
+    title=`echo $_title |sed "s/ /_/g"`
+    cd $memofolder
+    vim $title
+}
+
+
+showmemo() {
+    myecho -c "==========Select The Memo =========="
+    cd $memofolder
+    select memo in `ls`
+    do
+        clear
+        echo $memo
+        myecho -bo "-------------------------------------------"
+        cat $memo
+        myecho -bo "-------------------------------------------"
+        break
+    done
+}
+
+deletememo() {
+    cd $memofolder
+    select memo in `ls`
+    do
+        myecho -r "delete the memo $memo ???"
+        select res in "Y" "N"
+        do
+            if [ $res == "Y" ]
+            then
+                rm $memo
+            fi
+            break
+        done
+        break
+    done
+}
+
+while getopts adh: arg
+do
+    case $arg in
+        a)
+            addmemo
+            exit
+            ;;
+        d)
+            deletememo
+            exit
+            ;;
+        h)
+            #just for test
+            echo "$OPTARG"
+            exit
+            ;;
+        ?)
+            exit
+            ;;
+    esac
+done
+showmemo

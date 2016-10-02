@@ -187,3 +187,79 @@
 2016.25.0     06.12       other        androidN pdk的版本会讲frameworks.jar等内容打包提供，所以andriodn的版本依然没有多大参考性
 2016.25.2     06.14       other        telcel 问题跟踪，telstra表格汇总，androidn-pdk研究
 2016.25.2     06.14       other        telstra表格整理
+2016.25.3     06.15       other        telcel 问题追踪
+2016.25.3     06.15       other        windowmanager bug清理
+2016.25.4     06.16       6.0          动画卡顿问题
+2016.25.4     06.16       other        google code commit
+2016.25.4     06.16       other        pikeL评估
+2016.25.4     06.16       other        android N 升级会议
+2016.25.4     06.16       other        是否所有feature都需要设计和测试文档，2， 张德芳的不算feature
+2016.25.4     06.16       other        多哥，反安全
+2016.25.5     06.17       other        范安全问题沟通，需要金超确认
+2016.25.5     06.17       other        feature统计有问题，和jilei，zhiwei沟通
+2016.25.5     06.17       other        华为，隐藏navigationbar 显示不出来，input问题
+--2016.26
+2016.26.1     06.20       other        telcel ｄｒｍ是否还是问题？
+2016.26.1     06.20            lowmemory kill ANR
+2016.26.1     06.20       other        ANR 问题，由于ｆｏｃｕｓａｐｐ有问题，所以导致找不到焦点
+2016.26.1     06.20       6.0          567745,572964   ams
+2016.26.1     06.20       other        协助ｙａｎｇｐｉｎｇ　ANR 动画卡顿５秒的问题，转底层
+2016.26.1     06.20       other        inputmonitor 调用notifyANR出现ＯＯＭ问题，澄清这地方占用内存很少
+2016.26.1     06.20       other        更新wangteng身上需求状态，需要讨论
+2016.26.2     06.21       6.0          cucc动画打包问题
+2016.26.2     06.21       6.0          monkey+sleep稳定性问题沟通
+2016.26.2     06.21       other        仁康沟通
+2016.26.2     06.21       other        telcel问题追踪
+2016.26.3     06.22       other        金芳沟通542627
+2016.26.3     06.22       6.0          monkey+sleep稳定性问题,怀疑脚本有问题
+2016.26.3     06.22       other        androidn feature分类
+2016.26.3     06.22       other        telcel问题追踪
+2016.26.5     06.24       6.0          anr分析
+2016.26.5     06.24       other        telcel跟踪
+2016.26.5     06.24       other        pikeL会议
+2016.26.5     06.24       other        androidN feature 测试用例
+2016.26.5     06.24       other        PikeL评估
+2016.26.5     06.24       other        协助ｑｉｕｓｈｉ
+2016.26.5     06.24       other        google code review
+--2016.27
+2016.27.1     06.27       other        展卓是否有权限androidN
+2016.27.1     06.27       pike 5.1     573723 - [7731C-2][32+4][fullB][FT_TP][Stability]System crashed at android:ui [android.view.ViewRootImpl.setView(ViewRootImpl.java:562)]       转ａｍｓ
+2016.27.2     06.28       6.0          542627    分析后google递交
+2016.27.2     06.28       other        androidN 解耦，求实名下
+2016.27.2     06.28       6.0          576228, 字符串问题，won't fix 16b
+2016.27.4     06.30       other        androidN 表格确认
+2016.27.4     06.30       other        pikeL表格确认
+2016.27.4     06.30       other        AndroidN 学习
+2016.27.4     06.30       other        telcel FDN新需求评估
+2016.27.5     07.01       other        yangping , camear
+2016.27.5     07.01       other        pikeL
+--2016.28
+2016.28.1     07.04       other        华为亮屏慢，协助qiushi
+2016.28.2     07.05       other        PikeL wms需求
+2016.28.2     07.05       other        telcel FDN feature test case，联系人做统一接口
+2016.28.2     07.05       other        panlin Layerdrawable
+2016.28.2     07.05       other        上午分配解耦表格
+2016.28.2     07.05       other        下午将lego解耦内容转移到vendor目录
+2016.28.4     07.07       other        hide surface 新的机制，softkey会议
+--2016.29
+2016.29.1     07.11       other        hide surface 新的机制调试ok，telcel需求整理，telcel data clear code功能
+2016.29.1     07.11       other        pikeL plugin相关模块排查，无af2相关
+2016.29.2     07.12       other        pikeL 需求
+2016.29.2     07.12       other        579934 - [Huawei_Pad]华为现场：华为应用市场安装 全民数独 安装完成后点击桌面快捷方式无反应 DTS2016070405035
+2016.29.2     07.12       other        pikeL状态反馈
+2016.29.2     07.12       other        pdk surfacecontrol添加log
+2016.29.3     07.13       other        listview    Focus
+--2016.30
+2016.30.1     07.18       other        pikeL 填表
+--2016.32
+2016.32.3     08.03       other        490268，输入法问题
+2016.32.3     08.03       other        init.rc讲解
+2016.32.4     08.04       6.0          585539
+2016.32.4     08.04       6.0          585539  主线程阻塞
+--2016.33
+2016.33.1     08.08       other        telcel bug追踪
+2016.33.1     08.08       other        运营商需求追踪
+2016.33.2     08.09       other        t-mobile 之前统计过，再和jason确认下
+2016.33.2     08.09       other        androidN changelist 自检
+--2016.35
+2016.35.3     08.24       6.0          585677 - [MGSEI][6.0][SC9830][#5][Volte][16B][Telephony][特有]通话界面固定屏幕，界面下方显示异常

@@ -14,6 +14,7 @@ function croot {
     if [ `pwd` == / ]
         then
         echo "Can not find Android Root Folder"
+        return -1
     fi
 }
 
@@ -26,7 +27,7 @@ function mam {
     fi
     last_pwd=`pwd`
     mm 2>&1|tee ~/tmp/tmplog
-    for result in `cat ~/tmp/tmplog |grep "Install:" |awk -F " " '{print $2}'`
+    for result in `cat ~/tmp/tmplog |grep "Install:" |sed "s/.*Install://"`
     do
         croot
         mypush $result 
@@ -49,4 +50,59 @@ function cdc {
 }
 
 alias cdout='cd $ANDROID_PRODUCT_OUT'
+
+function mypush()
+{
+    if [ $# -lt 1 ]
+    then
+        echo "usage: mypush out/target/product/scxxx/system/lib/libmedia.so"
+        return
+    fi
+
+    #push services.jar or framework.jar or res.apk
+    if [ "$1" == "s" ]
+    then
+        cd $ANDROID_PRODUCT_OUT
+        adb push system/framework/services.jar /system/framework/
+        croot
+        return
+    elif [ "$1" == "f" ]
+    then
+        cd $ANDROID_PRODUCT_OUT
+        adb push system/framework/framework.jar /system/framework/
+        croot
+        return
+    elif [ "$1" == "r" ]
+    then
+        cd $ANDROID_PRODUCT_OUT
+        adb push system/framework/framework-res.apk /system/framework/
+        croot
+        return
+    fi
+
+    echo push..
+
+    lib=$1
+    havefolder=`echo $lib | grep "/"`
+
+    if [ "$havefolder" != "" ]
+    then
+        so=`echo $lib |awk -F "system" '{print $2}'`
+        so="system$so"
+        echo $so
+
+        myecho -g "push $lib to $so"
+
+        sudo adb push $lib $so
+    else
+        backup=`pwd`
+        cdout
+        cd system
+        libname=`find -name ${lib}*`
+        pushtolibname=`echo $libname |sed "s/.//"`
+        echo "adb push $libname system$pushtolibname"
+        sudo adb push $libname system$pushtolibname
+        cd $backup
+    fi
+}
 

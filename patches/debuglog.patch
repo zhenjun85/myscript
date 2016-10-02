@@ -1,0 +1,75 @@
+diff --git a/services/core/ex-interface/java/com/android/server/wm/WMSLog.java b/services/core/ex-interface/java/com/android/server/wm/WMSLog.java
+index 26a82d3..bdd3bd4 100644
+--- a/services/core/ex-interface/java/com/android/server/wm/WMSLog.java
++++ b/services/core/ex-interface/java/com/android/server/wm/WMSLog.java
+@@ -1,8 +1,12 @@
+ package com.android.server.wm;
+ 
++
+ public class WMSLog {
+     public void dumpWindowStatus(AppWindowToken wtoken) {
+     }
+     public void dumpWindowStatus(DisplayContent displayContent) {
+     }
++    public boolean changeDebugFlag(String[] args) {
++        return false;
++    }
+ }
+diff --git a/services/core/java/com/android/server/wm/WMSLogEx.java b/services/core/java/com/android/server/wm/WMSLogEx.java
+index a69dbee..2ec33dc 100644
+--- a/services/core/java/com/android/server/wm/WMSLogEx.java
++++ b/services/core/java/com/android/server/wm/WMSLogEx.java
+@@ -52,4 +52,53 @@ public class WMSLogEx extends WMSLog {
+             }
+         }
+     }
++
++    public boolean changeDebugFlag(String[] args) {
++        int opti = 0;
++        String cmd = null;
++        String valuestr = null;
++        boolean value;
++        while (opti < args.length) {
++            String opt = args[opti];
++            if (opt == null || opt.length() <= 0 || opt.charAt(0) != '-') {
++                Slog.w(TAG_WM, "wrong usage of change debug flag");
++                return false;
++            }
++            opti++;
++
++            if ("-set".equals(opt)) {
++                if (opti < args.length - 1) {
++                    cmd = args[opti++];
++                    valueStr = args[opti++];
++                    if ("0".equals(valueStr) || "false".equalsIgnoreCase(valueStr)) {
++                        value = false;
++                    } else if ("1".equals(valueStr) || "true".equalsIgnoreCase(valueStr)) {
++                        value = true;
++                    } else {
++                        Slog.w(TAG_WM, "wrong usage of change debug flag");
++                        return false;
++                    }
++                    break;
++                } else {
++                    Slog.w(TAG_WM, "wrong usage of change debug flag");
++                    return false;
++                }
++            }
++        }
++
++        Class cls = null;
++        Field field = null;
++        try {
++            cls = Class.forName("com.android.server.wm.WindowManagerDebugConfig");
++            field = cls.getDeclaredField(cmd);
++            boolean access = field.isAccessible();
++            field.setAccessible(true);
++            field.setBoolean(value);
++            field.setAccessible(access);
++        } catch (Exception e) {
++            Slog.w(TAG_WM, "Exception when get WindowManagerDebugConfig");
++            return false;
++        }
++
++    }
+ }

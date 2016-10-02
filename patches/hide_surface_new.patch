@@ -1,0 +1,224 @@
+diff --git a/core/java/android/view/View.java b/core/java/android/view/View.java
+index 43c578f..b96d48c 100644
+--- a/core/java/android/view/View.java
++++ b/core/java/android/view/View.java
+@@ -9747,6 +9747,7 @@ public class View implements Drawable.Callback, KeyEvent.Callback,
+                 attachInfo.mKeepScreenOn = true;
+             }
+             attachInfo.mSystemUiVisibility |= mSystemUiVisibility;
++            attachInfo.mSprdFlag |= mSprdFlag;
+             ListenerInfo li = mListenerInfo;
+             if (li != null && li.mOnSystemUiVisibilityChangeListener != null) {
+                 attachInfo.mHasSystemUiListeners = true;
+@@ -19341,6 +19342,19 @@ public class View implements Drawable.Callback, KeyEvent.Callback,
+         }
+     }
+ 
++	int mSprdFlag;
++	/**
++	*@hide
++	*/
++    public void setSprdFlag(int flag) { //zzj
++		if (flag != mSprdFlag) {
++			mSprdFlag = flag;
++			if (mParent != null && mAttachInfo != null && !mAttachInfo.mRecomputeGlobalAttributes) {
++                mParent.recomputeViewAttributes(this);
++            }
++		}
++    }
++
+     /**
+      * Returns the last {@link #setSystemUiVisibility(int)} that this view has requested.
+      * @return  Bitwise-or of flags {@link #SYSTEM_UI_FLAG_LOW_PROFILE},
+@@ -21703,6 +21717,8 @@ public class View implements Drawable.Callback, KeyEvent.Callback,
+          */
+         int mSystemUiVisibility;
+ 
++        int mSprdFlag; //zzj
++
+         /**
+          * Hack to force certain system UI visibility flags to be cleared.
+          */
+diff --git a/core/java/android/view/ViewRootImpl.java b/core/java/android/view/ViewRootImpl.java
+index 6e93a30..3943808 100644
+--- a/core/java/android/view/ViewRootImpl.java
++++ b/core/java/android/view/ViewRootImpl.java
+@@ -1132,6 +1132,7 @@ public final class ViewRootImpl implements ViewParent,
+             boolean oldScreenOn = mAttachInfo.mKeepScreenOn;
+             mAttachInfo.mKeepScreenOn = false;
+             mAttachInfo.mSystemUiVisibility = 0;
++            mAttachInfo.mSprdFlag = 0;
+             mAttachInfo.mHasSystemUiListeners = false;
+             mView.dispatchCollectViewAttributes(mAttachInfo, 0);
+             mAttachInfo.mSystemUiVisibility &= ~mAttachInfo.mDisabledSystemUiVisibility;
+@@ -1139,9 +1140,11 @@ public final class ViewRootImpl implements ViewParent,
+             mAttachInfo.mSystemUiVisibility |= getImpliedSystemUiVisibility(params);
+             if (mAttachInfo.mKeepScreenOn != oldScreenOn
+                     || mAttachInfo.mSystemUiVisibility != params.subtreeSystemUiVisibility
+-                    || mAttachInfo.mHasSystemUiListeners != params.hasSystemUiListeners) {
++                    || mAttachInfo.mHasSystemUiListeners != params.hasSystemUiListeners
++                    || mAttachInfo.mSprdFlag != params.sprdFlag) {
+                 applyKeepScreenOnFlag(params);
+                 params.subtreeSystemUiVisibility = mAttachInfo.mSystemUiVisibility;
++                params.sprdFlag = mAttachInfo.mSprdFlag;
+                 params.hasSystemUiListeners = mAttachInfo.mHasSystemUiListeners;
+                 mView.dispatchWindowSystemUiVisiblityChanged(mAttachInfo.mSystemUiVisibility);
+                 return true;
+diff --git a/core/java/android/view/WindowManager.java b/core/java/android/view/WindowManager.java
+index 45bc1df..f42b761 100644
+--- a/core/java/android/view/WindowManager.java
++++ b/core/java/android/view/WindowManager.java
+@@ -1519,6 +1519,11 @@ public interface WindowManager extends ViewManager {
+         public int subtreeSystemUiVisibility;
+ 
+         /**
++        *@hide
++        */
++        public int sprdFlag;
++
++        /**
+          * Get callbacks about the system ui visibility changing.
+          *
+          * TODO: Maybe there should be a bitfield of optional callbacks that we need.
+@@ -1687,6 +1692,7 @@ public interface WindowManager extends ViewManager {
+             out.writeInt(surfaceInsets.bottom);
+             out.writeInt(hasManualSurfaceInsets ? 1 : 0);
+             out.writeInt(needsMenuKey);
++            out.writeInt(sprdFlag);
+         }
+ 
+         public static final Parcelable.Creator<LayoutParams> CREATOR
+@@ -1737,6 +1743,7 @@ public interface WindowManager extends ViewManager {
+             surfaceInsets.bottom = in.readInt();
+             hasManualSurfaceInsets = in.readInt() != 0;
+             needsMenuKey = in.readInt();
++            sprdFlag = in.readInt();
+         }
+ 
+         @SuppressWarnings({"PointlessBitwiseExpression"})
+@@ -1935,6 +1942,11 @@ public interface WindowManager extends ViewManager {
+                 changes |= NEEDS_MENU_KEY_CHANGED;
+             }
+ 
++            if (sprdFlag != o.sprdFlag) {
++                sprdFlag = o.sprdFlag;
++                changes |= SYSTEM_UI_VISIBILITY_CHANGED;
++            }
++
+             return changes;
+         }
+ 
+diff --git a/core/java/android/view/WindowManagerPolicy.java b/core/java/android/view/WindowManagerPolicy.java
+index aaf6052..bd0ee31 100644
+--- a/core/java/android/view/WindowManagerPolicy.java
++++ b/core/java/android/view/WindowManagerPolicy.java
+@@ -378,6 +378,12 @@ public interface WindowManagerPolicy {
+         public boolean isAlive();
+ 
+         /**
++         * SPRD: request to the hide the Surface of a window.
++         * @param hide set true to hide Surface and false to show
++         */
++        public void requestHideSurface(boolean hide);
++
++        /**
+          * Check if window is on {@link Display#DEFAULT_DISPLAY}.
+          * @return true if window is on default display.
+          */
+diff --git a/services/core/java/com/android/server/wm/WindowManagerService.java b/services/core/java/com/android/server/wm/WindowManagerService.java
+index d0aaa9b..0b59980 100644
+--- a/services/core/java/com/android/server/wm/WindowManagerService.java
++++ b/services/core/java/com/android/server/wm/WindowManagerService.java
+@@ -3132,6 +3132,13 @@ public class WindowManagerService extends IWindowManager.Stub
+             if (attrs != null && seq == win.mSeq) {
+                 win.mSystemUiVisibility = systemUiVisibility;
+             }
++            if (attrs != null) {
++				int sprdflag = 0;
++				sprdflag = attrs.sprdFlag;
++				Slog.e("zzj", "zzj     sprdflag= " + sprdflag + "   " + win);
++				
++                win.requestHideSurface(sprdflag == 1);
++            }
+ 
+             winAnimator.mSurfaceDestroyDeferred =
+                     (flags&WindowManagerGlobal.RELAYOUT_DEFER_SURFACE_DESTROY) != 0;
+@@ -3151,7 +3158,7 @@ public class WindowManagerService extends IWindowManager.Stub
+                 }
+             }
+ 
+-            if (DEBUG_LAYOUT) Slog.v(TAG, "Relayout " + win + ": viewVisibility=" + viewVisibility
++            if (true) Slog.v(TAG, "Relayout " + win + ": viewVisibility=" + viewVisibility
+                     + " req=" + requestedWidth + "x" + requestedHeight + " " + win.mAttrs);
+ 
+             win.mEnforceSizeCompat =
+diff --git a/services/core/java/com/android/server/wm/WindowState.java b/services/core/java/com/android/server/wm/WindowState.java
+index c2548de..181e26f 100644
+--- a/services/core/java/com/android/server/wm/WindowState.java
++++ b/services/core/java/com/android/server/wm/WindowState.java
+@@ -1766,6 +1766,15 @@ final class WindowState implements WindowManagerPolicy.WindowState {
+     }
+ 
+     @Override
++    public void requestHideSurface(boolean hide) {
++        /* SPRD: Don't hide/show window when it's invisible  @{*/
++        if (mWinAnimator != null && mPolicyVisibility) {
++            mWinAnimator.requestHideSurface(hide);
++        }
++        /* @} */
++    }
++
++    @Override
+     public String toString() {
+         CharSequence title = mAttrs.getTitle();
+         if (title == null || title.length() <= 0) {
+diff --git a/services/core/java/com/android/server/wm/WindowStateAnimator.java b/services/core/java/com/android/server/wm/WindowStateAnimator.java
+index 726d29d..2f841c9 100644
+--- a/services/core/java/com/android/server/wm/WindowStateAnimator.java
++++ b/services/core/java/com/android/server/wm/WindowStateAnimator.java
+@@ -186,6 +186,12 @@ class WindowStateAnimator {
+     /** Was this window last hidden? */
+     boolean mLastHidden;
+ 
++    /**
++     * SPRD: If this window has request to the hide its Surface.
++     * @see #requestHideSurface(boolean)
++     */
++    boolean mRequestHide;
++
+     int mAttrType;
+ 
+     WindowStateAnimator(final WindowState win) {
+@@ -1514,7 +1520,7 @@ class WindowStateAnimator {
+                             mDsDx * w.mHScale, mDtDx * w.mVScale,
+                             mDsDy * w.mHScale, mDtDy * w.mVScale);
+ 
+-                    if (mLastHidden && mDrawState == HAS_DRAWN) {
++                    if (mLastHidden && mDrawState == HAS_DRAWN && !mRequestHide) {
+                         if (WindowManagerService.SHOW_TRANSACTIONS) WindowManagerService.logSurface(w,
+                                 "SHOW (performLayout)", null);
+                         if (WindowManagerService.DEBUG_VISIBILITY) Slog.v(TAG, "Showing " + w
+@@ -1967,6 +1973,23 @@ class WindowStateAnimator {
+         }
+     }
+ 
++    /**
++     * SPRD: request to the hide the Surface of this window.
++     * @param hide set true to hide Surface and false to show
++     */
++    void requestHideSurface(boolean hide) {
++       if (hide == mRequestHide)
++           return;
++
++       Slog.i(TAG, "requestHideSurface " + hide + ", " + this);
++       mRequestHide = hide;
++       if (hide) {
++           hide();
++       } else if(mService.mPowerManager.isScreenOn()){
++           showSurfaceRobustlyLocked();
++       }
++    }
++
+     @Override
+     public String toString() {
+         StringBuffer sb = new StringBuffer("WindowStateAnimator{");
