@@ -28,7 +28,7 @@ echo adfasfjasdf |tr '[a-z]' '[A-Z]'
 --git push
 git push ssh://zhenjun.zhang@10.0.64.28:29418/vendor/sprd/open-source/ HEAD:refs/for/sprdroid4.4
 --git clone
-git clone gittj@10.5.2.49:android/vendor/sprd/open-source -b sprdroid4.4
+git clone gittj@10.5.2.49:android/platform/frameworks/base -b sprdroid7.0_trunk_k310
 
 --grep error
 mmm vendor/sprd/open-source/libs/audio>&1 2>&1|grep error

@@ -263,3 +263,8 @@
 2016.33.2     08.09       other        androidN changelist 自检
 --2016.35
 2016.35.3     08.24       6.0          585677 - [MGSEI][6.0][SC9830][#5][Volte][16B][Telephony][特有]通话界面固定屏幕，界面下方显示异常
+--2016.42
+2016.42.4     10.13       other        camera 进入问题
+2016.42.4     10.13       other        mr1 解决原生问题
+2016.42.4     10.13       other        ccd 文档
+2016.42.4     10.13       other        destroy Surface Log沟通

@@ -78,3 +78,38 @@
 2016.40.6     10.01       604390 - [Beta_SH][6.0][SC9820][NewPikeL][AP Tele][客户关注] 来电时按挂机键不会挂断电话，必须按右软键才能挂断
 --2016.41
 2016.41.0     10.02       597388 - [Multimedia][7.0][SC9832A2][Volte]桌面添加图库小部件，点击小部件最下面的那张照片高概率出现屏幕右边白色线条闪烁，点击小部件中的其他照片无此异常
+2016.41.0     10.02       596073 - [TJ][Local][7.0][SC9832][Volte]手机重启后，开机闪现半个黑屏（见操作视频）
+--2016.42
+2016.42.0     10.09       605296] [Sprdroid7.0_trunk] [FW-WindowsManager][] [ST_India][7.0][SC9832A2][Volte],Jio, SharkLC fail to adjust size during split screen.   分屏模式问题
+2016.42.0     10.09       606333] [Sprdroid7.0_trunk] [FW-WindowsManager][] [研发自提]在WMS中添加PhoneWindowMnager的debug开关
+2016.42.5     10.14       606360 - [Multimedia][7.0][SC9832][Volte]视频横屏播放时，按home后，然后将屏幕旋转至竖屏，界面会出现异常，详见录制的视频
+2016.42.5     10.14       607160 - [Multimedia][7.0][SC9832][Volte]竖屏播放视频时，旋转至横屏后，再旋转到竖屏，然后按home键，再次进入时，会闪现桌面背景（详见录制的视频）
+2016.42.5     10.14       600762 - [PSST][7.0][SC9832][CMCC入库]进行monkey测试14.2小时发生 ANR in com.android.phone发生次数：2   mr1 有解决方案
+2016.42.5     10.14       608380 - [TJ][PSST][7.0][SC7731C][CTS]进行CTS测试，android.wm.cts.CrossAppDragAndDropTests#testGrantNoneRequestNone等13项--fai     google 原生问
+--2016.43
+2016.43.1     10.17       605052 - [Camera_Team][7.0][SC9832][Volte][PTR2Block]按home键或menu键退出相机，再进入相机时会出现屏幕亮，再黑屏再亮起的过程
+2016.43.2     10.18       608162 - [PSST][7.0][SC9832][Volte]进行大应用切换+sleep测试，#238测试4.5h出现android重启
+2016.43.3     10.19       608162 - [PSST][7.0][SC9832][Volte]进行大应用切换+sleep测试，#238测试4.5h出现android重启
+2016.43.3     10.19       603572 - [DVT][HQC][SP9860G-1_V1.2.0][current]黑屏通话过程电流测试比较：2台手机GSM900 CH62 PCL=5 通过接近传感器灭屏的电流值与按power键灭屏的电流值的差值分别为：323.112-299.534=23.578mA;298.882-276.201=22.681mA;标准不大于20mA
+2016.43.3     10.19       PikeL 通过过程中灭屏后，按键亮屏问题
+2016.43.3     10.19       609793 - [PSST][7.0][SC7731C][32+4]进行monkey测试,测试22.30小时,082#手机发生ANR in com.android.music,4台手机发生135次   lowmemorykiller
+--2016.44
+2016.44.1     10.24       609318] [Sprdroid7.0_trunk] [FW-WindowsManager][] androidN小分辨率下不支持开启多窗口
+2016.44.1     10.24       SPCSS00325629]：[SC7731C][GUOXINTONG][KM05C]申请“menu复用按键功能，menu短按是菜单键，长按进入最近应用”的正式Patch，谢谢!
+2016.44.1     10.24       SPCSS00325939   SC7731C][GOLDDRAGON][G223]G223开机动画出来之前有黑屏
+2016.44.1     10.24       598028 - [Multimedia][7.0][SC9832A2][Volte]视频播放器播放视频A中home键退出，进入文件管理器悬浮窗播放视频B再切换到全屏播放时，会先闪现视频A的播放界面     加入之前的列表
+2016.44.1     10.24       609898 - [Beta-SH][7.0][SC9832][Volte]进入相机或按home键退出，都会显现一下壁纸（附视频）       属于TextureView问题，和wms五个
+2016.44.1     10.24       610396] [Sprdroid7.0_trunk] [FW-ActivityManager][] [MGSEI][7.0][SC9832A2][Volte][Local]应用信息界面分屏，转屏两次后卸载该应用，卸载完成后界面显示错误（上半屏幕空白）     AMS iusse
+2016.44.1     10.24       SPCSS00326328]：[SC9832_6.0][HYST_SH][tg71 t2401]休眠唤醒去掉背光由按到亮的过程，因为现在发现休眠唤醒的时候有大概2s左右的轻微闪屏，谢谢 ，已经更新，谢谢！       上层对背光亮度只设置了一次
+2016.44.2     10.25       [SC7731][RUNMOST][Myphone]我们一个应用，要进入《Launcher3桌面长按显示设置界面》
+2016.44.2     10.25       [SC7731C][HYST][智科]如何在相机打开时禁用掉长按耳机中键打开谷歌搜索的功能。
+2016.44.2     10.25       610951 - [MGSEI][7.0][SC9832A2][Volte][Telephony]点击禁用SIM卡弹出提示框后分屏，在分屏中点击确定禁用，退出分屏后再次分屏，在分屏中无法启用SIM卡
+2016.44.2     10.25       -----------
+2016.44.2     10.25       610951 - [MGSEI][7.0][SC9832A2][Volte][Telephony]点击禁用SIM卡弹出提示框后分屏，在分屏中点击确定禁用，退出分屏后再次分屏，在分屏中无法启用SIM卡
+2016.44.2     10.25       610951 - [MGSEI][7.0][SC9832A2][Volte][Telephony]点击禁用SIM卡弹出提示框后分屏，在分屏中点击确定禁用，退出分屏后再次分屏，在分屏中无法启用SIM卡   systemui issue
+2016.44.3     10.26       605296 - [ST_India][7.0][SC9832A2][Volte],Jio, SharkLC fail to adjust size during split screen.     PMCCB
+2016.44.3     10.26       610330 - [PSST][SC9860G]手机进行系统monkey测试，测试21.06个小时，#626手机出现ANR in com.android.launcher3 (com.android.launcher3/.Launcher)，1台手机累计出现4次     apptoken是否为空
+2016.44.4     10.27        608045 - [TJ][MPT][SC9860G-3][指纹]指纹解锁速度不稳定，时快时慢，慢时速度比快时相差2倍以上
+2016.44.5     10.28       611708 - [PSST][7.0][SC9832A2][Volte]进行monkey测试7.5小时发生ANR in com.android.music 发生次数：2     dvm lock issue
+2016.44.5     10.28       611623 - [PSST][7.0][SC9832][Volte]进行系统monkey测试，#919测试log提示ANR in com.android.launcher3 (com.android.launcher3/.Launcher)，出现时间：0.9169h，出现次数：100 (edit)        OOM水位问题
+2016.44.5     10.28       610112 - [TJ][Telephony][7.0][SC9832][Volte] 手机在分屏模式下打开短信页面，顶部状态栏显示为浅绿色，但是退出分屏模式后，手机的顶部状态仍显示为浅绿色，不会自动恢复为默认

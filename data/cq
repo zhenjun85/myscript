@@ -1,0 +1,14 @@
+--2016.44
+2016.44.2     10.25       SPCSS00326672[SC9832][SPROCOMM][X5081LV]现在需要知道手机第一次开机在不同阶段的耗时
+2016.44.2     10.25       SPCSS00326644[SC7731C][HYST][智科]如何在相机打开时禁用掉长按耳机中键打开谷歌搜索的功能。
+2016.44.2     10.25       SPCSS00326632[SC7731C][boatchina][C10]开机第一帧到动画之间有1-2秒的黑屏。
+2016.44.2     10.25       SPCSS00326328[SC9832_6.0][HYST_SH][tg71 t2401]休眠唤醒去掉背光由按到亮的过程，因为现在发现休眠唤醒的时候有大概2s左右的轻微闪屏，谢谢
+2016.44.2     10.25       SPCSS00325939[SC7731C][GOLDDRAGON][G223]G223开机动画出来之前有黑屏
+2016.44.2     10.25       SPCSS00325925[SC7731][RUNMOST][Myphone]我们一个应用，要进入《Launcher3桌面长按显示设置界面》
+2016.44.2     10.25       SPCSS00325770[SC9832_6.0][HYST_SH][SWIPE]窗口播放视频提示“Unfortunately, Gallyery has stopped”
+2016.44.2     10.25       SPCSS00325629[SC7731C][GUOXINTONG][KM05C]申请“menu复用按键功能，menu短按是菜单键，长按进入最近应用”的正式Patch
+2016.44.4     10.27       SPCSS00327326 [SC9832][TOPWISE][sg7067ka]每次开机弹一个对话框（如附件），在什么时候比较合适？
+2016.44.4     10.27       SPCSS00327496 [SC7731C_6.0][BIRD_C][sc2728f]关机动画最后会出现白色闪屏，请帮忙分析原因
+2016.44.4     10.27       SPCSS00327473 [SC7731][FREECOM][纽曼]能否把视频预置到gallery中
+2016.44.4     10.27   SPCSS00327568    [SC7731C][HYST_SH][TC4][CTS]android.accessibilityservice.cts.AccessibilityWindowQueryTest测试失败
+2016.44.4     10.27   SPCSS00327499    [SC7731C][GUOXINTONG][KM05C]开机logo振动后切换到动画出现黑屏几秒
