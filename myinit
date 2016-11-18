@@ -1,12 +1,14 @@
 #!/bin/bash
 
-command="repo init -u gittj@10.5.2.49:android/platform/manifest.git -b"
+command="repo init -u gitadmin@10.5.2.49:android/platform/manifest.git -b"
+#command="repo init -u gitadmin@gitmirror.spreadtrum.com:android/platform/manifest -b"
 
 #compute last folder name
-aaa=`pwd`
-bbb=`cd .. && pwd &`
+#aaa=`pwd`
+#bbb=`cd .. && pwd &`
+#lst_folder_name=${aaa#${bbb}/}
 
-lst_folder_name=${aaa#${bbb}/}
+lst_folder_name=`pwd|sed 's/.*\///'`
 
 if [ $# -eq 0 ]
 then

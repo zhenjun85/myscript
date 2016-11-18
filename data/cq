@@ -12,3 +12,60 @@
 2016.44.4     10.27       SPCSS00327473 [SC7731][FREECOM][纽曼]能否把视频预置到gallery中
 2016.44.4     10.27   SPCSS00327568    [SC7731C][HYST_SH][TC4][CTS]android.accessibilityservice.cts.AccessibilityWindowQueryTest测试失败
 2016.44.4     10.27   SPCSS00327499    [SC7731C][GUOXINTONG][KM05C]开机logo振动后切换到动画出现黑屏几秒
+--2016.45
+2016.45.1     10.31   SPCSS00327243    [SC7731C_6.0][SPROCOMM][X4576MR]"File Explorer" application is crahsing
+2016.45.1     10.31   SPCSS00328359    [SC9832][Waterworld][9832][SC7731C][六部]android6.0可否一键添加所有应用权限
+2016.45.1     10.31   SPCSS00328363    [SC7731C][FREECOM][FS066]请问下，如何关闭屏背光从灭屏到亮屏有个渐变的过程。想改成直接到达最亮的状态,不需要这个渐变过程。
+2016.45.2     11.01   SPCSS00326733    [SC7731C][ZOOM_SH][岩石]长按home键进入google搜索失败
+2016.45.2     11.01   SPCSS00328809    [SC9830][COOLPAD][7712_U00]添加的关机动画没出来
+2016.45.2     11.01   SPCSS00328162    [SC7731_6.0][JLINKTIMES][jlinksz]开机动画添加声音的时候，黑屏时间太长
+2016.45.2     11.01   ----    -----
+2016.45.3     11.02   SPCSS00329044    [SC7731C_6.0][BIRD_C][sc2728f]开机过程kernel logo到开机动画黑屏时间过长
+2016.45.4     11.03   SPCSS00329561    [SC7731][REVOVIEW][k11]缅甸语下Gmail仍要显示英文
+2016.45.4     11.03   SPCSS00329430    [SC7731C][ITEL][W406-A]如何在来电界面屏蔽HOME键。
+2016.45.4     11.03   SPCSS00329472    [SC7731_6.0][SPROCOMM][X4580QM]在Camera 里面  用Google 的 Photos  打开录像 ， 按返回键 声音还存在（R7版本以上）(紧急)
+2016.45.5     11.04   SPCSS00329138    [SC9832][Huawei_MBBH][Baggio]客户反映在华为应用市场下了一个《2048精简加强版》的游戏无法打开
+2016.45.5     11.04   SPCSS00329670    [SC7731C][INNOVATECH][c390_zkd_071]7731C android5.1  首次开机进入系统开机动画完成后会黑屏1-2分钟，然后才显示出来开机向导。
+2016.45.5     11.04   SPCSS00328792    [SC9830][XUNRUI][语信]L203_V1.5_OE02 项目，跑Monkey时候发现手机定屏，除了power键以外，其他所有按键不能用。
+2016.45.5     11.04   SPCSS00328792    [SC9830][XUNRUI][语信]L203_V1.5_OE02 项目，跑Monkey时候发现手机定屏，除了power键以外，其他所有按键不能用。
+2016.45.5     11.04   SPCSS00330300    [SC9820A][XUNRUI][L260][L260]进入相机屏幕下方图标无边框显示，需要按左右导航键才显示边框
+--2016.46
+2016.46.1     11.07   SPCSS00330459    [SC9832_7.0][INNOVATECH][U268]新建项目编译User版本，出现无法开机现象，但完全相同代码编userdebug就可以正常开机 ，已经更新，谢谢！
+2016.46.1     11.07   SPCSS00330590    [SC9832][XUNRUI][POU2]【MP】带开机铃声的项目，在开机过程中，logo切动画的过程需要黑5秒左右(必现)
+2016.46.1     11.07   SPCSS00330587    [SC7731C_6.0][INNOVATECH][C390_YFN_A42]进入应用之前，手机会弹出权限选择，客户想要都去掉，是否可行 ，已经更新，谢谢！
+2016.46.2     11.08   SPCSS00330748    [SC7731C][XCHENGTECH][Z668]开机动画过程异常
+2016.46.2     11.08   SPCSS00330867    [SC7731][ZTE_HZ][L110]开光机铃音格式为WAV；开光机动画为gif动态图片。
+2016.46.2     11.08   SPCSS00331036    [SC7731C][NewThinking][SC4]CTSVerifier单项Screen Pinning Test操作完显示失败； ，已经更新，谢谢！
+2016.46.3     11.09   SPCSS00331239    [SC7731C][HYST][TC28]组合键：power键+音量上键  ，按下组合键start一个service，每次按下后会调出音量调节框，怎么能让按组合键的时候不调出音量调节框？
+2016.46.3     11.09   SPCSS00331339    [SC7731][SHZ_APACHE][Z0702]【通文远】【SC7731G】咨询SC7731G平台是否可以内置视频，音乐，图片？
+2016.46.3     11.09   SPCSS00330748    [SC7731C][XCHENGTECH][Z668]开机动画过程异常
+2016.46.3     11.09   SPCSS00331391    [SC7731C][XCHENGTECH][Z668]开机动画过程中闪屏问题 ，已经更新，谢谢！
+2016.46.3     11.09   SPCSS00326406    [SC9832][HIPADSZ][GL40A63]after locking the screen with the on-off button, the screen turns back on
+2016.46.3     11.09   SPCSS00331328    [SC7731][CHUANGXIANG][HS0096.0]开机logo和开机动画中间有间隔几秒的黑屏
+2016.46.4     11.10   SPCSS00331571    [SC9832][HUAQIN][zsl865]【阿里云】【自动开关机测试】稳定性自动开关机测试过程中，开机会卡在动画 最后一帧3分钟左右再进入到Launcher
+2016.46.4     11.10   SPCSS00331740    [SC9832][HIPADSZ][GL40A63][Android6.0][CTS][6.0_r12]UsbDebuggingAuthWithoutUnlockTest fail      TR
+2016.46.4     11.10   SPCSS00331779    [SC9832][HUAQIN][ZSL865]【CTP主观测试】屏幕弹出小窗口后，再点击除小窗口外其他区域，出现卡点现象（十字线未消失）
+2016.46.4     11.10   SPCSS00331637    [SC7731C][ITEL][w406]描述部分：手机重启时会闪一下黑屏。
+2016.46.4     11.10   SPCSS00331921    [SC9832][HUAQIN][zsl865]【ZSL865】【其他】【QT】关机时声音出现断音现象
+2016.46.4     11.10   SPCSS00331851    [SC9830_6.0][FIH_TP][M425]com.android.cts.devicepolicy.MixedProfileOwnerTest -- testPackageInstallUserRestrictions FAIL
+2016.46.4     11.10   SPCSS00331481    [SC7731C][TINNO][V2806]手机连接PC，切换选择usb连接方式，手机反应慢，界面会闪一下
+2016.46.5     11.11   SPCSS00331316    [SC7731C][HYST][TC28]7731C上目前我们遇到问题，power键概率性唤不醒，目前是所有机器都存在这个现象，概率大概十次有一次唤不醒。
+2016.46.5     11.11   SPCSS00332178    [SC7731][SPROCOMM][X50123LV]关机灭屏时出现条纹
+--2016.47
+2016.47.1     11.14   SPCSS00332653    [SC9832_6.0][HYSTSH][TG61]手机低电量时（2%左右）继续使用待电量到0%时会直接自动关机，不会有关机倒计时提示
+2016.47.1     11.14   SPCSS00332656    [SC9832_6.0][BIRD_SZ][5110SLQF]将关机动画预置进相应位置后（/system/media/shutdownanimation.zip），发现关机动画播放不完整（大约1S左右）手机就已熄屏
+2016.47.1     11.14   SPCSS00332939    [SC9832][SPROCOMM][X50106LV]请问贵司如何可以做到这样的动画效果？
+2016.47.2     11.15   SPCSS00332877    [SC7731C][ITEL][W406A]快捷键点击播放音乐。播放时点击菜单键清理后台，播放器没有清理
+2016.47.2     11.15   SPCSS00332883    [SC7731C][ITEL][W406A]播放音乐过程中，点击MENU键，清理后台，音乐停止播放，但状态栏的音乐图标及下拉功能栏内的音乐播放器仍存在，请修改
+2016.47.2     11.15   -----    ------
+2016.47.2     11.15   SPCSS00333092    [SC7731C][GUOXINTONG][KM05C]合入SPCSS00325629提供的代码后，锁屏界面点击KEYCODE_APP_SWITCH后会自动解锁
+2016.47.3     11.16   SPCSS00333316    [SC7731C][NewThinking][SC4]麻烦帮忙，完成单点测试通过CTSVerifier单项Screen Pinning Test测试的方案
+2016.47.3     11.16   SPCSS00331391    [SC7731C][XCHENGTECH][Z668]开机动画过程中闪屏问题         power的修改
+2016.47.3     11.16   SPCSS00333678    [SC7731C][FREECOM][FS066V20][SC7731][FREECOM][FS066V20][CTS]6.0R9
+2016.47.4     11.17   SPCSS00333876    [SC7731C_6.0][BIRD_C][SC7731C_6.0][CTS][testDebugAuthWithoutUnlock测试项出问题]
+2016.47.4     11.17   SPCSS00333820    [SC9832][XUNRUI][I505]【MP】[急]机器睡眠之后，唤醒较慢
+2016.47.4     11.17   SPCSS00332369    [SC7731][REVOVIEW][k03]打开划线工具，播放视频时多点触摸屏幕会变暗，数秒后回到屏保界面 ，已经更新，谢谢！
+2016.47.4     11.17   SPCSS00334024    [SC7731C][ITEL][w406a]【CTS】换了R12包之后出现问题：android.security.cts.UsbDebuggingAuthWithoutUnlockTest ，已经更新，谢谢！
+2016.47.4     11.17   SPCSS00333467    [SC9832_7.0][INNOVATECH][U268]点亮屏时间比一般手机长一倍以上
+2016.47.4     11.17   SPCSS00333228    [SC9832][HUAQIN][865][Setting] 开启触摸震动之后，点击下方三个实体键menu、home、back不震动
+2016.47.4     11.17   SPCSS00333793    [SC7731C][Waterworld][B700][RD2]自动旋转功能概率性失效

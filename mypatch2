@@ -1,6 +1,0 @@
-#!/bin/bash
-git difftool -y -x 'mkdir -p SampleCode/new/`git config remote.korg.projectname`/`dirname "$BASE"`; mkdir -p SampleCode/old/`git config remote.korg.projectname`/`dirname "$BASE"`; cp "$LOCAL" SampleCode/old/`git config remote.korg.projectname`/"$BASE"; cp "$REMOTE" SampleCode/new/`git config remote.korg.projectname`/"$BASE"; #'
-untracked=`git ls-files --others --exclude-standard`
-for var in $untracked; do if [[ $var != *"SampleCode"* ]]; then cp -pv --parents $var SampleCode/new/`git config remote.korg.projectname`; fi; done;
-tar -zcvf SampleCode.tar.gz SampleCode/
-rm -fr SampleCode

@@ -1,0 +1,51 @@
+diff --git a/services/core/java/com/android/server/wm/AppWindowToken.java b/services/core/java/com/android/server/wm/AppWindowToken.java
+index b9cb38b..040939f 100644
+--- a/services/core/java/com/android/server/wm/AppWindowToken.java
++++ b/services/core/java/com/android/server/wm/AppWindowToken.java
+@@ -362,7 +362,7 @@ class AppWindowToken extends WindowToken {
+ 
+             win.destroyOrSaveSurface();
+             if (win.mRemoveOnExit) {
+-                service.removeWindowInnerLocked(win);
++                service.removeWindowInnerLocked(win, win.mChildWindows.size() > 0);
+             }
+             final DisplayContent displayContent = win.getDisplayContent();
+             if (displayContent != null && !displayList.contains(displayContent)) {
+diff --git a/services/core/java/com/android/server/wm/InputMonitor.java b/services/core/java/com/android/server/wm/InputMonitor.java
+index a057da4..52dd161 100644
+--- a/services/core/java/com/android/server/wm/InputMonitor.java
++++ b/services/core/java/com/android/server/wm/InputMonitor.java
+@@ -448,7 +448,7 @@ final class InputMonitor implements InputManagerService.WindowManagerCallbacks {
+      */
+     public void setInputFocusLw(WindowState newWindow, boolean updateInputWindows) {
+         if (true || DEBUG_FOCUS_LIGHT || DEBUG_INPUT) {
+-            Slog.d(TAG_WM, "Input focus has changed to " + newWindow);
++            Slog.d(TAG_WM, "Input focus has changed to " + newWindow + "  " + android.os.Debug.getCallers(15));
+         }
+         if (newWindow != mInputFocus) {
+             if (newWindow != null && newWindow.canReceiveKeys()) {
+diff --git a/services/core/java/com/android/server/wm/WindowManagerService.java b/services/core/java/com/android/server/wm/WindowManagerService.java
+index aa29d47..09bdca9 100644
+--- a/services/core/java/com/android/server/wm/WindowManagerService.java
++++ b/services/core/java/com/android/server/wm/WindowManagerService.java
+@@ -2448,6 +2448,10 @@ public class WindowManagerService extends AbsWindowManagerService
+     }
+ 
+     void removeWindowInnerLocked(WindowState win) {
++        removeWindowInnerLocked(win, false);
++    }
++
++    void removeWindowInnerLocked(WindowState win, boolean updateFocus) {
+         if (win.mRemoved) {
+             // Nothing to do.
+             if (DEBUG_ADD_REMOVE) Slog.v(TAG_WM,
+@@ -2555,6 +2559,9 @@ public class WindowManagerService extends AbsWindowManagerService
+                 }
+             }
+         }
++        if (updateFocus) {
++            updateFocusedWindowLocked(UPDATE_FOCUS_NORMAL, false /*updateInputWindows*/);
++        }
+ 
+         mInputMonitor.updateInputWindowsLw(true /*force*/);
+     }

@@ -113,3 +113,45 @@
 2016.44.5     10.28       611708 - [PSST][7.0][SC9832A2][Volte]进行monkey测试7.5小时发生ANR in com.android.music 发生次数：2     dvm lock issue
 2016.44.5     10.28       611623 - [PSST][7.0][SC9832][Volte]进行系统monkey测试，#919测试log提示ANR in com.android.launcher3 (com.android.launcher3/.Launcher)，出现时间：0.9169h，出现次数：100 (edit)        OOM水位问题
 2016.44.5     10.28       610112 - [TJ][Telephony][7.0][SC9832][Volte] 手机在分屏模式下打开短信页面，顶部状态栏显示为浅绿色，但是退出分屏模式后，手机的顶部状态仍显示为浅绿色，不会自动恢复为默认
+--2016.45
+2016.45.1     10.31       612680] [Sprdroid7.0_trunk] [FW-ActivityManager][] [PSST][7.0][SC9832][CMCC入库]：进行Monkey测试，2.3小时发生ANR in com.android.music ，发生次数：10    AMS    pausing resume 没有成对出现
+2016.45.1     10.31       [Bug 610343] [Sprdroid_6.0_Whale2] [FW-WindowsManager][] [PSST][SC9860G]手机进行系统monkey测试，测试22.24个小时，#626手机出现ANR in com.android.deskclock (com.android.gallery3d/.app.MovieActivity)，1台手机累计出现2次       Display CPU占用率高
+2016.45.1     10.31       612989] [Sprdroid7.0_trunk] [FW-WindowsManager][] [研发自提]开机壁纸显示异常
+2016.45.2     11.01       612803 - [WCN][6.0][SC9820][NewPikeL][FM][PTR2Block]测试机进入FM自动搜台后，点击确认键，出现按键失效，FM不会跳转至电台播放主界面
+2016.45.2     11.01       -------
+2016.45.2     11.01       609763 - [WCN][2342A_BA][7.0][SC9832][Volte][FM]点击修改FM频道后出现闪退，不能修改FM频道
+2016.45.2     11.01       611099 - [PSST][7.0][SC7731C]进行monkey测试,测试17.14小时,088#手机发生ANR in com.android.contacts,1台手机发生1次
+2016.45.3     11.02       611708 - [PSST][7.0][SC9832A2][Volte]进行monkey测试7.5小时发生ANR in com.android.music 发生次数：2   dvm lock
+2016.45.3     11.02       611099] [Sprdroid7.0_trunk] [FW-ActivityManager][] [PSST][7.0][SC7731C]进行monkey测试,测试17.14小时,088#手机发生ANR in com.android.contacts,1台手机发生1次       paused   issu e AMS
+2016.45.3     11.02       611821] [Sprdroid7.0_trunk] [FW-WindowsManager][] [Beta_India][7.0][SC9832][Volte][Local]: When we come back from some options in settings, inside clock, screen gets black for a while. (Video attached)   原生问题
+2016.45.3     11.02       613643 - [TJ][Local][7.0][SC9832]在系统界面调节工具中选择其他-启用分屏上滑手势，点击rencent键并上滑不能成功分屏。需要对不支持导航栏的项目屏蔽此功能
+2016.45.3     11.02       613026 - [MGSEI][7.0][SC9832A2][Volte][Connectivity]连接蓝牙耳机，分屏，在要断开连接界面取消分屏，点击返回出现设置无响应
+2016.45.3     11.02       613505 - [5.22 h][TJ-RD][monkey][monkey-top][android6.0_PikeL][ANR]com.android.quicksearchbox happens ANR,log:ANR in com.android.quicksearchbox (com.android.quicksearchbox/.SearchActivity) (edit)   monkey  首错
+2016.45.4     11.03       sos
+2016.45.5     11.04       522184 - [SC9830][SC9830][SPROCOMM][LAVA]开机瞬间电流可以达到1.2A，我司标准是800ma        软绘开机动画
+--2016.46
+2016.46.1     11.07       614758] [Sprdroid_6.0_Whale2] [FW-WindowsManager][] [TJ][PSST][6.0][SC9860G][CTS][User][GMS] android.security.cts.UsbDebuggingAuthWithoutUnlockTest - testDebugAuthWithoutUnlock - failed   CASE设计有问题
+2016.46.1     11.07       518916     pengxu ,  开机动画切换方案
+2016.46.1     11.07       609285 - [BAT][入库预测][SharkLS-3][CMCC预测试][15C Modem][5.1][本地功能][必选项]__case 0273 终端开机动画和声音不同步
+2016.46.2     11.08       SPCSS00330748
+2016.46.2     11.08       SPCSS00330748
+2016.46.2     11.08        615053] [Sprdroid_6.0_Whale2] [FW-WindowsManager][] [Camera_Team][SC9860G-3][CameraUI]播放视频过程中点击返回键卡顿之后提示图库无响应    dvm   fence timeout
+2016.46.2     11.08       614751 - [7.0][SC9832A2][Volte][FT_Taipei][Stability]System crashed at android:ui[android.view.WindowManager$BadTokenException]   
+2016.46.2     11.08       -------------
+2016.46.2     11.08       603497] [Sprdroid7.0_trunk] [FW-WindowsManager][] [Android N][9860-2][TK][Basic Test][BSP][Display]Reboot device, when device enters lockscreen, the lockscreen only display 1~2seconds, then enters suspend right now.(5/10)
+2016.46.3     11.09       615080 - [BM] [7.0][SC9832][#3]Uiautomator脚本执行时，控件无法找到,影响短信模块自动测试正常进行
+2016.46.3     11.09       603497 - [Android N][9860-2][TK][Basic Test][BSP][Display]Reboot device, when device enters lockscreen, the lockscreen only display 1~2seconds, then enters suspend right now.(5/10)
+2016.46.3     11.09       SPCSS00331339
+2016.46.3     11.09       615885] [Sprdroid_6.0_Whale2] [FW-WindowsManager][] [Camera_Team][SC9860G-3][CameraUI][特有] 后台开启FM，熄屏后双击音量下键，返回图库查看存在熄屏抓拍图片。
+2016.46.4     11.10       Bug 611821 - [Beta_India][7.0][SC9832][Volte][Local]: When we come back from some options in settings, inside clock, screen gets black for a while. (Video attached) (edit)
+2016.46.4     11.10       615624 - [PSST][7.0][SC9832A2][Volte]进行monkey测试5.5小时发生ANR in com.android.quicksearchbox 发生次数：2 
+2016.46.4     11.10       615693] [Sprdroid_6.0_Whale2] [FW-WindowsManager][] [11.63 h][TJ-RD][monkey][monkey-top][android6.0_trunk_whale2_9860G3][ANR]com.android.deskclock happens ANR,log:ANR in com.android.deskclock (com.android.deskclock/.ScreensaverActivity)
+2016.46.4     11.10       614619 - [PSST][SC9860G]手机进行系统monkey测试，测试19.34个小时，#635手机出现ANR in com.android.browser (com.android.camera2/com.android.camera.CameraLauncher)，2台手机累计出现4次
+2016.46.5     11.11       609898 - [Beta-SH][7.0][SC9832][Volte]进入相机或按home键退出，都会显现一下壁纸（附视频）
+2016.46.5     11.11       560615] [Sprdroid_6.0_Whale2] [APP-Statusbar][] [MGSEI][6.0][SC9860G][Telephony]不解PIN码拨紧急电话，通话界面下拉状态栏点击数据输错三次PIN码后，再次点击数据，提示PIN码输入剩余0次，输入PIN码确定，提示系统界面已停止运行
+--2016.47
+2016.47.1     11.14       616900 - [8.49 h][TJ-RD][monkey][monkey-top][android7.0_trunk_9832][ANR]com.android.messaging happens ANR,log:ANR in com.android.messaging (com.android.messaging/.ui.conversationlist.ConversationListActivity)
+2016.47.1     11.14       614071 - [PSST][7.0][SC7731C]进行monkey测试,测试13.92小时,008#手机发生ANR in com.android.launcher3,1台手机发生1次       多实例问题导致
+2016.47.2     11.15       --------------
+2016.47.3     11.16       616952 - [PSST][7.0][SC9832][CMCC入库][入库预测]:进行monkey测试，0.7小时出现ANR in com.android.dialer，次数：2
+2016.47.3     11.16       616297 -PikeL 项目易用性问题----power键流程优化

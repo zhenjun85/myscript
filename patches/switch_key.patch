@@ -1,0 +1,75 @@
+diff --git a/core/java/android/provider/Settings.java b/core/java/android/provider/Settings.java
+index c9bc98b..87e53c7 100755
+--- a/core/java/android/provider/Settings.java
++++ b/core/java/android/provider/Settings.java
+@@ -4652,6 +4652,8 @@ public final class Settings {
+          */
+         public static final String DEFAULT_INPUT_METHOD = "default_input_method";
+ 
++        public static final String SWITCH_KEY_STATUS = "switch_key_status";
++
+         /**
+          * Setting to record the input method subtype used by default, holding the ID
+          * of the desired method.
+diff --git a/services/core/java/com/android/server/policy/PhoneWindowManager.java b/services/core/java/com/android/server/policy/PhoneWindowManager.java
+index 15c775d..0b7873d 100644
+--- a/services/core/java/com/android/server/policy/PhoneWindowManager.java
++++ b/services/core/java/com/android/server/policy/PhoneWindowManager.java
+@@ -156,6 +156,7 @@ import com.android.server.statusbar.StatusBarManagerInternal;
+ 
+ import java.io.File;
+ import java.io.FileReader;
++import java.io.FileWriter;
+ import java.io.IOException;
+ import java.io.PrintWriter;
+ import java.util.HashSet;
+@@ -624,6 +625,7 @@ public class PhoneWindowManager extends AbsPhoneWindowManager implements WindowM
+     boolean mAllowLockscreenWhenOn;
+     int mLockScreenTimeout;
+     boolean mLockScreenTimerActive;
++    int mSwitchKeyStatus;
+ 
+     // Behavior of ENDCALL Button.  (See Settings.System.END_BUTTON_BEHAVIOR.)
+     int mEndcallBehavior;
+@@ -843,6 +845,9 @@ public class PhoneWindowManager extends AbsPhoneWindowManager implements WindowM
+             resolver.registerContentObserver(Settings.Global.getUriFor(
+                     Settings.Global.POLICY_CONTROL), false, this,
+                     UserHandle.USER_ALL);
++            resolver.registerContentObserver(Settings.Secure.getUriFor(
++                    Settings.Secure.SWITCH_KEY_STATUS), false, this,
++                    UserHandle.USER_ALL);
+             /* SPRD: add pocket mode acquirement @ { */
+             sprdObserve(resolver, this);
+             /* @ } */
+@@ -2030,6 +2035,13 @@ public class PhoneWindowManager extends AbsPhoneWindowManager implements WindowM
+             if (mImmersiveModeConfirmation != null) {
+                 mImmersiveModeConfirmation.loadSetting(mCurrentUserId);
+             }
++
++            int switchKeyStatus = Settings.Secure.getIntForUser(resolver,
++                    Settings.Secure.SWITCH_KEY_STATUS, 0, UserHandle.USER_ALL);
++            if (mSwitchKeyStatus != switchKeyStatus) {
++                mSwitchKeyStatus = switchKeyStatus;
++                writeInputKeyStatus(mSwitchKeyStatus);
++            }
+         }
+         synchronized (mWindowManagerFuncs.getWindowManagerLock()) {
+             PolicyControl.reloadFromSetting(mContext);
+@@ -5459,6 +5471,17 @@ public class PhoneWindowManager extends AbsPhoneWindowManager implements WindowM
+         setHdmiPlugged(!mHdmiPlugged);
+     }
+ 
++    void writeInputKeyStatus(int status) {
++        //String status = status ? "1" : "0";
++        try {
++            FileWriter keyStatus = new FileWriter("/data/local/status");
++            keyStatus.write(status);
++            keyStatus.close();
++        } catch (IOException e) {
++            Slog.w(TAG, "Failed to write to /proc/input", e);
++        }
++    }
++
+     final Object mScreenshotLock = new Object();
+     ServiceConnection mScreenshotConnection = null;
+ 

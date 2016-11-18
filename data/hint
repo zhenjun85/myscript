@@ -61,9 +61,8 @@ if ("true".equals(zzjt)) {
 
 --下载
 repo sync -d -c -q -j8
-repo init -u gittj@10.5.2.49:android/platform/manifest.git -b sprdroid5.0_3.10_lsk
-repo init -u gittj@10.5.2.49:androidpdk/platform/vendor/pdk/generic/fs/manifest -b sprdroidn_pdk64_k44_full
-repo init -u gittj@10.5.2.49:androidpdk/platform/vendor/pdk/generic/fs/manifest -b sprdroidn_pdk64_k44_full_trunk_dev -m tj_default.xml
+repo init -u gitadmin@gitmirror.spreadtrum.com:android/platform/manifest -b $branch --repo-url=gitadmin@gitsrv01.spreadtrum.com:tools/newrepo.git
+repo init -u gitadmin@10.5.2.49:android/platform/manifest -b $branch --repo-url=gitadmin@gitsrv01.spreadtrum.com:tools/newrepo.git
 
 --trace
 Throwable tr = new Throwable();
@@ -88,7 +87,7 @@ git push origin HEAD:refs/for/master
 http://10.0.64.29:8080/jenkins/job/gerrit_do_verify_sprdroid6.x/
 
 --clear bug log
-for a in `ls |grep "^5"`; do cd $a;rm -rf `ls |grep -vE ".rar|.gz"`; cd -;done
+for a in `ls |grep "^6"`; do cd $a;rm -rf `ls |grep -vE ".rar|.gz"`; cd -;done
 
 --down pac
 /To_Taipei/Shanghai_Version/AndroidM/MocorDroid6.0_Trunk_16b_W16.24.3_All/Images
