@@ -69,3 +69,4 @@
 2016.47.4     11.17   SPCSS00333467    [SC9832_7.0][INNOVATECH][U268]点亮屏时间比一般手机长一倍以上
 2016.47.4     11.17   SPCSS00333228    [SC9832][HUAQIN][865][Setting] 开启触摸震动之后，点击下方三个实体键menu、home、back不震动
 2016.47.4     11.17   SPCSS00333793    [SC7731C][Waterworld][B700][RD2]自动旋转功能概率性失效
+2016.47.5     11.18   SPCSS00334088    [SC7731C][ITEL][w406A]设置中开启颜色反转，每次任意一个应用时都会闪现白屏       DisplayAdjustmentUtils.java

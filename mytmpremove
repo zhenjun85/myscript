@@ -1,0 +1,8 @@
+#!/bin/bash
+
+remove_name=`find -name $1`
+for name in $remove_name
+do
+    echo " rm   $remove_name"
+    rm -rf $remove_name
+done

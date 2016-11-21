@@ -155,3 +155,7 @@
 2016.47.2     11.15       --------------
 2016.47.3     11.16       616952 - [PSST][7.0][SC9832][CMCC入库][入库预测]:进行monkey测试，0.7小时出现ANR in com.android.dialer，次数：2
 2016.47.3     11.16       616297 -PikeL 项目易用性问题----power键流程优化
+2016.47.5     11.18        616444 - [TJ][PSST][7.0][SC9832][Volte][CTS][7.0r3][GMS]进行CTS测试，CtsAppSecurityHostTestCases--android.appsecurity.cts.DirectBootHostTest#testDirectBootNone--fail
+--2016.48
+2016.48.1     11.21       7.0   9860    开机黑屏,   mgsei创建的
+2016.48.1     11.21       618719 - [PSST][7.0][SC9832][CMCC入库][入库预测]:进行monkey测试，0.3小时出现ANR in com.android.music次数：12 
