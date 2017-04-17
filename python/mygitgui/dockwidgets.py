@@ -24,14 +24,11 @@ class MainWindow(QtGui.QMainWindow):
         self.initData()
         self.createActions()
         self.createMenus()
-        self.createToolBars()
-        self.createStatusBar()
         self.createDockWindows()
 
-        self.setWindowTitle("Dock Widgets")
+        self.setWindowTitle("My Git Gui")
 
         self.newLetter()
-        self.setUnifiedTitleAndToolBarOnMac(True)
 
     def initData(self):
         #default history length is 100
@@ -100,41 +97,6 @@ class MainWindow(QtGui.QMainWindow):
         cursor.insertBlock()
         cursor.insertText("ADDRESS", italicFormat)
 
-    def print_(self):
-        document = self.textEdit.document()
-        printer = QtGui.QPrinter()
-
-        dlg = QtGui.QPrintDialog(printer, self)
-        if dlg.exec_() != QtGui.QDialog.Accepted:
-            return
-
-        document.print_(printer)
-
-        self.statusBar().showMessage("Ready", 2000)
-
-    def save(self):
-        filename = QtGui.QFileDialog.getSaveFileName(self,
-                "Choose a file name", '.', "HTML (*.html *.htm)")
-        if not filename:
-            return
-
-        file = QtCore.QFile(filename)
-        if not file.open(QtCore.QFile.WriteOnly | QtCore.QFile.Text):
-            QtGui.QMessageBox.warning(self, "Dock Widgets",
-                    "Cannot write file %s:\n%s." % (filename, file.errorString()))
-            return
-
-        out = QtCore.QTextStream(file)
-        QtGui.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
-        out << self.textEdit.toHtml()
-        QtGui.QApplication.restoreOverrideCursor()
-
-        self.statusBar().showMessage("Saved '%s'" % filename, 2000)
-
-    def undo(self):
-        document = self.textEdit.document()
-        document.undo()
-
     def insertCustomer(self, customer):
         if not customer:
             return
@@ -154,20 +116,6 @@ class MainWindow(QtGui.QMainWindow):
             else:
                 oldcursor.endEditBlock()
 
-    def addParagraph(self, paragraph):
-        if not paragraph:
-            return
-        document = self.textEdit.document()
-        cursor = document.find("Yours sincerely,")
-        if cursor.isNull():
-            return
-        cursor.beginEditBlock()
-        cursor.movePosition(QtGui.QTextCursor.PreviousBlock,
-                QtGui.QTextCursor.MoveAnchor, 2)
-        cursor.insertBlock()
-        cursor.insertText(paragraph)
-        cursor.insertBlock()
-        cursor.endEditBlock()
 
     def gitLogShow(self, index):
         if not index:
@@ -191,24 +139,6 @@ class MainWindow(QtGui.QMainWindow):
                 "This is a Simple git gui, just for myself requirement")
 
     def createActions(self):
-        self.newLetterAct = QtGui.QAction(QtGui.QIcon(':/images/new.png'),
-                "&New Letter", self, shortcut=QtGui.QKeySequence.New,
-                statusTip="Create a new form letter",
-                triggered=self.newLetter)
-
-        self.saveAct = QtGui.QAction(QtGui.QIcon(':/images/save.png'),
-                "&Save...", self, shortcut=QtGui.QKeySequence.Save,
-                statusTip="Save the current form letter",
-                triggered=self.save)
-
-        self.printAct = QtGui.QAction(QtGui.QIcon(':/images/print.png'),
-                "&Print...", self, shortcut=QtGui.QKeySequence.Print,
-                statusTip="Print the current form letter",
-                triggered=self.print_)
-
-        self.undoAct = QtGui.QAction(QtGui.QIcon(':/images/undo.png'),
-                "&Undo", self, shortcut=QtGui.QKeySequence.Undo,
-                statusTip="Undo the last editing action", triggered=self.undo)
 
         self.quitAct = QtGui.QAction("&Quit", self, shortcut="Ctrl+Q",
                 statusTip="Quit the application", triggered=self.close)
@@ -223,34 +153,13 @@ class MainWindow(QtGui.QMainWindow):
 
     def createMenus(self):
         self.fileMenu = self.menuBar().addMenu("&File")
-        self.fileMenu.addAction(self.newLetterAct)
-        self.fileMenu.addAction(self.saveAct)
-        self.fileMenu.addAction(self.printAct)
         self.fileMenu.addSeparator()
         self.fileMenu.addAction(self.quitAct)
-
-        self.editMenu = self.menuBar().addMenu("&Edit")
-        self.editMenu.addAction(self.undoAct)
-
-        self.viewMenu = self.menuBar().addMenu("&View")
-
-        self.menuBar().addSeparator()
 
         self.helpMenu = self.menuBar().addMenu("&Help")
         self.helpMenu.addAction(self.aboutAct)
         self.helpMenu.addAction(self.aboutQtAct)
 
-    def createToolBars(self):
-        self.fileToolBar = self.addToolBar("File")
-        self.fileToolBar.addAction(self.newLetterAct)
-        self.fileToolBar.addAction(self.saveAct)
-        self.fileToolBar.addAction(self.printAct)
-
-        self.editToolBar = self.addToolBar("Edit")
-        self.editToolBar.addAction(self.undoAct)
-
-    def createStatusBar(self):
-        self.statusBar().showMessage("Ready")
 
     def createDockWindows(self):
 
@@ -259,7 +168,6 @@ class MainWindow(QtGui.QMainWindow):
         self.paragraphsList.addItems(self.info)
         dock.setWidget(self.paragraphsList)
         self.addDockWidget(QtCore.Qt.LeftDockWidgetArea, dock)
-        self.viewMenu.addAction(dock.toggleViewAction())
 
         #self.paragraphsList.currentTextChanged.connect(self.addParagraph)
         self.paragraphsList.currentRowChanged.connect(self.gitLogShow)
