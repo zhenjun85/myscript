@@ -15,7 +15,6 @@ done
 if [ `pwd` == / ]
 then
     myecho -y "Should use this script in Android Root Folder, Exit..."
-    echo
     return -1
 fi
 }

@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ $# -gt 0 ]
+then
+    echo "zhenjun.zhang@10.5.2.51"
+    exit
+fi
+
+ssh zhenjun.zhang@10.5.2.51

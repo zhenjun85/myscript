@@ -1,8 +1,8 @@
 diff --git a/envsetup.sh b/envsetup.sh
-index 9b5cb46..b69a79a 100644
+index db676e5..bbbb120 100644
 --- a/envsetup.sh
 +++ b/envsetup.sh
-@@ -494,12 +494,30 @@ function print_lunch_menu()
+@@ -489,12 +489,30 @@ function print_lunch_menu()
  function lunch()
  {
      local answer
@@ -33,7 +33,7 @@ index 9b5cb46..b69a79a 100644
          read answer
      fi
  
-@@ -507,7 +525,12 @@ function lunch()
+@@ -502,7 +520,12 @@ function lunch()
  
      if [ -z "$answer" ]
      then
@@ -47,7 +47,7 @@ index 9b5cb46..b69a79a 100644
      elif (echo -n $answer | grep -q -e "^[0-9][0-9]*$")
      then
          if [ $answer -le ${#LUNCH_MENU_CHOICES[@]} ]
-@@ -526,6 +549,29 @@ function lunch()
+@@ -521,6 +544,29 @@ function lunch()
          return 1
      fi
  
@@ -77,7 +77,7 @@ index 9b5cb46..b69a79a 100644
      export TARGET_BUILD_APPS=
  
      local product=$(echo -n $selection | sed -e "s/-.*$//")
-@@ -1515,3 +1561,9 @@ done
+@@ -1518,3 +1564,8 @@ done
  unset f
  
  addcompletions
@@ -86,4 +86,3 @@ index 9b5cb46..b69a79a 100644
 +export JRE_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre
 +export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
 +export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
-+

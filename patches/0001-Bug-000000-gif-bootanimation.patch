@@ -1,0 +1,246 @@
+From bd3a1a208a3ccfbc988abb83a2c9ebc647b3270a Mon Sep 17 00:00:00 2001
+From: "zhenjun.zhang" <zhenjun.zhang@spreadtrum.com>
+Date: Wed, 23 Nov 2016 16:10:56 +0800
+Subject: [PATCH] Bug #000000 gif bootanimation
+
+[root cause  ] just can play
+[changes     ]
+[side effects]
+[self test   ]<board, Test cases summary>:
+[reviewers   ]
+[change_type ] feature
+[tag_product ] common
+
+Change-Id: I1f6ed664040e8fe89c41a1d2aff2d92f79960525
+---
+ cmds/bootanimation/BootAnimation.cpp | 144 +++++++++++++++++++++++++++++++++++
+ cmds/bootanimation/BootAnimation.h   |   4 +
+ 2 files changed, 148 insertions(+)
+
+diff --git a/cmds/bootanimation/BootAnimation.cpp b/cmds/bootanimation/BootAnimation.cpp
+index eda968f..a2087dd 100644
+--- a/cmds/bootanimation/BootAnimation.cpp
++++ b/cmds/bootanimation/BootAnimation.cpp
+@@ -48,6 +48,7 @@
+ #include <SkBitmap.h>
+ #include <SkStream.h>
+ #include <SkImageDecoder.h>
++#include <SkMovie.h>
+ #pragma GCC diagnostic pop
+ 
+ #include <GLES/gl.h>
+@@ -64,6 +65,7 @@
+ 
+ #define OEM_BOOTANIMATION_FILE "/oem/media/bootanimation.zip"
+ #define SYSTEM_BOOTANIMATION_FILE "/system/media/bootanimation.zip"
++#define SYSTEM_BOOTANIMATION_FILE_GIF "/system/media/bootanimation.gif"
+ #define SYSTEM_ENCRYPTED_BOOTANIMATION_FILE "/system/media/bootanimation-encrypted.zip"
+ #define EXIT_PROP_NAME "service.bootanim.exit"
+ 
+@@ -113,6 +115,50 @@ void BootAnimation::binderDied(const wp<IBinder>&)
+     }
+ }
+ 
++status_t BootAnimation::initTextureGif(Texture* texture, const SkBitmap& bitmap) {
++
++    bitmap.lockPixels();
++
++    const int w = bitmap.width();
++    const int h = bitmap.height();
++    const void* p = bitmap.getPixels();
++
++    GLint crop[4] = { 0, h, w, -h };
++    texture->w = w;
++    texture->h = h;
++
++    glGenTextures(1, &texture->name);
++    glBindTexture(GL_TEXTURE_2D, texture->name);
++
++    switch (bitmap.colorType()) {
++        case kAlpha_8_SkColorType:
++            glTexImage2D(GL_TEXTURE_2D, 0, GL_ALPHA, w, h, 0, GL_ALPHA,
++                    GL_UNSIGNED_BYTE, p);
++            break;
++        case kARGB_4444_SkColorType:
++            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA,
++                    GL_UNSIGNED_SHORT_4_4_4_4, p);
++            break;
++        case kN32_SkColorType:
++            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA,
++                    GL_UNSIGNED_BYTE, p);
++            break;
++        case kRGB_565_SkColorType:
++            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGB,
++                    GL_UNSIGNED_SHORT_5_6_5, p);
++            break;
++        default:
++            break;
++    }
++
++    glTexParameteriv(GL_TEXTURE_2D, GL_TEXTURE_CROP_RECT_OES, crop);
++    glTexParameterx(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
++    glTexParameterx(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
++    glTexParameterx(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
++    glTexParameterx(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
++    return NO_ERROR;
++}
++
+ status_t BootAnimation::initTexture(Texture* texture, AssetManager& assets,
+         const char* name) {
+     Asset* asset = assets.open(name, Asset::ACCESS_BUFFER);
+@@ -357,13 +403,20 @@ status_t BootAnimation::readyToRun() {
+     return NO_ERROR;
+ }
+ 
++#define USE_GIF
+ bool BootAnimation::threadLoop()
+ {
+     bool r;
+     // We have no bootanimation file, so we use the stock android logo
+     // animation.
++    bool usegif = false;
++#ifdef USE_GIF
++    usegif = true;
++#endif
+     if (mZipFileName.isEmpty()) {
+         r = android();
++    } else if (usegif) {
++        r = gifMovie();
+     } else {
+         r = movie();
+     }
+@@ -715,6 +768,34 @@ bool BootAnimation::preloadZip(Animation& animation)
+     return true;
+ }
+ 
++bool BootAnimation::gifMovie()
++{
++    SkMovie* skmovie = SkMovie::DecodeFile(SYSTEM_BOOTANIMATION_FILE_GIF);
++    if (skmovie == NULL) {
++        ALOGE("can not decode the Gif File");
++        return false;
++    }
++    ALOGE("gifMovie");
++
++    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
++    glShadeModel(GL_FLAT); 
++    glDisable(GL_DITHER);
++    glDisable(GL_SCISSOR_TEST);
++    glDisable(GL_BLEND);
++
++    glBindTexture(GL_TEXTURE_2D, 0);
++    glEnable(GL_TEXTURE_2D);
++    glTexEnvx(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
++    glTexParameterx(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
++    glTexParameterx(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
++    glTexParameterx(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
++    glTexParameterx(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
++
++    playAnimation(*skmovie);
++
++    return true;
++}
++
+ bool BootAnimation::movie()
+ {
+ 
+@@ -880,6 +961,69 @@ bool BootAnimation::playAnimation(const Animation& animation)
+     return true;
+ }
+ 
++#define CHECK_TIME_MS 1
++#define LOOP 1
++
++bool BootAnimation::playAnimation(SkMovie& skmovie)
++{
++    int width = skmovie.width();
++    int height = skmovie.height();
++    const int xc = (mWidth - width) / 2;
++    const int yc = ((mHeight - height) / 2);
++    nsecs_t frameDuration = 0;
++    SkMSec totalMs = skmovie.duration();
++    ALOGE("totalMs = %d ms", totalMs);
++
++    Region clearReg(Rect(mWidth, mHeight));
++    clearReg.subtractSelf(Rect(xc, yc, xc+width, yc+height));
++
++    Texture texture;
++    while(!exitPending()) {
++
++        int count = 0;
++        for (SkMSec i=0 ; i<totalMs; i+= CHECK_TIME_MS) { //100 ms is not ok??? zzj todo
++            //glBindTexture(GL_TEXTURE_2D, 0);
++            nsecs_t lastFrame = systemTime();
++
++            if (exitPending()) {
++                break;
++            }
++            frameDuration += CHECK_TIME_MS * 1000000;
++
++            if (skmovie.setTime(i)) {
++                ALOGI("get new bitmap  frameDuration = %lld  count=%d", frameDuration, count++);
++                SkBitmap bitmap = skmovie.bitmap();
++                initTextureGif(&texture, bitmap);
++                glBindTexture(GL_TEXTURE_2D, texture.name);
++                glDrawTexiOES(xc , yc, 0, texture.w, texture.h);
++
++
++                nsecs_t now = systemTime();
++                nsecs_t delay = frameDuration - (now - lastFrame);
++                frameDuration = 0;
++                ALOGD("%lld, %lld", ns2ms(now - lastFrame), ns2ms(delay));
++                lastFrame = now;
++
++                if (delay > 0) {
++                    struct timespec spec;
++                    spec.tv_sec  = (now + delay) / 1000000000;
++                    spec.tv_nsec = (now + delay) % 1000000000;
++                    int err;
++                    do {
++                        err = clock_nanosleep(CLOCK_MONOTONIC, TIMER_ABSTIME, &spec, NULL);
++                    } while (err<0 && errno == EINTR);
++                }
++                eglSwapBuffers(mDisplay, mSurface);
++                glDeleteTextures(1, &texture.name);
++
++                checkExit();
++            }
++        }
++    }
++
++    return true;
++}
++
+ void BootAnimation::releaseAnimation(Animation* animation) const
+ {
+     for (Vector<Animation::Part>::iterator it = animation->parts.begin(),
+diff --git a/cmds/bootanimation/BootAnimation.h b/cmds/bootanimation/BootAnimation.h
+index d49e1ec..41d102a 100644
+--- a/cmds/bootanimation/BootAnimation.h
++++ b/cmds/bootanimation/BootAnimation.h
+@@ -27,6 +27,7 @@
+ #include <GLES/gl.h>
+ 
+ class SkBitmap;
++class SkMovie;
+ 
+ namespace android {
+ 
+@@ -89,11 +90,14 @@ private:
+ 
+     status_t initTexture(Texture* texture, AssetManager& asset, const char* name);
+     status_t initTexture(const Animation::Frame& frame);
++    status_t initTextureGif(Texture* texture, const SkBitmap&);
+     bool android();
+     bool movie();
++    bool gifMovie();
+     void drawTime(const Texture& clockTex, const int yPos);
+     Animation* loadAnimation(const String8&);
+     bool playAnimation(const Animation&);
++    bool playAnimation(SkMovie&);
+     void releaseAnimation(Animation*) const;
+     bool parseAnimationDesc(Animation&);
+     bool preloadZip(Animation &animation);
+-- 
+1.9.1
+

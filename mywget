@@ -1,15 +1,38 @@
 #!/bin/bash
 
-function hint() {
-echo password
-}
+PW_PATH=/home/local/SPREADTRUM/zhenjun.zhang/bin/data/ftppassword
 
-if [ $# != 3 ]
+if [ $# -eq 3 ]
 then
-    echo "error using mywget, Usage: mywget link user password"
-    exit
+    wget --ftp-user $2 --ftp-password $3 $1
+elif [ $# -eq 2 ]
+then
+    found=0
+    for username in `cat $PW_PATH`
+    do
+        if [ $found == 1 ]
+        then
+            password=$username
+            echo "found the password"
+            break
+        fi
+        if [ $username == $2 ]
+        then
+            echo "found the username"
+            found=1
+        fi
+    done
+    if [ $found == 1 ]
+    then
+        wget --ftp-user $2 --ftp-password $password $1
+    else
+        myecho -r "Can not found password in [$PW_PATH], pls add it"
+    fi
+elif [ $# == 1 ]
+then
+    myecho -g "use the default username:testpsst"
+    wget --ftp-user testpsst --ftp-password 01F59wcw $1
+else
+    myecho -bo "Error use mywget"
 fi
 
-hint
-
-wget --ftp-user $2 --ftp-password $3 $1

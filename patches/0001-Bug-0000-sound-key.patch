@@ -1,0 +1,63 @@
+From e1338862a0f4232ab0abaeb14f9c78f729af7052 Mon Sep 17 00:00:00 2001
+From: "zhenjun.zhang" <zhenjun.zhang@spreadtrum.com>
+Date: Wed, 4 Jan 2017 18:10:06 +0800
+Subject: [PATCH] Bug #0000 sound key
+
+[root cause  ]
+[changes     ]
+[side effects]
+[self test   ]<board, Test cases summary>:
+[reviewers   ]
+
+Change-Id: If0ab0c38c6716f00a8329c3114c428fcd3fa32bd
+---
+ .../android/server/policy/PhoneWindowManager.java   | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+diff --git a/services/core/java/com/android/server/policy/PhoneWindowManager.java b/services/core/java/com/android/server/policy/PhoneWindowManager.java
+index 4e219ab..01d16bc 100644
+--- a/services/core/java/com/android/server/policy/PhoneWindowManager.java
++++ b/services/core/java/com/android/server/policy/PhoneWindowManager.java
+@@ -234,6 +234,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+     private boolean mKeyguardHidden;
+     private boolean mKeyguardDrawnOnce;
+ 
++    AudioManager mAudioManager;
++
+     /* Table of Application Launch keys.  Maps from key codes to intent categories.
+      *
+      * These are special keys that are used to launch particular kinds of applications,
+@@ -5569,6 +5571,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+ 
+         if (useHapticFeedback) {
+             performHapticFeedbackLw(null, HapticFeedbackConstants.VIRTUAL_KEY, false);
++            playSoundEffect();
+         }
+ 
+         if (isWakeKey) {
+@@ -7478,4 +7481,22 @@ public class PhoneWindowManager implements WindowManagerPolicy {
+         }
+     };
+     /* @} */
++
++    private AudioManager getAudioManager() {
++        if (mAudioManager == null) {
++            mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
++        }
++        return mAudioManager;
++    }
++
++    public void playSoundEffect() {
++        try {
++            final AudioManager audioManager = getAudioManager();
++            audioManager.playSoundEffect(AudioManager.FX_KEYPRESS_STANDARD);
++        } catch (IllegalStateException e) {
++            // Exception thrown by getAudioManager() when mView is null
++            Log.e(TAG, "FATAL EXCEPTION when attempting to play sound effect: " + e);
++            e.printStackTrace();
++        }
++    }
+ }
+-- 
+1.9.1
+

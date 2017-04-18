@@ -1,0 +1,4 @@
+#!/bin/bash
+myremount
+adb shell sed -i 's/qemu.hw.mainkeys.*/qemu.hw.mainkeys=0/' system/build.prop
+mybootreboot

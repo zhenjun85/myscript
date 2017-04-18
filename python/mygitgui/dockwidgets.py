@@ -28,22 +28,20 @@ class MainWindow(QtGui.QMainWindow):
 
         self.setWindowTitle("My Git Gui")
 
-        self.newLetter()
-
     def initData(self):
         #default history length is 100
         self.loglength=1000
         self.loadsha1AndInfo()
 
     def loadsha1AndInfo(self):
-        logsha1='git log --pretty=format:\"%H\" -' + str(self.loglength)
+        logsha1='git log --pretty=format:\"%H\" -' + str(self.loglength) + " ."
         output = os.popen(logsha1);
         self.sha1=[]
         for line in output:
             line=line.strip('\n')
             self.sha1.append(line)
 
-        loginfo='git log --pretty=format:\"%s\" -' + str(self.loglength)
+        loginfo='git log --date=short --pretty=format:\"%ad || %s\" -' + str(self.loglength) + " ."
         output = os.popen(loginfo);
         self.info=[]
         for line in output:
@@ -52,91 +50,80 @@ class MainWindow(QtGui.QMainWindow):
 
 
 
-    def newLetter(self):
-        self.textEdit.clear()
+    def gitLogShow(self, shaindex):
+        if not shaindex:
+            return
 
+        self.textEdit.clear()
+        #self.textEdit.setColor(QtCore.Qt.red)
         cursor = self.textEdit.textCursor()
         cursor.movePosition(QtGui.QTextCursor.Start)
-        topFrame = cursor.currentFrame()
-        topFrameFormat = topFrame.frameFormat()
-        topFrameFormat.setPadding(16)
-        topFrame.setFrameFormat(topFrameFormat)
 
         textFormat = QtGui.QTextCharFormat()
+        redFormat = QtGui.QTextCharFormat()
+        redFormat.setForeground(QtCore.Qt.red)
+        greenFormat = QtGui.QTextCharFormat()
+        greenFormat.setForeground(QtCore.Qt.darkGreen)
+        blueFormat = QtGui.QTextCharFormat()
+        blueFormat.setForeground(QtCore.Qt.blue)
         boldFormat = QtGui.QTextCharFormat()
+        boldFormat.setForeground(QtCore.Qt.darkCyan)
         boldFormat.setFontWeight(QtGui.QFont.Bold)
-        italicFormat = QtGui.QTextCharFormat()
-        italicFormat.setFontItalic(True)
+        timeFormat = QtGui.QTextCharFormat()
+        #timeFormat.setForeground(QtCore.Qt.darkCyan)
+        timeFormat.setFontWeight(QtGui.QFont.Bold)
+        infoFormat = QtGui.QTextCharFormat()
+        infoFormat.setFontWeight(QtGui.QFont.Bold)
 
-        tableFormat = QtGui.QTextTableFormat()
-        tableFormat.setBorder(1)
-        tableFormat.setCellPadding(16)
-        tableFormat.setAlignment(QtCore.Qt.AlignRight)
-        cursor.insertTable(1, 1, tableFormat)
-        cursor.insertText("The Firm", boldFormat)
-        cursor.insertBlock()
-        cursor.insertText("321 City Street", textFormat)
-        cursor.insertBlock()
-        cursor.insertText("Industry Park")
-        cursor.insertBlock()
-        cursor.insertText("Some Country")
-        cursor.setPosition(topFrame.lastPosition())
-        cursor.insertText(QtCore.QDate.currentDate().toString("d MMMM yyyy"),
-                textFormat)
-        cursor.insertBlock()
-        cursor.insertBlock()
-        cursor.insertText("Dear ", textFormat)
-        cursor.insertText("NAME", italicFormat)
-        cursor.insertText(",", textFormat)
-        for i in range(3):
-            cursor.insertBlock()
-        cursor.insertText("Yours sincerely,", textFormat)
-        for i in range(3):
-            cursor.insertBlock()
-        cursor.insertText("The Boss", textFormat)
-        cursor.insertBlock()
-        cursor.insertText("ADDRESS", italicFormat)
+        #print the info
+        gitshowinfo='git show -s ' + self.sha1[shaindex]
+        output = os.popen(gitshowinfo);
+        for line in output:
+            line=line.strip('\n')
 
-    def insertCustomer(self, customer):
-        if not customer:
-            return
-        customerList = customer.split(', ')
-        document = self.textEdit.document()
-        cursor = document.find('NAME')
-        if not cursor.isNull():
-            cursor.beginEditBlock()
-            cursor.insertText(customerList[0])
-            oldcursor = cursor
-            cursor = document.find('ADDRESS')
-            if not cursor.isNull():
-                for i in customerList[1:]:
-                    cursor.insertBlock()
-                    cursor.insertText(i)
-                cursor.endEditBlock()
+            cursor.insertText(line, infoFormat)
+            cursor.insertBlock()
+
+        #print the file
+        gitshow='git show ' + self.sha1[shaindex] + " --pretty=format:\"\""
+        output = os.popen(gitshow);
+        for line in output:
+            line=line.strip('\n')
+            length = len(line)
+            index = 0
+            while index < length:
+                if line[index] != ' ':
+                    break
+                index = index + 1
+
+            if index == length:
+                cursor.insertText(line, textFormat)
+                cursor.insertBlock()
+                continue
+
+            if index < length - 2 and line[index] == '-' and line[index + 1]  == '-' and line[index + 2]  == '-':
+                cursor.insertText(line, boldFormat)
+            elif index < length - 2 and line[index] == '+' and line[index + 1]  == '+' and line[index + 2]  == '+':
+                cursor.insertText(line, boldFormat)
+            elif line[index]  == '-':
+                cursor.insertText(line, greenFormat)
+            elif line[index] == '+':
+                cursor.insertText(line, redFormat)
+            elif index < length - 1 and line[index] == '@' and line[index] == '@':
+                cursor.insertText(line, blueFormat)
+            elif line[index] == 'd':
+                cursor.insertText(line, boldFormat)
             else:
-                oldcursor.endEditBlock()
+                cursor.insertText(line, textFormat)
+            cursor.insertBlock()
 
-
-    def gitLogShow(self, index):
-        if not index:
-            return
-        document = self.textEdit.document()
-        cursor = document.find("Yours sincerely,")
-        if cursor.isNull():
-            return
-        cursor.beginEditBlock()
-        cursor.movePosition(QtGui.QTextCursor.PreviousBlock,
-                QtGui.QTextCursor.MoveAnchor, 2)
-        cursor.insertBlock()
-        cursor.insertText(self.sha1[index])
-        cursor.insertBlock()
-        cursor.endEditBlock()
 
 
 
     def about(self):
         QtGui.QMessageBox.about(self, "My Git Gui",
-                "This is a Simple git gui, just for myself requirement")
+                "This is a Simple git gui, just for myself requirement "
+                "If you useing this tools and have any question, pls contract to zhenjun85@qq.com")
 
     def createActions(self):
 
@@ -163,13 +150,12 @@ class MainWindow(QtGui.QMainWindow):
 
     def createDockWindows(self):
 
-        dock = QtGui.QDockWidget("Paragraphs", self)
+        dock = QtGui.QDockWidget("Git Log Info", self)
         self.paragraphsList = QtGui.QListWidget(dock)
         self.paragraphsList.addItems(self.info)
         dock.setWidget(self.paragraphsList)
         self.addDockWidget(QtCore.Qt.LeftDockWidgetArea, dock)
 
-        #self.paragraphsList.currentTextChanged.connect(self.addParagraph)
         self.paragraphsList.currentRowChanged.connect(self.gitLogShow)
 
 

@@ -159,3 +159,222 @@
 --2016.48
 2016.48.1     11.21       7.0   9860    开机黑屏,   mgsei创建的
 2016.48.1     11.21       618719 - [PSST][7.0][SC9832][CMCC入库][入库预测]:进行monkey测试，0.3小时出现ANR in com.android.music次数：12 
+2016.48.1     11.21       617619 - [BM][k3.18][9860-1]&[9860-2]视频电话后,或通话结束后播放视频文件，音乐文件等，无法横屏播放
+2016.48.1     11.21       618526 - [TJ][Telephony][7.0][SC9832][Volte]文件管理器中分享一张较大图片至email，分享过程中进行反复横竖屏切换，偶见跳转到email界面后无法在切换到横屏显示
+2016.48.2     11.22       619059 - [PSST][7.0][SC9832][Volte]进行monkey+reboot测试，#164出现定屏，有adb
+2016.48.2     11.22       ----------
+2016.48.2     11.22       614619 - [PSST][SC9860G]手机进行系统monkey测试，测试19.34个小时，#635手机出现ANR in com.android.browser (com.android.camera2/com.android.camera.CameraLauncher)，2台手机累计出现4次    转fw-anr
+2016.48.4     11.24       620343 - [TJ][SDELAB][7.0][SP9832][Daily Test][CTS][Native] CtsAssistTestCases—android.assist.cts.AssistStructureTest#testAssistStructure –fail
+2016.48.4     11.24       609927] [Sprdroid7.0_trunk] [FW-WindowsManager][] [MGSEI][7.0][SC9832A2][Volte][Telephony]分屏模式下在信息中拍照，横屏后竖屏，退出分屏后点击状态栏的电话无法切换到电话界面
+2016.48.5     11.25       616607 - [MGSEI][6.0][SC9820][NewPikeL][Reliance][Nikie输入法][Local]输入字符后删除，备选字符栏不消失，点返回关闭输入法后点确认键有字符输出
+2016.48.5     11.25       sos 5.1    7.0
+2016.48.5     11.25       621101] [Sprdroid4.4_sfphone_PikeL] [FW-WindowsManager][] New: [研发自提][9820a]－porting from 6.0 to PikeL 4.4,信息或记事本应用光标放在文本输入框中按*号键，弹出选项框按挂机键选项框不消失
+--2016.49
+2016.49.1     11.28       620691 - [PSST][7.0][SC9832][Volte]进行monkey测试，#780测试log提示ANR in com.android.browser (com.android.browser/.BrowserActivity)，出现时间：1.9149h，出现次数：20
+2016.49.1     11.28       620690 - [PSST][7.0][SC9832][Volte]进行monkey测试，#780测试log提示ANR in com.android.gallery3d (com.android.gallery3d/com.sprd.gallery3d.app.NewVideoPermissionsActivity)，出现时间：1.1291h，出现次数：18  
+2016.49.1     11.28       621322 - [PSST][7.0][SC9832A2][Volte]进行monkey测试16小时发生ANR in com.android.browser 发生次数：9
+2016.49.1     11.28       621232 - [TJ][Local][6.0][SC9820][NewPikeL][QQVGA]QQVGA版本开机界面“android”显示不全
+2016.49.2     11.29       620236] [Sprdroid6.0_trunk_sfphone_dev_PikeL] [FW-3rdParty][] [Beta_India][6.0][SC9820][NewPikeL][Local]: The special characters keyboard remains on the screen even when press end key on any app screen.(Video attached)
+2016.49.2     11.29       621766] [Sprdroid_6.0_Whale2] [FW-WindowsManager][] [Beta_External][9860G-3][guanghua.wu][Local]按power键唤醒慢
+2016.49.2     11.29       ----------------------------
+2016.49.2     11.29       620830] [Sprdroid_6.0_Whale2] [FW-WindowsManager][] [PSST][SC9860G-3]手机进行系统monkey测试，测试0.2小时，#535手机出现ANR in com.android.dialer (com.android.camera2/com.android.camera.CameraLauncher)，1台手机累计出现2次
+2016.49.5     12.02       622690] [Sprdroid7.0_trunk] [FW-Performance][] [TJ][Local][7.0][SC7731C][32+4]横屏情况下点击wlan快捷图标，刷新界面时显示模糊
+2016.49.5     12.02       622016] [Sprdroid_6.0_Whale2] [FW-Tele-SIM][] [FT_SH][常规场测][SC9860G][6.0][VoLTE][驻脱网][AP]双卡开机时概率性不能出现选择主副卡的选项导致不能驻网，直到手动去设置菜单选择主副卡后才能恢复
+2016.49.5     12.02       621282] [Sprdroid_6.0_Whale2] [FW-WindowsManager][] [TJ][PSST][6.0][SC9860G][CTS][User][GMS] android.app.uiautomation.cts.UiAutomationTest - testWindowContentFrameStatsNoAnimation - failed     TR
+2016.49.5     12.02       562783] [Sprdroid6.0_trunk] [FW-WindowsManager][] [BETA_SH][6.0][SharklC][oversea][local]设置中预览动态壁纸，按返回键的时候屏幕闪烁1S之前预览的动态壁纸（附视频）   wont'  fix
+2016.49.5     12.02       621777 - [TJ][Telephony][7.0][SC9832][Volte]recent键进入最近任务，点击短信应用，偶见提示信息无响应
+2016.49.5     12.02       SPCSS00338993
+--2016.50
+2016.50.1     12.05       623288] [Sprdroid_6.0_iWhale2] [FW-Bootanimation][] [PSST][SC9861E]#370开机后launcher界面背景有Android字面显示
+2016.50.1     12.05       623276 - [0.01 h][TJ-RD][monkey][monkey-top][android6.0_trunk_whale2_9860s][ANR]com.android.dialer happens ANR,log:ANR in com.android.dialer (com.android.dialer/.DialtactsActivity)
+2016.50.1     12.05       622737] [Sprdroid7.0_trunk] [FW-WindowsManager][] [MGSEI][7.0][SC9832A2][Volte][Multimedia]退出分屏模式后，从视频播放界面返回到相机界面，相机界面的操作按键消失。
+2016.50.1     12.05       623107 - [Beta_External][9860G-3][gaopeng.liu][Local]待机一段时间，测试机轻滑Home键返回无效，按Home键才能返回，一段时间后恢复正常
+2016.50.1     12.05       613085] [Sprdroid6.0_trunk] [FW-ActivityManager][] [BM][9860G-1 V112][6.0][Whale2]cmcc+cmcc开机‘尊敬的客户感谢您选择中国移动通信！’界面不退   AMS
+2016.50.1     12.05       623153] [Sprdroid6.0_trunk_sfphone_dev_PikeL] [FW-WindowsManager][] [TJ][Telephony][6.0][SC9820][PikeL_16C][NewPikeL]测试机通话中一方通话一方保持，保持段时间，偶现按按键不亮屏
+2016.50.2     12.06       623597 - [TJ][MPT][APK][SC9861E]在文件管理器中安装软件，安装过程中向右旋转手机，界面发生异常（见视频）
+2016.50.2     12.06       623295 - [TJ][Local][6.0][SC9820][PikeL_16C][NewPikeL]进入相机选择录像，录像两秒钟自动灭屏结束录像
+2016.50.2     12.06       PikeL替换开机动画Android字样
+2016.50.2     12.06       616087 - [APPS_TJ][BLOCK MP][客户需求]印度市场SOS需求
+2016.50.2     12.06       ------------------
+2016.50.2     12.06       622394] [Sprdroid6.0_trunk_sfphone_dev_PikeL] [FW-WindowsManager][] [Beta_India][6.0][SC9820][NewPikeL][Tele]:Reliance Jio, PikeL failed to shows the call notification on lock screen(screenshot attached)
+2016.50.3     12.07       623844 - [MGSEI][7.0][SC9832A2][Volte][Local]分屏，通话界面在下，退出分屏回到桌面，概率出现桌面背景异常
+2016.50.3     12.07       617465] [Sprdroid7.0_trunk] [FW-WindowsManager][] [TJ][Telephony][7.0][SC9832][Volte]网页在标签页界面有分屏模式切到全屏模式，标签页由左到右派版非上下排版
+2016.50.3     12.07       624203 - [MGSEI][7.0][SC9832A2][Volte][Telephony]在文件管理器中设置图片为联系人头像，退出分屏后，出现联系人停止运行
+2016.50.3     12.07       7.0 9832修改动画时长
+2016.50.4     12.08       607591] [Sprdroid7.0_trunk] [FW-WindowsManager][] [MGSEI][7.0][SC9832A2][Volte][Connectivity]录音机保存录音，全选录音名称，点击保存概率性性出现FM电台已停止运行或闪退
+2016.50.4     12.08       624209 - [TJ][Telephony][6.0][SC9820][PikeL_16C][NewPikeL]测试机来电，点击右下方关机键，来电置为后台，且来电铃声静音
+2016.50.4     12.08       623587 - [MGSEI][7.0][SC9832A2][Volte][Telephony]分屏下从状态栏挂断电话，通话界面黑屏
+2016.50.5     12.09       615080 - [BM] [7.0][SC9832][#3]Uiautomator脚本执行时，PB\短彩信模块出现控件无法找到的问题,影响自动测试执行
+2016.50.5     12.09       pikeL耳机
+2016.50.5     12.09        624936 - [研发自提][9820a]－来电时按挂机键不会挂断电话
+2016.50.5     12.09       603754    Comment12 EGL_BAD_ALLOC 可能是系统没有内存了
+--2016.51
+2016.51.1     12.12       611129 - [Beta_SH][7.0][SC9832][Volte][性能][专项][PTR3Block]切换第三方桌面时间 sharkls 7.0 平均耗时对比sharkls 6.0 平均耗时相差0.562s-1.534s 相差比例60%-166%
+2016.51.1     12.12       625282] [Sprdroid7.0_trunk] [FW-WindowsManager][] New: [7.0_trunk][FW-WMS][研发自提]窗口动画起始点异常，合入google patch
+2016.51.2     12.13       625525 - [BM][k4.4][9860-1]所有APP模块能横屏旋转的，都不能横屏显示
+2016.51.2     12.13       625172 - [PSST][7.0][SC9832][CMCC入库][入库预测]:进行Monkey测试，在测试机（#173）上出现大量ANR问题
+2016.51.2     12.13       621737] [Sprdroid7.0_trunk] [FW-WindowsManager][] [MGSEI][7.0][SC9832A2][Volte][Multimedia]相机中用触摸助手调用菜单后查看照片的详细信息时菜单选项闪烁
+2016.51.3     12.14       626045 - [WCN][2342B][SC9861E][FM]后台播放FM，灭屏后偶现点亮不了屏幕，电源键失效
+2016.51.3     12.14       626126] [Sprdroid4.4_sfphone_PikeL] [FW-WindowsManager][] New: [研发自提][9820a]－porting from 6.0 to PikeL 4.4,手机通话5s灭屏后，点任意键均需亮屏
+2016.51.4     12.15       625996 - [Beta_SH][9860G-3][CameraUI][MM]视频播放器界面进入相机，背景动画显示异常（详情见视频）
+2016.51.4     12.15       625404 - [PSST][7.0][SC9832A2][Volte]进行monkey+sleep测试7台测试机发生android重启
+2016.51.5     12.16       626442 - [Beta_External][SC9860G-3][6.0][FHD][性能][客户][Phoebe]从一个菜单按home键退回idle太慢 
+2016.51.5     12.16       624586 - [PSST][6.0][SC9820][PikeL_16C][NewPikeL]长时间待机灭屏后，按power唤醒，需要几秒后才能唤醒，唤醒时间过长
+--2016.52
+2016.52.1     12.19       607591 - [MGSEI][7.0][SC9832A2][Volte][Connectivity]录音机保存录音，全选录音名称，点击保存概率性性出现FM电台已停止运行或闪退
+2016.52.1     12.19       [Bug 626045] [Sprdroid_6.0_iWhale2] [FW-PowerManager][] [WCN][2342B][SC9861E][FM]后台播放FM，灭屏后偶现点亮不了屏幕，电源键失效
+2016.52.1     12.19       611129 - [Beta_SH][7.0][SC9832][Volte][性能][专项][PTR3Block]切换第三方桌面时间 sharkls 7.0 平均耗时对比sharkls 6.0 平均耗时相差0.562s-1.534s 相差比例60%-166%
+2016.52.1     12.19       SPCSS00343527
+2016.52.1     12.19       626368 - [MGSEI][7.0][SC7731C][特有][Local]设置显示大小为小，返回桌面，横屏，出现设置界面闪现
+2016.52.1     12.19       627156 - [FT_SH][whale2][SC9860G][FHD][Stability][常规场测][小辣椒]被叫端来电时偶现无铃声
+2016.52.2     12.20       --------------
+2016.52.2     12.20       625326] [Sprdroid7.0_trunk] [FW-WindowsManager][] [PSST][7.0][SC7731C][32+4]进行monkey测试，测试0.08小时，525#出现ANR in com.android.packageinstaller,1台手机发生2次
+2016.52.3     12.21        627358 - [Beta_SH][6.0][SC9820][NewPikeL][PikeL_16C][Local]主页面灭屏，挂机键亮屏后，*号键解锁，解锁界面闪烁
+2016.52.3     12.21       627800] [Sprdroid_6.0_Whale2] [FW-WindowsManager][] [Beta_External][9860G-3][guanghua.wu][Subj][PTR2Block]测试机后台在打包log,前台浏览20分钟网页，灭屏后无法唤醒，电话不通，但按power键可以看到屏幕有一点亮度变化
+2016.52.3     12.21        625996] [Sprdroid_6.0_Whale2] [MM-Graphics][] [Beta_SH][9860G-3][CameraUI][MM]视频播放器界面进入相机，背景动画显示异常（详情见视频）
+2016.52.4     12.22       616522 - [TJ][PSST][7.0][SC9832][Volte][CTS][7.0r3][GMS][共有]进行CTS测试，CtsAppSecurityHostTestCases--android.appsecurity.cts.DirectBootHostTest#testDirectBootEmulated--fail 
+2016.52.4     12.22       617911] [Sprdroid7.0_trunk] [FW-WindowsManager][] [MGSEI][7.0][SC9832A2][Volte][Telephony]来电防火墙中添加黑名单联系人界面分屏，下屏切换程序的同时上屏添加黑名单联系人界面消失，退回到上一界面
+2016.52.4     12.22       WMSLogEx
+--2016.53
+2016.53.1     12.26       629580 - 移除在WMSLogEx中winAnimator.finishDrawingLocked()的调用
+2016.53.2     12.27       628441 - [TJ][MPT][APK][SC9861E][360手机助手]进入生命狙击（1.0.1），黑屏后退出应用
+2016.53.3     12.28       629599 - [TJ][Local][7.0][SC9832A2][Volte]在定时开关机分屏界面，来定时关机提示框，按power键灭屏唤醒屏幕后点取消，手机仍执行关机操作
+2016.53.4     12.29       626303 - [Beta_External][9860G-3][Helen.Han][Subj]进入阴阳师游戏，发现游戏界面被压缩（附截图）
+2016.53.4     12.29       630537] [Sprdroid6.0_trunk_sfphone_dev_PikeL] [FW-WindowsManager][] New: [研发自提][9820a]-针对某些应用，屏蔽按power键回到launcher的功能
+2016.53.4     12.29       630667] [Sprdroid7.0_trunk] [FW-WindowsManager][] [BM][Daily test][6.0][SC9832][#2]自动测试中偶现home键失效
+2016.53.5     12.30       630194] [Sprdroid_6.0_iWhale2] [FW-WindowsManager][] [PSST][SC9861E]进行待机充电测试，#516测试2小时出现定屏，且有LTE Modem Assert，adb不可连
+--2017.2
+2017.2.2     01.03       630667 - [BM][Daily test][6.0][SC9832][#2]自动测试中偶现home键失效
+2017.2.2     01.03       631406] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [TJ][MPT][APK][SC9861E][7.0]安装任意应用的时候，横屏旋转屏幕瞬间出现时间/信号棒/wifi信号显示在中间，竖屏旋转屏幕瞬间出现时间/信号棒/wifi信号消失，但是2-3秒钟后就显示正常
+2017.2.2     01.03       630233] [Sprdroid_6.0_Whale2] [FW-WindowsManager][] [Beta_External][9860G-3][Subj][Phoebe][PTR2Block]唤醒慢，用力点击home键3次后等了一会才唤醒
+2017.2.2     01.03       630476 - [PICLAB][SC9860G-2][Orange_Pre]UE不支持电源连按2下挂断电话
+2017.2.3     01.04       629434 - [PSST][6.0][SC9830][Volte][32+4]进行monkey测试6.2小时发生ANR in com.android.packageinstaller ,出现次数：1
+2017.2.3     01.04       screencap 修改
+2017.2.5     01.06       630233] [Sprdroid_6.0_Whale2] [FW-PowerManager][] [Beta_External][9860G-3][Subj][Phoebe][PTR2Block]唤醒慢，用力点击home键3次后等了一会才唤醒      Power
+--2017.3
+2017.3.1     01.09       632782] [ALI_YunOS3.0_PikeL] [FW-WindowsManager][] 【系统】【100%】应用打开退出，动画效果卡顿，需优化
+2017.3.1     01.09       632046 - [TJ][Telephony][7.0][SC7731C]设置联系人照片，切换至分屏模式下保存，偶见crash，提示\"通讯录停止运行\"
+2017.3.2     01.10       633373 - [Multimedia][SC9861E][7.0]开启自动旋转，手机不会旋转
+2017.3.2     01.10       633781 - [BJ_RD][9832A 7.0][sharkls-2][StabilityTest][monkey+sleep]sharkls-2手机55#执行monkey+sleep测试出现物理键正常反应，屏幕背景黑屏，adb可连
+2017.3.2     01.10       ----------
+2017.3.3     01.11       625353 - [PSST][7.0][SC7731C][32+4]进行monkey测试，测试19.16小时，123#出现ANR in com.android.calendar,1台手机发生2次 
+2017.3.4     01.12       632517 - [TJ][MPT][APK][SC9860G-3]安装斗鱼（V2.4.3.1），点击首页中右下键摄像机图标--录制，打开时，画面右侧出现一条白线
+--2017.4
+2017.4.1     01.16       635423 - [PikeL][YunOS] 拍摄界面通过左下角的预览图标按钮进入图库，无法左右键进行查看拍摄的图片视频 
+2017.4.1     01.16       633423 - [PSST][7.0][SC9832][Volte]进行Monkey+Sleep测试，#809测试44.5h发生假定屏，有adb
+2017.4.2     01.17       635036 - [TJ][Local][6.0][SC9820][NewPikeL]手机开机后先显示壁纸，过一会才显示锁屏界面
+2017.4.4     01.19       [Bug 634807] [Sprdroid6.0_trunk_sfphone_dev_PikeL] [FW-WindowsManager][] [Beta_India][6.0][SC9820][NewPikeL][Tele]:Vodafone, PikeL shows unwanted window on screen after unlock the phone from sleep mode during browsing.(Video attached)
+2017.4.4     01.19       636380 - [Beta_SH][7.0][SC7731C][64+8][GMS][性能][体验]卸载大部分第三方APk（有用户数据），手机短暂黑屏
+2017.4.5     01.20       636155] [Sprdroid7.0_trunk] [FW-WindowsManager][] [Beta_SH][7.0][SC7731C][64+8][GMS][性能][体验]USB充电,低电量（15%）状态下，手机偶见灭屏唤不醒
+2017.4.5     01.20       634807 - [Beta_India][6.0][SC9820][NewPikeL][Tele]:Vodafone, PikeL shows unwanted window on screen after unlock the phone from sleep mode during browsing.(Video attached) 
+2017.4.5     01.20       635052] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [sharkl2][9850k][FAE-TEST][trunk][xunrui]拿起手机，打开除录音机外的原生应用都会出现翻转90度的现象。 答复全部答复转发 标记为未读
+--2017.5
+2017.5.0     01.22       630363] [Sprdroid4.4_sfphone_PikeL] [FW-WindowsManager][] [Multimedia][4.4][SC9820][NewPikeL] [PikeL_4+2]刷机或重启后进入图库或视频播放器，界面左上角会闪现蓝色小竖条，详见操作视频
+2017.5.1     01.23       637415] [Sprdroid6.0_trunk] [FW-Bootanimation][] [BM] [6.0][pike][7731G]烧完版本，手机无法开机
+2017.5.1     01.23       637968] [Sprdroid_6.0_Whale2] [FW-WindowsManager][] 手机放在车座上，很容易出现Camera被误触发
+2017.5.4     01.26       638822 - [TJ][Local][4.4][SC9820][NewPikeL] [PikeL_4+2]点击计算器进入时闪屏
+2017.5.4     01.26       638739 - [Beta_SH][sharkl2][9850ka][7.0_trunk][TJ][Local]按音量键调节音量，音量条偏右，没有居中显示
+--2017.6
+2017.6.6     02.04       639382 - 【相机】从相机进入相册无法左右移动浏览图片
+2017.6.6     02.04       639263 - [PSST][sharkl2][9850ka][7.0_trunk]Disktest+MP4硬解测试，#440手机测试1小时左右出现异常停止
+--2017.7
+2017.7.3     02.08       632380 - [Beta_SH][SC9861E][7.0][性能][PTR1Block]IWhale2_7.0 在设置、拨号器等应用，按home键和返回键退出响应慢耗时4s-5s
+2017.7.3     02.08       638088 - [BM] [9861][iwhale 2][7.0]手机开机以后，在android界面快跳到主页面的时候高概率黑屏2s
+2017.7.3     02.08       639502 - [Ali store][Top201-361][24]篮球公园OL 每次打开后卡死在登录界面
+2017.7.3     02.08       639112 - [PSST][7.0][SC9832][CMCC]执行线上monkey测试，#345测试1.23h发生CRASH: com.android.messaging
+2017.7.3     02.08       622739 - [Beta_SH][9860G-3][CameraUI][MM]视频取景界面开闪光灯后灭屏待机，来电拒接，闪光灯会点亮一下然后熄灭
+2017.7.4     02.09       640196] [Sprdroid7.0_trunk] [FW-WindowsManager][] [ST_India][7.0][SC9832A2][Perfect365],DUT show message \"Unfortunately Perfect365 has stopped\" while open Perfect365 app(Snapshot attached).
+2017.7.4     02.09       640906] [Sprdroid7.0_trunk] [FW-WindowsManager][] [TJ][Telephony][7.0][SC9832][Volte]从相机进入图库查看图片时，menu弹出“详细信息”此时切换系统语言后再返回查看时，“详细信息”位置偏移至左上角
+2017.7.4     02.09       640483] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [TJ][Local][SC9861E][7.0]情景模式开启点按时震动，按键不会产生震动
+--2017.09
+2017.09.1     02.27       640441 - [Multimedia][sharkl2][9850ka][7.0_trunk]横屏状态下将一张图片经邮件分享，在邮件界面收件人一栏键入第一个字母后界面跳成黑屏保持3s后恢复(见视频，竖屏状态下无此问题) 
+2017.09.1     02.27       646451] [Sprdroid7.0_trunk] [FW-WindowsManager][] [MGSEI][7.0][7731G][17A][Telephony]点击邮箱中的邮箱地址超链接菜单中的发送邮件再分屏出现电子邮件已停止运行
+2017.09.1     02.27       647348] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [Camera_Team][SC9861E][7.0]图片浏览界面，横屏状态下按返回键回到预览界面，必现5秒左右的预览定屏
+2017.09.2     02.28       622615 - [MGSEI][7.0][SC9832A2][Volte][Local]手机设置屏幕锁，启动屏保后闪现一次锁屏界面，闪现后屏保界面一直竖屏
+2017.09.2     02.28       648225 - [PSST][SC9861E][7.0]开启自动旋转，测试机转屏需要3.14s，影响用户体验。对比机三星C7转屏仅需0.68s左右
+2017.09.2     02.28       645463] [Sprdroid7.0_trunk] [FW-WindowsManager][] [SC7731C][SC7731C][SPROCOMM][X5545MT]SC7731_7.0如何实现LCD显示旋转180度，
+2017.09.2     02.28       648179] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [PSST][sharkl2][9850ka][7.0_trunk]Sleep+Call测试，#298无法唤醒，有adb
+2017.09.2     02.28       647378] [Sprdroid7.0_trunk] [FW-WindowsManager][] [Beta_SH][SC9832][7.0_trunk][Local]拨号盘使用分屏功能后横屏状态下按HOME键退出后，状态栏显示异常（附截图）
+2017.09.2     02.28       647241] [Sprdroid7.0_trunk] [FW-WindowsManager][] [MGSEI][7.0][SC9832A2][Trusty][Volte][17A][Telephony]联系人界面分屏，下拉状态栏切换到访客模式，联系人详情界面无法编辑，显示严重异常
+2017.09.4     03.02       649519 - [sharkl2][9850ka][7.0_trunk][FLAB]uiautomator自动化测试，下拉通知栏后，获取不到下拉通知栏的控件 
+2017.09.4     03.02        649407 - [Camera_Team][sharkl2][9850ka][7.0_trunk]进入相机，长按多任务键，提示语挡住拍照键 
+--2017.11
+2017.11.1     03.06       647947] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [PSST][sharkl2][9850ka][7.0_trunk]#25手机打一个电话后偶现黑屏，无法唤醒，有adb 答复全部答复转发 标记为已读
+2017.11.1     03.06       650455] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][Telephony][sharkl2][9850ka][7.0_trunk]删除群组时，偶见提示通讯录停止运行
+2017.11.2     03.07       650566] [Sprdroid4.4_sfphone_PikeL] [FW-WindowsManager][] [12.89 h][TJ-RD][monkey][android4.4_PikeL4+2][ANR]com.android.contacts happens ANR,log:ANR in com.android.contacts (com.android.contacts/.activities.ContactEditorActivity)
+2017.11.2     03.07       650384 - [PSST][sharkl2][9850ka][7.0_trunk]monkey测试,#349测试4.26小时出现ANR in com.android.gallery3d (com.android.gallery3d/com.sprd.gallery3d.app.MovieViewProxySet),1台手机累计出现1次 (edit)     fence timeout 导致windowanimator动画阻塞
+2017.11.2     03.07       配合zhiwei调研潍坊移动需求，详细内容写出来
+2017.11.2     03.07       650816] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][Telephony][sharkl2][9850ka][7.0_trunk]设置来电转接时做分屏和取消分屏操作时，偶见手机发生重启
+2017.11.2     03.07       647985] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [MGSEI][SC9861E][7.0][APPIOT][凯立德导航][Local]点击左下角横竖屏切换按钮切换为横屏，再点击该按钮切换为竖屏后，屏幕下半截显示黑屏
+2017.11.2     03.07       649861] [Sprdroid7.0_trunk] [FW-WindowsManager][] [1.42 h][TJ-RD][monkey][android7.0_trunk_7731G][ANR]com.android.camera2 happens ANR,log:ANR in com.android.camera2 (com.android.camera2/com.android.camera.CameraLauncher)
+2017.11.2     03.07       --------------
+2017.11.2     03.07       649088] [Sprdroid4.4_sfphone_PikeL] [FW-WindowsManager][] [TJ][Local][4.4][SC9820][NewPikeL] [PikeL_4+2] 设置界面灭屏在唤醒解锁，状态栏闪现白条
+2017.11.2     03.07       650289] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Beta_SH][sharkl2][9850ka][7.0_trunk][性能][关键]SharkL2_7.0 退出照相机均值0.87s对比TCL_520均值0.71s相比相差22%。
+2017.11.2     03.07       zhouhui，7.0sos问题
+2017.11.4     03.09       651956] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Camera_Team][Beta][sharkl2][9850ka][7.0_trunk][MM]灭屏状态下双击power键，调起相机时有1S白屏
+2017.11.4     03.09       651944] [Sprdroid7.0_trunk] [FW-WindowsManager][] [Camera_Team][Beta][7.0][SC7731C][MM]灭屏按power键亮屏双击power键进入相机，进入前白屏
+2017.11.4     03.09       651589] [Sprdroid6.0_trunk] [FW-WindowsManager][] [PSST][6.0][SC9832][Volte][32+4]进行开关机测试3到5次不能正常进入开机界面，一直停留在android开机界面，有adb口，能正常充电
+2017.11.4     03.09       650816] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][Telephony][sharkl2][9850ka][7.0_trunk]设置来电转接时做分屏和取消分屏操作时，偶见手机发生重启 有代码合入
+2017.11.4     03.09       640196] [Sprdroid7.0_trunk] [FW-Stability][] [ST_India][7.0][SC9832A2][Perfect365],DUT show message \"Unfortunately Perfect365 has stopped\" while open Perfect365 app(Snapshot attached).
+2017.11.4     03.09       652330 - [6.0]解决security patch带来的死锁
+2017.11.5     03.10       650713] [Sprdroid4.4_sfphone_PikeL] [FW-WindowsManager][] [Beta_SH][4.4][SC9820][NewPikeL][PikeL_4+2][性能][关键性能]屏幕点亮时间 pikeL_4.4 w17.09.2耗时0.540s 对比 pikeL_4.4 w17.07.1耗时0.339s 差值0.142s 差距为36% 答复全部答复转发 标记为已读
+2017.11.5     03.10       632307] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [SC9861E][7.0][FLAB]在拨号界面进入工程模式，出现"电话无响应"
+--2017.12
+2017.12.1     03.13       644796] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [TJ][Local][SC9861E][7.0]分屏模式，设置-显示-显示大小为默认状态下，无法调节至最大，需先调到最小-默认，才有调节到最大的选项（见视频）
+2017.12.1     03.13       637508] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [Multimedia][SC9861E][7.0]视频播放列表，选择菜单分享功能将视频分享至微信，屏幕上有一条黑线由上至下划过（详见视频） 答复全部答复转发 标记为已读
+2017.12.1     03.13       652911] [Sprdroid4.4_sfphone_PikeL] [FW-WindowsManager][] [Beta_SH][4.4][SC9820][NewPikeL] [PikeL_4+2] [Local]手机正常使用过程中，只有按中左软键和返回键，键盘背光灯才会亮起
+2017.12.1     03.13       652262 - [TJ][Local][4.4][SC9820][NewPikeL] [PikeL_4+2]编辑界面等待手机灭屏，灭屏后长按*键解锁，会弹出符号的popup框
+2017.12.1     03.13       652360] [Sprdroid4.4_sfphone_PikeL] [FW-WindowsManager][] [TJ][Local][4.4][SC9820][NewPikeL] [PikeL_4+2]日历界面等待灭屏，灭屏后长按*键解锁，会切换日历的月份
+2017.12.2     03.14       653934 - [TJ][Local][sharkl2][9850ka][7.0_trunk]任意dialog弹出框界面，均会出现闪屏（见视频）
+2017.12.3     03.15       652368] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [MGSEI][SC9861E][7.0][Local]开启省电模式，摇动切换壁纸时，切换过程中出现背景黑屏
+2017.12.3     03.15       SPCSS00363090   邮件处理CQ
+2017.12.3     03.15       screenshot cts
+2017.12.4     03.16       654312] [Sprdroid6.0_trunk] [FW-WindowsManager][] [PSST][6.0][SC9830][Volte][32+4]进行monkey测试#0405测试机1.45小时发生ANR in com.android.deskclock 发生次数：1
+2017.12.4     03.16        654420] [Sprdroid6.0_trunk] [FW-WindowsManager][] [PSST][6.0][SC9832][Volte][32+4]进行monkey测试#0080测试机4.3小时发生ANR in com.android.calendar 发生次数：1
+2017.12.4     03.16       638843] [Sprdroid4.4_sfphone_PikeL] [FW-WindowsManager][] [TJ][Telephony][4.4][SC9820][NewPikeL][PikeL_4+2]开机pin锁界面进入紧急呼叫界面，插入USB线后自动返回pin锁界面
+2017.12.5     03.17       CQ  跟踪分析
+2017.12.5     03.17       654510 - [TJ][Telephony][SC9861E][7.0]图片向左旋转时，偶见图库无响应 
+--2017.13
+2017.13.1     03.20       655047] [Sprdroid4.4_sfphone_PikeL] [FW-WindowsManager][] [1.09 h][TJ-RD][monkey][monkey-top][android4.4_PikeL4+2][ANR]com.android.browser happens ANR,log:ANR in com.android.browser (com.android.browser/.BrowserActivity)
+2017.13.1     03.20        [SPCSS00364539]:[9832]:Intex : Aqua 505 Hang & Stuck Issue
+2017.13.2     03.21       638822 - [TJ][Local][4.4][SC9820][NewPikeL] [PikeL_4+2][易用性]点击计算器进入时闪屏
+2017.13.2     03.21       655970] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [SC9861E][7.0][FLAB]第一次进入短信，设置权限提示框出现文字乱码
+2017.13.2     03.21       651958 (SPCSS00358208) - [SC9832A][SC9832][XUNRUI][Intex]连续快速按3下电源键，拨通紧急号码112 
+2017.13.3     03.22       655493 - [PSST][sharkl2][9850ka][7.0_trunk]monkey测试,#0649测试13.16小时出现ANR in com.android.messaging (com.android.messaging/.ui.PermissionCheckActivity),2台手机累计出现4次 (edit)
+2017.13.4     03.23       647378 - [Beta_SH][SC9832][7.0_trunk][Local]拨号盘使用分屏功能后横屏状态下按HOME键退出后，状态栏显示异常（附截图）
+--2017.14
+2017.14.1     03.27       655891] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [TJ][Local][SC9861E][7.0] 当背景壁纸接近白色时，横屏时状态栏的图标颜色过于相近，无法看清。
+2017.14.1     03.27       658752] [Sprdroid4.4_sfphone_PikeL] [FW-WindowsManager][] [10.28 h][TJ-RD][monkey][monkey-top][android4.4_PikeL4+2][ANR]com.sprd.simple.launcher happens ANR,log:ANR in com.sprd.simple.launcher (com.sprd.simple.launcher/.Launcher)
+2017.14.1     03.27       652228] [Sprdroid4.4_sfphone_PikeL] [FW-WindowsManager][] [TJ][Telephony][4.4][SC9820][NewPikeL][PikeL_4+2]测试机进行会议通话，进入管理界面，多次点击方向上键，焦点消失，点击选项-挂断，仍挂断第一通
+2017.14.1     03.27       659153] [Sprdroid4.4_sfphone_PikeL] [APP-Phone][] [SC9820A][SC9820A][TECHAINSH][GM05]灭屏状态下测试机来电会闪屏
+2017.14.3     03.29       659957] [Sprdroid7.0_trunk] [FW-WindowsManager][] [PSST][7.0][SC7731G][初筛]手机进行Monkey测试，测试25小时，#5137手机累计出现41次ANR
+2017.14.3     03.29       660405 - Enable Sos feature on Reliance project 
+2017.14.4     03.30       659153] [Sprdroid4.4_sfphone_PikeL] [FW-WindowsManager][] [SC9820A][SC9820A][TECHAINSH][GM05]灭屏状态下测试机来电会闪屏
+2017.14.5     03.31       639976] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][Local][sharkl2][9850ka][7.0_trunk]锁屏方式为图案，照片桌面设置显示全部图片,立即启动照片桌面屏幕保护程序，过一会会闪现锁屏界面
+2017.14.5     03.31       yassy 沟通多屏
+2017.14.6     04.01       660483] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Multimedia][sharkl2][9850ka][7.0_trunk]相机拍照/摄像预览界面，此时对比机来电，测试机从屏幕顶端弹出来电提示的一刹那多出了一个灰色条纹
+--2017.15
+2017.15.3     04.05       661601] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [TJ][Local][SC9861E][7.0]设置分屏下进入壁纸图库，home键退出打开主屏幕设置，再次对设置进行分屏，提示该应用不能分屏
+2017.15.4     04.06       662541 - [PSST][5.1][SC7731G]down版本后15秒左右,#5137手机出现定屏在android界面，adb可连
+2017.15.4     04.06       662649] [Sprdroid7.0_trunk] [FW-WindowsManager][] [14.29 h][TJ-RD][monkey][android7.0_trunk_7731G][ANR]com.android.dialer happens ANR,log:ANR in com.android.dialer (com.android.dialer/.DialtactsActivity)
+2017.15.4     04.06       662647] [Sprdroid7.0_trunk] [FW-WindowsManager][] [13.75 h][TJ-RD][monkey][android7.0_trunk_7731G][ANR]com.android.browser happens ANR,log:ANR in com.android.browser (com.android.soundrecorder/.SoundRecorder)
+2017.15.4     04.06       661948] [Sprdroid4.4_sfphone_9820W] [FW-WindowsManager][] [WCN][2342A_BA][4.4][SC9820W][SharkLC][BT][PTRBlock]测试机已连接蓝牙耳机，灭屏情况下，无法通过测试机端调节通话音量
+2017.15.4     04.06       662672 - [TJ][Telephony][sharkl2][9850ka][7.0_trunk]进入setting-勿扰-添加规则，输入规则名称时做分屏操作，偶见设置停止运行
+--2017.16
+2017.16.1     04.10       663315 - [PSST][6.0][SC9832]I线上monkey测试，在11H #803出现CRASH: com.android.launcher3:wallpaper_chooser (pid 17137) Time Longth Since Monkey Start: 41694588，1次
+2017.16.1     04.10       picture in picture mode
+2017.16.2     04.11       asset altes
+2017.16.2     04.11       663592 - [TJ][MPT][APK][SC9861E][7.0]安装哔哩哔哩（5.2.0），播放任意视频，按power键锁屏，10s后再按power键，手机处于黑屏，无法亮屏
+2017.16.2     04.11       664358] [ALI_YunOS3.0_PikeL] [FW-WindowsManager][] [TJ][Local][PikeL][YunOS]进入包含“选项”的应用中（如日历，信息，文件管理器等），部分应用长按左软键调出下拉菜单时，会同时调出选项菜单
+2017.16.2     04.11       664388 - [TJ][Telephony][sharkl2][9850ka][7.0_trunk]分屏下创建联系人，点开“更多字段”，创建新群组，在编辑框界面切回全屏后，光标仍在编辑框处，但无法调出输入法
+2017.16.3     04.12       664594] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][MPT][sharkl2][9850ka][7.0_trunk][指纹][PTR2Block][性能]指纹灭屏解锁时间平均1.4s，应小于1s
+2017.16.3     04.12       664344 - [TJ][Local][PikeL][YunOS]查看图库中具体图片，长按左软键未调出下拉状态栏，再按返回键出现下拉状态栏
+2017.16.3     04.12       645071] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [Multimedia][SC9861E][7.0]视频播放中来电接听，在通话界面点击返回键，屏幕中间会先闪现视频播放画面，之后才返回通话中请稍后再试的提示框界面，打开停用Hw叠加层也有此问题
+2017.16.3     04.12       660757] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Multimedia][sharkl2][9850ka][7.0_trunk]关闭文件管理器存储权限后，进入文件管理器，然后切换成分屏模式，进入计算器，按rencent键，会显示主菜单部分应用的图标，详见截图和录制的视频
+2017.16.4     04.13       660317] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [PSST][SC9861E][7.0][A1]monkey测试,#151测试2.23小时出现ANR in com.android.gallery3d (com.android.gallery3d/.app.GalleryActivity),3台手机累计出现17次
+2017.16.5     04.14       644862] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Beta_SH][sharkl2][9850ka][7.0_trunk][性能][关键][PTR2Block]SharkL2_7.0 11后台图片旋转均值0.890s对比TCL_520均值0.550s相比相差62%。
+2017.16.5     04.14       665378] [Sprdroid7.0_trunk] [FW-WindowsManager][] [PSST][7.0][SC7731G]手机进行Monkey测试，测试14.10小时，#1010手机出现ANR in com.android.email (com.android.email/.activity.Welcome)，1台手机累计出现1次
+--2017.17
+2017.17.1     04.17       666030] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][Telephony][sharkl2][9850ka][7.0_trunk] 锁屏界面双击锁屏按键不能成功打开相机，而是唤醒情景模式。
+2017.17.1     04.17       665591 - [0.76 h][TJ-RD][monkey][monkey-top][android7.0_trunk_7731G][ANR]com.android.music happens ANR,log:ANR in com.android.music (com.android.music/.MediaPlaybackActivity) (edit)
+2017.17.2     04.18       664594] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][MPT][sharkl2][9850ka][7.0_trunk][指纹][PTR2Block][性能]指纹灭屏解锁时间平均1.4s，应小于1s

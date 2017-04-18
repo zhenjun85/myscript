@@ -1,6 +1,12 @@
 --更新apt-get
 sudo vi /etc/cntlm.conf
 
+--sysui action
+metrics_constants.proto 
+
+--coverity
+u:fwap_fw2  p:666666
+
 --cts
 /PDLogs/MocorDroid/2015/CTS & GTS Tools
 
@@ -40,6 +46,10 @@ for a in `ls`; do echo "rm ${a}"; if [[ ${a} != "out" ]]; then rm -rf ${a}; fi; 
 --ssh
 ssh -l user 192.168.0.11
 
+
+--cts wifi
+tools123456
+
 --dump c++
 #include <utils/CallStack.h>  
 CallStack stack;  
@@ -69,9 +79,6 @@ Throwable tr = new Throwable();
 tr.fillInStackTrace();
 android.util.Log.d("zzj","Throw",tr);
 
---展卓会议
-996 720 198
-
 --11F6
 pldapps2015
 
@@ -79,9 +86,6 @@ pldapps2015
 --access google proxy
 export https_proxy=10.0.2.100:3128
 git push origin HEAD:refs/for/master
-
---meeting number
-993 241 561
 
 --jenkins
 http://10.0.64.29:8080/jenkins/job/gerrit_do_verify_sprdroid6.x/
@@ -94,3 +98,13 @@ for a in `ls |grep "^6"`; do cd $a;rm -rf `ls |grep -vE ".rar|.gz"`; cd -;done
 
 --remove Calibration
 myremount;adb shell rm system/app/ModemNotifier/ModemNotifier.apk
+
+--会议号
+995 746 894
+
+--远程服务器
+ssh zhenjun.zhang@10.5.2.51  SPRD#sciuser   Bubble31
+ssh zhenjun.zhang@10.5.227.17
+
+--qiushi
+spreadtrum\\qiushi.han@10.5.42.63

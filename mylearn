@@ -1,0 +1,38 @@
+#!/bin/bash
+IFS=$'\n'
+
+learn_folder=~/bin/data/learn
+
+cd $learn_folder
+
+function show_learn()
+{
+    select info in `ls $learn_folder`
+    do
+        clear
+        myecho -y "------------------------------------------------"
+        cat "$info"
+        myecho -y "------------------------------------------------"
+
+        break
+    done
+}
+
+function add_learn()
+{
+    cd $learn_folder
+    clear
+    myecho -y "------------------------------------------------"
+    myecho -bo "enter the learn title"
+    read title
+    #title=`zenity --entry --text "enter the learn title "`
+    vim "$title"
+}
+
+if [ $# == 0 ]
+then
+    show_learn
+else
+    add_learn
+fi
+

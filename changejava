@@ -1,7 +1,7 @@
 #!/bin/bash
 
 myecho -y "Select the java version:"
-select javaversion in "java7" "java8" "sunjava8"
+select javaversion in "java6" "java7" "java8" "sunjava8"
 do
     echo $javaversion >~/bin/data/javaversion
     break

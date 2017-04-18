@@ -62,21 +62,24 @@ function mypush()
     #push services.jar or framework.jar or res.apk
     if [ "$1" == "s" ]
     then
+        backup=`pwd`
         cd $ANDROID_PRODUCT_OUT
         adb push system/framework/services.jar /system/framework/
-        croot
+        cd $backup
         return
     elif [ "$1" == "f" ]
     then
+        backup=`pwd`
         cd $ANDROID_PRODUCT_OUT
         adb push system/framework/framework.jar /system/framework/
-        croot
+        cd $backup
         return
     elif [ "$1" == "r" ]
     then
+        backup=`pwd`
         cd $ANDROID_PRODUCT_OUT
         adb push system/framework/framework-res.apk /system/framework/
-        croot
+        cd $backup
         return
     fi
 

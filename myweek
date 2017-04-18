@@ -1,7 +1,6 @@
 #!/bin/bash
 
 dd=`date +%U`
-let "dd=$dd+1"
 myecho -b "##################################"
 myecho -r "         W`date +%G`.${dd}.`date +%w`"
 myecho -b "##################################"

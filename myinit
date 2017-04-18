@@ -1,7 +1,7 @@
 #!/bin/bash
 
-command="repo init -u gitadmin@10.5.2.49:android/platform/manifest.git -b"
-#command="repo init -u gitadmin@gitmirror.spreadtrum.com:android/platform/manifest -b"
+#command="repo init -u gitadmin@10.5.2.49:android/platform/manifest.git -b"
+command="repo init -u gitadmin@gitmirror.spreadtrum.com:android/platform/manifest -b"
 
 #compute last folder name
 #aaa=`pwd`
