@@ -44,15 +44,15 @@ class MainWindow(QtGui.QMainWindow):
         loginfo='git log --date=short --pretty=format:\"%ad || %s\" -' + str(self.loglength) + " ."
         output = os.popen(loginfo);
         self.info=[]
+        index=0
         for line in output:
             line=line.strip('\n')
-            self.info.append(line)
+            self.info.append(str(index) + "||" + line)
+            index = index + 1
 
 
 
     def gitLogShow(self, shaindex):
-        if not shaindex:
-            return
 
         self.textEdit.clear()
         #self.textEdit.setColor(QtCore.Qt.red)
@@ -150,6 +150,7 @@ class MainWindow(QtGui.QMainWindow):
 
     def createDockWindows(self):
 
+
         dock = QtGui.QDockWidget("Git Log Info", self)
         self.paragraphsList = QtGui.QListWidget(dock)
         self.paragraphsList.addItems(self.info)
@@ -157,7 +158,6 @@ class MainWindow(QtGui.QMainWindow):
         self.addDockWidget(QtCore.Qt.LeftDockWidgetArea, dock)
 
         self.paragraphsList.currentRowChanged.connect(self.gitLogShow)
-
 
 if __name__ == '__main__':
 
