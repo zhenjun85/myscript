@@ -1,0 +1,36 @@
+#!/bin/bash
+function usage() {
+    echo "w window_animation_scale"
+    echo "t transition_animation_scale"
+    echo "a animator_duration_scale"
+    echo "d restore to default"
+    echo "example $0 w 1"
+}
+
+case $1 in
+"w" )
+    command="window_animation_scale"
+    ;;
+"t" )
+    command="transition_animation_scale"
+    ;;
+"a" )
+    command="animator_duration_scale"
+    ;;
+"d" )
+    adb shell settings put global window_animation_scale 1
+    adb shell settings put global transition_animation_scale 1
+    adb shell settings put global animator_duration_scale 1
+    exit
+    ;;
+* )
+    usage
+    exit
+    ;;
+esac
+
+echo $command
+echo $2
+adb shell settings put global $command $2
+
+

@@ -21,7 +21,6 @@ fi
 
 croot || exit 1
 
-pwd
 
 if [ -f _bart_initialed ]
 then
@@ -31,7 +30,6 @@ fi
 
 touch _bart_initialed
 
-pwd
 
 if [ -d external/jpeg ]
 then
@@ -39,9 +37,15 @@ then
     cd build
     git apply ~/bin/data/androidm_build.patch
 else
-    echo "Current is android N"
     cd build
-    git apply ~/bin/data/androidn_build.patch
+    if [ -d .git ]
+    then
+        echo "Current is android N"
+        git apply ~/bin/data/androidn_build.patch
+    else
+        cd make
+        git apply ~/bin/data/androido_build.patch
+    fi
 fi
 
 myecho -b "Initial Android Success"

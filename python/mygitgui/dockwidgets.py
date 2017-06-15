@@ -106,9 +106,9 @@ class MainWindow(QtGui.QMainWindow):
             elif index < length - 2 and line[index] == '+' and line[index + 1]  == '+' and line[index + 2]  == '+':
                 cursor.insertText(line, boldFormat)
             elif line[index]  == '-':
-                cursor.insertText(line, greenFormat)
-            elif line[index] == '+':
                 cursor.insertText(line, redFormat)
+            elif line[index] == '+':
+                cursor.insertText(line, greenFormat)
             elif index < length - 1 and line[index] == '@' and line[index] == '@':
                 cursor.insertText(line, blueFormat)
             elif line[index] == 'd':
@@ -150,14 +150,21 @@ class MainWindow(QtGui.QMainWindow):
 
     def createDockWindows(self):
 
+        dock = QtGui.QDockWidget("Diff File", self)
+        self.textinfo = QtGui.QLabel()
+        dock.setWidget(self.textinfo)
+        self.setCorner(QtCore.Qt.TopLeftCorner, QtCore.Qt.LeftDockWidgetArea)
+        self.addDockWidget(QtCore.Qt.TopDockWidgetArea, dock)
+        self.textinfo.setText("TODO show the diff file name")
 
         dock = QtGui.QDockWidget("Git Log Info", self)
         self.paragraphsList = QtGui.QListWidget(dock)
         self.paragraphsList.addItems(self.info)
         dock.setWidget(self.paragraphsList)
         self.addDockWidget(QtCore.Qt.LeftDockWidgetArea, dock)
-
         self.paragraphsList.currentRowChanged.connect(self.gitLogShow)
+
+
 
 if __name__ == '__main__':
 

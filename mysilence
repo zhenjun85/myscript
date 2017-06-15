@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo adb root
+sudo adb remount
+sudo adb shell settings put system sound_effects_enabled 0
+sudo adb shell settings put system lockscreen_sounds_enabled 0

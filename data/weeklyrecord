@@ -378,3 +378,105 @@
 2017.17.1     04.17       666030] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][Telephony][sharkl2][9850ka][7.0_trunk] 锁屏界面双击锁屏按键不能成功打开相机，而是唤醒情景模式。
 2017.17.1     04.17       665591 - [0.76 h][TJ-RD][monkey][monkey-top][android7.0_trunk_7731G][ANR]com.android.music happens ANR,log:ANR in com.android.music (com.android.music/.MediaPlaybackActivity) (edit)
 2017.17.2     04.18       664594] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][MPT][sharkl2][9850ka][7.0_trunk][指纹][PTR2Block][性能]指纹灭屏解锁时间平均1.4s，应小于1s
+2017.17.4     04.20       667547 - [Beta_SH][sharkl2][9850ka][CMCC][7.0_trunk][Local]繁体下，长按电源键，飛行模式未翻译成飛航模式，与下拉状态栏显示不一致（附截图）
+2017.17.4     04.20       650566 - [12.89 h][TJ-RD][monkey][android4.4_PikeL4+2][ANR]com.android.contacts happens ANR,log:ANR in com.android.contacts (com.android.contacts/.activities.ContactEditorActivity)
+2017.17.4     04.20       667018 - [Camera_Team][PikeL][YunOS][4+2]点击开始录像，偶现预览界面提示“请稍等”，录像正常开始录制
+--2017.18
+2017.18.1     04.24       chenzhongjun    ro.sf.hwrotation
+2017.18.1     04.24       668921 - [TJ][MPT][APK][SC9861E][7.0]点击recent键首次长按一款不支持分屏功能的应用没有提示语
+2017.18.2     04.25       660177] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [MGSEI][SC9861E][7.0][A1][Telephony]卡2来电状态栏接听后卡1输入错误的PIN码进入PUK解锁界面，电话结束之前无法操作PUK解锁界面
+2017.18.2     04.25       whale2 开机定屏问题
+2017.18.2     04.25       669175 - [TJ][MPT][APK][sharkl2][9850ka][7.0_trunk][PTR2Block]安装微信（6.5.7），无法正常登陆账号
+2017.18.3     04.26       668948] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [TJ][PSST][SC9861E][7.0][A1][User][CTS][GMS] 在CtsPrintTestCases中，android.print.cts.CustomPrintOptionsTest#testChangeToAllPages - failed
+2017.18.4     04.27       caoliangliang, 底部下来
+2017.18.4     04.27       669551] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [PSST][sharkl2][9850ka][7.0_trunk][PTR2Block]monkey测试,#479测试0.65小时出现ANR in com.android.systemui (com.android.systemui/.settings.BrightnessDialog),1台手机累计出现1次
+2017.18.4     04.27       670086 - [Camera_Team][SC9861E-3][7.0]相框模式，预览上方未被相框覆盖（附预览截图）
+2017.18.5     04.28       670327] [Sprdroid7.0_trunk] [FW-WindowsManager][] [4.16 h][TJ-RD][monkey][monkey-top][android7.0_trunk_9832_17a][ANR]com.android.calendar happens ANR,log:ANR in com.android.calendar (com.android.calendar/.PermissionsActivity)
+2017.18.5     04.28       验证isharkl2feature
+2017.18.5     04.28       670426 - [Beta_SH][CMCC][sharkl2][9850ka][7.0_trunk][Tele][PTR2Block]拨打电话手机黑屏，按power键唤不醒，只有对端挂机手机屏幕才亮
+2017.18.5     04.28       670838 - [PSST][SC9861E-3][7.0]手机处于通话中，遮挡、远离手机近距离传感器位置，手机由灭屏到亮屏时，屏幕会闪一下
+--2017.19
+2017.19.2     05.02       671397] [Sprdroid5.1_SharkLS] [FW-WindowsManager][] [TJ][MPT][SC9832][5.1][15C_MP][多国语言-多格拉文][RTL语言共有问题]进入设置-开发者选项-选择调试应用-”选择应用“抬头未右对齐
+2017.19.3     05.03       stk dialog 闪现
+2017.19.3     05.03       android O 多窗口进入
+2017.19.4     05.04       672498 - [TJ][Local][SC9861E-3][7.0]按power键亮屏，闪现花屏，用户体验不好
+2017.19.4     05.04       669373] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Beta_SH][sharkl2][9850ka][7.0_trunk][CMCC][MM][2G RAM]后台音乐，灭屏后调节音量，和亮屏状态调节体验不一致，无法最小 答复全部答复转发 标记为未读
+2017.19.5     05.05       su  test....
+2017.19.5     05.05       672666 - [PSST][sharkl2][9850ka][7.0_trunk][USB]插拔U盘时，#78测试机出现定屏，一分钟左右后黑屏，有adb
+2017.19.5     05.05       input 稳定性问题，怀疑gps递交
+--2017.20
+2017.20.1     05.08       673458 - [TJ][Telephony][SC9853-1][Browser]浏览网页过程中点击右上角meun键进入设置，偶见浏览器停止运行
+2017.20.1     05.08        671578] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [PSST][SC9861E][7.0][A1] 进行系统Monkey测试，测试12.29个小时，#0298手机出现CRASH: com.android.gallery3d（Short Msg: android.app.RemoteServiceException），2台手机累计出现2次
+2017.20.1     05.08       673406] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Beta_SH][sharkl2][9850ka][7.0_trunk][性能][关键][PTR2Block]11后台图片旋转时间：Sharkls 1G均值0.721s， TCL 520均值0.550s;Sharkl2 1g均值 0.825s，Shark2 2G均值0.814s；sharkl2 1G对比sharkls 1g Gap14%；sharkl2 2g对比tcl 520 Gap... 答复全部答复转发 标记为已读
+2017.20.1     05.08       673004] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Camera_Team][sharkl2][9850ka][7.0_trunk]进行Monkey测试，#493测试0.332h出现ANR in com.android.camera2 (com.android.camera2/com.android.camera.CameraLauncher)(Reason: Input dispatching timed out)，4台机器出现8次
+2017.20.2     05.09       673363 - [WCN][2342B][SC9853-1][Wi-Fi]测试机连接SSID带有汉字的AP，该AP在测试机AP列表中后缀有乱码显示
+2017.20.3     05.10       673130 - [TJ][Local][SC9861E-3][7.0][-3硬件特有]开启多个应用，按recent-点击删除按钮，高概率出现需要按2-4次才能删除成功
+2017.20.3     05.10       674203] [Sprdroid7.0_trunk] [FW-WindowsManager][] [2.76 h][TJ-RD][monkey][monkey-top][android7.0_trunk_7731][ANR]com.android.dialer happens ANR,log:ANR in com.android.dialer (com.android.packageinstaller/.permission.ui.GrantPermissionsActivity)
+2017.20.3     05.10       673730] [Sprdroid7.0_trunk] [FW-WindowsManager][] [TJ][Telephony][7.0][9832][Vowifi][RLS1] 下载管理器与其他应用分屏，长按选中多个条目，提示语显示不全。 答复全部答复转发 标记为已读
+2017.20.3     05.10       [Bug 674606] [Sprdroid4.4_sfphone_9820W] [FW-WindowsManager][] [TJ][Local][4.4][sp9820W] 长按*键应仅执行解锁，却会切换日历的月份,不应进行月份切换
+2017.20.3     05.10       674745] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [sharkl2][9850ka][7.0_trunk][多模][FLAB]自动化测试 解锁后只有壁纸，桌面图标消失
+2017.20.4     05.11       674895 - [TJ][Local][SC9853-1]按recent键切换最近应用时偶见应用缩略图上出现横线（见截图）
+2017.20.4     05.11       [Bug 675024] [Sprdroid_6.0_Whale2] [FW-WindowsManager][] [0.07 h][TJ-RD][monkey][monkey-top][android6.0_trunk_whale2_9860s][ANR]com.android.packageinstaller happens ANR,log:ANR in com.android.packageinstaller (com.android.packageinstaller/.permission.u...
+2017.20.4     05.11       675102] [Sprdroid_6.0_Whale2] [FW-WindowsManager][] [PSST][SC9860G-3]手机进行系统monkey测试，测试0.07个小时，#482手机出现ANR in com.android.email (com.android.email/.activity.setup.EmailPreferenceActivity)，1台手机累计出现2次
+2017.20.5     05.12       lifei,   锁屏动画黑
+2017.20.5     05.12       674762] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [PSST][SC9861E][7.0][A1]打开设置-智能控制-智能体感-开启应用，在手机灭屏且不连充电器时，高概率出现双击手机后壳，相机没有打开，但按power键亮屏后能看到相机启动界面
+2017.20.5     05.12       670158 - [FT_SH][SharkL2][9850ka][7.0_trunk][Sharkl2_常规][Stability][LTE稳定性攻关]CMCC+CUCC，开机屏幕无法正常点亮，灰屏
+--2017.21
+2017.21.1     05.15       664344] [ALI_YunOS3.0_PikeL] [FW-WindowsManager][] [TJ][Local][PikeL][YunOS]查看图库中具体图片，长按左软键未调出下拉状态栏，再按返回键出现下拉状态栏 答复全部答复转发 标记为已读
+2017.21.1     05.15       673164] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][MPT][sharkl2][9850ka][7.0_trunk][指纹]分屏模式下指纹启动应用，后台页面显示异常
+2017.21.2     05.16       676551] [ALI_YunOS3.0_PikeL] [FW-WindowsManager][] [TJ][Local][PikeL][YunOS][32+4] 长按*键应仅执行解锁，却会切换日历的月份,不应进行月份切换 答复全部答复转发 标记为已读
+2017.21.2     05.16       676477 - [Multimedia][7.0][9832][Vowifi][RLS1]执行monkey测试15h，两台手机一台手机出现anr，出现anr在com.android.music
+2017.21.3     05.17       677177] [Sprdroid6.0_trunk_sfphone_dev_PikeL] [FW-WindowsManager][] [6.0][SC9820][NewPikeL][PikeL_16C][FDD][FT_Taipei][TWM][Stability]DUT crash at com.android.deskclock[java.lang.RuntimeException]
+2017.21.3     05.17       676100 - [PSST][SC9861E][7.0][A1][PTR2Block] 进行SwitchNetworkModeCSPS+sleep测试，#1356测试25.5小时出现定屏在拨号界面，adb可连
+2017.21.3     05.17       qiushi 黑屏问题
+2017.21.3     05.17       gs   WMS feature填写
+2017.21.4     05.18       讨论------------分屏模式下指纹启动应用，后台页面显示异常 
+2017.21.4     05.18       chengyong, irservice异常导致wm空指针
+2017.21.5     05.19       双击后壳启动camera 原生支持
+2017.21.5     05.19       678118 - [Camera_Team][SC9853-1]相机预览界面截图显示“无法抓取屏幕截图”
+2017.21.5     05.19       678485 - [TJ][Local][PikeL][YunOS][32+4]日历界面长按*键会切换日历的月份
+2017.21.5     05.19       677880] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Camera_Team][sharkl2][9850ka][7.0_trunk]进行Monkey测试，#628测试1.466h出现ANR in com.android.camera2 (com.android.camera2/com.android.camera.CameraActivity)(Reason: Input dispatching timed out ),5台机器出现1次
+2017.21.5     05.19       677226] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][MPT][sharkl2][9850ka][7.0_trunk][指纹]已开启应用锁，进入被锁应用，recent，查看界面显示，显示异常
+--2017.22
+2017.22.1     05.22       662541 - [PSST][5.1][SC7731G]down版本后15秒左右,#5137手机出现定屏在android界面，adb可连
+2017.22.1     05.22       678967] [Sprdroid4.4_sfphone_9820W] [FW-WindowsManager][] [1.30 h][TJ-RD][monkey][monkey-top][android4.4_Sfphone_9820w][ANR]com.android.contacts happens ANR,log:ANR in com.android.contacts (com.android.contacts/.common.vcard.ExportVCardActivity)
+2017.22.2     05.23       GSP 隐藏video图层
+2017.22.2     05.23       672214] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [BM][sharkl2][9850ka][7.0_trunk][oversea]自动测试过程中出现手机状态栏消失
+2017.22.3     05.24       679687] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Camera_Team][sharkl2][9850ka][7.0_trunk]进行Monkey测试，#493测试0.029h出现ANR in com.android.camera2 (com.android.camera2/com.android.camera.CameraLauncher)(Reason: Input dispatching timed out ),5台机器出现1次
+2017.22.3     05.24       CryptKeeper   keyguard issue
+2017.22.3     05.24       680460] [Sprdroido_pdk] [FW-WindowsManager][] New: [AndroidO][bringup]WIN DEATH when system Suspend&resume
+2017.22.5     05.26       681362] [Sprdroid_7.0_iSharkL2] [FWAP_FW-WindowsManager][] New: [TJ][Local][SC9853-1]显示大小最小时，进入一个不支持分屏的应用（如日历），横屏后长按recent键，较高概率出现闪屏（附操作视频）
+2017.22.6     05.27       status bar 显示异常问题
+2017.22.6     05.27       zhouhui    蓝牙闪现桌面问题
+--2017.23
+2017.23.3     05.31       security 讨论
+2017.23.3     05.31       682675 - [ST_India][Isharkl2][SC9853-1][file explorer][apk] ,DUT Screen fluctuate when exit from folder in file explorer in landscape mode(Video attached)
+2017.23.4     06.01       启动pay app支持
+2017.23.4     06.01       674991] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [TJ][MPT][APK][32T64][iWhale2][特有]进入whatsapp中,给好友发语音，长按录音按键无反应
+2017.23.4     06.01       682915 - [Multimedia][SC9853-1]按recent应用键，查看各最近启动过的应用，发现各应用的名字的字大小，以及“不支持分屏”字大小不一致，有大有小
+2017.23.5     06.02       683382] [Sprdroido_pdk] [FW-WindowsManager][] New: Add pip/autofill/multi-display feature
+2017.23.5     06.02       surfaceview 带宽问题
+2017.23.5     06.02       bootanimation 解耦
+--2017.24
+2017.24.0     06.04       683014] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][Telephony][sharkl2][9850ka][7.0_17B]双击电源键无法进入相机
+2017.24.2     06.06       night display mode
+2017.24.2     06.06       Twilight  service
+2017.24.2     06.06       surfaceview 动画闪现问题分析
+2017.24.4     06.08       682617] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [PSST][SC9861E][7.0][A1]monkey测试,#0200测试20.11小时出现ANR in com.android.deskclock (com.android.deskclock/.DeskClock),1台手机累计出现1次
+2017.24.4     06.08       Android O, Camera 刷新两次问题
+2017.24.4     06.08       686219 - [TJ][MPT][SC9853-1][指纹]USB充电一段时间，注册指纹，出现录入界面显示异常，接下来提示“糟糕，这不是传感器”
+2017.24.4     06.08       687269] [Sprdroid_7.0_iSharkL2] [MM-Graphics][] [TJ][Telephony][SC9853-1]任务列表偶现显示异常，参考附件截图
+2017.24.5     06.09       655579] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [TJ][Telephony][SC9861E][7.0]打开信息应用，添加常用短语输入至上限，保存后再次点击，偶见提示信息停止运行
+2017.24.5     06.09       686607 - [Multimedia][SC9853-1]图库中播放幻灯片，然后锁屏灭屏，通过来电、短信、或短按power键点亮屏幕，之后手机不会灭屏待机，一直保持高亮状态（对比华为mate9,魅蓝3不会）
+2017.24.5     06.09       687710 - [Beta_SH][sharkl2][9850ka][7.0_trunk][功能]Sharkl2_7.0项目过渡动画缩放倍数需修改为默认0.5x
+--2017.25
+2017.25.1     06.12       security app meeting
+2017.25.1     06.12       681626] [Sprdroido_pdk] [FW-WindowsManager][] [AndroidO][CDD][Software]Alert windows
+2017.25.2     06.13       688305] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [TJ][MPT][SC9853-1][7.0][指纹]录入指纹过程中，指纹进度停止，无法继续显示录入指纹的进度
+2017.25.2     06.13       688910] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [PSST][SC9853]monkey测试,#292测试0.28小时出现ANR in com.android.music (com.android.music/.MusicBrowserActivity),2台手机累计出现3次
+2017.25.2     06.13       678794] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [TJ][Local][SC9853-1]设置壁纸进入图库后点击触摸助手圆盘上的搜索，再点击任意图片未到壁纸设置界面
+2017.25.4     06.15       683600] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Beta_SH][CMCC][sharkl2][9850ka][7.0_trunk][2G RAM][Subj][APK]今日头条选择一个视频播放，按home键退出，随便点击一个应用进入，会闪现今日头条视频
+2017.25.4     06.15       690123] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][Local][sharkl2][9850ka][7.0_17B][Monkey]偶现com.android.launcher3 停止运行
+2017.25.4     06.15       sharklj1   feature bug
+2017.25.4     06.15       sharklj1 feature     6ge 
+2017.25.4     06.15       修电脑
