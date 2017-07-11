@@ -1,0 +1,6 @@
+//setkey <deviceinfoconfig><voip><sensor>
+<stepCounterMaxStep5m>1000</stepCounterMaxStep5m>
+<stepCounterSaveInterval>60000</stepCounterSaveInterval>
+<stepCounterRateUs>600000</stepCounterRateUs>
+<stepCounterSwitch>1</stepCounterSwitch></sensor></voip></deviceinfoconfig>
+

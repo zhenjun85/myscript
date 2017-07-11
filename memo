@@ -1,4 +1,5 @@
-百胜 沈东 157 5785 9834
-卓幼飞 甬旺 135 6662 1038， 153 5607 1571
-蔡 卉旺 139 5827 3365
+509456 - [PSST][SC9838][5.1][CM_5Mod][USB]测试机进行USB模式切换测试，#265和#808手机出现framework crash
 
+475928 - [PSST][SC9838][5.1][CM_5Mod]手机进行monkey+sleep+reboot测试，测试22个小时，#300手机一直停在“android正在启动，正在启动应用”界面    xiaodong.qiao
+
+592737 - [PSST][SC9860G][PTR1Block]手机进行CPUloading测试，测试30个小时，#249手机出现android重启

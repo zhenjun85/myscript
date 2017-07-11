@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "Should use ' ' to wrap content"
+result=`echo $1|sed 's:\\\:/:g'`
+echo $result

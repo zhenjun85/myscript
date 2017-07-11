@@ -480,3 +480,49 @@
 2017.25.4     06.15       sharklj1   feature bug
 2017.25.4     06.15       sharklj1 feature     6ge 
 2017.25.4     06.15       修电脑
+2017.25.4     06.15       677841] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [PSST][SC9861E][7.0][A1] 进行高温65度（MemTest+MP4硬解）测试，0200测试12小时左右出现黑屏，adb可连
+2017.25.5     06.16       685809] [Sprdroid4.4_sfphone_9820W] [FW-WindowsManager][] [TJ][Local][4.4][SC9820W]按power键锁屏再按power键亮屏，测试机收到来电，闪现桌面图标
+--2017.26
+2017.26.1     06.19       协助camera  SurfaceView 异常 退出
+2017.26.1     06.19       687710 - [Beta_SH][sharkl2][9850ka][7.0_trunk][功能]Sharkl2_7.0项目过渡动画缩放倍数需修改为默认0.5x
+2017.26.1     06.19       691422] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [PSST][SC9853-1]monkey测试,#058测试0.62小时出现ANR in com.android.browser (com.android.browser/.BrowserActivity),8台手机累计出现17次
+2017.26.1     06.19       修电脑
+2017.26.1     06.19       addLinksSprd   不建议修改framework
+2017.26.2     06.20       693249 - [Beta_SH][SC9861E][7.0][A1][MM]进入相机，按最近应用列表，再进入相机，进入之前会闪现下壁纸 
+2017.26.3     06.21       解耦  sos feature
+2017.26.3     06.21       sprdlink
+2017.26.3     06.21       wmware 安装
+2017.26.4     06.22       sensor study
+2017.26.4     06.22       688980 - [TJ][Telephony][SC9853-1]单卡PIN码输入界面进行紧急拨号并开启免提，插入带有PIN码的卡二，待状态栏显示卡二后锁屏再解锁，测试机偶现闪现紧急拨号界面
+2017.26.5     06.23       695136] [Sprdroido_pdk] [FW-WindowsManager][] [APPS_TJ][BLOCK MP][客户需求]印度市场SOS需求
+2017.26.5     06.23       696427] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] New: [TJ][Local][SC9853-1]时钟应用信息存储界面分屏，点击recent键后点击返回按键，偶现分屏界面上屏仍然存在，下屏变为主屏界面且主屏界面不能滑动
+--2017.27
+2017.27.2     06.27       Android O Feature 5
+2017.27.2     06.27       Android O Feature 8
+2017.27.2     06.27       Android O Feature 9
+2017.27.2     06.27       697704] [Sprdroido_pdk] [FW-WindowsManager][] [9850ka][Sprdroido_pdk ]动态虚拟导航栏需求(framework)
+2017.27.2     06.27       hide surface 依赖surfaceflinger，需要surfaceflinger做相应修改
+2017.27.3     06.28       俄罗斯按键互换需求
+2017.27.3     06.28       698771 - 将home和switch键透传给工厂应用
+2017.27.3     06.28       动态navigation bar
+2017.27.3     06.28       keycode camera
+2017.27.4     06.29       691048] [Sprdroid_7.0_iSharkL2] [APP-PackageInstall][] [PSST][SC9853-1]手机进行monkey+sleep测试，测试2.5个小时，#098手机出现android重启
+2017.27.4     06.29       cmaera key feature
+2017.27.4     06.29       698034 - [TJ][Local][SharkLJ1][CMCC]最近应用列表只存在信息和日历两个应用，设置下分屏，点击信息后在设置中关闭信息的应用权限，此时分屏界面下方会显示日历界面
+2017.27.5     06.30       692749 - [Feature List]黑屏唤醒
+2017.27.5     06.30       699935] [Sprdroido_pdk] [FW-WindowsManager][] New: [Feature List]极速抓拍功能[WindowManger]
+2017.27.5     06.30       699240] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Beta_SH][sharkl2][9850ka][7.0_17B][MM][PTR3Block]录像过程中截图保存完成后，第二次截图（音量-和power键），按键2-3次才可以连续截图，体验不好
+2017.27.5     06.30       699744] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [PSST][sharkl2][9850ka][7.0_17B][PTR3Block]monkey+sleep测试，#542测试36h出现黑屏,adb可连
+--2017.28
+2017.28.1     07.03       ams   stack issue 698554
+2017.28.2     07.04       700986] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [PSST][SC9853-1]手机进行Monkey测试，测试5.89小时，#250出现CRASH: com.android.gallery3d (pid 12402) Time Longth Since Monkey Start: 21229553，5台累计出现8次
+2017.28.2     07.04       700366 - [PSST] [SC9853-1][PTR1Block]进行monkey+sleep测试，#429手机测试2.5h出现android重启
+2017.28.2     07.04       协助graphic调查ion内存使用异常的情况
+2017.28.2     07.04       701609] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [TJ][Telephony][SharkLJ1][CMCC][7.0]邮件分屏界面点击home键，添加信息3*3小部件，选择对话界面横竖屏切换，竖屏后状态栏显示两道黑线
+2017.28.5     07.07       702973] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][Telephony][sharkl2][9850ka][7.0_17B]测试过程中搜索无响应，log中提示ANR in com.android.quicksearchbox
+2017.28.5     07.07       702165 - [TJ][Telephony][SharkLJ1][CMCC][7.0]添加账户，登录界面分屏，输入姓名后切换为全屏，添加完成后偶见设置界面被分成上下两部分
+2017.28.5     07.07       702640] [Sprdroido_pdk] [FW-WindowsManager][] [PSST][AndroidO][SharkL2]进行,开关机测试，#0817测试 1小时发生Android重启
+--2017.29
+2017.29.1     07.10       702759] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [TJ][Telephony][SC9861E][7.0][A1]测试过程中，偶现ANR in com.android.quicksearchbox
+2017.29.1     07.10       whatapp 客户问题
+2017.29.1     07.10       702067 - [TJ][Local][sharkl2][9850ka][7.0_17B][Monkey]测试过程中偶现设置已停止运行（Short Msg: android.view.WindowManager$BadTokenException）(参考Bug 695063)

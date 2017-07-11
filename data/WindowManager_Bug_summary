@@ -1,0 +1,413 @@
+原生问题：
+1. 已经给google递交方案，等待反馈
+622602 - [TJ][Telephony][7.0][SC9832A2][Volte]分屏状态下编辑联系人，新建群组时切换为全屏模式，无法调用输入法
+
+2. 目前正在分析
+702165 - [TJ][Telephony][SharkLJ1][CMCC][7.0]添加账户，登录界面分屏，输入姓名后切换为全屏，添加完成后偶见设置界面被分成上下两部分
+
+3. AMS 模块导致的问题
+623844 - [MGSEI][7.0][SC9832A2][Volte][Local]分屏，通话界面在下，退出分屏回到桌面，概率出现桌面背景异常
+622737 - [MGSEI][7.0][SC9832A2][Volte][Multimedia]退出分屏模式后，从视频播放界面返回到相机界面，相机界面的操作按键消失
+623587 - [MGSEI][7.0][SC9832A2][Volte][Telephony]分屏下从状态栏挂断电话，通话界面黑屏
+658529 - [MGSEI][SC9861E][7.0][Local]改变字体大小后进入新增语言界面分屏再取消分屏，字体恢复为默认大小
+512908 - [TJ][Telephony][6.0][SC7731]从图库中分享图片至信息，点击back键返回到idle界面时会出现文件管理器界面
+632046 - [TJ][Telephony][7.0][SC7731C]设置联系人照片，切换至分屏模式下保存，偶见crash，提示\"通讯录停止运行\
+493650 - [TJ][PSST][6.0][SC7731][CTS Verifier][TR] 进行CTS Verifier测试，Screen Pinning Test测试项failed
+497099 - [TJ][Local][6.0][SC7731][user]user版本刷完版本后首次开机，手机启动时黑屏，不停点返回键，偶现com.android.provision无响应
+662899 - [PSST][6.0][SC7731C][32+4] 进行monkey测试，测试9.04小时，#335出现ANR in com.android.contactsr，1台手机发生1次
+
+4. A启动B，B为半透明，B启动后A稍后finish，会出现多余的动画
+688980 - [TJ][Telephony][SC9853-1]单卡PIN码输入界面进行紧急拨号并开启免提，插入带有PIN码的卡二，待状态栏显示卡二后锁屏再解锁，测试机偶现闪现紧急拨号界面
+
+5. 原生问题，已经不存在
+484602 - [PSST][Tshark3][block_PTR1]进行Monkey测试，120#手机测试过程中出现定屏，按键有震动，Power键可亮、灭屏，ADB可用
+
+6. 原生设计导致的问题，规避
+598028 - [Multimedia][7.0][SC9832A2][Volte]视频播放器播放视频A中home键退出，进入文件管理器悬浮窗播放视频B再切换到全屏播放时，会先闪现视频A的播放界面
+605052 - [Camera_Team][7.0][SC9832][Volte][PTR2Block]按home键或menu键退出相机，再进入相机时会出现屏幕亮，再黑屏再亮起的过程
+617465 - [TJ][Telephony][7.0][SC9832][Volte]网页在标签页界面有分屏模式切到全屏模式，标签页由左到右派版非上下排版
+593513 (SPCSS00310154) - [SC7731C][SC7731C][INNOVATECH][c178_hwf_221][Android6.0]长按Home,google search经常起不来
+616522 - [TJ][PSST][7.0][SC9832][Volte][CTS][7.0r3][GMS][共有][SC7731C]进行CTS测试，CtsAppSecurityHostTestCases--android.appsecurity.cts.DirectBootHostTest#testDirectBootEmulated--fail
+460403 - [TJ][PSST][5.1][7731gea][32+4][FWVGA][user][GMS][CTS][5.1_r2] android.view.cts.WindowTest -- testSetLocalFocus - failed 
+523957 - [TJ][PSST][6.0][SC7731][CTS][高概率复现][TR] com.android.cts.devicepolicy.MixedProfileOwnerTest - testScreenCaptureDisabled - failed
+
+7. google CTS case 问题
+608380 - [TJ][PSST][7.0][SC7731C][CTS][TR][SC9832]进行CTS测试，android.wm.cts.CrossAppDragAndDropTests#testGrantNoneRequestNone等13项--fail
+615057 - [TJ][PSST][6.0][SC9830][Volte][32+4][user][GMS][6.0 r12][CTS][共有][TR]进行CTS测试，android.security.cts.UsbDebuggingAuthWithoutUnlockTest --testDebugAuthWithoutUnlock-- failed
+
+
+8. 解耦导致的问题
+640196 - [ST_India][7.0][SC9832A2][Perfect365],DUT show message \"Unfortunately Perfect365 has stopped\" while open Perfect365 app(Snapshot attached).
+
+9.动画计算的时候精度问题导致的动画异常
+597388 - [Multimedia][7.0][SC9832A2][Volte]桌面添加图库小部件，点击小部件最下面的那张照片高概率出现屏幕右边白色线条闪烁，点击小部件中的其他照片无此异常
+
+10. 原生setreplacewindow的机制导致动画过程中出现黑屏
+611821 - [Beta_India][7.0][SC9832][Volte][Local]: When we come back from some options in settings, inside clock, screen gets black for a while. (Video attached) 
+
+11. 按power会多次响锁屏声
+460343 - [SC7731][SC7731][CL][DY800]闹钟或者计时器闹铃响，按Power键，锁屏提示音异常
+555550 (SPCSS00274895) - [SC9830][SC9830][TECHAINSH][L01B]【B类问题】【显示设置】开启屏保功能后锁屏界面插入充电器，待机自动屏保时会有三声锁屏的声音[Block MP]
+555560 (SPCSS00275783) - [SC7731][SC7731][ZTE_HZ][L110]按Power键灭屏锁屏声音播放了两次
+447788 - [MGSEI][SC9838][5.1][CM_5Mod][Full][User Trial[Local]将屏保设置为万花筒，并选择启动方式为"以上任一情况"，连接AC充电器后重启手机后等待屏保出现，手机发出一串嘚嘚声
+
+12. 低内存配置导致PhoneWindow执行相关逻辑引发的问题
+483199 - [SC7731][SC7731][CARON][P1923]进入设置菜单从一个界面进入另一个界面时有时候会在标题栏闪一下白条
+495627 - [SC7731][6.0]进入设置菜单从一个界面进入另一个界面时有时候会在标题栏闪一下白条
+513157 - [SC9830][SC9830][REVOVIEW][F18_基伍]待机/设置/按电源键灭屏/再点亮/ 状态栏会闪一下白条
+531657 - [SC9832][HUAQIN][lava]手机发现部分第三方界面 虚拟键和界面重叠
+
+13. 逻辑同步问题，禁止主动抛出异常
+453983 - [MGSEI][SC9838][5.1][CM_5Mod][Full][Free][Local]通过设置和无障碍小部件进入无障碍->放大手势，并在最近使用程序中交替开关和使用放大手势功能 高概率出现sysdump
+497008 - [6.0][SC7731]通过设置和无障碍小部件进入无障碍->放大手势，并在最近使用程序中交替开关和使用放大手势功能 高概率出现sysdump
+
+14. 数组越界
+625404 - [PSST][7.0][SC9832A2][Volte]进行monkey+sleep测试7台测试机发生android重启
+
+15. 原生问题，合入patch
+600762 - [PSST][7.0][SC9832][CMCC入库]进行monkey测试14.2小时发生 ANR in com.android.phone发生次数：2
+686607 - [Multimedia][SC9853-1]图库中播放幻灯片，然后锁屏灭屏，通过来电、短信、或短按power键点亮屏幕，之后手机不会灭屏待机，一直保持高亮状态（对比华为mate9,魅蓝3不会）
+512025 - [TJ][Local][6.0][SC9830][uiautomator]进行uiauto稳定性测试，偶现测试机黑屏，可以下拉状态栏，power键之外的键无反应
+606501 - [MGSEI][7.0][SC9832A2][Volte][Telephony]分屏模式下通话过程中，点击recent键高概率出现闪屏
+541696 - [TJ][MPT][APK][SC9850S]进入全民超神（V1.11.0），灭屏后，旋转屏幕，点亮屏幕解锁，游戏界面显示一半，另一半为黑色
+467173 - [Google Patch][FW-WindowManager][Prevent unexpected rotation while going back to keyguard]
+495064 - [MGSEI][6.0][SC7731][Local]移除系统界面调谐器时，点Home或者Menu，移除界面不消失也无法移除或取消，其他功能无法使用，出现定屏现象
+515719 - [google-patch][Development_Area][性能]转屏场景的性能优化
+520600 - [TJ_PSST][6.0][SC9832]][SharkLS][Native][CTS][特有]进行CTS测试，com.android.cts.devicepolicy.MixedDeviceOwnerTest--testPermissionPrompts-fail
+534598 - [MGSEI][6.0][SC7731C][Pike][Telephony]新建一个只含姓名的SIM卡联系人，删除其姓名然后按recent后联系人主界面下半部分显示为黑色
+612989 - [研发自提]开机壁纸显示异常
+613026 - [MGSEI][7.0][SC9832A2][Volte][Connectivity]连接蓝牙耳机，分屏，在要断开连接界面取消分屏，点击返回出现设置无响应
+625282 - [7.0_trunk][FW-WMS][研发自提]窗口动画起始点异常，合入google patch
+537413 (SPCSS00257330) - [SC9830][SC9830][FREECOM][FS087]锁屏界面进入相机，下拉状态栏点击设置图标，密码输入框未显示输入法
+
+16. wallpaper相关
+596073 - [TJ][Local][7.0][SC9832][Volte]手机重启后，开机闪现半个黑屏（见操作视频）
+
+17. keyguard 相关
+660177 - [MGSEI][SC9861E][7.0][A1][Telephony]卡2来电状态栏接听后卡1输入错误的PIN码进入PUK解锁界面，电话结束之前无法操作PUK解锁界面
+
+18. 空指针问题
+626031 - [MGSEI][7.0][SC9832A2][Volte][Local]无SIM卡，通话详情界面拨号，挂断后点击recent，低概率出现系统UI停止运行
+
+ANR问题
+1. 在visibility状态为VISIBLE的时候，Surface为null，有一种可能是在relayoutWindow的时候win.mAppToken.clientHidden为true.这样就可能会出现surface为null的情况，导致焦点无法切换到对应window，导致anr
+542627 - [16.71 h][TJ-RD][monkey][android6.0_trunk_pike_32+4][ANR]com.android.dialer happens ANR,log:ANR in com.android.dialer (com.android.dialer/.DialtactsActivity)
+
+2. 子窗口被移除后，没有及时更新input focus导致的ANR，一般发生在quicksearchbox比较多，概率很低
+615624 - [PSST][7.0][SC9832A2][Volte]进行monkey测试5.5小时发生ANR in com.android.quicksearchbox 发生次数：2
+702973 - [TJ][Telephony][sharkl2][9850ka][7.0_17B]测试过程中搜索无响应，log中提示ANR in com.android.quicksearchbox
+
+3.应用没有执行am_resume_activity
+674204 - [3.00 h][TJ-RD][monkey][android7.0_trunk_7731][ANR]com.android.deskclock happens ANR,log:ANR in com.android.deskclock (com.android.packageinstaller/.permission.ui.GrantPermissionsActivity)
+
+4. APP TRANSITION TIMEOUT问题，规避，monkey情况将这个timeout缩短为2秒，避免和monkey触发的时间一致 
+662649 - [14.29 h][TJ-RD][monkey][android7.0_trunk_7731G][ANR]com.android.dialer happens ANR,log:ANR in com.android.dialer (com.android.dialer/.DialtactsActivity)
+555672 - [PSST][SC9832][5.1][SharkLS-3][CMCC预测试][15C Modem]进行monkey测试]，#165测试4.6h出现ANR in com.android.contacts (com.android.contacts/.activities.ContactEditorAccountsChangedActivity).CameraLauncher), 共出现1次
+620676 - [PSST][7.0][SC9832][Volte]进行monkey测试，#780测试log提示ANR in com.android.calendar (com.android.calendar/.PermissionsActivity)，出现时间：0.0686h，出现次数：25
+
+
+5. 底层驱动导致的绘制流程阻塞导致的ANR
+514395 - [PSST][7731C][32+4][RF3533G]进行monkey测试，测试17.56小时，488#手机发生CRASH: com.android.systemui（Short Msg: android.view.WindowManager$BadTokenException），1台手机发生4283次
+
+6. dummyanimation导致的资源抢占，system_server线程阻塞引发的anr 
+523865 - [PSST][6.0][SC7731C][PIKE][RF3532D]Monkey 测试，测试24.73小时223#发生ANR in com.android.launcher3,1台手机发生1次
+541387 - [2.20 h][TJ-RD][monkey][monkey-top][android6.0_trunk_16a_pike][ANR]com.android.packageinstaller happens ANR,log:ANR in com.android.packageinstaller (com.android.packageinstaller/.permission.ui.GrantPermissionsActivity)
+611708 - [PSST][7.0][SC9832A2][Volte][PTR2Block]进行monkey测试7.5小时发生ANR in com.android.music 发生次数：2
+
+7. vsync，mali等surfaceflinger底层导致的ANR，定屏
+531057 - [PSST][6.0][SC9832][Volte]进行monkey测试，log提示ANR in com.android.phone (com.android.contacts/.common.activity.RequestPermissionsActivity)，出现时间：18.51h，出现次数：1
+647947 - [PSST][sharkl2][9850ka][7.0_trunk]#25手机打一个电话后偶现黑屏，无法唤醒，有adb
+632307 - [SC9861E][7.0][FLAB]在拨号界面进入工程模式，出现"电话无响应"
+676100 - [PSST][SC9861E][7.0][A1][PTR2Block] 进行SwitchNetworkModeCSPS+sleep测试，#1356测试25.5小时出现定屏在拨号界面，adb可连
+
+8. focus app和focus window不对应导致的ANR
+512799 - [PSST][6.0][SC7731C][PIKE]进行monkey测试，测7.69小时，475#手机发生ANR in com.android.launcher3,2台手机累计发生3次
+598169 - [PSST][6.0][SC9830][Volte][32+4]进行monkey测试#142测试机9.5小时发生ANR in com.android.packageinstaller 发生次数：2
+572964 - [10.60 h][TJ-RD][monkey][monkey-top][android6.0_16b_pike_32+4][ANR]com.android.contacts happens ANR,log:ANR in com.android.contacts (com.android.contacts/.activities.PeopleActivity)
+
+9. 应用操作不当出现多个窗口，极低概率条件下引发fw-input逻辑有问题
+614617 - [PSST][SC9860G]手机进行系统monkey测试，测试18.95个小时，#635手机出现ANR in com.android.gallery3d (com.android.gallery3d/.app.MovieActivity)，2台手机累计出现3次
+
+10. lowmemory水位配置问题导致的ANR
+609793 - [PSST][7.0][SC7731C][32+4]进行monkey测试,测试22.30小时,082#手机发生ANR in com.android.music,4台手机发生135次
+
+11. 第三方应用有问题导致的ANR
+568662 - [PSST][SC9860G]手机进行系统monkey测试，测试2.1717个小时，#082手机出现ANR in com.android.browser (com.cmvideo.migumovie/com.wondertek.activity.AppActivity)，6台手机累计出现10次
+
+12. 手机灭屏后还接收input事件导致的anr
+512836 - [PSST][6.0][SC9832]进行monkey测试，log提示ANR in com.android.launcher3 (com.android.launcher3/.Launcher)，出现时间：11.57h，出现次数：2
+
+13. monkey过程中切换用户导致ANR
+496484 - [0.11 h][TJ-RD][monkey][monkey-top][android6.0_trunk][ANR]com.android.provision happens ANR,log:ANR in com.android.provision (com.android.provision/.DefaultActivity)
+
+14. 安装两个Launcher导致频繁启动ResolverActivity引发的ANR，测试问题
+480649 - [8.53 h][TJ-RD][monkey][android5.1_pike_prime][ANR]com.android.email happens ANR,log:ANR in com.android.email (com.android.email/.activity.setup.AccountSetupFinal)
+
+15. 应用主线程阻塞引发的ANR
+523325 - [0.04 h][TJ-RD][monkey][monkey-top][android6.0_trunk_sharkls][ANR]com.android.browser happens ANR,log:ANR in com.android.browser (com.android.browser/.BrowserActivity)
+
+16. 频繁发广播引起系统负载高
+613505 - [5.22 h][TJ-RD][monkey][monkey-top][android6.0_PikeL][ANR]com.android.quicksearchbox happens ANR,log:ANR in com.android.quicksearchbox (com.android.quicksearchbox/.SearchActivity)
+578950 - [TJ-RD][monkey][android6.0_trunk_16b_sharkls][ANR] happens ANR,log: 
+616900 - [8.49 h][TJ-RD][monkey][monkey-top][android7.0_trunk_9832][ANR]com.android.messaging happens ANR,log:ANR in com.android.messaging (com.android.messaging/.ui.conversationlist.ConversationListActivity)
+
+稳定性问题
+1. SystemServer在启动各种关键服务的时候，前面的服务发生Exception导致后续流程没有执行导致的问题
+702640 - [PSST][AndroidO][SharkL2]进行,开关机测试，#0817测试 1小时发生Android重启 
+
+2. 应用多实例导致的资源消耗问题，packageinstaller设置为常驻，导致不能被杀掉。同时camera应用也存在创建多个实例的现象
+691052 - [PSST][SC9853-1]手机进行monkey+sleep测试，测试12.5个小时，#147手机出现android重启
+700366 - [PSST] [SC9853-1][PTR1Block]进行monkey+sleep测试，#429手机测试2.5h出现android重启 
+多实例导致的问题
+510077 - [PSST][6.0][SC7720]进行monkey测试，测8小时，378#手机发生ANR in com.android.packageinstaller ,10台手机累计发生1次
+508793 - [PSST][6.0][SC7731][HDR]进行系统monkey测试，#416测试log提示ANR in com.android.systemui (com.android.systemui/.recents.RecentsActivity)，测试时间9.9762h，出现次数：4
+592737 - [PSST][SC9860G][PTR1Block]手机进行CPUloading测试，测试30个小时，#249手机出现android重启
+614071 - [PSST][7.0][SC7731C]进行monkey测试,测试13.92小时,008#手机发生ANR in com.android.launcher3,1台手机发生1次
+509456 - [PSST][SC9838][5.1][CM_5Mod][USB]测试机进行USB模式切换测试，#265和#808手机出现framework crash
+545962 - [13.84 h][TJ-RD][monkey][monkey-top][android6.0_trunk_16b_sharkl][ANR]com.android.fmradio happens ANR,log:ANR in com.android.fmradio (com.android.fmradio/.FmMainActivity) 
+587966 - [WCN][Marlin2][9832][AB][BT]测试机连接BLE键盘后，关闭开启键盘，偶现一段时间内开关键盘，待键盘连接/断开瞬间测试机屏幕闪现黑屏，开关BT后恢复
+
+3. davlik配置异常导致的问题 
+632468 - [BJ_RD][Whale2 7.0][sp9860g-1][StabilityTest][Monkey]9860g-1进行monkey测试,出现monkey异常停止
+
+4. WindowManager处未发现异常
+699744 - [PSST][sharkl2][9850ka][7.0_17B][PTR3Block]monkey+sleep测试，#542测试36h出现黑屏,adb可连
+
+5. 死锁问题，google已解 
+509682 - [PSST][SC9838][5.1][4MOD][3593]手机进行monkey+sleep+reboot测试，测试30个小时，#307手机一直停在“android正在启动，正在启动应用”界面
+593098 (SPCSS00310814) - [SC9832_6.0][SC9832_6.0][TECHAINSH][L15]【模拟用户测试】手机烧录版本，开机出现定屏，以及恢复出厂设置出现定屏问题
+测试脚本也同时有问题
+475928 - [PSST][SC9838][5.1][CM_5Mod]手机进行monkey+sleep+reboot测试，测试22个小时，#300手机一直停在“android正在启动，正在启动应用”界面
+484716 - [PSST][Jiaotu][Android][PTR1Block] 进行Monkey+Sleep+Reboot测试， 120/156/196/198四台手机一直停留在“Android正在启动”界面，按键失效，ADB可用，但无法将log导出
+
+6. davik配置导致
+571533 - [PSST][6.0][SC9832][Volte][32+4][PTR2Block]进行monkey+sleep测试，测试24h左右，手机测试停止
+
+7. monkey操作导致destroy超时引发的BadTokenException，应用修改
+475026 - [PSST][5.1_PAD][7731gea][64+8][HDR]进行monkey测试，log提示CRASH: com.android.contacts (android.view.WindowManager$BadTokenException),出现时间5.52h，出现次数：3
+297282 - [4.4][7715ea-14a][monkey][JavaCrash][Contacts]com.android.contacts出现WindowManager$BadTokenException
+567477 - [SC9832][5.1][3593AA1][CPU 1.3G][Volte][FT_TP][Stability]System crashed at com.android.quicksearchbox [ViewRootImpl.java:562]
+
+8. View对窗口尺寸设置异常，导致底层buffer过大导致的问题
+526042 - [PSST][6.0][SC9832][POP WINDOWS]进行monkey测试，log提示CRASH: com.android.messaging (java.lang.IllegalStateException)，出现时间：12.80h，出现次数：1
+639112 - [PSST][6.0][SC9832][CMCC]执行线上monkey测试，#345测试1.23h发生CRASH: com.android.messaging
+
+9. WindowManager模块增加debug信息，未加锁保护引发的重启
+521892 - [PSST][6.0][SC7731][HDR][PTR2Block]进行monkey+sleep测试，#164测试3.6小时出现android重启 
+
+10. monkey操作发送key事件，有概率会出现按键只发down，不发up，导致power键被误认为消费，导致power键不起作用，同时修改测试脚本问题
+573774 - [PSST][6.0][SC9832][Volte][32+4]进行monkey+sleep测试，测试45h左右，#778假黑屏，有adb，power键无响应，跟踪脚本修改
+
+11. AMS destroy之后没有调用create
+[PSST][6.0][SC9832]I线上monkey测试，在11H #803出现CRASH: com.android.launcher3:wallpaper_chooser (pid 17137) Time Longth Since Monkey Start: 41694588，1次
+
+
+
+12. 第三方应用导致的多实例问题，引发重启
+608162 - [PSST][7.0][SC9832][Volte]进行大应用切换+sleep测试，#238测试4.5h出现android重启
+
+13. google patch更新后，增加了ams的锁，和之前的feature有冲突导致的死锁问题
+662541 - [PSST][5.1][SC7731G]down版本后15秒左右,#5137手机出现定屏在android界面，adb可连
+651589 - [PSST][6.0][SC9832][Volte][32+4]进行开关机测试3到5次不能正常进入开机界面，一直停留在android开机界面，有adb口，能正常充电
+
+14. 规避处理
+601169 - [7.0][SC9832A2][Volte][FT_Taipei][Stability][11.59m]System crashed at com.android.quicksearchbox[android.view.WindowManager$BadTokenException] 
+579508 - [sharklC][oversea][AB][FT_Israel][Stability]System crashed at com.android.quicksearchbox [android.view.WindowManager$BadTokenException: Unable to add window]
+
+第三方问题，其他模块问题
+1. 第三方应用问题
+632517 - [TJ][MPT][APK][SC9860G-3]安装斗鱼（V2.4.3.1），点击首页中右下键摄像机图标--录制，打开时，画面右侧出现一条白线
+
+2. DockDivider在分屏操作下出现异常，在SystemUI出规避
+647378 - [Beta_SH][SC9832][7.0_trunk][Local]拨号盘使用分屏功能后横屏状态下按HOME键退出后，状态栏显示异常（附截图）
+
+3. 数据库中的Settings.Secure.USER_SETUP_COMPLETE设置为0，这样就会屏蔽掉HOME，Rencent等键值，认为setup wiziard还未完成，属于其他模块导致的
+630667 - [BM][Daily test][7.0][SC9832][#2]自动测试中偶现home键失效
+
+4. 应用设置动画导致的问题
+633132 - [Camera_Team][SC9861E][7.0][PTR1Block]Camera界面切换预览后，出现重叠、闪屏、切屏等问题
+625996 - [Beta_SH][9860G-3][CameraUI][MM]视频播放器界面进入相机，背景动画显示异常（详情见视频）
+
+5. 应用关于转屏调用错误导致的问题
+693610 - [TJ][Telephony][sharkl2][9850ka][7.0_17B]编辑邮件添加附件做分屏/横竖屏切换，偶见编辑界面横屏后无法切换为竖屏状态
+618526 - [TJ][Telephony][7.0][SC9832][Volte]文件管理器中分享一张较大图片至email，分享过程中进行反复横竖屏切换，偶见跳转到email界面后无法在切换到横屏显示
+614984 - [MGSEI][7.0][SC9832A2][Volte][Telephony]新建邮件横屏下添加附件后低概率出现不能切换到竖屏
+496311 - 照片预览自动翻转功能关闭失败[展讯支持]
+
+6. cts测试过程中弹出其他窗口，导致后续case fail
+535550 - [TJ][PSST][6.0][SC7731C][Pike][16A][32+4][GMS][CTS]进行CTS测试，android.accessibilityservice.cts.AccessibilityEndToEndTest等27项--fail
+569161 - [TJ][PSST][6.0][sp9830a5][32+4][HDR][CTS] [TR]进行CTS测试com.android.cts.ui.ScrollingTest--testFullScrolling FAIL
+
+7. 应用自身逻辑有问题导致
+645071 - [Multimedia][SC9861E][7.0]视频播放中来电接听，在通话界面点击返回键，屏幕中间会先闪现视频播放画面，之后才返回通话中请稍后再试的提示框界面，打开停用Hw叠加层也有此问题
+629599 - [TJ][Local][7.0][SC9832A2][Volte]在定时开关机分屏界面，来定时关机提示框，按power键灭屏唤醒屏幕后点取消，手机仍执行关机操作
+
+8. 冷启动优化导致
+622690 - [TJ][Local][7.0][SC7731C][32+4]横屏情况下点击wlan快捷图标，刷新界面时显示模糊
+620343 - [TJ][SDELAB][7.0][SP9832][Daily Test][CTS][Native] CtsAssistTestCases—android.assist.cts.AssistStructureTest#testAssistStructure –fail
+
+9. 权限框特殊设置问题
+595355 - [Multimedia][7.0][SC9832][Volte]悬浮窗播放视频，进入设置-应用，随便进入一个应用的权限界面（如电话），在权限界面无法对悬浮窗进行操作
+
+10. View=DecorView@3a92a54[] not attached to window manager 类问题，一般应用使用不当导致
+662672 - [TJ][Telephony][sharkl2][9850ka][7.0_trunk]进入setting-勿扰-添加规则，输入规则名称时做分屏操作，偶见设置停止运行
+658890 - [TJ][Telephony][sharkl2][9850ka][7.0_trunk]添加常用短语时分屏操作，偶见提示信息停止运行
+
+11. 应用使用问题
+664344 - [TJ][Local][PikeL][YunOS]查看图库中具体图片，长按左软键未调出下拉状态栏，再按返回键出现下拉状态栏
+599752 - [TJ][Telephony][7.0][SC9832A2][Volte] 使用分屏模式打开浏览器的时候，浏览器的网址栏会被状态栏遮挡
+597099 - [Android N][9832-2][Free Test][TK][Multimedia][Gallery] Lock video view and tap the video view, lock icon doesn't appear.(5/5)
+511091 - 【jiaotu】【相机】横屏连拍后再竖屏，预览界面的图标始终是横向
+
+12. 应用修改为不支持多窗口
+594523 - [TJ][Local][7.0][SC9832][Volte]分屏模式下新建日程重复选择界面横竖屏下都显示不全
+
+SystemUI相关问题
+1. Keyguard动画导致的白屏现象
+651944 - [Camera_Team][Beta][7.0][SC7731C][MM]灭屏按power键亮屏双击power键进入相机，进入前白屏
+
+2. AndroidO bringup阶段因为我们项目没有NavigationBar而引发的异常
+680460 - [AndroidO][bringup]WIN DEATH when system Suspend&resume
+
+3. RecentsActivity重新走生命周期导致的问题，修改原生引入的问题
+610613 - [Beta_India][7.0][SC9832][Volte][Local]: After rotating the device double tap on recent apps button, it won't open the last app for the first time. (Video attached)
+
+4. keyguard状态错误
+522365 - [FT_贵阳] [SC9830A][5MOD][VOLTE][15C_MP][Volte规模场测一][2.1.4]主叫端在视频通话界面无法使用HOME和MENU按键，重启后恢复正常
+
+5. keyguard加入延迟解决
+683014 - [TJ][Telephony][sharkl2][9850ka][7.0_17B]双击电源键无法进入相机
+
+6. statusbar错误
+593041 - [Android N][9832][Feature Check][TK][Connectivity][Bluetooth]Cannot trigger the keyboard shortcuts screen when user press "search+/" in BT keyboard.(10/10)
+
+SurfaceFlinger，HWC，hwui相关的，底层驱动，硬件等导致的问题
+1. 怀疑CPU cache
+674895 - [TJ][Local][SC9853-1]按recent键切换最近应用时偶见应用缩略图上出现横线（见截图）
+
+2. GSP问题导致的异常
+695046 - [TJ][Telephony][SC9853-1]拨号进入语音信箱号码设置界面，逐渐返回上一级，返回过程中界面闪动，见视频
+653934 - [TJ][Local][sharkl2][9850ka][7.0_trunk]任意dialog弹出框界面，均会出现闪屏（见视频）
+543819 - [PSST][SC9850S][Sensorhub][功能]开启自动旋转，进入图库打开一幅图片/进入日历/浏览器等，手机左横屏，图片翻转后，再将手机旋转180度至右横屏，发现图片旋转异常
+638739 - [Beta_SH][sharkl2][9850ka][7.0_trunk][TJ][Local]按音量键调节音量，音量条偏右，没有居中显示
+527232 - [BETA_SH][6.0][SC7731][32+4][Subj][PTR2Block]下载user版本后开机，操作时出现跳屏，屏幕无法点中，userdebug版本无此现象
+549001 (SPCSS00270056) - [SC9832][SC9832][SPROCOMM][X5519LV]点击下拉栏中的多用户图标（多用户功能没有开启），下拉栏在隐藏时，有1-2秒钟的卡顿，主屏无法滑动
+544943 - [Wbox][k3.18]Video-播放HEVC/4K视频时点击悬浮窗，切换到悬浮窗口时间过长，有时切换后的前几秒只有声音没有画面
+626368 - [MGSEI][7.0][SC7731C][特有][Local]设置显示大小为小，返回桌面，横屏，出现设置界面闪现
+551571 - [Multimedia][SC9850S]视频播放器中播放测试片源，自动播放结束时，会定格在最后画面5秒左右再退出播放状态
+
+3. hwui模块修改导致的问题
+609898 - [Beta-SH][7.0][SC9832][Volte]进入相机或按home键退出，都会显现一下壁纸（附视频）
+595039 - [TJ][Local][7.0][SC9832][Volte]开发者选项中，模拟辅助显示设备功能无效 
+
+4. display，surfaceflinger driver引发的问题
+623288 - [PSST][SC9861E]#370开机后launcher界面背景有Android字面显示
+686219 - [TJ][MPT][SC9853-1][指纹]USB充电一段时间，注册指纹，出现录入界面显示异常，屏幕出现黑屏（如附件截图）”
+502786 - [TJ][PSST][6.0][SC7731][CTS Verifier]进行CTS Verifier测试，在进行Projection Tests测试项的测试过程中，手机高概率偶现定屏
+588332 - [PSST][SC9860G]Cardboard VR app display on small screen area,reference phone Huawei P9 is normal
+561134 - [TJ][Telephony][SC9860G][full]拨打视频电话，挂断后偶见“电话无响应”
+674895] [Sprdroid_7.0_iSharkL2] [MM-Graphics][] [TJ][Local][SC9853-1]按recent键切换最近应用时偶见应用缩略图上出现横线（见截图）
+
+5. 疑似display driver返回值有问题，导致hwui crash
+598448 - [MGSEI][7.0][SC9832A2][Volte][Telephony]新建联系人界面创建新群组，填写群组名全选后转屏->界面跳转至联系人界面；再次新建联系人填写群组名全选后转屏，出现通讯录的停止运行
+607591 - [MGSEI][7.0][SC9832A2][Volte][Connectivity]录音机保存录音，全选录音名称，点击保存概率性性出现FM电台已停止运行或闪退
+
+Power相关的问题
+1. WindowManager处无异常，底层分析
+636155 - [Beta_SH][7.0][SC7731C][64+8][GMS][性能][体验]USB充电,低电量（15%）状态下，手机偶见灭屏唤不醒
+
+2. NetworkManager block导致长时间不能唤醒 
+624586 - [PSST][6.0][SC9820][PikeL_16C][NewPikeL]长时间待机灭屏后，按power唤醒，需要几秒后才能唤醒，唤醒时间过长
+
+3. phone修改亮屏逻辑导致的闪屏问题
+659153 (SPCSS00366513) - [SC9820A][SC9820A][TECHAINSH][GM05]灭屏状态下测试机来电会闪屏
+
+4. phone 模块导致的问题
+516652 - [PSST][6.0][SC9830][#5][PTR1Block][特有]sleep+call测试，#343经常出现来电不亮屏，只有声音在响 
+
+Input， Sensor相关问题
+1. 底层旋转功能失效
+459386 - [SharkLT8_Trunk] [5.1]自动旋转开关开启后，手机不能自动旋转
+585097 - [Multimedia][SC9860G]小窗口播放视频，拖动到左下角或者右下角，偶现无法旋转屏幕（附视频）
+633373 - [Multimedia][SC9861E][7.0][Local]开启自动旋转，手机不会旋转
+544384 - [TJ][Local][SC9850S]手机待机一段时间后，偶现无法转屏，手机重启后恢复
+625525 - [BM][k4.4][9860-1]所有APP模块能横屏旋转的，都不能横屏显示
+
+2. 底层sensor问题
+670426 - [Beta_SH][CMCC][sharkl2][9850ka][7.0_trunk][Tele][PTR2Block]拨打电话手机黑屏，按power键唤不醒，只有对端挂机手机屏幕才亮
+558615 - [WCN][Marlin2][9832][Wi-Fi][PTR1Block]测试机连接一AP或打开BT，灭屏后发生周期性的振动。
+602172 - [PSST][6.0][SC9820][NewPikeL][PTR1Block] 进行开关机（带耳机，SIM卡，开启bt）测试，#523测试17小时，手机进入安全模式，并提示“很抱歉，com.simple.launche已停止运行”
+597607 - [Android N][9832-2][Free Test][TK][Multimedia][Camera] Can't capture multiple photos by double press the volume keys.(6/10
+635052 - [sharkl2][9850k][FAE-TEST][trunk][xunrui]拿起手机，打开除录音机外的原生应用都会出现翻转90度的现象
+583654 - [9860-2][Multimedia][Camera] The camera will be launched when you tap the front instead of back.
+468440 - [Camera_Team][5.1phase2][7731gea][64+8][HDR][版本引入]拼图中的图像拼接功能，选择9张任意照片组成竖排列的长图，向下滑动至图片底部后继续向下快速滑动，高概率照片会向反方向滑动
+561057 - [MGSEI][6.0][SC9860G][Local]设置中智能控制黑屏唤醒功能灵敏度较差且高概率出现手上水平位置无法进行黑屏双击唤醒
+604102 (SPCSS00320050) - [SC9860G][SC9860G][TECHAINSH][TechainA06A]进入智能体感，开启开启应用，按home键返回到待机界面，双击手机后壳概率性无法打开相机
+615053 - [Camera_Team][SC9860G-3][CameraUI]播放视频过程中点击返回键卡顿之后提示图库无响应
+554922 - [BM][k3.18][9850-2]&[9850-2][prime]手机灭屏一段时间后自动亮屏
+
+WindowManager相关需求
+1. 616087 - [APPS_TJ][BLOCK MP][客户需求]印度市场SOS需求
+2. 475164 - [APPS_TJ][平台需求]关机播放铃声
+3. 475913 - [APPS_TJ][平台需求]添加显示硬件加速接口  ----------已经废弃
+   684553 - [sharkLJ1][Featurelist]添加显示硬件加速接口
+4. 536696 - [APPS_TJ][平台需求]口袋防误触模式
+   657137 - [iSharkL2][Featurelist][FL0103110005]口袋防误触模式
+   540056 - [TJ][MPT][6.0][SC7731][多国语言-台湾繁体]frameworks模块下，部分字符串未翻译成台湾繁体（参看附件）
+5. 498098 - [APPS_TJ][平台需求]ScreenPin模式下弹出导航栏
+6. 505116 - [APPS_TJ][平台需求]GMS版本长按home键进入“google search”
+   656980 - [iSharkL2][Featurelist][FL0103110004]长按home键进入“google search”
+7. 511212 - [APPS_TJ][平台需求]双击后盖开启Camera  -------------google原生支持，需要配置sensor的typeid
+   657016 - [iSharkL2][Featurelist][FL0103170007][平台特有]双击后盖开启camera
+8. 511451 - [APPS_TJ][平台需求]黑屏时，双击手机正面，亮屏   -----------------google原生支持
+   657018 - [iSharkL2][Featurelist][FL0103170008]黑屏唤醒
+   692749 - [Feature List]黑屏唤醒	
+9. 656736 - [iSharkL2][Featurelist][FL0103110001]去除UI层，降低Video播放功耗
+   684569 - [sharkLJ1][Featurelist]去除UI层，降低Video播放功耗
+   692668 - [Feature List]去除UI层，降低Video播放功耗
+   由于HWC不支持UI层与Video层同时渲染，如果用GPU会增加功耗，上层实现的workround方案，8.0上需要Surfaceflinger也有对应的修改
+   hide 图层feature引发的Bug
+   670218 - [Multimedia][sharkl2][9850ka][7.0_trunk]开启触摸助手，播放视频，进入参数设置界面后返回播放界面，当悬浮控制面板隐藏时，点击触摸助手中的menu按钮无效
+   611112 - [Beta_India][7.0][SC9832][Volte][Local]: Play a video in video player and switch between different applications by double tapping on recent app icon, sometimes the UI of the phone gets truncated from top and bottom. (Video attached)
+   601571 - [Multimedia][7.0][SC9832][CMCC入库][入库预测]播放邮件中的视频，切换到文件管理器界面，偶现有前面界面视频播放的残留透明框
+   607160 - [Multimedia][7.0][SC9832][Volte]竖屏播放视频时，旋转至横屏后，再旋转到竖屏，然后按home键，再次进入时，会闪现桌面背景（详见录制的视频）
+   610247 - [Multimedia][7.0][SC9832][Volte]视频横屏播放时，按home后，然后将屏幕旋转至竖屏，再次进入视频，会闪现桌面壁纸
+   564334 - [Multimedia][SC9860G]视频播放中下拉状态栏切换至访客模式，访客模式下的IDLE界面显示异常，详见操作视频
+   578323 (SPCSS00294846) - [SC9830][SC9830][XUNRUI][d1]下载一个 内涵段子 安装后 界面显示黑色的 , 麻烦看下是什么问题 ？ 这个apk 在高通 n1 的机器上运行正常
+
+10. 656749 - [iSharkL2][Featurelist][FL0103110002]WMS添加必要的debug log
+11. 657297 - [iSharkL2][Featurelist][FL0103110006]Multi-window    ---------------需要增加物理app_switch对多窗口的支持
+    684136 - [sharkLJ1][Featurelist]Multi-window
+12. 657375 - [iSharkL2][Featurelist][FL0103110007]长按实体键Back退出ScreenPin模式
+13. 698771 - 将home和switch键透传给工厂应用
+14. 700546 - 长按实体Camera键打开相机
+15. 535100 - [APPS_TJ][客户需求]虚拟按键动态显示，并能选择虚拟按键的顺序
+
+性能问题：
+467956 - [Beta_SH][SC9838][5.1][CM_5Mod][性能]Sharkl T8屏幕解锁平均耗时0.593s，与SharkL 5M (HD)平均耗时0.487相比相差22%
+664594 - [TJ][MPT][sharkl2][9850ka][7.0_trunk][指纹][PTR2Block][性能]指纹灭屏解锁时间平均1.4s，应小于1s
+644862 - [Beta_SH][sharkl2][9850ka][7.0_trunk][性能][关键][PTR2Block]11后台图片旋转时间：Sharkls 1G均值0.721s， TCL 520均值0.550s;Sharkl2 1g均值 0.825s，Shark2 2G均值0.814s；sharkl2 1G对比sharkls 1g Gap14%；sharkl2 2g对比tcl 520 Gap 48%
+608045 - [TJ][MPT][SC9860G-3][指纹]指纹解锁速度不稳定，时快时慢，慢时速度比快时相差2倍以上
+687710 - [Beta_SH][sharkl2][9850ka][7.0_trunk][功能]Sharkl2_7.0项目过渡动画缩放倍数需修改为默认0.5x
+
+其他：
+1. 设计问题，需要规避
+634807 - [Beta_India][6.0][SC9820][NewPikeL][Tele]:Vodafone, PikeL shows unwanted window on screen after unlock the phone from sleep mode during browsing.(Video attached)
+661948 - [WCN][2342A_BA][4.4][SC9820W][SharkLC][BT][PTRBlock]测试机已连接蓝牙耳机，灭屏情况下，无法通过测试机端调节通话音量
+638822 - [TJ][Local][4.4][SC9820][NewPikeL] [PikeL_4+2][易用性]点击计算器进入时闪屏
+615885 - [Camera_Team][SC9860G-3][CameraUI][特有] 后台开启FM，熄屏后双击音量下键，返回图库查看存在熄屏抓拍图片
+626442 - [Beta_External][SC9860G-3][6.0][FHD][性能][客户][Phoebe]从一个菜单按home键退回idle太慢
+604390 - [Beta_SH][6.0][SC9820][NewPikeL][AP Tele][客户关注] 来电时按挂机键不会挂断电话，必须按右软键才能挂断
+652262 - [TJ][Local][4.4][SC9820][NewPikeL] [PikeL_4+2]编辑界面等待手机灭屏，灭屏后长按*键解锁，会弹出符号的popup框
+674606 - [TJ][Local][4.4][sp9820W] 长按*键应仅执行解锁，却会切换日历的月份,不应进行月份切换
+618682 - [MGSEI][6.0][SC9820][PikeL_16C][Reliance][NewPikeL][Nikie输入法][Local]信息或记事本应用光标放在文本输入框中按*号键，弹出选项框按挂机键选项框不消失
+
+2. 修改引入
+603538 (SPCSS00319122) - [SC7731C][SC7731C][FREECOM][blu]拨号界面按home键之后在点击回去拨号界面，界面下面三个虚拟键底图不对
+617911 - [MGSEI][7.0][SC9832A2][Volte][Telephony]来电防火墙中添加黑名单联系人界面分屏，下屏切换程序的同时上屏添加黑名单联系人界面消失，退回到上一界面
+649519 - [sharkl2][9850ka][7.0_trunk][FLAB][版本引入]uiautomator自动化测试，下拉通知栏后，获取不到下拉通知栏的控件
+591038 - [Android N][9860-2][TK][Free Test][APP][Settings]Can't launch camera by pressing power button twice with screen locked
+554889 - [AOSP][SC9850S-2][MR1][Full Test][APP][Settings]Set the brightness level to min, when device enters daydream mode, the clock image can't be seen. (10/10)
+535599 - [MGSEI][6.0][SC7731C][Pike][Telephony][特有][版本引入]锁屏时无法接听来电（来电过程中无法手动解锁进入系统进行其他操作，16A&SharkL均不出现此问题）
+629580 - [研发自提][9832]移除在WMSLogEx中winAnimator.finishDrawingLocked()的调用
+

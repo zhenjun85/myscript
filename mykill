@@ -3,6 +3,10 @@
 killserver() {
     servername=`sudo adb shell ps|grep $1|awk -F " " '{print $2}'`
     echo $servername
+    if [ ! $servername ]
+    then
+        servername=`sudo adb shell ps -ef|grep $1|awk -F " " '{print $2}'`
+    fi
     sudo adb shell kill $servername
 }
 
