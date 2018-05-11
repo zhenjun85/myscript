@@ -1,0 +1,4 @@
+camera.sp9832e.so
+android.hardware.camera.provider@2.4-impl-sprd.so
+./vendor/lib/camera.device@3.3-impl.so
+qemu.sf.fake_camera both

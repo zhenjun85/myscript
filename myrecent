@@ -1,0 +1,12 @@
+#!/bin/bash
+COMMAND_PATH=~/bin/data/recentcommand
+
+if [ $# == 0 ]
+    then
+        command=`cat $COMMAND_PATH`
+        echo $command
+        $command
+    exit
+fi
+
+echo "$@">$COMMAND_PATH

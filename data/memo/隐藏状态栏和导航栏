@@ -1,0 +1,6 @@
+全屏沉浸模式（包括状态栏和虚拟按键）：
+adb shell settings put global policy_control immersive.full=*
+沉浸状态栏：
+adb shell settings put global policy_control immersive.status=*
+沉浸虚拟按键（隐藏后底部上划可以呼出）：
+adb shell settings put global policy_control immersive.navigation=*

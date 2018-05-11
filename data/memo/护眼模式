@@ -1,0 +1,2 @@
+在7.0上只需要设置下面这个值就可以了
+Settings.Secure.ACCESSIBILITY_DISPLAY_COLOR_MATRIX

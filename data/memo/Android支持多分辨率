@@ -1,0 +1,5 @@
+设置window的preferredDisplayModeId
+
+http://www.voidcn.com/blog/zoudifei/article/p-4209675.html
+新的平台可以允许显示分辨率升级到4K。 要查询当前的物理分辨率，可使用Display.ModeAPI。如果UI在绘制时有拉伸，则要注意物理分辨率getPhysicalWidth()的值可能会不同于逻辑分辨率的getSize(). 
+当应用运行时，你可以通过设置preferredDisplayModeId来请求系统改变物理分辨率。当在4K模式下，UI按之前的分辨率渲染，但是会拉伸到4K。但是SurfaceView可能仍然会保持原样。

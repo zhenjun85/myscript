@@ -526,3 +526,632 @@
 2017.29.1     07.10       702759] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [TJ][Telephony][SC9861E][7.0][A1]测试过程中，偶现ANR in com.android.quicksearchbox
 2017.29.1     07.10       whatapp 客户问题
 2017.29.1     07.10       702067 - [TJ][Local][sharkl2][9850ka][7.0_17B][Monkey]测试过程中偶现设置已停止运行（Short Msg: android.view.WindowManager$BadTokenException）(参考Bug 695063)
+2017.29.3     07.12       704596 - [PSST][SC9861E][7.0][A1][PTR2Block][Bin1] 进行monkey+sleep测试，3台测试46.7--57.5小时出现Android重启
+2017.29.3     07.12       703659 - [后视镜][camera]插入sd card 时camera 发生crash
+2017.29.3     07.12       调研护眼模式，只需设置个属性即可
+2017.29.3     07.12       703059] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][Telephony][sharkl2][9850ka][7.0_17B]测试过程中偶现dialer无响应，log提示ANR in com.android.dialer
+2017.29.4     07.13       706659 - [WCN][2342B][AndroidO][SharkL2][Wi-Fi]测试机连接wifi,用浏览器在线观看视频，全屏播放1分钟后，测试机出现灭屏，视频停止播放 （已上传测试所拍视频）
+2017.29.5     07.14       693249] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [Beta_SH][SC9861E][7.0][A1][MM]进入相机，按最近应用列表，再进入相机，进入之前会闪现下壁纸
+2017.29.5     07.14       623826] [Sprdroid7.0_trunk] [FW-WindowsManager][] [TJ][Telephony][7.0][SC9832A2][Volte]竖屏分屏模式下编辑联系人头像，拍照后没有完成图标，取消和重拍图标也显示不全
+2017.29.5     07.14       Bug 705767 (SPCSS00401198) - [SC7731][TOPWISE][si7067sa]修改lcd_density后gensor有一个方向无法旋转
+2017.29.5     07.14       700388] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [Camera_Team][SharkLJ1][CMCC][PTR1Block]线控自拍杆长按拍照键连拍，未拍完30张时中断
+2017.29.5     07.14       https://chromium.googlesource.com/chromium/src/+/9ee8865d84c2156728f1b9f78fb8f8b812e4ba19
+2017.29.5     07.14       707200] [Sprdroido_pdk] [FW-WindowsManager][] [PSST][AndroidO][SharkL2]进行Sleep+大应用测试，#0886 测试 43.8小时 Android重启
+--2017.30
+2017.30.1     07.17       707273] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [TJ][Telephony][SC9861E][7.0]monkey测试过程中，偶见setting出现无响应
+2017.30.2     07.18       708203] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [PSST][SC9853-1]手机进行应用测试，测试14小时，#209手机出现测试异常停止
+2017.30.2     07.18       pay app
+2017.30.2     07.18       isharkl2 稳定性 问题讨论
+2017.30.3     07.19       681418] [Sprdroid_6.0_iWhale2] [FW-WindowsManager][] [ST_India]][iWhale2][SC9861E-2][7.0],DUT got kernel crash during test.
+2017.30.3     07.19       709228] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [PSST][SC9861E][7.0][A1][PTR2Block] 进行sleep+大应用+call测试，6台测试3.5--14.3小时出现Android重启
+2017.30.3     07.19       8.0   cts  确认
+2017.30.3     07.19       709371 - [PSST][4.4][SC9820W_JRX][Vowifi]monkey测试11.33h发生ANR in com.android.music，1台手机累计出现1次
+2017.30.4     07.20       709460] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [PSST][SC9853-1]手机进行monkey测试，#217测试14.47小时出现ANR in com.android.launcher3 (com.android.launcher3/.Launcher),1台手机累计出现1次
+2017.30.5     07.21       711744] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [BM][Daily test][SharkLJ1][CMCC][修改引入]recent键失效
+--2017.31
+2017.31.1     07.24       712498] [Sprdroido_pdk] [FW-WindowsManager][] [AndroidO] Add debug log for ViewRoot & SurfaceView
+2017.31.1     07.24       711794 - [TJ][Telephony][AndroidO][SharkL2]打开任意会话，进入参与者名单和选项，进行屏蔽号码，偶见信息停止运行
+2017.31.1     07.24       712405] [Sprdroido_pdk] [FW-WindowsManager][] [AndroidO][SharkL2][FLAB][ Audio][多模]连接蓝牙耳机，测试机通话中可将音量调节至0格，此时仍有声音
+2017.31.2     07.25       710915] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]一方通话时来电接听后分屏再取消分屏，挂断电话，必现手机下半部分显示异常，只能重启
+2017.31.2     07.25       动态分辨率切换
+2017.31.3     07.26       706240] [SPCSS_SC7731] [FW_WindowManager][---] [SC7731][TOPWISE][si7067sc]使用Video Player播放视频时候，点击左上角菜单选择Parameter setting 控制栏图标会被挤下与home键等重叠
+2017.31.3     07.26       714981] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [PSST][SC9853-1]手机进行应用测试，测试3.5小时，#218手机出现android重启
+2017.31.3     07.26       711964 - [Beta_external][sharkl2][9850ka][7.0][Subj][Joe.Ni][PTR3Block]开启多后台，待机一段时间，偶现电源键点不亮屏幕，需要多次才可以点亮屏幕
+2017.31.4     07.27       713014] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Local][AndroidO][SharkL2]选择任意应用分屏，分屏应用点击返回，下方支持分屏的应用界面会全屏显示
+2017.31.4     07.27       712566] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]录音文件分享界面--recent--返回键，分享界面必现闪烁 
+2017.31.4     07.27       716449] [Sprdroido_pdk] [FW-WindowsManager][] New: [TJ][Telephony][AndroidO][SharkL2]录音文件分享界面--recent--返回键，返回后查看界面会整体闪烁一下
+2017.31.4     07.27       714049 - [PSST][SC9853-1]手机进行系统monkey测试，测试11.84个小时，#207手机出现ANR in com.android.music (com.android.music/com.sprd.music.activity.ArtistDetailActivity)，3台手机累计出现11次
+2017.31.4     07.27       716691] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][MPT][sharkl2][9850ka][17B][指纹][PTR3Block][版本引入]灭屏解锁，解锁时间不稳定（测试100次，最大1891ms,最小508ms）
+2017.31.5     07.28       717243 - [Multimedia][sharkl2][9850ka][7.0_trunk]图库中播放幻灯片，然后锁屏灭屏，通过来电、短信、或短按power键点亮屏幕，之后手机不会灭屏待机省电，一直保持高亮状态（耗电高)
+2017.31.5     07.28       716722] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Beta_External][sharkl2][9850ka][7.0_17B][lianjun.wei][Local]Power键双击调出camera功能，出现未连续点击两次调出camera的现象
+--2017.32
+2017.32.1     07.31       716691] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [TJ][MPT][sharkl2][9850ka][17B][指纹][PTR3Block][版本引入]灭屏解锁，解锁时间不稳定（测试100次，最大1891ms,最小508ms）
+2017.32.1     07.31       681418 - [ST_India]][iWhale2][SC9861E-2][7.0],DUT got kernel crash during test.
+2017.32.1     07.31       718296 - 超级省电模式-WindowManager部分逻辑
+2017.32.1     07.31       18704 - [TJ][Telephony][AndroidO][SharkL2]权限开关界面，关闭权限后弹出提示框，横屏后锁屏再竖屏解锁，弹出提示框显示异常
+2017.32.1     07.31       输入法超时问题
+2017.32.1     07.31       mingyan名下显示异常的bug
+2017.32.2     08.01       712770] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Local][AndroidO][SharkL2]分屏应用，矩阵界面偶现应用界面消失
+2017.32.3     08.02       705247] [Sprdroid_7.0_iSharkL2] [FW-Bootanimation][] [TJ][Local][SC9853-1]测试机重启自动开机后闪现黑色背景壁纸几秒后恢复为设置的壁纸 答复全部答复转发 标记为未读
+2017.32.3     08.02       查看google新修改
+2017.32.3     08.02       719973 - 新功能: 长按“*”键，一键打开或关闭鼠标手
+2017.32.3     08.02       查看8.0快速点击两次，起两个activity的问题
+2017.32.3     08.02       719754] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Local][AndroidO][SharkL2]锁屏界面来电，铃声响起几秒后，来电界面才显示出来
+2017.32.4     08.03       717882 - [TJ][Telephony][AndroidO][SharkL2]新建记事本界面，双击下方相机图标，可以打开两次camera，且点击返回键也需要返回两次才能退出相机
+2017.32.5     08.04       720982 - [SZ][I&ST][skyworth_true][9820W]安装APK详情界面出现彩色条纹
+2017.32.5     08.04       line不支持分屏
+2017.32.5     08.04       722322 - 将app transition动画scale默认值设置为0.5
+2017.32.5     08.04       学习uimode模式
+2017.32.6     08.05       719170] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]信息或电子邮件与其他应用分屏，下方应用图标点击两次才生效
+--2017.33
+2017.33.1     08.07       722161] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Sharkl2][9850ka][7.0_trunk][India][FT_Coimbatore][Others] RJIO, SharkL2 fail to initiate emergency call while On/Off power button thrice times, Reference C7 working fine .
+2017.33.1     08.07       协助分析722886 ，setview的时候token为null 的情况
+2017.33.1     08.07       看recent代码
+2017.33.2     08.08       721481] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]进入“下载”应用，进入音频，选择音频分享时，偶见下载无响应
+2017.33.2     08.08       723719] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]相机设置界面锁屏，解锁后必现闪现相机的设置界面
+2017.33.3     08.09       715661] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [Multimedia][SharkLJ1][CMCC]悬浮窗播放视频，竖屏下将其拖动到最大，移到界面最底端，横竖屏旋转，界面底端边缘有闪烁亮条纹出现，详见操作视频
+2017.33.3     08.09       723815] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [TJ][Local][SharkLJ1][CMCC]闹钟起闹出现一次手机屏幕卡死，时间点2:59pm
+2017.33.3     08.09       722322 - 将app transition动画scale默认值设置为0.5
+2017.33.3     08.09       咨询  addview 重复，建议应用规避724867   
+2017.33.3     08.09       725252] [Sprdroid4.4_sfphone_9820W] [FW-WindowsManager][] [TJ][Local][4.4][SC9820W] [SC9820W_RLS1][PTR3Block]长按*开启鼠标手功能后，在任意带有选项/选择/返回界面，鼠标手点击无作用
+2017.33.3     08.09       723228 - [Multimedia][AndroidO][SharkL2]“继续播放视频”界面中多次按home键退出再返回，会闪现主屏幕画面（详细看视频，iwhale2上正常）
+2017.33.4     08.10       加密后指纹解锁慢，协助调查
+2017.33.5     08.11       725868] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [Multimedia][SC9861E][7.0]设置-显示-壁纸-图库-选择任意图片进入设置壁纸页面-长按recent进入分屏模式-页面还处于设置壁纸页面
+2017.33.5     08.11       邮件沟通sharklj1 home key
+2017.33.5     08.11       仕涛安全patch
+2017.33.5     08.11       718097] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]联系人详情--创建快捷方式--弹窗后--锁屏解锁，下方必现一块白色区域如截图
+2017.33.6     08.12       726605] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]设置--用户--急救信息，点击弹窗后锁屏，再摁power键时未进入锁屏的界面而是直接解锁进入了急救信息界面
+2017.33.6     08.12       726600] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [TJ][Telephony][isharkl2][SC9853-1][7.0_trunk]设置--用户--急救信息，点击弹窗后锁屏，再摁power键时未进入锁屏的界面而是直接解锁进入了急救信息界面
+--2017.34
+2017.34.1     08.14       727915 - [TJ][PSST][sharkl2][9850ka][7.0_trunk][GMS][CTS][7.0r11][7.0_17B][PTR3Block][1G RAM]进行CTS 测试，CtsDragAndDropHostTestCases-modulle 下14条case fail，如，android.wm.cts.CrossAppDragAndDropTests#testCancelSoon--fail
+2017.34.1     08.14       邮件协助分析   创建多个Dialog引起724245 - [PSST][SharkLJ1][CMCC] 进行CPULoading测试，#140058测试18.5H之内出现定屏，adb可连
+2017.34.2     08.15       728724 - [TJ][Telephony][AndroidO][SharkL2]拨号盘界面点击取消收藏按钮，偶现停止运行
+2017.34.2     08.15       协助view查看mFlag为null问题，recent学习
+2017.34.2     08.15       727210] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2][download]下拉菜单中有8+的下载完成的文件提示，再次下载一个文件时，下拉菜单中不显示正在下载的文件，在下载管理中正常显示
+2017.34.3     08.16       692748 - [Feature List]双击后盖开启camera 
+2017.34.3     08.16       协助处理iSharkl2 monkey camera黑屏问题
+2017.34.3     08.16       导航栏问题
+2017.34.4     08.17       730726 - WindowManager的逻辑可能会remove stack两次
+2017.34.5     08.18       721481 - [TJ][Telephony][AndroidO][SharkL2]进入“下载”应用，进入音频，选择音频分享时，偶见下载无响应
+2017.34.5     08.18       730323] [Sprdroido_pdk] [FW-WindowsManager][] [Multimedia][AndroidO][SharkL2]视频续播界面竖屏下按recent键进入最近任务列表，观察续播提示框不显示；横屏界面显示无图像（sharklj1无此问题）
+2017.34.5     08.18       查看高通code
+--2017.35
+2017.35.1     08.21       732266] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Local][AndroidO][SharkL2]设置壁纸过程中闪现黑屏，建议修改
+2017.35.1     08.21       732159] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Local][AndroidO][SharkL2]点击进入应用（如拨号盘/信息）时，状态栏图标偶现闪现重影
+2017.35.1     08.21       727686] [Sprdroid4.4_sfphone_9820W] [FW-WindowsManager][] [PSST][4.4][SC9820W][RDA5876]monkey测试3.20h发生ANR in com.android.contacts，1台手机累计出现1次
+2017.35.1     08.21       wallpaper 调查
+2017.35.1     08.21       底层控制是否显示navigation
+2017.35.2     08.22       732923] [Sprdroid7.0_trunk] [FW-WindowsManager][] [PSST][7.0][9832][17A][GMS]进行monkey+sleep测试，#5326 测试 13.5小时发生Android重启
+2017.35.2     08.22       733151] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [PSST][SC9853-1]手机设置安全-屏幕锁定方式为无，打开智能控制-智能体感-开启应用。手机按power键灭屏休眠后，双击手机后壳3次左右，手机出现android重启
+2017.35.2     08.22       733061] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [PSST][SC9853-1][GMS]手机进行应用测试，测试9小时，#531手机出现android重启
+2017.35.2     08.22       732835] [Sprdroido_pdk] [FW-WindowsManager][] [I&ST][monkey][android8.0_trunk_sharkl2][ANR]com.android.calendar happens ANR,log:ANR in com.android.calendar (com.android.calendar/.PermissionsActivity)
+2017.35.2     08.22       734350] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Local][AndroidO][SharkL2]分屏状态下，锁屏再解锁，闪现界面字体拉伸（见操作视频）
+2017.35.3     08.23       733061 TR
+2017.35.3     08.23       726649] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [Multimedia][SharkLJ1][CMCC]音乐播放器中，短信分享一首歌曲，弹出短信框，可以旋转屏幕（附视频）
+2017.35.3     08.23       735466 - [BAT][入库预测][XRCMCC] [sharkL2][9850ka][7.0_trunk] [MTBF][必选项]__case 25，进入多个应用用例时操作视频应用时出现“视频已停止运行”
+2017.35.3     08.23       androidO zebu   启动异常
+2017.35.4     08.24       732443 - [Beta_External][sharkl2][9850ka][7.0_17B][jin.ji][Subj][apk]安装并运行QQ同步助手，手机定屏
+--2017.36
+2017.36.1     08.28       学习wallpaper逻辑，基本了解大概流程
+2017.36.1     08.28       728568] [Sprdroido_pdk] [FW-WindowsManager][] PSST][AndroidO][SharkL2][PTR1Block]进行SAR测试，#0483 测试 43小时发生定屏，有adb(定屏在Contacts界面)
+2017.36.1     08.28       711964分析
+2017.36.1     08.28       isharkl2 8.0 feature, sensor hub not ready
+2017.36.2     08.29       728228] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [PSST][sharkl2][9850ka][7.0_17B][XRCMCC] [MTBF][CMCC][入库预测]：测试中手机在执行发送邮件case时出现重启
+2017.36.2     08.29       739014] [Sprdroido_pdk] [FW-Bootanimation][] New: [TJ][Local][AndroidO][SharkL2]首次开机动画结束后黑屏2，3秒才出现桌面
+2017.36.3     08.30       android.anim 可能存在fd泄露
+2017.36.3     08.30       726410] [Sprdroido_pdk] [FW-WindowsManager][] [PSST][AndroidO][SharkL2][PTR1Block]进行monkey测试，#0681测试 11.8小时发生 Android重启
+2017.36.3     08.30       739620 - [I&ST][9853i][8.0][Camera]Camera自启动
+2017.36.4     08.31       739357] [Sprdroido_pdk] [FW-WindowsManager][] [Multimedia][AndroidO][SharkL2][apk]下拉状态栏开启自动旋转，运行3Dmark_V1.5.3263，当一项跑分内容结束（横屏结果界面），点击左上角返回键，恢复竖屏，屏幕下半部分黑屏，随后出现3dmark无响应
+2017.36.4     08.31       738258] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [PSST][SC9853-1][GMS]手机进行monkey+sleep测试，测试13个小时左右，13台手机出现android重启
+2017.36.4     08.31       740172] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [TJ][Local][8.0][9832E]横屏下，在弹出提示框的界面（如情景模式-添加自定义模式），点击两次recent，返回后屏幕右侧出现白屏（见视频）
+2017.36.5     09.01       738829] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [Beta_SH][sharkl2][9850ka][7.0_trunk][性能][体验][1G][GMS][PTR3Block]游戏横屏界面，按home键退出需要耗时5.5s，体验很慢
+2017.36.5     09.01       741050] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]首次开机，打开浏览器使用数据流量下载时会弹出注意POP框，点击home键无法取消该选项框
+2017.36.5     09.01       741013 - [TJ][Telephony][AndroidO][SharkL2]输入文件名时分屏操作偶现“下载”停止运行
+--2017.37
+2017.37.1     09.04       741349] [Sprdroid8.0_iSharkL2] [FW-WindowsManager][] [BM][isharkl2][8.0]手机测试基本功能时高概率自动进入相机界面
+2017.37.1     09.04       740315 - [I&ST][9853i][8.0][WallPaper]灭屏通话壁纸发生偏移
+2017.37.1     09.04       741864] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [0.26 h][I&ST][monkey][monkey-top][android7.0_trunk_sharkl2_GMS][ANR]com.android.launcher3 happens ANR,log:ANR in com.android.launcher3 (com.android.launcher3/.Launcher)
+2017.37.2     09.05       741942] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [PSST][SC9861E][7.0][A1][安全版本][GMS] 进行应用测试,9台测试3.3--19.4小时左右出现定屏在携程搜索界面，adb可连[ticket 105597]
+2017.37.2     09.05       742337 (SPCSS00418014) - [SC9853I-IA][INNOVATECH][K500]智能控制中黑屏唤醒功能经常不起作用
+2017.37.2     09.05       surfaceview cts 调研
+2017.37.3     09.06       742835] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [I&ST][monkey][monkey-top][android7.0_trunk_sharkl2_GMS]occur freezescreen
+2017.37.3     09.06       740854] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]锁屏时来电，屏幕点击以后按HOME键应无效果
+2017.37.3     09.06       743390] [Sprdroido_pdk] [FW-WindowsManager][] New: [TJ][Telephony][AndroidO][SharkL2]权限开关界面，关闭权限后弹出提示框，横屏后锁屏再竖屏解锁，点击“仍然拒绝”后权限未关闭
+2017.37.4     09.07       weicheng gesture评估
+2017.37.4     09.07       701049] [Sprdroid7.0_SharkLJ1] [APP-MusicPlayer][] [Multimedia][SharkLJ1][CMCC]开机首次进入音乐播放器或重置音乐偏好设置后进入音乐播放器，弹出权限之前高概率出现一瞬间的黑屏（附视频）
+2017.37.4     09.07       743856] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]新用户模式下关闭相机所有权限后从锁屏界面快捷方式滑动进入相机，无法进入（机主模式下可以进入）
+2017.37.5     09.08       744207] [Sprdroid7.0_SharkLJ1] [FW-Graphics][] [Multimedia][SharkLJ1][CMCC]开机后第一次进入音乐播放器-均衡器,出现黑屏（附视频） 答复全部答复转发 标记为已读
+2017.37.5     09.08       743484] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [TJ][Local][Isharkl2][7.0][入库预测]idle页面，点击短信图标的同时快速点击home键，主屏幕壁纸变为白色。
+2017.37.5     09.08       743045] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [PSST][SC9853-1][A1][GMS]手机进行monkey+sleep测试，测试36小时，#154手机出现android重启
+2017.37.5     09.08       743952] [Sprdroido_pdk] [APP-Lock/unlock][] [TJ][Telephony][AndroidO][SharkL2][sim]在搜索网络界面手机锁屏，解锁后显示的手机主界面而不是搜网界面
+2017.37.5     09.08       SPCSS00415712   viber
+--2017.38
+2017.38.1     09.11       744559] [Sprdroid7.0_trunk] [FW-WindowsManager][] [1.30 h][I&ST][monkey][monkey-top][android7.0_trunk_7731G][ANR]com.android.quicksearchbox happens ANR,log:ANR in com.android.quicksearchbox (com.android.quicksearchbox/.SearchActivity)
+2017.38.1     09.11       viber  客户问题
+2017.38.1     09.11       745588 - [BJ_RD][9850ka 8.0][sharkl2][StabilityTest]653#执行Monkey+reboot测试1小时，出现定屏(adb可连)
+2017.38.1     09.11       745601] [Sprdroido_pdk] [FW-WindowsManager][] [PSST][AndroidO][SharkL2]进行Monkey+Reboot测试，#0546 测试 6小时发生 Android重启
+2017.38.1     09.11       745477] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [Multimedia][8.0][9832E][特有]进入音乐播放器，点击任意界面，都会返回到上一界面再返回到当前界面（附操作视频） 答复全部答复转发 标记为已读
+2017.38.2     09.12       746075] [Sprdroid4.4_sfphone_9820W] [FW-WindowsManager][] 新功能： 在打开鼠标手时，通过"0-9"按键关闭鼠标手
+2017.38.3     09.13       746750] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]Browser单模块monkey两小时偶见android.process.media停止运行
+2017.38.3     09.13       746625 (SPCSS00420145) - [SC9853I-IA][ZTE_SH][Blade V8][SC9853I-IA][ZTE_SH][Blade V8][SC9853I-IA][ZTE_SH][Blade V8]在应用中用home键直接退出时，手机会自动进入谷歌浏览器
+2017.38.4     09.14       745557 - [TJ][MPT][SharkLJ1][CMCC][salsa][指纹]灭屏指纹解锁，偶现闪现锁屏界面
+2017.38.4     09.14       chenxi协助截图功能
+2017.38.4     09.14       744207] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [Multimedia][SharkLJ1][CMCC]开机后第一次进入音乐播放器-均衡器,出现黑屏（附视频）
+2017.38.5     09.15       747975] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [TJ][Local][8.0][9832E]Monkey测试过程中，出现设置停止运行Short Msg: java.lang.IllegalArgumentException
+2017.38.5     09.15       746791] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][isharkl2][SC9853-1][8.0]快速拨号“2”设置号码为空格后，拨号盘时长按“2”后高概率黑屏（AndroidOsharkl2无此问题）
+2017.38.5     09.15       dimlayer
+2017.38.5     09.15       743508] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]开启固定屏幕及PIN或图案锁功能，固定任意应用，点击power键锁屏再解锁，pin锁界面点击紧急呼救，点击急救信息后点击home键，再解锁直接退出固定屏幕模式
+--2017.39
+2017.39.1     09.18       开会讨论调整分辨率
+2017.39.3     09.20       744207] [Sprdroid7.0_SharkLJ1] [APP-MusicPlayer][] [Multimedia][SharkLJ1][CMCC]开机后第一次进入音乐播放器-均衡器,出现黑屏（附视频）
+2017.39.3     09.20       750401] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [TJ][Telephony][SharkLJ1][CMCC]关闭phone的提示和通知，打电话给这个phone，点开屏幕解锁，进入任何应用，home键失效
+2017.39.3     09.20       744505] [Sprdroid4.4_sfphone_PikeL] [FW-WindowsManager][] [PICLAB][4.4][SC9820W_JRX][Vowifi][SC9820A]active call+hold call,vowifi->LTE->SRVCC,屏幕熄灭，不能点亮
+2017.39.4     09.21       741211] [Sprdroido_pdk] [FW-WindowsManager][] [Multimedia][AndroidO][SharkL2]悬浮窗播放视频，更换语言，下拉状态栏观察android system一栏，语言未变化
+2017.39.5     09.22       743144] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][MPT][AndroidO][SharkL2]使用过分屏模式功能之后，在某应用的界面下锁屏再解屏会自动退出到主界面
+2017.39.5     09.22       resolution讨论
+2017.39.5     09.22       749501] [Sprdroido_pdk] [FW-WindowsManager][] [BJ_RD][9850ka 8.0][sharkl2][StabilityTest]576#执行Monkey+sleep测试，出现异常停止。
+--2017.40
+2017.40.1     09.25       9850 全面屏 Round Corner 方案需求
+2017.40.1     09.25       752303] [Sprdroido_pdk] [FW-WindowsManager][] [Camera_Team][AndroidO][SharkL2][功能]相机启动过程中，相机启动界面下方有紫色条纹残留（附对比iwhale2的视频）
+2017.40.2     09.26       752402] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][MPT][AndroidO][SharkL2][省电管理]低电量模式下截图，没有截图动画出现
+2017.40.2     09.26       753619 - [FT_SH][SharkL2][9850ka][7.0_trunk][NAVAJO_常规][17A_release][其他]接听电话中偶现屏幕分屏的现象
+2017.40.2     09.26       753641 - [Beta_SH][Isharkl2][SC9853-1][GMS][Subj]多次双击power键调出相机，概率性无法调出相机，无法进入测试机一直黑屏，长时间等待可以恢复
+2017.40.2     09.26       753759 - [PSST][SharkLJ1][CMCC] [NoSalsa]进行应用测试，#140028测试17H之内出现定屏
+2017.40.3     09.27       752526] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [0.07 h][I&ST][monkey][monkey-top][android8.0_trunk_sharkle][JAVACrash]com.android.documentsui happens JavaCrash,log:java.lang.ClassCastException
+2017.40.3     09.27       748872] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [Beta_SH][ISharkL2][SC9853-1][体验]手机设置成密码锁定方式，进入setting点击屏幕锁定方式输入法展开闪屏，体验差。（附视频）
+2017.40.3     09.27       754608] [Sprdroido_pdk] [FW-WindowsManager][] [PSST][AndroidO][SharkL2][Oversea]进行monkey测试，#0888 测试 11.8小时发生 Android重启
+2017.40.4     09.28       754627] [Sprdroido_pdk] [FW-WindowsManager][] [PSST][AndroidO][SharkL2][Oversea][PTR2Block]进行monkey测试，#0065测试7.5小时发生ANR in com.android.messaging 发生次数：2
+2017.40.4     09.28       754203  window leaked issue,应用规避
+2017.40.4     09.28       查看window dismiss接口，已经废弃
+2017.40.4     09.28       755663] [Sprdroido_pdk] [FW-WindowsManager][] [BJ_RD][9850ka 8.0][sharkl2][StabilityTest]605#执行Monkey+sleep测试20.5小时，出现异常停止。
+2017.40.5     09.29       本周重点，google review
+2017.40.5     09.29       将Toast逻辑提取出来，按照子窗口的逻辑去显示出来
+2017.40.5     09.29       super resolution 讨论会
+2017.40.6     09.30       756169] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [PSST][8.0][9832E]进行monkey+sleep测试,#927测试21小时出现android重启
+2017.40.6     09.30       756173 - [PSST][8.0][9832E]进行monkey+sleep测试,#889测试27小时出现android重启
+2017.40.6     09.30       756307 - [TJ][Telephony][8.0][9832E][Reliance][featurelist]使用移动卡/无卡，两秒内连续按三次电源键，直接拨打 112
+2017.40.6     09.30       755631 (SPCSS00424642) - [Block MP][SC9853I-IA][ZTE_SH][Blade V8][SC9853I-IA][ZTE_SH][Blade V8][俄罗斯]【指纹解锁】指纹解锁响应速度太慢
+--2017.41
+2017.41.0     10.01       750618 - [PSST][8.0][9832E]进行monkey+sleep测试，#328测试24小时出现kernel crash
+--2017.42
+2017.42.2     10.10       757352] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] New: [PSST][8.0][9832E]进行monkey+sleep测试，#328测试24小时出现kernel crash
+2017.42.2     10.10       756992] [Sprdroido_pdk] [FW-WindowsManager][] [Camera_Team][AndroidO][SharkL2][功能]home键退出相机后，再次进入相机过程中闪现方框图案（附视频）
+2017.42.2     10.10       756459] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][MPT][AndroidO][SharkL2][FDE]进行手机加密，卡在正在加密界面，需要灭屏再点亮才能进入系统显示锁屏界面【版本引入】
+2017.42.2     10.10       758111] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] PSST][8.0][9832E]进行monkey+sleep测试, #0839测试15.8小时出现Android重启
+2017.42.2     10.10       752859] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [PSST][SC9853-1][A1]手机进行monkey+sleep测试，测试19小时，#218手机出现android重启
+2017.42.2     10.10       759460 - [TJ][Local][8.0][9832E]首次开机偶见android动画结束后始终处于黑屏状态，手动按power键需多次按才亮屏
+2017.42.2     10.10       code review 动画
+2017.42.2     10.10       省电模式，分析，home需求review
+2017.42.3     10.11       760320] [Sprdroid8.0_iSharkL2] [FW-WindowsManager][] New: 新功能: 1.长按*键锁屏　２. 短按power（Home）键的处理:要求在其他应用时，短按一次先返回到main menu界面；再次按动时回到idle界面；再次按时灭屏并锁屏
+2017.42.3     10.11       760294] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [Multimedia][8.0][9832E]文件管理器中，浏览图片然后返回键退出的过程，屏幕刷新不一致，感觉闪烁
+2017.42.4     10.12       758191 - [Multimedia][AndroidO][SharkL2]进入视频播放器，播放任意视频文件过程中按HOME键后，再点击视频画面会闪现一下再黑屏并且闪现桌面背景一瞬间，之后视频才正常播放（附操作视频）
+2017.42.4     10.12       720285 - [IOT][RVM][发掘][NPI][MMI]下载键（音量-）测试失败
+2017.42.4     10.12       761044 - [TJ][Local][8.0][9832E]摇换壁纸时屏幕闪动（开发者选项关闭动画则无闪动）
+2017.42.5     10.13       757369] [Sprdroido_pdk] [FW-WindowsManager][] [Multimedia][AndroidO][SharkL2]横屏状态下时编辑FM收藏的电台名称，长按选择标题名称字幕，等待编辑菜弹出后，点击“完成”按钮，编辑菜单区域出现闪屏(附视频)
+2017.42.5     10.13       757369 - [Multimedia][AndroidO][SharkL2]横屏状态下时编辑FM收藏的电台名称，长按选择标题名称字幕，等待编辑菜弹出后，点击“完成”按钮，编辑菜单区域出现闪屏(附视频)
+2017.42.5     10.13       759170 (SPCSS00425688) - [SC9853I-IA][ZTE_SH][Blade V8][俄罗斯][BlockMP]【0级问题】[Monkey]monkey中出现多次冻屏
+2017.42.5     10.13       761530] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] New: [TJ][Local][8.0][9832E]日历月视图滑动到其他任意界面，home键回到桌面，从日历小部件进入日历后左上角月份与界面日历不符
+2017.42.5     10.13       761090 - [PSST][SC9853-1][A2][GMS]手机进行应用测试，测试42小时，#564手机出现android重启 
+2017.42.5     10.13       758191] [Sprdroido_pdk] [FW-WindowsManager][] [Multimedia][AndroidO][SharkL2]进入视频播放器，播放任意视频文件过程中按HOME键后，再点击视频画面会闪现一下再黑屏并且闪现桌面背景一瞬间，之后视频才正常播放（附操作视频）
+2017.42.5     10.13       756961 - [TJ][MPT][SC9861E][7.0][指纹]指纹解锁，偶现Launcher3停止运行
+2017.42.5     10.13       739683] [Sprdroido_pdk] [FW-WindowsManager][] [Multimedia][AndroidO][SharkL2]播放任意视频，锁屏解锁后视频画面先闪现一次再黑屏一瞬间，之后视频才正常播放（附视频）
+--2017.43
+2017.43.1     10.16       762380] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Local][AndroidO][SharkL2]分屏模式，设置在上，下拉状态栏点击设置按钮，在分屏下方打开文件管理器，闪现设置界面
+2017.43.1     10.16       肖正飞会议，super resolution
+2017.43.1     10.16       肖正飞，super resolution，蓝光，rgb调整等
+2017.43.1     10.16       762753] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [TJ][MPT][APK][8.0][9832E][反向回归]在安卓壁纸中设置一张锁屏壁纸，锁屏界面无法关机/重启手机
+2017.43.2     10.17       762969] [FIH_SC9820A_YunOS5.2_Zouk4G] [FW-WindowsManager][] CSK to wake up unlock does not work
+2017.43.2     10.17       763289 - SC9820A FIH zouk 4G UI修改App进入，退出动画为Nokia参考机形式
+2017.43.2     10.17       762705] [FIH_SC9820A_YunOS5.2_Zouk4G] [FW-WindowsManager][] [BM][yunos][zouk]长按电源键7秒手动sysdump手机，手机会先关机再进行dump
+2017.43.2     10.17       762965] [FIH_SC9820A_YunOS5.2_Zouk4G] [FW-WindowsManager][] Long press * key, screen black in lock screen
+2017.43.2     10.17       762964 - Long press * does not work in lock screen cannot enter black screen
+2017.43.2     10.17       763413] [FIH_SC9820A_YunOS5.2_Zouk4G] [APP-MUI][] [Zouk4G][UI]UI Part – 8. The timer of long press is too short
+2017.43.2     10.17       763404] [FIH_SC9820A_YunOS5.2_Zouk4G] [FW-WindowsManager][] [Zouk4G][UI]UI Part - 1. End key does not work
+2017.43.2     10.17       762616] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [TJ][Telephony][8.0][9832E]重启手机拨打紧急呼叫电话后解锁sim卡pin码进入手机，下拉状态栏无法打开
+2017.43.2     10.17       761236] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][MPT][AndroidO][SharkL2][指纹][monkey]指纹解锁压力测试+monkey单包测试设置模块，测试0.5小时后偶现power无法锁屏，出现后一直存在
+2017.43.2     10.17       763536] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [TJ][Local][SC9853-1][入库预测]屏幕锁定方式设置为图案或密码或pin码以后，横屏启动屏保--状态栏一直闪动
+2017.43.3     10.18       762616 - [TJ][Telephony][8.0][9832E]重启手机拨打紧急呼叫电话后解锁sim卡pin码进入手机，下拉状态栏无法打开
+2017.43.3     10.18       763404] [FIH_SC9820A_YunOS5.2_Zouk4G] [FW-WindowsManager][] [Zouk4G][UI]UI Part - 1. End key does not work
+2017.43.3     10.18       763413] [FIH_SC9820A_YunOS5.2_Zouk4G] [APP-MUI][] [Zouk4G][UI]UI Part – 8. The timer of long press is too short
+2017.43.3     10.18       761236] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][MPT][AndroidO][SharkL2][指纹][monkey]指纹解锁压力测试+monkey单包测试设置模块，测试0.5小时后偶现power无法锁屏，出现后一直存在
+2017.43.3     10.18       763474] [SPCSS_SC9853I-IA] [FW_WindowManager][---] [SC9853I-IA][ZTE_SH][Blade V8]【俄罗斯】【monkey】monkey测试中，23#出现冻屏，有ADB口
+2017.43.3     10.18       764079] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [TJ][Local][SharkLJ1][CMCC]快速点击指针时钟小部件后按返回键，多次重复操作出现闪屏
+2017.43.3     10.18       floating theme
+2017.43.4     10.19       762496] [Sprdroid8.0_iSharkL2] [PM_CCB][] [Feature List]WMS添加必要的debug log
+2017.43.4     10.19       765052] [FIH_SC9820A_YunOS5.2_Zouk4G] [FW-WindowsManager][] [Manual][Row_SS]在控制面板点击End键不能回到菜单
+2017.43.4     10.19       
+2017.43.4     10.19       8.1差异分析
+2017.43.4     10.19       toast study
+2017.43.4     10.19       756961 - [TJ][MPT][SC9861E][7.0][指纹]指纹解锁，偶现Launcher3停止运行
+2017.43.4     10.19       脚本
+2017.43.5     10.20       763593] [Sprdroido_pdk] [FW-WindowsManager][] [4.82 h][I&ST][monkey][android8.0_trunk_sharkl2][ANR]com.android.messaging happens ANR,log:ANR in com.android.messaging (com.android.messaging/.ui.conversationlist.ConversationListActivity)
+2017.43.5     10.20       766292 - [4.77 h][I&ST][monkey][android8.0_trunk_sharkle_no-camera][ANR]com.android.calendar happens ANR,log:ANR in com.android.calendar (com.android.calendar/.PermissionsActivity)
+2017.43.5     10.20       757848] [IOT_SL8541_RVM] [AP][] [后视镜][发掘][V1][稳定性]7# 跑camera+monkey，仅有前录，UI卡住不动
+2017.43.5     10.20       8.1状态收集
+2017.43.5     10.20       dimlayer 调查
+2017.43.5     10.20       765974] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [Multimedia][SharkLJ1][CMCC]音乐播放器中有过期的DRM音乐，在歌曲页面连续多次点击DRM文件闪退至主屏幕。（相同情况下，8.0无此问题）
+2017.43.5     10.20       766766] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [Multimedia][SharkLJ1][CMCC]音乐中有过期的DRM文件，多次快速点击会退出音乐播放器（附操作视频）
+--2017.44
+2017.44.1     10.23       767614] [Sprdroido_pdk] [APP-Statusbar][] [TJ][Local][8.0][AndroidO][SharkL2]分屏时在可分屏应用的应用信息界面点击卸载此应用，下方显示的可分屏应用中此应用仍然存在，点击无效
+2017.44.1     10.23       766796 - [Manual][Row_SS]短按关机键可以关机
+2017.44.1     10.23       759729] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]设置与浏览器分屏，几次横竖屏切换后，横屏时电池图标不显示，竖屏时蓝牙、电池、时间图标显示为白色，其他为黑色（具体见截图）
+2017.44.1     10.23       768594 - [TJ][PSST][AndroidO][SharkL2][GMS][CTS][8.0r1]进行CTS 测试时，CtsToastLegacyTestCases--module,android.widget.toast.cts.legacy.ToastTest#testAddTwoToastsViaAddingWindowApisWhenUidNotFocusedQuickly-- case fail
+2017.44.1     10.23       766630] [Sprdroid8.0_iSharkL2] [FW-WindowsManager][] [BM][Isharkl2][8.0]手机在选择拨打电话时，背景图闪橘红色，进入图库横竖屏时闪蓝色
+2017.44.2     10.24       dimlayer 关于featurebar的修改
+2017.44.2     10.24       751016] [Sprdroido_pdk] [FW-WindowsManager][] [Multimedia] [AndroidO][SharkL2]进入视频播放器，home键退出，进入图库悬浮窗播放一视频，切换回全屏过程中会先闪现视频播放器的列表，开启停用HW叠加层问题仍存在
+2017.44.2     10.24       759614] [Sprdroid4.4_sfphone_9820W] [FW-WindowsManager][] [11.15 h][I&ST][monkey][monkey-top][android4.4_Sfphone_9820w][ANR]com.sprd.simple.launcher happens ANR,log:ANR in com.sprd.simple.launcher (com.sprd.simple.launcher/.Launcher)
+2017.44.2     10.24       767116] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [3.72 h][I&ST][monkey][android8.0_trunk_sharkle][ANR]com.android.systemui happens ANR,log:ANR in com.android.systemui (com.android.systemui/.settings.BrightnessDialog)
+2017.44.3     10.25       769794 - [TJ][Local][8.0][9832E]重启手机后，第一次解锁出现闪屏
+2017.44.3     10.25       769527 (SPCSS00429462) - [SC9853I-IA][ZTE_SH][Blade V8][SC9853I-IA][ZTE_SH][P953F10][俄罗斯][Home实体键]该项目的实体Home键无法唤醒并解锁系统
+2017.44.3     10.25       starting window
+2017.44.3     10.25       770112 - [TJ][Telephony][AndroidO][SharkL2]拨号盘--收藏--点击任一收藏联系人右上方menu--recent--back，必现屏幕闪烁
+2017.44.3     10.25       [Bug 766784] [FIH_SC9820A_YunOS5.2_Zouk4G] [FW-WindowsManager][] [Manual][Row_SS]Idle界面按压call键，无法进入通话记录界面
+2017.44.3     10.25       CQ   V8手机指纹解锁
+2017.44.4     10.26       766783 - [BM][SP9820w ][6c11-userdebug]选择大写或者小写字母输入法时会输出成数字
+2017.44.4     10.26       surfaceview 问题
+2017.44.4     10.26       指纹解锁慢
+2017.44.4     10.26       770347 - [SC9853I-IA][ZTE_SH][P953F10]指纹传感器 --- android侧指纹解锁亮屏慢 
+2017.44.4     10.26       770980] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [TJ][Telephony][SharkLJ1][Oversea]通话中，点击home键回到主屏幕，点击recent回到通话中，需要点击两次home键才能回到主屏幕
+2017.44.4     10.26       766511] [FIH_SC9820A_YunOS5.2_Zouk4G] [FW-WindowsManager][] [Manual][Row_SS][Performance]录音机打开到主页面完全显示计算，响应平均耗时在1.960s左右，用户体验不好
+2017.44.4     10.26       756961] [Sprdroid_7.0_iWhale2] [FW-Binder][] [TJ][MPT][SC9861E][7.0][指纹]指纹解锁，偶现Launcher3停止运行
+2017.44.5     10.27       756961 - [TJ][MPT][SC9861E][7.0][指纹]指纹解锁，偶现Launcher3停止运行
+2017.44.5     10.27       769794] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [TJ][Local][8.0][9832E]重启手机后，第一次解锁出现闪屏
+2017.44.5     10.27       三星手机调研
+--2017.45
+2017.45.1     10.30       参加颜色管理会议，建议在底层做，java framework不负责
+2017.45.1     10.30       771470 - [TJ][Telephony][SharkLJ1][CMCC][7.0]进入下载-分屏，home键退出，再次选择下载，下半边屏幕进入主菜单界面，之后无法全屏，且下半屏幕无法完整查看所有菜单（类似客户问题680795）
+2017.45.2     10.31       查看android配置参数，看有哪些支持的feature，但默认没有打开的
+2017.45.2     10.31       772202] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]mokey测试过程中，偶见设置无响应：ANR in com.android.settings (com.android.settings/.SubSettings)
+2017.45.2     10.31       771286] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [TJ][Local][SC9853-1]Monkey测试过程，偶现CRASH: com.android.messaging （Short Msg: java.lang.ArithmeticException）
+2017.45.2     10.31       客户项目home键不发userActivity
+2017.45.3     11.01       772519 (SPCSS00430767) - [SC9853I-IA][ZTE_SH][P953F10][俄罗斯][monkey] [anr]com.android.email 
+2017.45.3     11.01       756992] [Sprdroido_pdk] [FW-WindowsManager][] [Camera_Team][AndroidO][SharkL2][功能]home键退出相机后，再次进入相机过程中闪现方框图案（附视频）
+2017.45.4     11.02       773445] [Sprdroido_pdk] [FW-WindowsManager][] [ST_India][AndroidO][SharkL2][True][App][Sony Liv]Jio, DUT Show message "SonyLIV app keeps stopping" while open apps to watch video.(Snapshot attached)
+2017.45.4     11.02       查看lowmem相关
+2017.45.4     11.02       749616] [Sprdroid8.0_iSharkL2] [FW-WindowsManager][] [TJ][Local][SC9853-1]退出图库时，闪现黑色缩略图画面（详见附件视频）
+2017.45.4     11.02       pqmanager 开会
+2017.45.5     11.03       773685] [FIH_SC9820A_YunOS5.2_Zouk4G] [APP-Statusbar][] [Manual][Row_SS]在设屏幕亮度时按电源键亮度控制面板不消失
+2017.45.5     11.03       775384] [Sprdroido_pdk] [FW-WindowsManager][] New: [SZ][I&ST][SharkL2][androidO][CTS-r2][prime]进行CTS测试，CtsServicesHostTestCases下android.server.cts.AnimationBackgroundTests#testAnimationBackground_duringAnimation--fail
+2017.45.5     11.03       775388] [Sprdroido_pdk] [FW-WindowsManager][] New: [SZ][I&ST][SharkL2][androidO][CTS-r2][prime]进行CTS测试，CtsServicesHostTestCases下android.server.cts.DisplaySizeTest#testCompatibilityDialog等3项fail
+2017.45.5     11.03       711044] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]锁屏界面点击紧急呼救按键进入紧急呼救界面，首次拨打紧急呼救电话时会先显示锁屏界面再显示紧急呼救拨号界面最后再显示呼叫界面，第二次拨打电话时正常，直接显示拨号界面
+2017.45.5     11.03       775438 (SPCSS00432068) - [SC9853I-IA][ZTE_SH][P953F10]触摸屏
+2017.45.6     11.04       775699] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [I&ST][monkey][monkey-top][android7.0_trunk_sharkLJ1]monkey stop,The phone was power off
+2017.45.6     11.04       775157 - [PSST][SharkLJ1][CMCC][AB]做应用测试，#140011测试40H之内出现android重启
+2017.45.6     11.04       775795] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [PSST][8.0][9832E] 进行Monkey+sleep测试，1100#测试27.5小时出现Android重启
+2017.45.6     11.04       775798] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [PSST][8.0][9832E]进行monkey+sleep测试, #0843测试29.3小时出现Android重启
+--2017.46
+2017.46.0     11.05       775802] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [PSST][8.0][9832E]进行monkey+sleep测试, #1069测试30小时出现Android重启
+2017.46.1     11.06       776182] [Sprdroido_pdk] [FW-WindowsManager][] [TJ][Telephony][AndroidO][SharkL2]手机测试过程中偶见无法旋转屏幕
+2017.46.1     11.06       776346] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] New: [TJ][Local][SC9853-1]显示大小和字体大小最大（开启蓝牙和wifi,添加2个未来闹钟，截图2次）状态栏图标近满，来回切换情景模式--状态栏靠近左边的三个图标一直在闪动。
+2017.46.2     11.07       706556 - [Multimedia][AndroidO][SharkL2]文件管理器播放视频,双击返回键退出播放出现闪屏.停用hw叠加层后问题依旧存在
+2017.46.3     11.08       756992] [Sprdroido_pdk] [FW-WindowsManager][] [Camera_Team][AndroidO][SharkL2][功能]home键退出相机后，再次进入相机过程中闪现方框图案（附视频）
+2017.46.3     11.08       777229] [Sprdroido_pdk] [FW-WindowsManager][] [Camera_Team][AndroidO][SharkL2][功能][版本引入]手机屏幕设置为“纵向”，手机横屏放置，相机界面不会随之变化为横屏界面 (附视频)
+2017.46.3     11.08       777104] [SPCSS_SC9853I-IA] [FW_WindowManager][---] [SC9853I-IA][ZTE_SH][ZTE BLADE V8 2018]双击唤醒
+2017.46.3     11.08       774139 (SPCSS00431574) - [SC9832A_6.0][KANGYONG3G][r9s]FWVGA 项目手机 微信 无法打开收付款码 ，回重新自动启动微信
+2017.46.4     11.09       777154] [360OS_9850] [FW-WindowsManager][] 横屏应用开启分屏过程中竖屏，显示界面异常
+2017.46.4     11.09       777130] [Sprdroid7.0_SharkLJ1] [BSP-INPUT-SENSOR][] [Beta_SH][sharklJ1][CMCC[local]正常使用手机，设置自动旋转，一台机器出现功能失效，无法自动旋转。（附视频）
+2017.46.4     11.09       冷启动优化review
+2017.46.4     11.09       steven focus window问题沟通
+2017.46.4     11.09       778876 - [TJ][Local][8.0][9832E]全屏状态下，进入下载-新建文件夹-输入名称-分屏-点击确定，下屏会闪现输入框
+2017.46.4     11.09       774952] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [Beta_SH] [AndroidO][SharkLE][9832E][8.0][性能][体验][PTR3Block]点击桌面小部件进入图库轻微闪屏，请对比7.0效果优化。（附视频）
+2017.46.4     11.09       778724] [Sprdroid8.0_SharkLE] [FW-WindowsManager][] [PSST][8.0][9832E]进行应用测试测试, #0704测试19小时出现假黑屏,有adb,按power键可以看到背光亮灭
+2017.46.5     11.10       744108] [Sprdroido_pdk] [FW-WindowsManager][] [Multimedia][AndroidO][SharkL2]安装微信后，点击图库小部件查看照片时，闪现相册界面
+--2017.47
+2017.47.1     11.13       779370 - [BJ_RD][9850ka 8.0][sharkl2][StabilityTest]597#执行monkey+reboot测试，出现异常停止
+2017.47.1     11.13       https://android-review.googlesource.com/#/c/platform/frameworks/base/+/535375/
+2017.47.1     11.13       se private 策略研究
+2017.47.1     11.13       779337 - [I&ST][8.0trunk bringup摸底]开机过程存在异常
+2017.47.1     11.13       774925 - [TJ][Local][8.0][9832E]刷完版本首次开机--添加小部件到新的页面--新的页面壁纸显示不全（一半壁纸一半黑或全黑壁纸）
+2017.47.2     11.14       780772] [FIH_SC9820A_YunOS5.2_Zouk4G] [APP-Statusbar][] [Manual][Row_SS][Monkey]通知栏打开流量连接出现弹框后按end键弹框不消失
+2017.47.2     11.14       758191 - [Multimedia][AndroidO][SharkL2]进入视频播放器，播放任意视频文件过程中按HOME键后，再点击视频画面会闪现一下再黑屏并且闪现桌面背景一瞬间，之后视频才正常播放（附操作视频）
+2017.47.3     11.15       781666 - [Zouk4G][9820A][SPRD][DevErr][收音机]__进入收音机，点击左软键弹出菜单屏幕底端灰显被遮盖。
+2017.47.4     11.16       调研色彩管理
+2017.47.5     11.17       782327] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [WCN][2342B][AndroidGO][SharkL2][Local]测试机语言切换时，会闪黑屏（附测试视频）
+2017.47.5     11.17       779474] [FIH_SC9820A_YunOS5.2_Zouk4G] [FW-WindowsManager][] 短按Nokia WH-610有线耳机，无法控制后台播放的音乐、收音机、听书音频
+2017.47.5     11.17       782529] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [Multimedia][AndroidGo][SharkL2]悬浮窗视频无法显示在应用权限页面
+--2017.49
+2017.49.1     11.27       787595] [Sprdroido_pdk] [FW-WindowsManager][] [I&ST][monkey][monkey-top][android8.0_trunk_sharkl2]occur restart
+2017.49.1     11.27       788373] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [SZ][I&ST][Sprdroid7.0_SharkLJ1][GMS][CTS][cts7.0_r16]进行CTS 测试,CtsAccessibilityServiceTestCases下android.accessibilityservice.cts.AccessibilitySoftKeyboardModesTest#testHideSoftKeyboard_shouldHid..
+2017.49.2     11.28       772540] [Sprdroid4.4_sfphone_9820W] [FW-WindowsManager][] [Beta_SH][4.4][SC9820W_JRX][Vowifi][性能][体验][APK]手机安装Whatsapp2.17.2.323、Facebook lite61.0.0.4.155应用交互体验差。
+2017.49.2     11.28       788437] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [TJ][Local][AndroidGo][512M][SharkL2]长按power键偶现同时调出两个关机/重启菜单（见截图）
+2017.49.2     11.28       788200] [FIH_SC9820A_YunOS5.2_Zouk4G] [FW-WindowsManager][] [Manual][Row_SS]解锁后无法唤醒背光灯
+2017.49.2     11.28       retail mode
+2017.49.2     11.28       全面屏
+2017.49.3     11.29       qq视频通话
+2017.49.3     11.29       视频屏保问题
+2017.49.3     11.29       aspectRatio问题
+2017.49.3     11.29       791704 - [10.60 h][I&ST][monkey][monkey-top][android4.4_Sfphone_9820w][JAVACrash]com.android.contacts happens JavaCrash,log:android.view.WindowManager
+2017.49.4     11.30       678794] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [TJ][Local][SC9853-1]设置壁纸进入图库后点击触摸助手圆盘上的搜索，再点击任意图片未到壁纸设置界面
+2017.49.4     11.30       791852 - [FT_SH][SharklE_常规][ 9832E_V1.0.0][8.0][9832E][其他]dut 主界面背景屏幕出现错位
+2017.49.4     11.30       711044] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [TJ][Telephony][AndroidGo][SharkL2][512M]锁屏界面点击紧急呼救按键进入紧急呼救界面，首次拨打紧急呼救电话时会先显示锁屏界面再显示紧急呼救拨号界面最后再显示呼叫界面，第二次拨打电话时正常，直接显示拨号界面
+2017.49.4     11.30       协助指纹问题
+2017.49.5     12.01       791538] [Sprdroid4.4_sfphone_9820E] [FW-WindowsManager][] [I&ST][9820E][Mocor5]播放音乐一段时间后，按上下键无法调节音量
+2017.49.5     12.01       791538 - [I&ST][9820E][Mocor5]播放音乐一段时间后，按上下键无法调节音量
+--2017.50
+2017.50.2     12.05       aspectratio porting
+2017.50.2     12.05       775388 - [SZ][I&ST][SharkL2][androidO][CTS-r2][prime]进行CTS测试，CtsServicesHostTestCases下android.server.cts.DisplaySizeTest#testCompatibilityDialog等3项fail (edit)
+2017.50.2     12.05       791590] [Sprdroid_7.0_iWhale2] [FW-WindowsManager][] [TJ][Local][SC9861E][7.0]设置显示界面更改显示大小后，在该界面下拉状态栏切换到多用户模式进入设置显示，对应显示大小同步更改
+2017.50.3     12.06       793674] [Sprdroid8.1_SharkL2] [BSP-Display][] [TJ][MPT][Android8.1][SharkL2][应用分身]首次添加应用分身时，提示语显示不清（如截图）
+2017.50.4     12.07       794356] [Sprdroid8.x_pike2] [FW-WindowsManager][] [TJ[Local][SC7731E][pike2][8.1]锁屏界面通过设置的启动下载图标进入下载应用时，界面会存在5-6s白屏
+2017.50.4     12.07       art-profile
+2017.50.4     12.07       788436 (SPCSS00437606) - [SC9853I-IA][ZTE_SH][P953F10][BlockMP]【待机】monkey测试第十天，出现两次重启
+2017.50.5     12.08       796821] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [WCN][AndroidGo][SharkLE][512M]测试机进入设置界面，手动灭屏后等待10秒，解锁进入设置界面，字体变的模糊，3秒后恢复正常
+--2017.51
+2017.51.1     12.11       windowFreezeTimeOut
+2017.51.2     12.12       study doze
+2017.51.2     12.12       744108 - [Multimedia][AndroidO][SharkL2]安装微信后，点击图库小部件查看照片时，闪现相册界面
+2017.51.2     12.12       cts case failed
+2017.51.3     12.13       799113 - [SZ][I&ST][Android8.1][GSI][AndroidGo][1G][SharkL2][CTS]进行 CTS 测试,CtsServicesHostTestCases下android.server.cts.DisplaySizeTest#testCompatibilityDialog等3项fail
+2017.51.3     12.13       799204] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [SZ][I&ST][Android8.1][GSI][AndroidGo][1G][SharkL2][CTS]进行 CTS 测试,CtsToastLegacyTestCases下android.widget.toast.cts.legacy.ToastTest#testAddTwoToastsViaAddingWindowApisWhenUidFocusedQuickly--fail
+2017.51.3     12.13       全面屏  workround方案
+2017.51.3     12.13       798244 - [TJ][MPT][Android8.1][SharkLE][指纹]指纹录入和解锁，振动强度太弱，用户不易感知，建议强度增大
+2017.51.4     12.14       800276 - [TJ][Local][4.4][9820E][Mocor5]测试机灭屏状态下---只能按power键亮屏，按其它键均为无效
+2017.51.4     12.14       797082 - [BM][sc7731e][pike2][AndroidGo_512MB][1h20][sanity]手机开机以后进入android界面，界面图标往上偏移   BOOTANIMATION
+2017.51.4     12.14       799947 - [1.76 h][I&ST][monkey][android_Go_1G_trunk_sharkle][ANR]com.android.launcher3 happens ANR,log:ANR in com.android.launcher3 (com.android.launcher3/.Launcher)
+2017.51.4     12.14       798634 - [TJ][PSST][AndroidGo][Android8.1][SharkLE][CTS][GSI]进行GSI 测试，在模块CtsAppTestCases中，android.app.cts.ActivityManagerMemoryClassTest#testGetMemoryClass Fail
+2017.51.4     12.14       802197] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] New: [Android Go][8.1]低内存版本取消TaskSnapshot功能
+2017.51.5     12.15       802294 - [Manual][Row_SS][FOTA]FOTA升级后切换语言时,界面会先黑屏，然后显示“YUNOS is checking file system..."
+2017.51.5     12.15       801222 - [TJ][Local] [4.4][9820E][Mocor5][PTR1Block]设置屏幕锁定后，灭屏待机一段时间，点亮屏幕无屏幕锁定
+2017.51.5     12.15       802880] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [TJ][Local][SharkLJ1][CMCC]联系人快捷方式与其他应用分屏，转屏后按back键回到桌面，桌面壁纸异常
+--2017.52
+2017.52.1     12.18       803632] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [AndroidGo][512MB][SharkLE]进行monkey+sleep测试, #0911测试28小时出现Android重启
+2017.52.1     12.18       zouk OTA升级不能解锁
+2017.52.1     12.18       800029] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [Camera_Team][AndroidGo][1G][SharkL2][2C30][SharklE][APK]安装"秒拍"apk，录像预览全黑，无画面显示（附视频）
+2017.52.2     12.19       804662] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [Multimedia][AndroidGo][1G][SharkLE]图库中编辑图片，菜单选项-打印，保存为PDF，返回编辑界面时横屏，编辑界面会先横屏显示，再自动变回竖屏
+2017.52.3     12.20       805504] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [sharkl2][9850KL][7.0_17B][Navajo][Oulu][FT_Oulu][Others] Call app is not waking up, home screen empty
+2017.52.3     12.20       805331] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [Beta_external][Isharkl2][SC9853-1][Subj][guanghua.wu]待机灭屏后，画图解锁，出现两次界面卡住不能使用，灭屏后点亮很慢
+2017.52.3     12.20       开会，feature错乱， 全面屏说明情况，monkey问题
+2017.52.3     12.20       805750] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [SZ][I&ST][SharkLE][AndroidGo][512M][CTS][GMS][GSI][8.1_r1]进行CTS测试，CtsInputMethodTestCases下android.view.inputmethod.cts.BaseInputConnectionTest#testCloseConnection等12项fail
+2017.52.3     12.20       795493] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [TJ][Local][AndroidGo][512MB][SharkLE]桌面旋转屏幕偶现旋转过程闪黑（见视频）
+2017.52.4     12.21       805592] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [Multimedia][AndroidGo][1GB][SharkLE][Sharkl2]进入文件管理器横屏播放视频,按两次退出播放后文件管理器会转屏（附视频）
+2017.52.5     12.22       807211] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [Camera_Team][AndroidGo][1GB][SharkLE]相机横屏状态下拉通知栏，开启自动旋转功能，相机模式与图标显示异常，且相机预览旋转90度
+--2017.53
+2017.53.1     12.25       颜色模式
+2017.53.1     12.25       mocor5 相关递交
+2017.53.1     12.25       806860] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [Camera_Team][SharkLJ1][CMCC]monkey测试结束后按power键无效
+2017.53.1     12.25       807750 - [Camera_Team][SC7731E][pike2][8.1][PTR1Block]将音量键功能设置为变焦，在全景模式下多次点击音量键变焦高概率无对应的提示语
+2017.53.2     12.26       808480 - [TJ][PSST][SC7731E][pike2][8.1][512M][User][CTS][GMS] 在CtsViewTestCases中，android.view.cts.DragDropTest#testOverNowhere - faile
+2017.53.2     12.26       807900] [FIH_SC9820A_YunOS5.2_Zouk4G] [FW-ActivityManager][] [Zouk4G][9820A][SPRD][DevErr][按键]__手机开启“点按提示音”，所有返回键，按键均没有按键音
+2017.53.2     12.26       796559] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [TJ][MPT][Android8.1][SharkL2][省电管理]添加测试机自带的动态壁纸，切换到超级省电重启手机后，待机一段时间，待机锁屏界面与主界面重叠（见截图）
+2017.53.3     12.27       807900 - [Zouk4G][9820A][SPRD][DevErr][按键]__手机开启“点按提示音”，所有返回键，按键均没有按键音
+2017.53.4     12.28       810164] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] New: [TJ][Local][AndroidGo][1GB][SharkLE][FeatureList验证]512M和1G版本不支持分屏，请修改featurelist
+2017.53.4     12.28       808794] [Sprdroid4.4_sfphone_9820E] [FW-WindowsManager][] [I&ST][9820E][Mocor5][nand4+2]拨号界面存在异常且概率性出现拨号无响应
+2017.53.4     12.28       808480] [Sprdroid8.x_pike2] [FW-WindowsManager][] [TJ][PSST][SC7731E][pike2][8.1][512M][User][CTS][GMS] 在CtsViewTestCases中，android.view.cts.DragDropTest#testOverNowhere - failed
+2017.53.4     12.28       wm 命令解锁有问题
+2017.53.4     12.28       807818 - [PSST][sharkLE][AndroidGo][1GB][USB]测试机连接键盘，手动锁屏后，按空格键高概率无法解锁
+2017.53.5     12.29       将case顺序打印出来
+--2018.1
+2018.1.2     01.02       810933] [Sprdroid8.x_pike2] [FW-View][] [TJ][PSST][SC7731E][pike2][8.1][512M][User][CTS][GMS] 在CtsViewTestCases中，android.view.cts.DragDropTest#testOverNowhere - failed
+2018.1.2     01.02       810983] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] New: [TJ][MPT][Android8.1][SharkL2][指纹]指纹录入和解锁，振动强度太弱，用户不易感知，建议强度增大
+2018.1.2     01.02       810932] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [PSST][AndroidGo][512MB][SharkLE]进行monkey+sleep测试, #1380测试15小时出现Android重启
+2018.1.4     01.04       zhaoyang   listview  selected 问题
+2018.1.5     01.05       810608] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [14.31 h][I&ST][monkey][android_Go_1G_trunk_sharkl2][ANR]com.sprd.screencapture happens ANR,log:
+2018.1.5     01.05       813419] [IOT_SL8541_RVM] [AP][] New: [后视镜][发掘][V3][camera]后视镜预览窗口放大再进其他应用，预览窗口不消失问题
+2018.1.5     01.05       812143] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [Android8.1][SharkLE][9832E][India][FT_Delhi][SS],Idea, DUT shows black screen after running USSD code on Idea 3G.
+2018.1.6     01.06       813081] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [14.57 h][I&ST][monkey][android_Go_MR1_trunk_sharkle][ANR]com.sprd.screencapture happens ANR,log:ANR in com.sprd.screencapture (com.sprd.screencapture/.ScreenCaptureActivity)
+--2018.2
+2018.2.1     01.08       震动
+2018.2.1     01.08       810932 - [PSST][AndroidGo][512MB][SharkLE] 进行monkey+sleep测试, #1380测试15小时出现Android重启
+2018.2.1     01.08       788373 - [SZ][I&ST][Sprdroid7.0_SharkLJ1][GMS][CTS][cts7.0_r16]进行CTS 测试,CtsAccessibilityServiceTestCases下android.accessibilityservice.cts.AccessibilitySoftKeyboardModesTest#testHideSoftKeyboard_shouldHideAndShowKeyboardOnRequest等2项fail
+2018.2.2     01.09       814693] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [Beta_external][SharkLJ1][CMCC][Local][tom.ma]多次power键亮灭屏后会出现一次亮屏无效
+2018.2.2     01.09       814622] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] 设置安全锁屏，进入设置->显示->屏保，任选一个接着点击上面更多选项，选择立即启动，接着观察大概4秒之后会闪现锁屏界面。
+2018.2.2     01.09       814923] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [AndroidGo][SharkL2][SLAB][TP][Stability]Crash at java.lang.IllegalStateException: View android.widget.LinearLayout{c18b33b
+2018.2.3     01.10       815219] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [PSST][AndroidGo][512MB][SharkLE]进行Monkey4System测试, log提示CRASH:com.android.music(android.view.WindowManager$BadTokenException) ，出现时间:10.77h,出现次数:1
+2018.2.3     01.10        813072 - [0.02 h][I&ST][monkey][monkey-top][android8.1_trunk_sharkl2][ANR]com.android.camera2 happens ANR,log:ANR in com.android.camera2 (com.android.camera2/com.android.camera.CameraLauncher)
+2018.2.3     01.10       开会，全面屏
+2018.2.4     01.11       815726] [Sprdroid_7.0_SharkL2] [APP-Setting_Device][] 改变显示大小会闪现黑屏1-2S
+2018.2.4     01.11       814563] [SPCSS_SC7731C] [FW_WindowManager][---] [SC7731C][SPROCOMM][5301SM]需求问题 - 【用户体验部】设置主界面划动卡
+2018.2.5     01.12       全面屏代码优化
+2018.2.5     01.12       817172 - [15.57 h][I&ST][monkey][monkey-top][android_Go_1G_trunk_sharkle][JAVACrash]com.android.music happens JavaCrash,log:java.lang.IllegalStateException
+--2018.3
+2018.3.1     01.15       test duration
+2018.3.1     01.15       810933
+2018.3.2     01.16       814598] [Sprdroid7.0_trunk] [FW-WindowsManager][] [WCN][7.0][SC7731C][BT][兼容性]测试机连接LG-HBS900蓝牙耳机，播放视频时耳机端不能控制视频暂停、播放（LG-HBS730耳机以及对比机7.0 6P均无此问题）
+2018.3.2     01.16       818658] [Sprdroid4.4_sfphone_9820E] [FW-WindowsManager][] New: 长按*键开启和关闭鼠标手
+2018.3.3     01.17       818658 - 长按*键开启和关闭鼠标手
+2018.3.3     01.17       818933] [Sprdroid_5.1_Trunk_TShark] [FW-WindowsManager][] [PSST][7731gea][32+4][PTR4Block]monkey测试：#1954测试2.04小时出现Crash in com.android.contacts 1台手机累计出现3次
+2018.3.3     01.17       yangping systrace
+2018.3.4     01.18       818734] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [TJ][Local][Android8.1][AndroidGo][1GB][SharkLE]插入耳机/开启蓝牙-->后台开启酷狗在线wifi听音乐-->桌面添加联系人快捷方式-->系统语言为英文后-->按power键无法锁屏
+2018.3.4     01.18       819559 - [TJ[Local][4.4][9820E][Mocor5][32+4][4+2][版本引入][PTR1Block]长按*键一键开关鼠标手功能失效
+2018.3.5     01.19       817655] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [TJ][PSST][AndroidGo][1GB][SharkLE][CTS][8.1R1][GMS]进行CTS测试，在模块CtsWebkitTestCases中，android.webkit.cts.WebViewTest#testOnPageCommitVisibleCalled Fail
+2018.3.5     01.19       819795] [Sprdroid8.x_pike2] [FW-WindowsManager][] [Multimedia][SC7731E][pike2][8.1][512M]手机连接USB，进入视频播放器中播放视频，完全下拉状态栏后，上滑至一半时，屏幕下方出现一个白色方块
+2018.3.5     01.19       zhaoyang popupwindow
+2018.3.6     01.20       820733] [Sprdroid4.4_sfphone_9820E] [FW-WindowsManager][] [TJ][Local][4.4][9820E][Mocor5][4+2]长按左软键调出下拉状态栏后，按右软键返回到桌面，此时按挂断键未锁屏，反而进入到主菜单
+--2018.4
+2018.4.1     01.22       814598] [Sprdroid7.0_trunk] [FW-WindowsManager][] [WCN][7.0][SC7731C][BT][兼容性]测试机连接LG-HBS900蓝牙耳机，播放视频时耳机端不能控制视频暂停、播放（LG-HBS730耳机以及对比机7.0 6P均无此问题）
+2018.4.1     01.22       821145] [Sprdroid4.4_sfphone_9820E] [FW-WindowsManager][] [TJ][Telephony] [4.4][9820E][Mocor5][32+4]omacp输入User PIN时，文字颜色太淡，几乎与背景同色。
+2018.4.2     01.23       821570] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [PSST] [Android8.1][SharkL2]monkey测试,手机自动旋转功能异常
+2018.4.2     01.23        820292] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [TJ][Telephony][AndroidGo][1GB][SharkLE]monkey偶见com.android.Email无响应
+2018.4.3     01.24       823739] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [SZ][I&ST][Sprdroid7.0_SharkLJ1][GMS][CTS][cts7.0_r17]进行CTS 测试,CtsAccessibilityServiceTestCases下android.accessibilityservice.cts.AccessibilitySoftKeyboardModesTest#testHideSoftKeyboard_shouldHid...
+2018.4.4     01.25       旋转异常问题won't fix
+2018.4.5     01.26       sharkl3 亮屏有问题
+2018.4.5     01.26       yy直播，录像就有问题
+--2018.5
+2018.5.1     01.29       825947] [Sprdroid4.4_sfphone_9820E] [FW-WindowsManager][] [Multimedia][4.4][9820E][Mocor5][32+4]任选一个亲情号，OK键进入，有一个比较宽的竖黑条出现 答复全部答复转发 标记为已读
+2018.5.1     01.29       826008] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [TJ][Local][SharkLJ1][CMCC]主菜单页面，点击任意应用如：设置/时钟，状态栏闪白线。
+2018.5.1     01.29       824489] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [Beta_SH][AndroidGo][1G][SharkL2][Navajo][Subj][PTR2Block]微信聊天返回桌面后，偶现测试机冻屏2s后自动黑屏，按power键可以亮屏
+2018.5.2     01.30       821893] [Sprdroid4.4_sfphone_9820E] [FW-WindowsManager][] [WCN][4.4][9820E][Mocor5][版本引入][SMS][PTR1Block]进入短信、FM等应用，测试机自动进入休眠模式3分钟后，点亮测试机并退出该应用，测试机出现白屏的情况
+2018.5.2     01.30       788296] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [TJ][Local][AndroidGo][SharkL2]首次开机时，在android消失后，主界面出现前，闪现白屏
+2018.5.2     01.30       821465] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [Camera_Team][SharkLJ1][CMCC][功能]偶现熄屏抓拍的图片显示无缩略图
+2018.5.3     01.31       826032] [Sprdroid4.4_sfphone_9820E] [FW-WindowsManager][] [WCN][4.4][9820E][Mocor5][Statusbar]测试机通过蓝牙传输文件，使用状态栏的清除按钮清除传输记录，记录被清除，但是状态栏仍然显示
+2018.5.3     01.31       826535 - [PSST][Android8.1][SharkLE]进行monkey+sleep测试, #1057测试3小时出现Android重启
+2018.5.3     01.31       826672 - [PSST][Android8.1][SharkLE][PTR2Block]进行monkey+sleep测试, #0708测试6小时出现Android重启
+2018.5.5     02.02       828237] [Sprdroid4.4_sfphone_9820E] [FW-WindowsManager][] [BM][9820E][SharkLE][2H10]（手机解锁）长按Power键会直接关机不会弹出提示选择“重启”“关机”“切换飞行模式”
+2018.5.5     02.02       828317] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [PSST][SharkL2][9850K][7.0_17B][oversea] 进行monkey测试，#0899测试 11.9小时发生CRASH: com.android.camera2 (java.lang.RuntimeException) Time Longth Since Monkey Start: 43194397 发生次数：1
+2018.5.5     02.02       827153 - [TJ][Telephony][4.4][9820E][Mocor5][32+4]浏览器界面选择桌面版本网页，点击选项弹出各个设置菜单界面，下方的选择和取消显示在黑色背景下面显示不清 
+2018.5.5     02.02       829974] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [Camera_Team][SharkLJ1][CMCC]连续熄屏抓拍，偶现照片显示无缩略图
+--2018.6
+2018.6.1     02.05       827607] [Sprdroid4.4_sfphone_9820E] [FW-General][] [Camera_Team][4.4][9820E][Mocor5][4+2][性能]连拍启动耗时0.556s，与SC9820W的0.225s差距为147.26%
+2018.6.1     02.05       690731 - [Multimedia][SC9853-1]每次开机后摇换壁纸，前2-3次中间有黑色的切换过程
+2018.6.1     02.05       830557] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [TJ][MPT][Android8.1][SharkLE][指纹][PTR2Block]指纹录入中掉电重启后，偶现无法进入launcher界面，提示“Android is starting”,下拉状态栏进入设置，屏锁方式，无法设置备用锁成功，重启无法恢复
+2018.6.2     02.06       825821] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [PSST][Android8.1][SharkL2]进行Monkey测试，#0905测试5.5小时发生ANR in com.android.systemui发生次数：1
+2018.6.2     02.06       823044] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [TJ][Telephony][Android8.1][SharkL2][L+L]通话界面分屏，挂断电话后回到idle界面，主界面异常
+2018.6.3     02.07       鼠标手 touchmode
+2018.6.4     02.08       830484] [Sprdroid7.0_SharkLJ1] [FW-WindowsManager][] [PSST][SharkLJ1][GMS][CMCC][AB][PTR2Block]做Monkey4System测试,#240004手机测试18.9H出现android重启
+2018.6.4     02.08       rgb调节色温
+2018.6.4     02.08       782058] [Sprdroid8.1_SharkL3] [PM_CCB][] [Feature List]Picture Quality子功能：颜色管理：自动模式下周期性地根据RGB sensor的输入，调整色温等参数，并配置给底层
+2018.6.4     02.08       832109] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [I&ST][SharkL3][Android 8.1][bringup rebase]点击缩略图查看所录制视频和返回预览，手机屏幕都会闪烁几次
+2018.6.5     02.09       rgb sensor会议讨论
+2018.6.5     02.09       830900 (SPCSS00453463) - [SC9850K][Waterworld][L558][XM]9850平台是否能支持护眼模式
+2018.6.5     02.09       蓝光护眼 demo
+--2018.7
+2018.7.1     02.12       833399] [Sprdroid8.1_iSharkL2] [FW-WindowsManager][] New: [TJ][Local][SC9853-1]点击电话打开，长按recent分屏，在分屏的下屏界面点击通话记录后点击recent键，此时分屏的下屏界面会出现电话图标，点击无效
+2018.7.1     02.12       830642] [Sprdroid4.4_sfphone_9820E] [FW-WindowsManager][] [0.16 h][I&ST][monkey][android4.4_Sfphone_9820E][ANR]com.android.camera2 happens ANR,log:ANR in com.android.camera2 (com.android.camera2/com.android.camera.CameraLauncher)
+2018.7.1     02.12       827607] [Sprdroid4.4_sfphone_9820E] [FW-General][] [Camera_Team][4.4][9820E][Mocor5][4+2][性能]连拍启动耗时0.556s，与SC9820W的0.225s差距为147.26%
+2018.7.2     02.13       刘海屏调查
+2018.7.2     02.13       830484 - [PSST][SharkLJ1][GMS][CMCC][AB][PTR2Block]做Monkey4System测试,#240004手机测试18.9H出现android重启
+--2018.8
+2018.8.6     02.24       833869] [Sprdroid8.1_SharkLE] [APP-Gallery][] [15.05 h][I&ST][monkey][monkey-top][android_Go_1G_trunk_sharkle][ANR]com.android.systemui happens ANR,log:ANR in com.android.systemui (com.sprd.recents/.presentation.view.activity.RecentsActivity
+--2018.08
+2018.08.2     02.27       827527] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [9.40 h][I&ST][monkey][monkey-top][android7.0_trunk_isharkl2][ANR]com.android.launcher3 happens ANR,log:ANR in com.android.launcher3 (com.android.launcher3/.Launcher)
+2018.08.2     02.27       834251 - [TJ][Telephony][4.4][9820E][Mocor5]进入浏览器，切换光标到地址栏，英语输入法下输入字符后网页显示 异常
+2018.08.3     02.28       834599] [Sprdroid8.x_pike2] [FW-WindowsManager][] [TJ][MPT][SC7731E][pike2][8.1][指纹]指纹解锁，偶现黑屏无法点亮，power 也无法点亮，有背光
+2018.08.4     03.01       836451 - [Multimedia][SC9853-1]横屏操作手机后转为竖屏,桌面有一半背景是黑色(附截图)
+2018.08.4     03.01       835936] [Sprdroid8.1_iSharkL2] [FW-WindowsManager][] [Camera_Team][SC9853-1]锁屏解锁后左滑进入相机，偶现界面黑屏
+2018.08.4     03.01       834596] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [PSST] [AndroidGo][1G][SharkL2]monkey测试,#530测试6.31小时出现ANR in android.process.acore,2台手机累计出现2次
+2018.08.5     03.02       836595] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [PSST][AndroidGo][SharkLE][1GB]进行monkey测试,#0090出现大量anr，影响monkey测试结果
+2018.08.5     03.02       836817] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [Camera_Team][SC9863-1][SharkL3]相机二维码模式扫描二维码成功后，跳转界面会几帧显示异常（附视频）
+2018.08.5     03.02       836817 - [Camera_Team][SC9863-1][SharkL3]相机二维码模式扫描二维码成功后，跳转界面会几帧显示异常（附视频
+--2018.09
+2018.09.1     03.05       学习wallpaper逻辑，发现低内存有Bug，会将bitmap资源释放掉
+2018.09.2     03.06       837695] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [PSST][AndroidGo][1GB][SharkLE]进行SAR测试, #0010测试16小时出现定屏
+2018.09.2     03.06       838450] [Sprdroid4.4_sfphone_9820E] [FW-WindowsManager][] New: 新功能：只在launcer和keyguard界面显示状态栏
+2018.09.2     03.06       838305] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] 灭屏状态下，按power键点亮屏幕时间慢
+2018.09.4     03.08       839239] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [TJ][MPT][SC9863-1][省电管理]开启低分辨率省电后，字体变大
+2018.09.4     03.08       839121] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [3.90 h][I&ST][monkey][monkey-top][android_Go_512M_trunk_sharkle][ANR]com.android.systemui happens ANR,log:ANR in com.android.systemui (com.android.systemui/.settings.BrightnessDialog)
+2018.09.4     03.08       839311] [Sprdroid8.1_SharkL3] [MM-Graphics][] [TJ][MPT][SC9863-1][省电管理]开启低分辨率省电后，重启手机，在开机界面中的android字体出现截断 答复全部答复转发 标记为已读
+2018.09.4     03.08       839108 - [TJ][MPT][SC9863-1][省电管理]开启设置低分辨率省电开关时，屏幕出现先缩小后变大的现象
+2018.09.5     03.09       notch study
+--2018.11
+2018.11.1     03.12       840399] [Sprdroid8.x_pike2] [FW-WindowsManager][] [TJ][Telephony][pike2][8.1][SC7731E][Telcel Pretest]首次开机使用开启PIN码SIM卡，解锁PIN码后界面显示全黑（只能看到状态栏，具体见截图）
+2018.11.1     03.12       840299] [Sprdroid8.1_SharkL3] [FW-View][] [TJ][Local] [SC9863-1]开启护眼模式后，部分功能无法显示，并且带有复选框的后面复选框均无法看清
+2018.11.1     03.12       841245] [Sprdroid8.1_iSharkL2] [FW-WindowsManager][] [TJ][MPT][SC9853-1][8.1][指纹]指纹录入和解锁，振动强度太弱，用户不易感知，建议强度增大
+2018.11.1     03.12       841093] [Ali_YunOS_SharkL2] [SPRD_Others][] 手机解锁后，虚拟键加载较慢，与桌面其他图标加载不协调，影响体验
+2018.11.3     03.14       840736] [Sprdroid8.1_iSharkL2] [FW-WindowsManager][] [TJ][Telephony][SC9853-1][8.1][Telcel]首次开机使用开启PIN码SIM卡，解锁PIN码后界面显示全黑（只能看到状态栏，具体见截图）
+2018.11.3     03.14       840399 - [TJ][Telephony][pike2][8.1][SC7731E][Telcel Pretest]首次开机使用开启PIN码SIM卡，解锁PIN码后界面显示全黑（只能看到状态栏，具体见截图） (edit)
+2018.11.3     03.14       841807] [Sprdroid8.1_iSharkL2] [APP-Camera][] [Camera_Team][SC9853-1][FeatureList][PTR1Block]不支持“双击后盖开启camera”，与FeatureList显示支持不符
+2018.11.3     03.14       839945] [Sprdroid8.x_pike2] [FW-WindowsManager][] [Beta_SH][SC7731E][pike2][8.1][512M][性能][关键性能][GMS][PTR2Block]Pike2_AndroidGo_GMS_W18.09.05计算器force-stop杀进程冷启动耗时：1.313，对比机Pike_6.0_512MB_GMS_W18.09.1版本耗时0.844，差距56% 答复全部答复转发 标记为已读
+2018.11.4     03.15       navigationbar 慢问题
+--2018.12
+2018.12.2     03.20       842533] [Sprdroid8.1_iSharkL2] [FW-WindowsManager][] [Multimedia][SC9853-1]选择图片通过其他应用分享，长按分享应用出现的菜单界面，右侧有间断的线条
+2018.12.2     03.20       844071 - [SZ][I&ST][Sprdroid8.1_SharkLE][GSI][AndroidGo][512M][CTS][cts8.1_R3][armeabi-v7a]CTS测试,[CtsWindowManagerHostTestCases]中,[android.server.cts.AlertWindowsTests#testAlertWindowAllowed]等[3]TestCases共[16]项Failed
+2018.12.3     03.21       839735] [Sprdroid8.1_iSharkL2] [FW-WindowsManager][] [Camera_Team][SC9853-1]全景拍照过程中来蓝牙配对消息，偶现提示“PIN码或配对秘钥不正确...”
+2018.12.3     03.21       845499] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [TJ][Telephony][AndroidGo][1GB][SharkLE][mokey]mokey测试过程中多次出现lanucher3无响应
+2018.12.3     03.21       845720 (SPCSS00460445) - [SC9832E][ZTE_SH][P932V40]【SC9832E】【P932V40】【上海基础业务】【设置】固定屏幕退出方式只长按back键就退出，与需求不符 
+2018.12.4     03.22       846270 - [TJ][Local] [SC7731E][pike2][8.1][512M]][客户硬件][16c10]进入任意二级菜单，手机均会先黑屏一下显示 
+2018.12.5     03.23       845419 - [Multimedia[SC9863-1][8.1][Sharkl3]悬浮窗播放视频时查看信息，高概率出现界面黑屏，具体查看操作视频
+2018.12.5     03.23       调查843639 ， case设计不合理
+2018.12.5     03.23       run cts 方法
+2018.12.5     03.23       847116 - [P982V40][VF需求][回退原生]Framwork 
+2018.12.5     03.23       846456] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [PSST][Android8.1][SharkL2][Navajo]monkey测试,#636测试8.07小时出现ANR in com.sprd.screencapture
+2018.12.5     03.23       流海屏会议
+2018.12.5     03.23       846426 - [TJ][Local][4.4][9820E][Mocor5]monkey测试，偶现ANR in com.android.settings (com.android.settings/.SubSettings)
+2018.12.5     03.23       814519 - [Beta_external][sharklJ1][CMCC][Subj][apk]微信在分屏模式，点击聊天列表/返回聊天列表 会闪现微信小的聊天界面，用户体验不好（附视频）
+2018.12.6     03.24       uiautomator 应该是测试脚本写的有问题
+--2018.13
+2018.13.1     03.26       847498 - [Multimedia][Android8.1][SharkLE]FM播放中点击右边选项，按锁屏键锁屏后再亮屏观察,屏幕闪现黑屏 
+2018.13.1     03.26       847873] [SPCSS_SC9832E] [FW_WindowManager][---] [P982V40][VF需求]4.11.6BOOT-0060 长按POWER键强制重启的时长
+2018.13.1     03.26       pike up wake up
+2018.13.1     03.26       847386 - [PSST][SC9863-1][8.1]进行monkey测试,#0870测试2.45小时出现Crash in com.android.contacts (pid 21949) Time Longth Since Monkey Start: 8836113,1台手机累计出现11次
+2018.13.1     03.26       843233 - [Beta_SH][Android8.1][SharkLE Plus][性能][关键性能]SharkLe_PLUS_2G 微信热启动耗时均值：0.44s，对比 SharklE_8.1_2G耗时均值：0.24s 相比相差81%；
+2018.13.1     03.26       843231] [sprdroid8.1_sharkLEPlus] [FW-WindowsManager][] [Beta_SH][Android8.1][SharkLE Plus][性能][关键性能]SharkLe_PLUS_2G 11后台微信热启动耗时均值：0.44s，对比 SharklE_8.1_2G耗时均值：0.27s 相比相差66%；
+2018.13.1     03.26       846761 (SPCSS00460955) - [SC7731E][TINNO][K101]进入应用菜单界面，重复点击电话应用后按返回键，手机大概率出现闪屏现象(附带log+视屏)
+2018.13.1     03.26       848081] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [PSST][AndroidGo][SharkLE][1GB]进行monkey+sleep测试, #0026测试42小时出现Android重启
+2018.13.2     03.27       848457] [Sprdroid8.1_iSharkL2] [FW-WindowsManager][] [PSST][SC9853-1][8.1][A2]手机进行系统monkey测试，测试2.25个小时，#535手机出现ANR in com.android.systemui,1台手机累计出现1次
+2018.13.2     03.27       848170 (SPCSS00461577) - [SC9850K][REVOVIEW][taiyi]续CQ SPCSS00459123，竖屏关机或重启，关机过程中切换为横屏，关机动画分屏显示且显示不全，帮忙分析解决下，谢谢！
+2018.13.2     03.27       848480 - [Beta_SH[SC7731E] [pike2][8.1][512M][Local]UC浏览器界面，高概率截图失败（附视频）
+2018.13.2     03.27       847409] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [Camera_Team][SC9863-1][SharkL3][PTR2Block]从图库回退进入全景模式后横竖屏操作，横屏状态下界面会闪回残留（附视频）
+2018.13.3     03.28       849477 - 新功能:长按*键打开关闭鼠标手发送广播
+2018.13.3     03.28        847614] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [TJ][Telephony][Android8.1][SharkL2][Monkey]偶现com.android.dialer停止运行（FATAL EXCEPTION：java.lang.IllegalStateException: register failed, the sensor listeners size has exceeded the maximum limit 128）
+2018.13.3     03.28       847779] [SPCSS_SC7731E] [FW_WindowManager][---] [SC7731E][INNOVATECH][sa389_hlg_021]在应用界面长按menu需要进入分屏，否则无功能。 答复全部答复转发 标记为未读
+2018.13.4     03.29       845349 - [TJ][Telephony][4.4][9820E][Mocor5][32+4][oversea]视频通话来电偶现来电界面异常，显示头像，见截图
+2018.13.4     03.29       模拟camera  HAL
+2018.13.4     03.29       输入法
+2018.13.5     03.30       850648] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [TJ][Telephony][AndroidGo][1G][SharkL2][Monkey]偶现com.android.settings无响应
+2018.13.5     03.30       848772 - [AndroidGo][1G][SharkL2][FLAB]手机内存存储，manualassert，不弹框也无log存储
+2018.13.5     03.30       851013 - 关闭长按*键打开／关闭鼠标手功能
+2018.13.5     03.30       814519 - [Beta_external][sharklJ1][CMCC][Subj][apk]微信在分屏模式，点击聊天列表/返回聊天列表 会闪现微信小的聊天界面，用户体验不好（附视频）
+--2018.14
+2018.14.1     04.02       851068 - [TJ][Local][SC9863-1]设置色温为暖色/冷色时，进行开启、关闭护眼模式，关闭后色温不能回复为上次设置情况，需进入色温和屏幕优化屏幕才进行变化 (edit)
+2018.14.1     04.02       847873] [SPCSS_SC9832E] [FW_WindowManager][---] [P982V40][VF需求]4.11.6BOOT-0060 长按POWER键强制重启的时长
+2018.14.1     04.02       851687 (SPCSS00463410) - [SC9832E][ZTE_SH][P932V40]【设置】同时按住Back和RecentApp键无法退出固定屏幕模式
+2018.14.1     04.02       邮件追踪850281
+2018.14.1     04.02       邮件追踪850281，指纹解锁屏幕不亮问题
+2018.14.2     04.03       rgb sensor 开发
+2018.14.2     04.03       流海屏
+2018.14.2     04.03       851041 - [TJ][Local][SC9863-1]机主和新用户下均开启护眼模式，模式间切换后，护眼模式功能显示开启实际现象显示未开启状态
+2018.14.2     04.03       852294] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [TJ][Local][SC9863-1][省电管理]开启低分辨率省电功能后，切换到新用户下，进入设置对应显示大小&字体大小均显示为默认，实际手机端显示为最大
+--2018.15
+2018.15.0     04.08       852322] [Sprdroid8.1_iSharkL2] [FW-WindowsManager][] Beta_SH][SC9853-1][8.1][性能][游戏]ISharkl2_8.1_2G_W18.13.2 运行大型游戏home键返回主屏界面，主屏1/2界面黑屏（见截屏）。
+2018.15.0     04.08       850784 - [18.10 h][I&ST][monkey][monkey-top][android_Go_1G_trunk_sharkl2][ANR]com.android.soundrecorder happens ANR,log:ANR in com.android.soundrecorder (com.android.soundrecorder/com.sprd.soundrecorder.SettingActivity) 
+2018.15.0     04.08       853481] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [TJ][Local][SC9863-1][CMCC]横屏下，设置/文件分屏状态，滑动设置界面屏幕出现彩色条纹/黑色小方块
+2018.15.0     04.08       853606] [Sprdroid8.1_SharkL2] [FW-WindowsManager][] [PSST][AndroidGo][1G][SharkL2][sea]进行monkey测试，#0375 测试 16.4小时发生ANR in com.android.contacts 发生次数：1 答复全部答复转发 标记为已读
+2018.15.0     04.08       协助客户亮屏问题
+2018.15.0     04.08       853394] [Sprdroid4.4_sfphone_9820E] [FW-WindowsManager][] [TJ][Local][4.4][9820E][Mocor5][32+4][monkey]monkey测试中，偶见com.android.phone发生crash，提示java.lang.NullPointerException
+2018.15.0     04.08       854070] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [Beta_external][AndroidGo][1GB][SharkLE][Subj][xuehao.jiang]使用猎豹清理大师(6.03.5)加速王者荣耀(1.33.1.35)，进入通知使用权限界面手动开启权限，按返回键无响应，等会儿提示“停止运行”
+2018.15.0     04.08       853627] [Sprdroid8.x_pike2] [FW-WindowsManager][] [Beta_India[SC7731E][pike2][8.1][512M][Music Player]DUT stops showing play mode notifications after sometime when pressed on playback mode button continuously.
+2018.15.1     04.09       853231] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [TJ][Local][SC9863-1][CMCC]设置和桌面设置分屏状态下，更改显示大小后不支持分屏的应用（如应用分身）处于分屏状态
+2018.15.1     04.09        854704] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [TJ][Local][SC9863-1] 新用户下设置色温为暖色后，切换到机主下开启护眼模式后，再次切换到新用户下，对应色温功能为非之前设置项，功能异常
+2018.15.3     04.11       android P systemimage
+2018.15.3     04.11       853231] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [TJ][Local][SC9863-1][CMCC]设置和桌面设置分屏状态下，更改显示大小后不支持分屏的应用（如应用分身）处于分屏状态
+2018.15.3     04.11       856181] [CUS_ZTE_SC9832E] [FW-WindowsManager][] [TJ][PSST][Android8.1][9832E][ZTE][P932V40][CTS Verifier]进行CTS Verifier 测试，在模块other中，Screen Pinning Test，长按Back键无法解锁
+2018.15.4     04.12       845419] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [Multimedia[SC9863-1][8.1][Sharkl3]悬浮窗播放视频时查看信息，高概率出现界面黑屏，具体查看操作视频
+2018.15.4     04.12       852991] [Sprdroid4.4_sfphone_9820E] [FW-WindowsManager][] [4.60 h][I&ST][monkey][monkey-top][android4.4_Sfphone_9820E][ANR]com.android.camera2 happens ANR,log:ANR in com.android.camera2 (com.android.camera2/com.android.camera.CameraActivity)
+2018.15.4     04.12       840882] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [TJ][Local][SC9863-1][省电管理]低分辨率省电下，查看显示大小为自定义（320），此时进入显示大小调整后查看，自定义（320）消失
+2018.15.4     04.12       856972] [CUS_ZTE_SC9832E] [FW-WindowsManager][] [PSST][9832E][ZTE][P932V40]进行Monkey4System测试, #0116测试24小时出现Android重启
+2018.15.5     04.13       阿里支持，解锁显示后面Activity
+2018.15.5     04.13       857006] [sprdroid8.1_sharkLEPlus] [FW-WindowsManager][] [Multimedia][Android8.1][SharkLE Plus]音乐播放器播放界面,锁屏解锁后会闪屏,停用HW叠加层后不会(附视频)
+--2018.16
+2018.16.1     04.16       845419 - [Multimedia[SC9863-1][8.1][Sharkl3]悬浮窗播放视频时查看信息，高概率出现界面黑屏，具体查看操作视频 
+2018.16.1     04.16       阿里支持
+2018.16.1     04.16       858043] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [TJ][Local][SC9863-1] [SC9853-1][SharkL2]退出ScreenPin模式与fl不一致，需长按back+overview 键
+2018.16.1     04.16       加密界面白条问题
+2018.16.1     04.16       858175] [Sprdroid8.1_iSharkL2] [FW-WindowsManager][] [Beta_India][SC9853-1][Camera],iSharL2 failed to wake up after double tab on screen if device put on desk even user select smart wake feature.(Video attached)
+2018.16.2     04.17       857976] [Sprdroid6.0_trunk] [FW-WindowsManager][] [6.0][sp9832a][2018-04-GoogleSecurityBulletin][10台机器][Monkey测试]#8首错0.75出现 anr应用名com.android.packageinstaller
+2018.16.2     04.17       858445] [Sprdroid8.1_SharkLE] [FW-View][] [SZ][I&ST][Sprdroid8.1_SharkLE][GMS][AndroidGo][512M][CTS][cts8.1_r3][armeabi-v7a]CTS测试,[CtsViewTestCases]中,[android.view.cts.LongPressBackTest#testAppIsNotDismissed]等[1]TestCases共[1]项Failed
+2018.16.2     04.17       study P
+2018.16.2     04.17       让晨希做rgb sensor，秋实已经完成框架
+2018.16.2     04.17       分析 858317，开机先显示黑屏然后显示wallpaper问题
+2018.16.3     04.18       855850] [Ali_YunOS_SharkL2] [SPRD_Others][] 【桌面】【QT】将壁纸设为白色，手动POWER灭屏后，再手动点亮屏幕并解锁，idle界面上方出现闪屏
+2018.16.3     04.18       859367] [sprdroid8.1_sharkLEPlus] [FW-WindowsManager][] [TJ][Local][Android8.1][SharkLE Plus]设置显示界面更改显示大小后，切换到多用户模式进入设置显示，对应显示大小同步更改
+2018.16.4     04.19       860014] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [BAT][CMCC][入库预测][SC9863-1][8.1][Sharkl3][非用例]_拨打紧急情况联系人过程中添加通话，期间反复按Power键，挂断电话后，在急救信息界面按返回键出现“Android系统没有响应”
+2018.16.4     04.19       859004] [Sprdroid8.1_iSharkL2] [FW-WindowsManager][] [Camera_Team][SC9853-1]拍照后手机横屏进入缩略图查看图片，返回相机界面时会闪烁一下拉伸画面
+2018.16.4     04.19       为阿里找解锁动画
+2018.16.4     04.19       OverlayManagerService
+2018.16.4     04.19       协助调查sharkl3转屏
+2018.16.4     04.19       860497] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] New: [SZ][I&ST][Sprdroid8.1_SharkL3][GMS][CTS][cts8.1_r3][arm64-v8a]CTS测试,[CtsWindowManagerHostTestCases]中,[android.server.cts.DialogFrameTests#testDialogPlacedAboveParent]等[1]TestCases共[9]项Failed
+2018.16.4     04.19       859899] [sprdroid8.1_sharkLEPlus] [FW-WindowsManager][] [Camera_Team][Android8.1][SharkLE Plus]相机界面锁屏后双击power键进相机，偶现无法进入相机，预览黑屏
+2018.16.5     04.20       858348] [sprdroid8.1_sharkLEPlus] [FW-WindowsManager][] [TJ][Telephony][Android8.1][SharkLE Plus]分屏状态下，上半边屏幕是分享文件跳转来的邮件编辑界面，下半边屏幕是新建邮件界面，点击返回后偶见下半边屏幕回到通讯录界面，上方的联系人记录无法查看
+2018.16.5     04.20       861192] [Sprdroid8.1_SharkL3] [APP-Setting_Device][] [TJ][Local][SC9863-1]机主下开启低分辨率省电后，切换到新用户下操作显示大小后，关闭低分辨率省电后，新用户下显示大小变为不存在的320p
+2018.16.5     04.20        860419] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [TJ][Local][SC9863-1][CMCC]Monkey测试中偶见ANR in com.sprd.fileexplorer (com.sprd.fileexplorer/.activities.OverViewActivity)
+--2018.17
+2018.17.1     04.23       858445] [Sprdroid8.1_SharkLE] [FW-View][] [SZ][I&ST][Sprdroid8.1_SharkLE][Sharkl2][GMS][AndroidGo][512M][CTS][cts8.1_r3][armeabi-v7a]CTS测试,[CtsViewTestCases]中,[android.view.cts.LongPressBackTest#testAppIsNotDismissed]等[1]TestCases共[1]项Failed
+2018.17.1     04.23       861788] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [PSST][9832E][ZTE][P932V40]进行Monkey4System测试, #0245测试11小时出现Android 重启
+2018.17.2     04.24       862282] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [PSST][SC9863-1][8.1]进行Monkey+sleep测试，#0969测试17小时左右出现定屏在android界面，adb可连
+2018.17.3     04.25       862717] [SPCSS_SC7731E] [APP_StatusBar/NavigationBar][---] [SC7731E][TINNO][K101]KBABO-1446【原型问题点】长按返回键和概览键无法退出固定屏幕
+2018.17.4     04.26       863356] [CUS_ZTE_SC9832E] [FW-WindowsManager][] [I&ST][monkey][monkey-top][android_Go_Sharkle_trunk_ZTE_D9_GMS]occur restart
+2018.17.4     04.26       surfacebackgroud dim
+2018.17.4     04.26       api for cutout
+2018.17.4     04.26       863929] [Sprdroid8.1_SharkL3] [AP-Powermanagement][] sharkl3 temple run2 基于18.15.5 HD+ 版本的合成方式为GPU,而荣耀7C HD+使用非GPU合成。
+2018.17.5     04.27       862890] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [PSST][PhaseII] [L+L][SharkL2][Navajo][PTR3Block]monkey测试,#169测试3.17小时出现ANR in com.android.calendar
+2018.17.5     04.27       863892] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [ST_India][SC9853-1][Open camera][apk] DUT show half screen black all the times after recording video with open camera app.(video attached)
+2018.17.5     04.27       863112] [Sprdroid_7.0_SharkL2] [FW-WindowsManager][] [PSST][Android][SharkL2][navajo][PhaseII][GMS]进行monkey4system测试,#0909、#0885、#0705、#0896测试过程中，12H出现ANR in com.android.contacts.共出现43次。
+2018.17.6     04.28       864565 (SPCSS00469892) - [SC9820E][LONGSUNG][9820E 龙尚固定台][SC9820E][LONGSUNG][9820E 龙尚固定台]不断从短信或联系人或其他界面切换或返回到idle，有时候会屏幕会黑一下再出来界面
+2018.17.6     04.28       emulator cutout
+2018.17.6     04.28       864261 (SPCSS00469741) - [SC9820E][LONGSUNG][9820e 龙尚手持机项目]长按power键，没法关机
+--2018.18
+2018.18.3     05.02        839357] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [Multimedia][SC9863-1][8.1][Sharkl3]悬浮窗播放视频时，横屏时点击视频应用信息中的存储返回时，背景黑屏，详情查看操作视频
+2018.18.3     05.02       864565 (SPCSS00469892) - [SC9820E][LONGSUNG][9820E 龙尚固定台][SC9820E][LONGSUNG][9820E 龙尚固定台]不断从短信或联系人或其他界面切换或返回到idle，有时候会屏幕会黑一下再出来界面
+2018.18.4     05.03       865211] [Sprdroid4.4_sfphone_9820E] [FW-WindowsManager][] [PSST][4.4][9820E][Mocor5][4+2]monkey测试,#348测试5.93小时出现ANR in com.sprd.note (com.sprd.note/.NoteEditor),1台手机累计出现4次
+2018.18.4     05.03       862493] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [Beta_India][AndroidGo][1GB][SharkLE],Jio,Airtel,SharkLE failed to wake up the screen during call waiting.(Video attached)
+2018.18.4     05.03       866248] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [Beta_external][Android8.1][2GB][SharkLE][L+L][Local]高德地图（8.35.2.1200版本）界面按home键返回桌面，高概率出现闪黑屏后恢复正常
+2018.18.4     05.03       864270] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [PSST][SC9863-1][8.1]快速按2次power键，必现黑屏，有背光
+2018.18.4     05.03       866230] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [PSST][AndroidGo][SharkLE][512MB][GMS]进行Monkey测试，#923手机测试6.75h出现CRASH: com.android.camera2（android.view.WindowManager$BadTokenException）
+--2018.19
+2018.19.1     05.07       867653 - 流海屏Feature WindowManager部分适配
+2018.19.1     05.07       857918] [sprdroid8.1_sharkLEPlus] [FW-WindowsManager][] [TJ][Local][Android8.1][SharkLE Plus][CMCC]后台运行多个应用，反复点击recent键，最近应用列表中应用界面显示重影 答复全部答复转发 标记为未读
+2018.19.1     05.07       863947] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [Multimedia][SC9863-1]解锁方式为滑动解锁，在拨号/图库/音乐/时钟等应用界面，弹出对话框时锁屏再解锁，界面高概率会闪现下黑屏，详见操作视频
+2018.19.3     05.09       866731 - [Camera_Team][9832E][ZTE][P932V40][PTR1Block]设置图案解锁，左滑进相机拍照，点击左下角的缩略图闪退至锁屏界面
+2018.19.3     05.09       硬件绘制，软件绘制
+2018.19.3     05.09       868839 - [Beta_India][SC9853-1],Jio,VT call goes in background automatically if schedule power saving mode activated during call.(video attached) (edit)
+2018.19.5     05.11       870084] [Sprdroid8.1_iSharkL2] [FW-WindowsManager][] [I&ST][isharkl2][8.1][security][单包糗事百科monkey]测试过程中出现异常停止

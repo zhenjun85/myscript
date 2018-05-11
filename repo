@@ -178,6 +178,12 @@ group.add_option('--mirror',
 group.add_option('--reference',
                  dest='reference',
                  help='location of mirror directory', metavar='DIR')
+group.add_option('--no-alt-ref',
+                 dest='no_alt_ref', action='store_true',
+                 help='do not copy branches/tags from reference repository')
+group.add_option('--no-autocache',
+                 dest='noautocache', action='store_true',
+                 help='restrict auto-cache')
 group.add_option('--depth', type='int', default=None,
                  dest='depth',
                  help='create a shallow clone with given depth; see git clone')
@@ -195,6 +201,12 @@ group.add_option('-p', '--platform',
                  help='restrict manifest projects to ones with a specified '
                       'platform group [auto|all|none|linux|darwin|...]',
                  metavar='PLATFORM')
+group.add_option('-c', '--current-branch',
+                 dest='current_branch_only', action='store_true',
+                 help='fetch only current branch of manifest from server')
+group.add_option('--no-tags',
+                 dest='no_tags', action='store_true',
+                 help="don't fetch tags of manifest")
 
 
 # Tool
@@ -496,8 +508,9 @@ def _Fetch(url, local, src, quiet):
   else:
     err = None
   cmd.append(src)
-  cmd.append('+refs/heads/*:refs/remotes/origin/*')
-  cmd.append('refs/tags/*:refs/tags/*')
+  cmd.append('+refs/heads/%s:refs/remotes/origin/%s' % (REPO_REV,REPO_REV))
+  # We do not verify tag, so just ignore all tags
+  # cmd.append('refs/tags/*:refs/tags/*')
 
   proc = subprocess.Popen(cmd, cwd = local, stderr = err)
   if err:
@@ -840,7 +853,7 @@ def main(orig_args):
   if cmd == 'sync':
     repodst = os.path.join(rel_repo_dir,S_repo)
     _Fetch(S_repo,repodst,'origin','')
-    _Checkout(repodst,'stable','refs/remotes/origin/stable','')
+    _Checkout(repodst, REPO_REV,'refs/remotes/origin/%s' % REPO_REV,'')
 
   ver_str = '.'.join(map(str, VERSION))
   me = [sys.executable, repo_main,

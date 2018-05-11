@@ -1,0 +1,9 @@
+#!/bin/bash
+IFS=$'\n'
+cd ~/bin
+for line in `ls|grep my`
+do
+    echo $line
+    cat $line|grep $1
+done
+

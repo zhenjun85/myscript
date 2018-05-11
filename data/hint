@@ -1,60 +1,24 @@
---更新apt-get
-sudo vi /etc/cntlm.conf
-
---sysui action
-metrics_constants.proto 
-
 --coverity
 u:fwap_fw2  p:666666
-
---cts
-/PDLogs/MocorDroid/2015/CTS & GTS Tools
-
---master base
-git clone https://github.com/android/platform_frameworks_base.git
 
 --monkey
 while true; do adb shell monkey -v 1000000 --ignore-crashes --ignore-timeouts --ignore-security-exceptions --ignore-native-crashes ; done
     adb shell monkey -s 48 --throttle 200 --ignore-crashes --ignore-timeouts --ignore-security-exceptions --pkg-blacklist-file /data/local/tmp/blacklist --kill-process-after-error -v -v -v 750000
 
---java 7
-export PATH=/usr/lib/jvm/java-7-openjdk-amd64/bin:$PATH
-
 --extract system.img
 sudo mount -o rw,loop system.img test
 
---dump tcp
-tcp -s 0 -i any -w /sdcard/dumpfile 
---parse kernel log in dumpsys
-parse_log -s vmlinux -d sysdump.core.01_0x80000000-0x87ffffff_dump.lst -a 0xc0000000
-
 --小写转大写
 echo adfasfjasdf |tr '[a-z]' '[A-Z]'
-
---git push
-git push ssh://zhenjun.zhang@10.0.64.28:29418/vendor/sprd/open-source/ HEAD:refs/for/sprdroid4.4
---git clone
-git clone gittj@10.5.2.49:android/platform/frameworks/base -b sprdroid7.0_trunk_k310
 
 --grep error
 mmm vendor/sprd/open-source/libs/audio>&1 2>&1|grep error
 
 
---rm save out
-for a in `ls`; do echo "rm ${a}"; if [[ ${a} != "out" ]]; then rm -rf ${a}; fi; done
-
---ssh
-ssh -l user 192.168.0.11
-
-
---cts wifi
-tools123456
 
 --dump c++
 #include <utils/CallStack.h>  
-CallStack stack;  
-stack.update();  
-stack.log("zzj");  
+CallStack stack("zzj");  
 
 --scp
 scp -r apuser@10.5.228.37:/home/apuser/folder .
@@ -62,49 +26,57 @@ scp -r apuser@10.5.228.37:/home/apuser/folder .
 --input log
 adb shell setprop persist.sys.input.log true
 
---systemproperities
-import android.os.SystemProperties;
-String zzjt = SystemProperties.get("persist.zzj.test", "false");
-if ("true".equals(zzjt)) {
-    
-}
-
---下载
-repo sync -d -c -q -j8
-repo init -u gitadmin@gitmirror.spreadtrum.com:android/platform/manifest -b $branch --repo-url=gitadmin@gitsrv01.spreadtrum.com:tools/newrepo.git
-repo init -u gitadmin@10.5.2.49:android/platform/manifest -b $branch --repo-url=gitadmin@gitsrv01.spreadtrum.com:tools/newrepo.git
 
 --trace
 Throwable tr = new Throwable();
 tr.fillInStackTrace();
 android.util.Log.d("zzj","Throw",tr);
 
---11F6
-pldapps2015
-
-
 --access google proxy
 export https_proxy=10.0.2.100:3128
 git push origin HEAD:refs/for/master
 
---jenkins
-http://10.0.64.29:8080/jenkins/job/gerrit_do_verify_sprdroid6.x/
+--events log
+out/target/common/obj/JAVA_LIBRARIES/services.core_intermediates/src/java/com/android/server/am/EventLogTags.java
 
---clear bug log
-for a in `ls`; do cd $a;rm -rf `ls |grep -vE ".rar|.gz|.zip"`; cd -;done
-
---down pac
-/To_Taipei/Shanghai_Version/AndroidM/MocorDroid6.0_Trunk_16b_W16.24.3_All/Images
-
---remove Calibration
-myremount;adb shell rm system/app/ModemNotifier/ModemNotifier.apk
-
---会议号
-995 746 894
-
---远程服务器
-ssh zhenjun.zhang@10.5.2.51  SPRD#sciuser   Bubble31
-ssh zhenjun.zhang@10.5.227.17
-
---qiushi
+--qiushi juanjuan
 spreadtrum\\qiushi.han@10.5.42.63
+spreadtrum\\juanjuan.hou@10.5.42.72
+password:123@abAO
+
+
+--tmp commit
+Bug #00000
+
+[root cause  ]
+[changes     ]
+[side effects]
+[self test   ]:yes
+[download normally]:yes
+[power on/off normally]:yes
+[do common repository/branch inspection]:yes
+[is there dependence]:yes
+[confirm dependent commit]:yes
+[board]:aaaa
+[test case]:aaaa
+[reviewers   ]
+[change_type ] bringup --> sprd_chip_support
+[tag_product ] common
+
+--close starting window
+adb shell setprop persist.sys.startingwindow false
+
+--repo sync
+repo sync -c --no-tags -j8
+
+--gms issue
+Sunil.Goyal@spreadtrum.com
+
+--systemproperities
+import android.os.SystemProperties;
+if (android.os.SystemProperties.getBoolean("persist.zzj.test", false)){
+    
+}
+
+--ALLOW_MISSING_DEPENDENCIES
+export ALLOW_MISSING_DEPENDENCIES=true

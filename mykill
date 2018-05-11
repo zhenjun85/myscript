@@ -1,13 +1,19 @@
 #!/bin/bash
 
 killserver() {
-    servername=`sudo adb shell ps|grep $1|awk -F " " '{print $2}'`
-    echo $servername
-    if [ ! $servername ]
+    process_pid=`sudo adb shell ps|grep $1|awk -F " " '{print $2}'`
+    if [ ! $process_pid ]
     then
-        servername=`sudo adb shell ps -ef|grep $1|awk -F " " '{print $2}'`
+        process_pid=`sudo adb shell ps -ef|grep $1|awk -F " " '{print $2}'`
+        if [ ! $process_pid ]
+        then
+            myecho -r "Can not found Process: $1, exit"
+            exit
+        fi
+        process_name=`sudo adb shell ps -ef|grep $1|awk -F " " '{print $8}'`
+        echo "Killing $process_name"
     fi
-    sudo adb shell kill $servername
+    sudo adb shell kill $process_pid
 }
 
 if [ $# == 0 ]

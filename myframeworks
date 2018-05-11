@@ -3,8 +3,10 @@
 sudo adb wait-for-device root
 sudo adb wait-for-device remount 
 cur=`date +%m%d%H%M`
-mkdir "${cur}$1"
-cd $cur
+foldername="${cur}_$1"
+echo $foldername
+mkdir $foldername
+cd $foldername
 sudo adb pull /system/framework/services.jar . 
 sudo adb pull /system/framework/framework.jar . 
 sudo adb pull /system/framework/framework-res.apk . 

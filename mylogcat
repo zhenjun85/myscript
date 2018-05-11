@@ -1,0 +1,25 @@
+#!/bin/bash
+
+logcatprocess() {
+    servername=`sudo adb shell ps|grep $1|awk -F " " '{print $2}'`
+    echo $servername
+    if [ ! $servername ]
+    then
+        servername=`sudo adb shell ps -ef|grep -w $1|awk -F " " '{print $2}'`
+    fi
+    if [ ! $servername ]
+    then
+        echo "Can not found process $1"
+        return 
+    fi
+    shift
+    sudo adb logcat --pid=$servername $@ 
+}
+
+if [ $# == 0 ]
+    then
+        logcatprocess system_server
+    exit
+fi
+
+logcatprocess $@

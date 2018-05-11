@@ -7,7 +7,8 @@ printwork (){
     IFS=$'\n'
     clear
     myecho -bo "=======the weeekly record======="
-    for line in `cat $worklog`
+    #for line in `cat $worklog`
+    for line in `tail -n 100 $worklog`
     do
         if [ ${line:0:2} == '--' ]
         then

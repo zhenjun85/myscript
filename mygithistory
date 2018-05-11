@@ -1,0 +1,28 @@
+#!/bin/bash
+if [ $# == 2 ]
+then
+    gitcommand="git log --oneline $2"
+elif [ $# == 1 ]
+then
+    gitcommand="git log --oneline"
+else
+    echo -e "\E[32m\033[1mWrong Usage exit"
+    echo "Usage: $0 wantToSearch FILEORPATH"
+    tput sgr0
+    exit
+fi
+commitids=`$gitcommand|awk -F " " '{print $1}'`
+echo
+for commitid in $commitids
+do
+    git show $commitid| grep $1
+    if [ $? == 0 ]
+    then
+        echo -en "\E[34m\033[1mFound $1 in commit "
+        tput sgr0
+        echo -e "\E[33m\033[1m$commitid"
+        git log -1 --pretty=format:%ad $commitid
+        tput sgr0
+        echo
+    fi
+done

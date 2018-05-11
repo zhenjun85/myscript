@@ -1,0 +1,9 @@
+#/bin/sh
+
+for file in `ls ~/code/o/frameworks/base/services/core/java/com/android/server/wm`
+do
+    echo $file
+    command="http://review.source.spreadtrum.com/gitweb/?p=androidpdk/platform/frameworks/base.git;a=blob_plain;f=services/core/java/com/android/server/wm/${file};hb=refs/heads/o-release-generic-fs"
+    echo $command
+    wget -O $file $command
+done

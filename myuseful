@@ -1,0 +1,6 @@
+#!/bin/bash
+cat ~/bin/myuseful
+
+
+exit
+logcat -e "haveWall=true" -m 1;layer=`dumpsys window windows|grep -A10 "Window #.*StatusBar"|grep mLastLayer|sed 's/.*mLastLayer=//'`;screencap -m $layer -M $layer /sdcard/c.png

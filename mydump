@@ -2,8 +2,8 @@
 
 if [ $# -lt 1 ]
 then
-    sudo adb shell dumpsys SurfaceFlinger
+    sudo adb shell dumpsys SurfaceFlinger |grep -B30 "h/w composer state" |grep -A30 "Display 0 HWC layers"
 else
-    sudo adb shell dumpsys $1
+    sudo adb shell dumpsys $@
 fi
 

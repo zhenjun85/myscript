@@ -19,6 +19,6 @@ sudo adb logcat -v threadtime -b system> ~/logs/monkeylog/$name/system_log&
 
 while true
 do
-sudo adb shell monkey -s 48 --throttle 200 --ignore-crashes --ignore-timeouts --ignore-security-exceptions --pkg-blacklist-file /data/local/tmp/blacklist --kill-process-after-error -v -v -v 750000
+sudo adb shell monkey --pct-appswitch 35 --pct-syskeys 10 --pct-majornav 0 --pct-touch 40 -s 48 --throttle 200 --ignore-crashes --ignore-timeouts --ignore-security-exceptions --pkg-blacklist-file /data/local/tmp/blacklist --kill-process-after-error -v -v -v 750000
 sleep 10
 done

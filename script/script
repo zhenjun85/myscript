@@ -46,7 +46,7 @@ function cds {
 
 function cdc {
     croot
-    cd frameworks/base/core
+    cd frameworks/base/core/java
 }
 
 alias cdout='cd $ANDROID_PRODUCT_OUT'
@@ -64,21 +64,21 @@ function mypush()
     then
         backup=`pwd`
         cd $ANDROID_PRODUCT_OUT
-        adb push system/framework/services.jar /system/framework/
+        sudo adb push system/framework/services.jar /system/framework/
         cd $backup
         return
     elif [ "$1" == "f" ]
     then
         backup=`pwd`
         cd $ANDROID_PRODUCT_OUT
-        adb push system/framework/framework.jar /system/framework/
+        sudo adb push system/framework/framework.jar /system/framework/
         cd $backup
         return
     elif [ "$1" == "r" ]
     then
         backup=`pwd`
         cd $ANDROID_PRODUCT_OUT
-        adb push system/framework/framework-res.apk /system/framework/
+        sudo adb push system/framework/framework-res.apk /system/framework/
         cd $backup
         return
     fi
@@ -102,10 +102,19 @@ function mypush()
         cdout
         cd system
         libname=`find -name ${lib}*`
+        echo $libname
         pushtolibname=`echo $libname |sed "s/.//"`
         echo "adb push $libname system$pushtolibname"
         sudo adb push $libname system$pushtolibname
         cd $backup
     fi
+}
+
+function myjava6()
+{
+    export JAVA_HOME=/usr/java/jdk1.6.0_29
+    export JRE_HOME=/usr/java/jdk1.6.0_29/jre
+    export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+    export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
 }
 

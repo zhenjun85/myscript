@@ -1,0 +1,18 @@
+#/bin/bash
+
+function printlist() {
+    local parent_folder=$1
+    for file in `ls`
+        do
+        if [[ -d $file ]]
+            then
+            cd $file
+            printlist $parent_folder/$file
+            cd ..
+        else
+            echo $parent_folder/$file
+        fi
+    done
+}
+
+printlist .

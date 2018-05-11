@@ -1,0 +1,42 @@
+1. 
+mmm development/tools/idegen/
+2.
+./development/tools/idegen/idegen.sh
+生成android.iml, android.ipr, android.iws
+3. 编辑android.iml, 去掉无用的folder
+<excludeFolder url="file://$MODULE_DIR$/.repo" />
+<excludeFolder url="file://$MODULE_DIR$/abi" />
+<excludeFolder url="file://$MODULE_DIR$/art" />
+<excludeFolder url="file://$MODULE_DIR$/bionic" />
+<excludeFolder url="file://$MODULE_DIR$/bootable" />
+<excludeFolder url="file://$MODULE_DIR$/build" />
+<excludeFolder url="file://$MODULE_DIR$/cts" />
+<excludeFolder url="file://$MODULE_DIR$/dalvik" />
+<excludeFolder url="file://$MODULE_DIR$/developers" />
+<excludeFolder url="file://$MODULE_DIR$/development" />
+<excludeFolder url="file://$MODULE_DIR$/device" />
+<excludeFolder url="file://$MODULE_DIR$/docs" />
+<excludeFolder url="file://$MODULE_DIR$/external" />
+<excludeFolder url="file://$MODULE_DIR$/hardware" />
+<excludeFolder url="file://$MODULE_DIR$/libcore" />
+<excludeFolder url="file://$MODULE_DIR$/libnativehelper" />
+<excludeFolder url="file://$MODULE_DIR$/ndk" />
+<excludeFolder url="file://$MODULE_DIR$/out" />
+<excludeFolder url="file://$MODULE_DIR$/pdk" />
+<excludeFolder url="file://$MODULE_DIR$/prebuilt" />
+<excludeFolder url="file://$MODULE_DIR$/prebuilts" />
+<excludeFolder url="file://$MODULE_DIR$/sdk" />
+<excludeFolder url="file://$MODULE_DIR$/system" />
+<excludeFolder url="file://$MODULE_DIR$/tools" />
+
+4. Android Studio导入android.ipr
+
+
+5. 打开一个文件，提示配置sdk，选择一个sdk，将默认配置删除，源码选择你要调试的源码
+
+6.
+右键点击工程，选择debug，attach system_process， 设置断点后可以调试
+
+
+部分参考
+http://www.jianshu.com/p/30a628335114
