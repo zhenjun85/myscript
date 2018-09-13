@@ -1,0 +1,14 @@
+Bug #
+
+[root cause  ] 
+[changes     ] 
+[side effects] no
+[self test   ]:
+[download normally]:yes
+[power on/off normally]:yes
+[do common repository/branch inspection]:yes
+[is there dependence]:no
+[confirm dependent commit]:no
+[board]:9832e
+[test case]:test as the bug description
+[reviewers   ] qiushi.han chenxi.li

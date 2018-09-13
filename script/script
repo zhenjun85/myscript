@@ -1,8 +1,10 @@
 #!/bin/bash
+userpath="/home/local/SPREADTRUM/zhenjun.zhang"
+export server="zhenjun.zhang@tjand05"
 function croot {
     local TOPFILE=build/envsetup.sh
     local FULLDIR=`pwd`
-    while [ `pwd` != / ]
+    while [ `pwd` != $userpath ]
     do
         if [ -f $TOPFILE ]
         then
@@ -11,7 +13,7 @@ function croot {
         fi
         cd ..
     done
-    if [ `pwd` == / ]
+    if [ `pwd` == $userpath ]
         then
         echo "Can not find Android Root Folder"
         return -1
@@ -64,14 +66,22 @@ function mypush()
     then
         backup=`pwd`
         cd $ANDROID_PRODUCT_OUT
-        sudo adb push system/framework/services.jar /system/framework/
+        cd system/framework/
+        for lib in "./services.jar ./oat/arm64/services.odex ./oat/arm64/services.art ./oat/arm64/services.vdex ./services.jar.prof"
+        do
+            sudo adb push $lib system/framework/$lib 
+        done
         cd $backup
         return
     elif [ "$1" == "f" ]
     then
         backup=`pwd`
         cd $ANDROID_PRODUCT_OUT
-        sudo adb push system/framework/framework.jar /system/framework/
+        cd system/framework/
+        for lib in "./services.jar ./oat/arm64/services.odex ./oat/arm64/services.art ./oat/arm64/services.vdex ./services.jar.prof"
+        do
+            sudo adb push $lib /system/framework/$lib 
+        done
         cd $backup
         return
     elif [ "$1" == "r" ]
@@ -118,3 +128,6 @@ function myjava6()
     export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
 }
 
+alias pushss='sudo adb push $OUT/system/framework/services.jar $OUT/system/framework/services.jar.prof $OUT/system/framework/services.core.jar system/framework/; sudo adb push $OUT/system/framework/oat/arm/services.core.vdex $OUT/system/framework/oat/arm/services.core.odex system/framework/oat/arm/; sudo adb push $OUT/system/framework/oat/arm64/services.vdex $OUT/system/framework/oat/arm64/services.odex $OUT/system/framework/oat/arm64/services.core.vdex $OUT/system/framework/oat/arm64/services.core.odex
+$OUT/system/framework/oat/arm64/services.art system/framework/oat/arm64/'
+alias pushff='sudo adb push $OUT/system/framework/framework.jar $OUT/system/framework/boot-framework.vdex system/framework/; sudo adb push $OUT/system/framework/arm/boot-framework.oat $OUT/system/framework/arm/boot-framework.art.rel $OUT/system/framework/arm/boot-framework.art system/framework/arm/; sudo adb push $OUT/system/framework/arm64/boot-framework.oat $OUT/system/framework/arm64/boot-framework.art.rel $OUT/system/framework/arm64/boot-framework.art system/framework/arm64/'

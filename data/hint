@@ -1,3 +1,6 @@
+--cts resource
+http://tjtest.spreadtrum.com/autotest/Resource/resource.do
+
 --coverity
 u:fwap_fw2  p:666666
 
@@ -44,6 +47,9 @@ spreadtrum\\qiushi.han@10.5.42.63
 spreadtrum\\juanjuan.hou@10.5.42.72
 password:123@abAO
 
+--p-fs-release
+repo init -u gitadmin@gitmirror.spreadtrum.com:androidpdk/platform/vendor/pdk/generic/fs/manifest -b p-fs-release
+
 
 --tmp commit
 Bug #00000
@@ -66,6 +72,13 @@ Bug #00000
 --close starting window
 adb shell setprop persist.sys.startingwindow false
 
+--branch pm
+18b keren.tong
+18a yanli <yan_yan.li@spreadtrum.com>
+18a_rls1 sqall.hu
+18a_rls2 nicole.wang
+18b_rls1 xiaozhen.pang
+
 --repo sync
 repo sync -c --no-tags -j8
 
@@ -78,5 +91,8 @@ if (android.os.SystemProperties.getBoolean("persist.zzj.test", false)){
     
 }
 
---ALLOW_MISSING_DEPENDENCIES
-export ALLOW_MISSING_DEPENDENCIES=true
+--run cts
+run cts -m $1 -t $2 --skip-device-info --skip-all-system-status-check --skip-preconditions
+
+--hwui
+debug.hwui.renderer

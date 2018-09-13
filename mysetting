@@ -4,6 +4,7 @@ function usage() {
     echo "t transition_animation_scale"
     echo "a animator_duration_scale"
     echo "d restore to default"
+    echo "o sleep_timeout"
     echo "example $0 w 1"
 }
 
@@ -31,6 +32,10 @@ case $1 in
     ;;
 "r" )
     adb shell settings put system user_rotation $2
+    exit
+   ;;
+"o" )
+    adb shell settings put secure sleep_timeout $2
     exit
     ;;
 * )

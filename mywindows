@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo rdesktop 10.5.2.26 -u zhenjun.zhang -p Bubbleapr4 -a 16 -f -r sound:local -5 -r clipboard:PRIMARYCLIPBOARD -d SPREADTRUM &
+sudo rdesktop 10.5.2.26 -u zhenjun.zhang -p Bubblejul5 -a 16 -f -r sound:local -5 -r clipboard:PRIMARYCLIPBOARD -d SPREADTRUM &
