@@ -1475,3 +1475,51 @@
 2018.37.1     09.10       933204] [Sprdroid9.0_Pike2] [FW-WindowsManager][] [BJ_RD][7731E 9.0][pike2][StabilityTest]10台手机进行Monkey+Sleep测试，watchdog 问题 android.anim 线程执行耗时导致关键线程block 3台Ｓleep异常停止 ，adb可连
 2018.37.2     09.11       933236] [Sprdroid9.0_Pike2] [FW-WindowsManager][] [PSST][SC7731E][Pike2][9.0][PTR1Block]进行monkey+sleep测试, #0819测试24小时出现Android重启,48小时内10台全部android重启
 2018.37.2     09.11       930528] [SPCSS_SC9853I-IA] [FW_WindowManager][---] [SC9853I-IA][INNOVATECH][K515_TRX_411]设置图案解锁后，在锁屏后来电，下滑点击通知栏中的来电通知，解锁图案与下方虚拟键重叠
+2018.37.5     09.14       929715 - [Multimedia][SC9863-1]锁屏界面进入安全相机，拍照后横屏，点击缩略图进入浏览界面会闪一下，设置-开发者选项，勾选“停用HW叠加层”后无此问题
+2018.37.5     09.14       需求  931860 - [SC7731E][HYMS][MR1]如何调整灭屏流程，先出现锁屏在息屏”需求
+2018.37.5     09.14       treble 会议
+2018.37.5     09.14       客户问题935548] [SPCSS_SC7731E_Transsion] [FW_Audio][---] [SZ_TEST][SC7731E][Pike2][Itel Polaris][Settings]设置中触摸声音默认打开，进入设置列表，上下滑动数次，点击任意菜单，触摸声音变小，触摸声音又恢复
+2018.37.5     09.14       RCA ppt撰写
+--2018.38
+2018.38.1     09.17       936514] [Sprdroid9.0_Pike2] [FW-WindowsManager][] [Camera_Team][Android9.0][Pike2][Go1G][PTR1Block]设置密码锁，双击Power键快速启动相机，点击“Home”键，出现锁屏界面覆盖在相机界面上（附视频）
+2018.38.1     09.17       935995] [Sprdroid9.0_SharklE] [FW-WindowsManager][] [Camera_Team][Android9.0][SharkLE][Go1G]连拍模式下来电，必现长按音量键却只能拍一张的情况，无法实现连拍，但长按快门键可以连拍（附视频）
+2018.38.1     09.17       936538] [Sprdroid9.0_Pike2] [FW-WindowsManager][] [Multimedia][Android9.0][Pike2][Go1G][共有]灭屏播放音乐时，长按手机音量键无法控制音量连续加减，解锁界面和主界面亮屏时长按音量键都可以控制音量连续加减
+2018.38.1     09.17       936772] [Sprdroid9.0_SharklE] [FW-WindowsManager][] [Multimedia][Android9.0][SharkLE][Go1G][AutoTest][Monkey][5.88h]Monkey测试出现Music的crash，Long Msg: java.lang.NullPointerException: Remote stack trace:
+2018.38.1     09.17       DEBUG_ANIM
+2018.38.1     09.17       936540] [Sprdroid9.0_Pike2] [FW-WindowsManager][] [Camera_Team][Android9.0][Pike2][Go1G]设置图案锁，设置--应用--相机-清除数据，锁屏界面，双击Power键快速启动相机，出现黑屏现象
+2018.38.3     09.19       938232] [Sprdroid9.0_SharklE] [FW-WindowsManager][] [BAT][Android9.0][SharkLE][非用例]_设置->情景模式->标准->编辑，“点按时振动”为勾选状态时，进入设置->安全性和位置信息->高级->SIM卡锁定，长按右上角的“搜索”图标无振动
+2018.38.3     09.19       935947] [Sprdroid9.0_SharkL3] [FW-WindowsManager][] [BM][Android9.0][sharkl3][2G][PTR1Block]手机测试功耗，低电流有点偏高。
+2018.38.3     09.19       936326 - [ST_India][Android9.0][Pike2][Go1G][GMS][apk][Angry Birds 2],Vodafone, DUT call screen rotate & zoom after disconnect call while playing angry birds 2 game.(video attached) 
+2018.38.3     09.19       客户问题 938349 (SPCSS00515101) - [SC9863A][SPROCOMM][ED5716M]【Gesturs】Swipe fingerprint for notifications 功能无效
+2018.38.3     09.19       930874] [Sprdroid9.0_SharkL3] [BSP-Display][] [TJ][Local][Android9.0][SharkL3]色温下功能冷、暖色功能异常
+2018.38.3     09.19       调试PQ
+2018.38.3     09.19       938668 (SPCSS00515322) - [SC9832E][ZTE_SH][P932F10]【用例发现】【设置】开启触摸音设置，操作手机时没有任何声音
+2018.38.4     09.20       938931] [Sprdroid9.0_SharklE] [FW-WindowsManager][] [TJ][MPT][Android9.0][SharkLE][Go1G][省电管理]超级省电模式，按压物理音量下键无作用
+2018.38.4     09.20       938924] [Sprdroid9.0_SharklE] [FW-WindowsManager][] [SZ][I&ST][Sprdroid9.0_SharklE][GMS][CTS][cts9.0_r1][arm64-v8a]CTS测试,[CtsCurrentApiSignatureTestCases]中,[android.signature.cts.api.SignatureTest#testSignature]等[1]TestCases共[1]项Failed
+2018.38.4     09.20       939170] [Sprdroid9.0_SharklE] [FW-WindowsManager][] [PSST][Android9.0][SharkLE][GMS]进行Monkey4System测试, #0412测试22小时出现Android重启
+2018.38.5     09.21       936326] [Sprdroid9.0_Pike2] [FW-WindowsManager][] [ST_India][Android9.0][Pike2][Go1G][GMS][apk][Angry Birds 2],Vodafone, DUT call screen rotate & zoom after disconnect call while playing angry birds 2 game.(video attached)
+2018.38.5     09.21       938610] [Sprdroid9.0_Pike2] [FW-WindowsManager][] [Camera_Team][Android9.0][Pike2][Go512]设置密码锁后双击power键进相机，高概率出现进相机前先退至桌面一次
+2018.38.5     09.21       938255] [Sprdroid9.0_Pike2] [FW-WindowsManager][] [TJ][PSST][Android9.0][Pike2][Go512][Instant]在CtsWindowManagerDeviceTestCases中，android.server.wm.LocationOnScreenTests#testLocationOnDisplay_appWindow等5项 -failed
+2018.38.5     09.21       939834] [Sprdroid9.0_SharklE] [FW-WindowsManager][] [PSST][Android9.0][SharkLE][Go1G][GMS]monkey测试,#0382测试19.87小时出现 CRASH: com.android.launcher3 (pid 12926) ,1/10(台)累计出现1次
+2018.38.5     09.21       937619] [Sprdroid9.0_SharklE] [FW-WindowsManager][] [TJ][Telephony][Android9.0][SharkLE]通话中添加通话，会短暂黑屏2秒左右
+--2018.39
+2018.39.2     09.25       940622] [Sprdroid9.0_SharklE] [FW-WindowsManager][] [TJ][PSST][Android9.0][SharkLE][Go1G][CTS] 在CtsCurrentApiSignatureTestCases中，android.signature.cts.api.SignatureTest#testSignature - failed
+2018.39.2     09.25       940976] [Sprdroid9.0_SharklE] [FW-WindowsManager][] [I&TS][android9.0_sharkle_GMS][9832e][Monkey_Test]android重启
+2018.39.2     09.25       确认log， 修改应该生效，910644 - [Beta_SH][SC9853-1][1G_RAM][性能][关键性能][PTR2Block] ISharkL2_8.1_1G_Native_W18.28.5屏幕点亮均值为1.122，ISharkL2_8.1_2G_Native_W18.17.4均值为0.028，对比差值：1.095，相差3957%
+2018.39.2     09.25       940170] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [I&ST][9853i][7.0][2018-10-GoogleSecurityBulletin][monkey]FirstJavaCrashTime:4.55h首措偏低，出现JavaCrash Types are: com.android.fmradio
+2018.39.3     09.26       940607] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [PSST][AndroidGo][1GB][SharkLE]monkey测试,#513测试23.53小时出现 CRASH: com.android.music (android.view.WindowManager$BadTokenException) ,1/10(台)累计出现1次
+2018.39.3     09.26       897798 - [TJ][Telephony][Android8.1][SharkL2][Monkey]Monkey测试7个小时后偶现com.android.browser停止运行（Native Crash：Abort message: 'Failed to set damage region on surface 0x84ebe920, error=EGL_BAD_ACCESS'
+2018.39.3     09.26       windowmanager文档
+2018.39.3     09.26       941805] [Sprdroid9.0_SharkL3] [FW-WindowsManager][] [ST_India][Android9.0][SharkL3][GMS]; SharkL3 Fail to open camera while double click on Power button.
+2018.39.3     09.26       942288] [Sprdroid9.0_Pike2] [FW-WindowsManager][] [PSST][PIKE2][9.0]手机进行monkey+sleep测试，#828手机测试40个小时左右，出现android重启，3台手机累计出现3次
+2018.39.4     09.27       939170] [Sprdroid9.0_SharklE] [FW-WindowsManager][] [PSST][Android9.0][SharkLE][GMS][PTR2Block]进行Monkey4System测试, #0412测试22小时出现Android重启
+2018.39.4     09.27       940925] [Sprdroid9.0_SharkL3] [FW-WindowsManager][] [TJ][Local][Android9.0][Android9.0][SharkL3]护眼模式，浓度调节无变化
+2018.39.5     09.28       942916] [Sprdroid8.1_SharkLE] [FW-WindowsManager][] [4.97 h][I&ST][monkey][android_Go_1G_trunk_sharkle][ANR]com.android.contacts happens ANR,log:ANR in com.android.contacts (com.android.contacts/.vcard.ImportVCardActivity)
+2018.39.5     09.28       940170] [Sprdroid_7.0_iSharkL2] [FW-WindowsManager][] [I&ST][9853i][7.0][2018-10-GoogleSecurityBulletin][monkey]FirstJavaCrashTime:4.55h首措偏低，出现JavaCrash Types are: com.android.fmradio
+2018.39.6     09.29       944093 (SPCSS00518228) - [SC9832E_ZTE][ZTE_SH][P932F10]合力泰项目闪屏故障，希望LCD先显示，背光延迟点亮，请帮忙确认下加延迟的地方请问展讯这边该怎么修改
+--2018.41
+2018.41.3     10.10       939430] [Sprdroid8.1_iSharkL2] [FW-WindowsManager][] [TJ][Local][SC9853-1]分屏按home键回到桌面，横屏隐藏导航栏再显示，点击recent键快速转竖屏，分屏界面显示异常（见视频）
+2018.41.3     10.10       945299 - [PSST][Android9.0][SharkL3][PTR1Block]手机进行系统monkey测试，4台手机出现手机假定屏，adb可连接，home键和返回键无响应，power键有响应
+--2018.42
+2018.42.2     10.16       949979 - [PSST][Android9.0][SharkL3]进行Monkey4System测试, #1077测试38.5小时出现Android重启
+2018.42.2     10.16       936278] [Sprdroid8.1_SharkL3] [FW-WindowsManager][] [Beta_external][SC9863-1][Tele]测试机开机弹出桌面后，读取usim卡应用过程中，高概率桌面呈现黑屏状态，体验不好（附视频）
